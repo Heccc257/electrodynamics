@@ -3,6 +3,7 @@ import argparse
 import os 
 from tqdm import tqdm
 import torch
+from vllm import LLM, SamplingParams
 
 from transformers import (
     AutoTokenizer,
@@ -55,21 +56,42 @@ def load_model_and_tokenizer(path):
 
     return model, tokenizer
 
+def post_process(input, answer):
+    length = len(input)
+    if answer[0: length] == input:
+        answer = answer[length: ]
+    return answer
+
 def get_answers(
-    model=None,
-    tokenizer=None,
+    model_path,
+    # model=None,
+    # tokenizer=None,
     datasets=None,
     output_dir=None,
     prompt_template=None,
 ):
+    llm = LLM(
+        model=model_path,
+        max_model_len=1024,
+    )
 
+    sampling_params = SamplingParams(
+        max_tokens=1024,  # 生成的最大新token数，包括输入文本
+        best_of=3,
+        n=1,  # 返回的序列数量
+        temperature=0.7,  # 控制输出的随机性，值越低输出越确定但可能更单调
+        top_p=0.9,  # 核采样，只从累积概率最高的词汇中选择下一个token
+        top_k=50,  # Top-k采样，只从概率最高的k个词汇中选择下一个token
+        repetition_penalty=1.2  # 对已经生成过的token施加惩罚，以降低其再次被选中的概率
+    )
+    
     for dataset in datasets:
         print("=====================")
         print(f"begin answer dataset: {dataset}")
         answers = []
 
         data_name = dataset.split('/')[-1]
-        output_path = os.path.join(output_dir, data_name)
+        output_path = os.path.join(output_dir, "answer_" + data_name)
         
         data = json.load(open(dataset, "r"))
         for idx, json_obj in enumerate(tqdm(data)):
@@ -80,14 +102,28 @@ def get_answers(
             # 根据template构造完整得prompt
             prompt = prompt_template.format(**json_obj)
 
-            # 这部分后面可以换成vllm
-            input_ids = tokenizer(
-                prompt, return_tensors="pt"
-            ).input_ids.to("cuda")
+            # # 这部分后面可以换成vllm
+            # input_ids = tokenizer(
+            #     prompt, return_tensors="pt"
+            # ).input_ids.to("cuda")
 
-            output = model.generate(input_ids, max_length=500, num_return_sequences=1)
-            generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
-            print(f"generated_text {generated_text}")
+            # output = model.generate(
+            #     input_ids,
+            #     max_new_tokens=1024,  # 生成的最大新token数
+            #     num_return_sequences=1,  # 返回的序列数量
+            #     no_repeat_ngram_size=3,  # 避免生成相同的n-gram（例如：3表示三元组）
+            #     early_stopping=True,  # 如果达到一个合理的停止点，则提前结束生成
+            #     temperature=0.7,  # 控制输出的随机性，值越低输出越确定但可能更单调
+            #     top_p=0.9,  # 核采样，只从累积概率最高的词汇中选择下一个token
+            #     top_k=50,  # Top-k采样，只从概率最高的k个词汇中选择下一个token
+            #     repetition_penalty=1.2  # 对已经生成过的token施加惩罚，以降低其再次被选中的概率
+            # )
+            # generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
+
+            outputs = llm.generate(prompt, sampling_params=sampling_params)
+            generated_text = outputs[0].outputs[0].text
+
+            generated_text = post_process(prompt, generated_text)
             
             answer = {}
             answer["input"] = json_obj["input"]
@@ -96,7 +132,7 @@ def get_answers(
 
             answers.append(answer)
             
-            if idx%10 == 0:
+            if idx%10 == 0 or idx < 5:
                 json_str = json.dumps(answers, ensure_ascii=False, indent=4)
                 with open(output_path, "w", encoding="utf-8") as f:
                     f.write(json_str)
@@ -126,7 +162,7 @@ if __name__ == "__main__":
     model_path = model2path[model_name]
     print(f"model name: {model_name}, model path: {model_path}")
 
-    model, tokenizer = load_model_and_tokenizer(model_path)
+    # model, tokenizer = load_model_and_tokenizer(model_path)
 
     prompt_type = args.prompt
     print(prompt_type)
@@ -134,6 +170,6 @@ if __name__ == "__main__":
     prompt = prompts[prompt_type]
     print(f"prompt: {prompt}")
 
-    get_answers(model=model, tokenizer=tokenizer, 
+    get_answers(model_path=model_path, 
         datasets=datasets, output_dir=output_dir, prompt_template=prompt)
 
