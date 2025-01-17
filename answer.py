@@ -62,6 +62,14 @@ def post_process(input, answer):
         answer = answer[length: ]
     return answer
 
+def apply_system_template(prompt):
+    template = f'''<|im_start|>system
+You are a helpful assistant.<|im_end|>
+<|im_start|>user
+{prompt} <|im_end|>
+    '''
+    return template
+
 def get_answers(
     model_path,
     # model=None,
@@ -70,6 +78,8 @@ def get_answers(
     output_dir=None,
     prompt_template=None,
 ):
+
+    print(f"prompt template: {prompt_template}")
     llm = LLM(
         model=model_path,
         max_model_len=1024,
@@ -101,29 +111,17 @@ def get_answers(
 
             # 根据template构造完整得prompt
             prompt = prompt_template.format(**json_obj)
+            prompt = apply_system_template(prompt)
 
-            # # 这部分后面可以换成vllm
-            # input_ids = tokenizer(
-            #     prompt, return_tensors="pt"
-            # ).input_ids.to("cuda")
-
-            # output = model.generate(
-            #     input_ids,
-            #     max_new_tokens=1024,  # 生成的最大新token数
-            #     num_return_sequences=1,  # 返回的序列数量
-            #     no_repeat_ngram_size=3,  # 避免生成相同的n-gram（例如：3表示三元组）
-            #     early_stopping=True,  # 如果达到一个合理的停止点，则提前结束生成
-            #     temperature=0.7,  # 控制输出的随机性，值越低输出越确定但可能更单调
-            #     top_p=0.9,  # 核采样，只从累积概率最高的词汇中选择下一个token
-            #     top_k=50,  # Top-k采样，只从概率最高的k个词汇中选择下一个token
-            #     repetition_penalty=1.2  # 对已经生成过的token施加惩罚，以降低其再次被选中的概率
-            # )
-            # generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
+            if idx == 0:
+                print("===== prompt example =====")
+                print(prompt)
+                print("")
 
             outputs = llm.generate(prompt, sampling_params=sampling_params)
             generated_text = outputs[0].outputs[0].text
 
-            generated_text = post_process(prompt, generated_text)
+            # generated_text = post_process(prompt, generated_text)
             
             answer = {}
             answer["input"] = json_obj["input"]
@@ -165,10 +163,9 @@ if __name__ == "__main__":
     # model, tokenizer = load_model_and_tokenizer(model_path)
 
     prompt_type = args.prompt
-    print(prompt_type)
+    print(f"prompt type {prompt_type}")
     prompts = json.load(open("config/prompt.json", 'r'))
     prompt = prompts[prompt_type]
-    print(f"prompt: {prompt}")
 
     get_answers(model_path=model_path, 
         datasets=datasets, output_dir=output_dir, prompt_template=prompt)
