@@ -1,0 +1,567 @@
+[
+    {
+        "instruction": "经典电动力学是什么的经典极限？",
+        "input": "",
+        "output": "经典电动力学是量子电动力学的经典极限。"
+    },
+    {
+        "instruction": "在什么条件下，经典电动力学是一个非常好的近似？",
+        "input": "",
+        "output": "在光子数目很大且单个光子携带的动量远远小于电荷载体的动量时，经典电动力学是个非常好的近似。"
+    },
+    {
+        "instruction": "经典电动力学由什么方程组描述？",
+        "input": "",
+        "output": "经典电动力学由Maxwell方程组描述。"
+    },
+    {
+        "instruction": "Maxwell 方程组在电动力学中表示什么？",
+        "input": "",
+        "output": "Maxwell 方程组描述了电场和磁场的基本规律，包括电场的散度与自由电荷密度的关系、磁场的旋度与电场变化率的关系、电场的旋度与磁场变化率的关系，以及磁场的散度为零。"
+    },
+    {
+        "instruction": "Maxwell 方程组中的第一个方程是什么？",
+        "input": "",
+        "output": "$\\nabla\\cdot D=\\rho_{\\mathrm{f}}$"
+    },
+    {
+        "instruction": "Maxwell 方程组中的第二个和第三个方程分别是什么？",
+        "input": "",
+        "output": "$\\nabla\\times\\boldsymbol{H}-\\frac{\\partial\\boldsymbol{D}}{\\partial t}=\\boldsymbol{j}_{\\mathrm{f}}$ 和 $\\nabla\\times\\boldsymbol{E}+\\frac{\\partial\\boldsymbol{B}}{\\partial t}=\\mathbf{0}$"
+    },
+    {
+        "instruction": "Maxwell 方程组中的第四个方程是什么？",
+        "input": "",
+        "output": "$\\nabla\\cdot B=0$"
+    },
+    {
+        "instruction": "在电动力学中，$\\boldsymbol{D}$ 和 $\\boldsymbol{H}$ 场的引入原因是什么？",
+        "input": "",
+        "output": "引入 $\\boldsymbol{D}$ 和 $\\boldsymbol{H}$ 场的原因是总电荷 $\\rho_{\\mathrm{t}}$ 和总电流 $j_{\\mathrm{t}}$ 不好求，希望物理表达式通过自由电荷和传导电流来表示。"
+    },
+    {
+        "instruction": "介质方程在电动力学中表示什么？",
+        "input": "",
+        "output": "介质方程描述了电位移场 $D$ 和磁场强度 $\\boldsymbol{H}$ 与电场 $E$ 和磁感应强度 $\\boldsymbol{B}$ 之间的关系，这些关系可能非常复杂，包括非线性、非局域性、依赖晶体结构和温度等。"
+    },
+    {
+        "instruction": "电荷的连续性方程在电动力学中表示什么？",
+        "input": "",
+        "output": "电荷的连续性方程表示电荷密度 $\\rho$ 和电流密度 $\\boldsymbol{j}$ 之间的关系，即 $\\frac{\\partial\\rho}{\\partial t}+\\nabla\\cdot\\boldsymbol{j}=0$。"
+    },
+    {
+        "instruction": "带电粒子在电磁场中的受力由什么力刻画？",
+        "input": "",
+        "output": "带电粒子在电磁场中的受力由 Lorentz 力刻画，即 $\\boldsymbol{F} = q(\\boldsymbol{E} + \\boldsymbol{v} \\times \\boldsymbol{B})$。"
+    },
+    {
+        "instruction": "在电动力学中，Lorentz力是如何表示的？",
+        "input": "",
+        "output": "$$\\pmb{F}=q\\big(\\pmb{E}+\\pmb{v}\\times\\pmb{B}\\big)$$"
+    },
+    {
+        "instruction": "Lorentz力密度是如何表示的？",
+        "input": "",
+        "output": "$$\\mathbf{f}=\\rho\\mathbf{E}+\\mathbf{\\nabla}j\\times\\mathbf{B}$$"
+    },
+    {
+        "instruction": "在电动力学中，Maxwell 方程组在 Gauss 单位制下是如何表示的？",
+        "input": "",
+        "output": "$$\\nabla\\cdot\\pmb{\\cal D}=4\\pi\\rho$$ $$\\nabla\\times\\pmb{H}-\\frac{1}{c}\\frac{\\partial\\pmb{D}}{\\partial t}=\\frac{4\\pi}{c}\\pmb{j}$$ $$\\nabla\\times\\pmb{E}+\\frac{1}{c}\\frac{\\partial\\pmb{B}}{\\partial t}=\\pmb{0}$$ $$\\nabla\\cdot B=0$$"
+    },
+    {
+        "instruction": "国际单位制（SI）与 Gauss 单位制之间的电场和磁场的换算关系是什么？",
+        "input": "",
+        "output": "$${\\pmb E}^{\\mathrm{(SI)}}=\\frac{1}{\\sqrt{4\\pi\\epsilon_{0}}}{\\pmb E}^{\\mathrm{(G)}}$$ $$B^{\\mathrm{(SI)}}=\\sqrt{\\frac{\\mu_{0}}{4\\pi}}B^{\\mathrm{(G)}}$$"
+    },
+    {
+        "instruction": "在电动力学中，电荷密度在 SI 单位和 Gauss 单位制之间的换算关系是什么？",
+        "input": "",
+        "output": "$$\\rho^{(\\mathrm{SI})}=\\sqrt{4\\pi\\epsilon_{0}}\\rho^{(\\mathrm{G})}$$"
+    },
+    {
+        "instruction": "什么是静电场和静磁场？",
+        "input": "",
+        "output": "静电场和静磁场是电动力学中研究静止电荷和恒定电流产生的场。静电场由静止电荷产生，静磁场由恒定电流产生。"
+    },
+    {
+        "instruction": "静电场的数学表达式是什么？",
+        "input": "",
+        "output": "$\\mathbf{E} = \\frac{1}{4\\pi\\epsilon_0} \\int \\frac{\\rho(\\mathbf{r}') (\\mathbf{r} - \\mathbf{r}')}{|\\mathbf{r} - \\mathbf{r}'|^3} d^3r'$"
+    },
+    {
+        "instruction": "静磁场的数学表达式是什么？",
+        "input": "",
+        "output": "$\\mathbf{B} = \\frac{\\mu_0}{4\\pi} \\int \\frac{\\mathbf{J}(\\mathbf{r}') \\times (\\mathbf{r} - \\mathbf{r}')}{|\\mathbf{r} - \\mathbf{r}'|^3} d^3r'$"
+    },
+    {
+        "instruction": "什么是静电场？",
+        "input": "",
+        "output": "静电场是由静止电荷产生的电场。Coulomb 定律描述了点电荷之间的静电力，公式为：\n$$\n\\pmb{F}_{j}=\\frac{1}{4\\pi\\varepsilon_{0}}\\sum_{i\\neq j}\\frac{q_{i}q_{j}}{\\left|\\pmb{r}_{i}-\\pmb{r}_{j}\\right|^{2}}\\frac{\\pmb{r}_{j}-\\pmb{r}_{i}}{\\left|\\pmb{r}_{i}-\\pmb{r}_{j}\\right|}\n$$\n其中，$\\varepsilon_{0}$ 是真空介电常数，$\\varepsilon_{0}=8.85{\\times}10^{-12}\\,\\mathrm{C}^{2}\\,\\mathrm{N}^{-1}\\,\\mathrm{m}^{-2}$。"
+    },
+    {
+        "instruction": "Coulomb 定律中的平方反比关系隐含了什么物理意义？",
+        "input": "",
+        "output": "Coulomb 定律中的平方反比关系隐含着光子的静质量为零，这是电磁学作为规范场的一个重要性质。"
+    },
+    {
+        "instruction": "如何从Coulomb 定律得到电场强度矢量？",
+        "input": "",
+        "output": "根据Coulomb 定律，带电粒子 $j$ 受力正比于自身电荷 $q_{j}$，因此可以将受力除以 $q_{j}$，得到与带电粒子本身性质无关的电场强度矢量。"
+    },
+    {
+        "instruction": "电场强度矢量是如何定义的？",
+        "input": "",
+        "output": "$$\\pmb{E}(\\pmb{r})=\\frac{1}{4\\pi\\varepsilon_{0}}\\frac{q}{r^{2}}\\hat{\\pmb{r}}$$"
+    },
+    {
+        "instruction": "电场强度矢量的积分形式是什么？",
+        "input": "",
+        "output": "$$\\pmb{E}(\\pmb{r})=\\frac{1}{4\\pi\\varepsilon_{0}}\\iiint\\frac{\\rho\\left(\\pmb{r}^{\\prime}\\right)\\hat{\\pmb{e}}\\left(\\pmb{r}-\\pmb{r}^{\\prime}\\right)}{\\left|\\pmb{r}-\\pmb{r}^{\\prime}\\right|^{2}}\\mathrm{d}\\tau^{\\prime}$$"
+    },
+    {
+        "instruction": "Coulomb 定律和叠加原理在静电学中的作用是什么？",
+        "input": "",
+        "output": "Coulomb 定律和叠加原理原则上能解决所有的静电学问题，但在具体问题中，表达式常常存在求解上的困难，需要多极场展开等方式来做近似处理。"
+    },
+    {
+        "instruction": "静电场满足哪些基本方程？",
+        "input": "",
+        "output": "静电场满足的基本方程包括：\n1. 高斯定律的积分形式：\n$$\\iiint\\nabla\\cdot E\\mathrm{d}\\boldsymbol{\\tau}=\\frac{1}{\\varepsilon_{0}}\\iiint\\rho\\mathrm{d}\\boldsymbol{\\tau}$$\n2. 静电场的无旋性：\n$$\\iint\\left(\\nabla\\times E\\right)\\cdot\\mathrm{d}\\pmb{\\sigma}=0$$\n或者它们的微分形式：\n$$\\nabla\\cdot\\pmb{E}=\\frac{\\rho}{\\varepsilon_{0}}$$\n$$\\nabla\\times\\mathbf{{\\cal{E}}}=\\mathbf{0}$$"
+    },
+    {
+        "instruction": "静电场的有源性和无旋性分别由哪些方程描述？",
+        "input": "",
+        "output": "静电场的有源性由高斯定律描述：\n$$\\nabla\\cdot\\pmb{E}=\\frac{\\rho}{\\varepsilon_{0}}$$\n静电场的无旋性由以下方程描述：\n$$\\nabla\\times\\mathbf{{\\cal{E}}}=\\mathbf{0}$$"
+    },
+    {
+        "instruction": "在Faraday电磁感应现象中，非静电场的性质是什么？",
+        "input": "",
+        "output": "在Faraday电磁感应现象中，非静电场一般是有旋的。"
+    },
+    {
+        "instruction": "静电场的Coulomb解是什么？",
+        "input": "",
+        "output": "静电场的Coulomb解为：\n$$\\pmb{{\\cal E}}(\\pmb{r})=\\frac{1}{4\\pi\\varepsilon_{0}}\\frac{q}{r^{2}}\\hat{\\pmb{r}}$$"
+    },
+    {
+        "instruction": "如何证明静电场的高斯定律？",
+        "input": "",
+        "output": "静电场的高斯定律可以通过以下步骤证明：\n$$\\iiint\\nabla\\cdot\\mathbf{E}\\mathrm{d}{\\boldsymbol{\\tau}}=\\iint\\mathbf{E}\\cdot\\mathrm{d}{\\boldsymbol{\\sigma}}$$\n$$={\\cfrac{q}{4\\pi\\varepsilon_{0}}}\\oiint{\\frac{{\\boldsymbol{\\hat{r}}}\\cdot\\mathrm{d}{\\boldsymbol{\\sigma}}}{r^{2}}}={\\cfrac{q}{4\\pi\\varepsilon_{0}}}\\oiint\\mathrm{d}{\\hat{\\Omega}}}$$\n最终得到：\n$$\\iiint\\nabla\\cdot E\\mathrm{d}\\tau={\\frac{1}{\\varepsilon_{0}}}\\iiint\\rho\\mathrm{d}\\tau$$"
+    },
+    {
+        "instruction": "如何证明静电场的无旋性？",
+        "input": "",
+        "output": "静电场的无旋性可以通过以下步骤证明：\n$$\\iint\\left(\\nabla\\times\\mathbf{{E}}\\right)\\cdot\\mathrm{{d}}\\pmb{\\sigma}=\\oint\\mathbf{{E}}\\cdot\\mathrm{{d}}\\ell$$\n$$={\\cfrac{q}{4\\pi\\varepsilon_{0}}}\\oint{\\cfrac{{\\hat{\\mathbf{r}}}\\cdot\\mathrm{{d}}\\ell}{r^{2}}}={\\cfrac{q}{4\\pi\\varepsilon_{0}}}\\oint{\\cfrac{\\mathrm{{d}}r}{r^{2}}}=0$$\n最终得到：\n$$\\iint\\left(\\nabla\\times\\mathbf{{E}}\\right)\\cdot\\mathrm{{d}}\\pmb{\\sigma}=0$$"
+    },
+    {
+        "instruction": "在什么条件下，静电场的基本方程有唯一解？",
+        "input": "",
+        "output": "在要求无穷远处电场强度为 $\\pmb{{\\cal E}}(\\infty)=\\mathbf{0}$ 的条件下，根据Helmholtz定理，静电场的基本方程 $\\nabla\\cdot\\boldsymbol{E}=\\rho\\big/\\varepsilon_{0}$ 和 $\\nabla\\times\\boldsymbol{E}=\\mathbf{0}$ 有唯一解，即Coulomb解。"
+    },
+    {
+        "instruction": "在电动力学中，静磁场是如何产生的？",
+        "input": "",
+        "output": "通电的导线产生磁场，其规律由Ampère定律描述。"
+    },
+    {
+        "instruction": "导体中的电流与电场的关系由哪个定律描述？",
+        "input": "",
+        "output": "Ohm定律描述导体中的电流与电场的关系，公式为 $j=\\sigma E$。"
+    },
+    {
+        "instruction": "体电流密度如何表示？",
+        "input": "",
+        "output": "体电流密度可以表示为 $\\pmb{j}=\\rho_{+}\\pmb{v}_{+}+\\rho_{-}\\pmb{v}_{-}$，其中 $\\pmb{v}_{+}\\setminus\\pmb{v}_{-}$ 只包括有序运动部分。"
+    },
+    {
+        "instruction": "电流与电流密度的关系是什么？",
+        "input": "",
+        "output": "电流为电流密度的通量，公式为 $I=\\iint j\\cdot\\mathrm{d}{\\boldsymbol{\\sigma}}$。"
+    },
+    {
+        "instruction": "电荷守恒性如何表达？",
+        "input": "",
+        "output": "电荷守恒性可以表达为 ${\\frac{\\mathrm{d}}{\\mathrm{d}t}}\\iiint\\rho\\mathrm{d}{\\boldsymbol{\\tau}}=-\\oint\\oint{\\boldsymbol{j}}\\cdot\\mathrm{d}{\\boldsymbol{\\sigma}}$。"
+    },
+    {
+        "instruction": "在电动力学中，电荷的连续性方程是什么？",
+        "input": "",
+        "output": "$${\\frac{\\partial\\rho}{\\partial t}}+\\nabla\\cdot\\boldsymbol{j}=0$$"
+    },
+    {
+        "instruction": "对于稳恒电流，电荷的连续性方程简化为___。",
+        "input": "",
+        "output": "$\\nabla\\cdot\\boldsymbol{j}=0$"
+    },
+    {
+        "instruction": "Biot-Savart 定律描述了___。",
+        "input": "",
+        "output": "无限小的电流元 $j\\left(r^{\\prime}\\right)\\mathrm{d}\\tau^{\\prime}$ 生成磁感应强度 $\\mathrm{d}B(r)$"
+    },
+    {
+        "instruction": "Biot-Savart 定律描述了___。",
+        "input": "",
+        "output": "电流元产生的磁场"
+    },
+    {
+        "instruction": "Biot-Savart 定律的数学表达式是___。",
+        "input": "",
+        "output": "$$\\mathrm{d}B(\\boldsymbol{r})=\\frac{\\mu_{0}}{4\\pi}\\frac{\\boldsymbol{j}\\left(\\boldsymbol{r^{\\prime}}\\right)\\times\\hat{\\boldsymbol{e}}\\left(\\boldsymbol{r}-\\boldsymbol{r^{\\prime}}\\right)}{\\left|\\boldsymbol{r}-\\boldsymbol{r^{\\prime}}\\right|^{2}}\\mathrm{d}\\tau^{\\prime}$$"
+    },
+    {
+        "instruction": "在国际单位制中，Biot-Savart 定律中的常数因子是___。",
+        "input": "",
+        "output": "$\\mu_{0}/4\\pi=1/4\\pi\\varepsilon_{0}c^{2}$"
+    },
+    {
+        "instruction": "电流元之间的相互作用是否满足Newton 的作用力与反作用力定律？",
+        "input": "",
+        "output": "不满足"
+    },
+    {
+        "instruction": "闭合回路之间的相互作用是否满足牛顿第三定律？",
+        "input": "",
+        "output": "满足"
+    },
+    {
+        "instruction": "使用叠加原理，磁场 $B(\\boldsymbol{r})$ 可以表示为___。",
+        "input": "",
+        "output": "$$B(\\boldsymbol{r})=\\frac{\\mu_{0}}{4\\pi}\\iiint\\frac{\\boldsymbol{j}\\left(\\boldsymbol{r}^{\\prime}\\right)\\times\\hat{\\boldsymbol{e}}\\left(\\boldsymbol{r}-\\boldsymbol{r}^{\\prime}\\right)}{\\left|\\boldsymbol{r}-\\boldsymbol{r}^{\\prime}\\right|^{2}}\\mathrm{d}\\tau^{\\prime}$$"
+    },
+    {
+        "instruction": "磁矢势 $\\pmb{A}$ 的定义是___。",
+        "input": "",
+        "output": "$$B\\equiv\\nabla\\times\\mathbf{A}$$"
+    },
+    {
+        "instruction": "磁矢势 $\\pmb{A}$ 的表达式是___。",
+        "input": "",
+        "output": "$$A(\\boldsymbol{r})=\\frac{\\mu_{0}}{4\\pi}\\iiint\\frac{j\\left(\\boldsymbol{r^{\\prime}}\\right)}{\\left|\\boldsymbol{r}-\\boldsymbol{r^{\\prime}}\\right|}\\mathrm{d}\\tau^{\\prime}$$"
+    },
+    {
+        "instruction": "磁场的散度 $\\nabla\\cdot B$ 等于___。",
+        "input": "",
+        "output": "0"
+    },
+    {
+        "instruction": "Ampère 环路定理的微分形式是___。",
+        "input": "",
+        "output": "$$\\nabla\\times{\\boldsymbol{B}}=\\mu_{0}j$$"
+    },
+    {
+        "instruction": "静磁场满足的基本方程是什么？",
+        "input": "",
+        "output": "$$\\nabla\\cdot B=0$$ $$\\nabla\\times\\mathbfcal{B}=\\mu_{0}j$$"
+    },
+    {
+        "instruction": "静磁场的矢势满足的方程是什么？",
+        "input": "",
+        "output": "$$\\nabla^{2}A=-\\mu_{0}j$$ $$\\nabla\\cdot A=0$$"
+    },
+    {
+        "instruction": "在电动力学中，Maxwell 方程的作用是什么？",
+        "input": "",
+        "output": "Maxwell 方程用于描述电磁场的动态行为，包括电场和磁场如何随时间变化以及它们之间的相互作用。"
+    },
+    {
+        "instruction": "Faraday 在1831年提出了什么重要的电磁学定律？",
+        "input": "",
+        "output": "Faraday 提出了电磁感应定律，该定律描述了变化的磁场如何产生电场。"
+    },
+    {
+        "instruction": "Faraday 电磁感应定律是什么？",
+        "input": "",
+        "output": "Faraday 电磁感应定律描述了感应电动势与磁通量变化率的关系，公式为 $$\\oint E\\cdot\\mathrm{d}{\\boldsymbol{\\ell}}={\\boldsymbol{\\mathcal{E}}}=-{\\frac{\\mathrm{d}\\Phi}{\\mathrm{d}t}}=-{\\frac{\\mathrm{d}}{\\mathrm{d}t}}\\iint B\\cdot\\mathrm{d}{\\boldsymbol{\\sigma}}$$ 其中感应电动势 $\\mathcal{E}=-\\mathrm{d}\\Phi/\\mathrm{d}t$ 为高中时学习的版本；前面的负号由Lenz 定律所描述。"
+    },
+    {
+        "instruction": "如何通过Stokes公式转换Faraday定律的积分形式？",
+        "input": "",
+        "output": "对上式的左边使用数学上的Stokes 公式，我们得到 $$\\iint(\\nabla\\times E)\\cdot\\mathrm{d}{\\boldsymbol{\\sigma}}$$ 由于积分面积可为任意面积，故有 $$\\nabla\\times\\mathbf{{\\cal{E}}}=-\\frac{\\partial\\mathbf{{\\cal{B}}}}{\\partial t}$$"
+    },
+    {
+        "instruction": "总电场 $\\pmb{E}$ 可以分为哪两部分？",
+        "input": "",
+        "output": "总电场 $\\pmb{E}$ 一般可以分为两部分：由电荷激发的纵场（散度不为零、旋度为零）和变化的磁场激发的横场（散度为零、旋度不为零）。"
+    },
+    {
+        "instruction": "Maxwell 在电磁场理论中的贡献是什么？",
+        "input": "",
+        "output": "1865 年，Maxwell 在静电场、静磁场，以及Faraday 电磁感应定律的基础上，建立了电磁场理论，预言了电磁波，并指出光其实是一种电磁波。Maxwell 整理出了一套完备的电磁方程组。"
+    },
+    {
+        "instruction": "Maxwell 方程组是什么？",
+        "input": "",
+        "output": "$$\\begin{array}{l}{\\displaystyle\\nabla\\cdot{\\boldsymbol E}=\\frac{\\rho}{\\varepsilon_{0}}}\\\\ {\\displaystyle\\nabla\\times{\\boldsymbol E}=-\\frac{\\partial{\\boldsymbol B}}{\\partial t}}\\\\ {\\displaystyle\\nabla\\cdot{\\boldsymbol B}=0}\\\\ {\\displaystyle\\nabla\\times{\\boldsymbol B}=\\mu_{0}j+\\varepsilon_{0}\\mu_{0}\\frac{\\partial{\\boldsymbol E}}{\\partial t}}\\end{array}$$"
+    },
+    {
+        "instruction": "Maxwell 原创的部分是什么？",
+        "input": "",
+        "output": "位移电流 $j_{\\mathrm{d}}\\equiv\\varepsilon_{0}\\partial E/\\partial t$"
+    },
+    {
+        "instruction": "为什么需要引入位移电流？",
+        "input": "",
+        "output": "因为旋度的散度为零，倘若没有位移电流，我们有，$$\\begin{array}{r}{0=\\nabla\\cdot\\left(\\nabla\\times\\boldsymbol{B}\\right)=\\mu_{0}\\nabla\\cdot\\boldsymbol{j}}\\end{array}$$等式右边在静电场和静磁场的情况下确实为零，但普遍情况下，根据电荷守恒方程可知不为零，$${\\frac{\\partial\\rho}{\\partial t}}+\\nabla\\cdot\\boldsymbol{j}=0$$"
+    },
+    {
+        "instruction": "位移电流的形式是什么？",
+        "input": "",
+        "output": "$$j_{\\mathrm{{d}}}\\equiv\\varepsilon_{0}{\\frac{\\partial{\\cal{E}}}{\\partial t}}$$"
+    },
+    {
+        "instruction": "位移电流的引入揭示了什么？",
+        "input": "",
+        "output": "位移电流的引入，深刻地揭示了电场和磁场之间的联系：不仅变化的磁场激发电场，变化的电场同样激发磁场；两者都以涡旋形式激发，并且左右手对称。"
+    },
+    {
+        "instruction": "Maxwell 方程组具有哪些重要的对称性？",
+        "input": "",
+        "output": "Maxwell 方程组具有空间反演对称性、时间反演对称性、Lorentz 对称性和规范对称性。"
+    },
+    {
+        "instruction": "在空间反演 ${\\pmb x}\\rightarrow-{\\pmb x}$ 下，电磁场如何变换？",
+        "input": "",
+        "output": "在空间反演下，电场 ${\\cal E}\\rightarrow-{\\cal E}$，磁场 ${\\boldsymbol{B}}\\to{\\boldsymbol{B}}$。"
+    },
+    {
+        "instruction": "在时间反演 $t\\rightarrow-t$ 下，电磁场如何变换？",
+        "input": "",
+        "output": "在时间反演下，电场 $E\\rightarrow E$，磁场 $B\\rightarrow-B$。"
+    },
+    {
+        "instruction": "在Lorentz 变换 $x^{\\mu}\\rightarrow\\Lambda^{\\mu}{}_{\\nu}x^{\\nu}$ 下，Maxwell 方程组如何变化？",
+        "input": "",
+        "output": "在Lorentz 变换下，Maxwell 方程组保持不变。"
+    },
+    {
+        "instruction": "在规范对称性下，标量势 $\\varphi$ 和矢量势 $\\pmb{A}$ 如何变换？",
+        "input": "",
+        "output": "在规范对称性下，标量势 $\\varphi\\rightarrow\\varphi-{\\frac{\\partial f}{\\partial t}}$，矢量势 $\\pmb{A}\\rightarrow\\pmb{A}+\\pmb{\\nabla}f$，其中 $f$ 为任意标量函数。"
+    },
+    {
+        "instruction": "在量子力学中，规范对称性如何影响物理？",
+        "input": "",
+        "output": "在量子力学中，$\\pmb{A}$ 场会出现在波函数的复相位中，从而能够影响物理，例如Aharonov-Bohm 效应。"
+    },
+    {
+        "instruction": "为什么电场 ${\\pmb E}$ 和磁场 $\\textbf{\\emph{B}}$ 是不对称的？",
+        "input": "",
+        "output": "电场 ${\\pmb E}$ 和磁场 $\\textbf{\\emph{B}}$ 的不对称性涉及到磁单极子是否存在。"
+    },
+    {
+        "instruction": "在电磁作用下，能量和动量是如何变化的？",
+        "input": "",
+        "output": "带电粒子在电磁场中运动，受力为"
+    },
+    {
+        "instruction": "电磁场的能量如何用电磁场表示？",
+        "input": "",
+        "output": "电磁场的能量可以用电磁场 $\\scriptstyle{E,\\ B}$ 来表示，假设在电磁相互作用过程中，总能量守恒。"
+    },
+    {
+        "instruction": "电磁场的能量守恒是如何描述的？",
+        "input": "",
+        "output": "电磁场的能量守恒可以通过以下方程描述：\n$$-{\\frac{\\partial w}{\\partial t}}=W+\\nabla\\cdot S$$\n其中，$w$ 表示电磁场的能量密度，$W$ 表示电磁场对带电粒子做功的功率密度，$S$ 表示电磁场的能流密度，也叫Poynting 矢量。"
+    },
+    {
+        "instruction": "电磁场对带电粒子做功的功率密度 $W$ 是如何表达的？",
+        "input": "",
+        "output": "电磁场对带电粒子做功的功率密度 $W$ 可以表达为：\n$$W = \\left(\\rho{\\boldsymbol{E}} + {\\boldsymbol{j}} \\times {\\boldsymbol{B}}\\right) \\cdot {\\boldsymbol{v}} = {\\boldsymbol{j}} \\cdot {\\boldsymbol{E}} = \\left({\\cfrac{1}{\\mu_{0}}}\\nabla \\times {\\boldsymbol{B}} - \\varepsilon_{0}{\\cfrac{\\partial{\\boldsymbol{E}}}{\\partial t}}\\right) \\cdot {\\boldsymbol{E}}$$"
+    },
+    {
+        "instruction": "如何利用数学恒等式表达 $\\nabla \\cdot (\\boldsymbol{E} \\times \\boldsymbol{B})$？",
+        "input": "",
+        "output": "利用数学恒等式，$\\nabla \\cdot (\\boldsymbol{E} \\times \\boldsymbol{B})$ 可以表达为：\n$$\\nabla \\cdot (\\boldsymbol{E} \\times \\boldsymbol{B}) = \\boldsymbol{B} \\cdot (\\nabla \\times \\boldsymbol{E}) - \\boldsymbol{E} \\cdot (\\nabla \\times \\boldsymbol{B})$$"
+    },
+    {
+        "instruction": "如何从电磁场的能量守恒方程中推导出 $W$ 的表达式？",
+        "input": "",
+        "output": "从电磁场的能量守恒方程中，$W$ 的表达式可以推导为：\n$$W = -{\\frac{1}{\\mu_{0}}}\\nabla \\cdot (\\boldsymbol{E} \\times \\boldsymbol{B}) - {\\frac{1}{2}}{\\frac{\\partial}{\\partial t}}\\left(\\varepsilon_{0}\\boldsymbol{E}^{2} + {\\frac{1}{\\mu_{0}}}\\boldsymbol{B}^{2}\\right)$$"
+    },
+    {
+        "instruction": "在电动力学中，电磁场的动量守恒方程是如何表达的？",
+        "input": "",
+        "output": "类似于前面电磁场能量守恒的情况，我们假设电磁场与物质场相互作用过程中总动量守恒，可以写出电磁场的动量守恒方程。"
+    },
+    {
+        "instruction": "电磁场的动量守恒是如何描述的？",
+        "input": "",
+        "output": "电磁场的动量守恒由以下方程描述：\n$$-{\\frac{\\partial g}{\\partial t}}=f+\\nabla\\cdot\\mathbf{T}$$\n其中，$\\textbf{\\emph{g}}$ 表示电磁场的动量密度，$f$ 表示电磁场对带电粒子的施力密度，$\\mathbf{T}$ 表示电磁场的动量流密度。"
+    },
+    {
+        "instruction": "电磁场的动量密度 $\\pmb{g}$ 是如何定义的？",
+        "input": "",
+        "output": "电磁场的动量密度 $\\pmb{g}$ 定义为：\n$$\\pmb{g}=\\varepsilon_{0}\\pmb{E}\\times\\pmb{B}=\\frac{1}{c^{2}}\\pmb{S}$$\n其中，$\\pmb{E}$ 是电场，$\\pmb{B}$ 是磁场，$\\pmb{S}$ 是坡印廷矢量。"
+    },
+    {
+        "instruction": "如何将电磁场的动量流密度 $\\mathbf{T}$ 表达为电场和磁场的函数？",
+        "input": "",
+        "output": "电磁场的动量流密度 $\\mathbf{T}$ 可以表达为：\n$$-\\nabla\\cdot{\\bf T}=\\varepsilon_{0}\\left(\\nabla\\cdot{\\cal E}\\right){\\cal E}+\\frac{1}{\\mu_{0}}\\left(\\nabla\\cdot{\\cal B}\\right){\\cal B}+\\varepsilon_{0}\\big(\\nabla\\times{\\cal E}\\big)\\times{\\cal E}+\\frac{1}{\\mu_{0}}\\big(\\nabla\\times{\\cal B}\\big)\\times{\\cal B}$$\n其中，${\\cal E}$ 和 ${\\cal B}$ 分别表示电场和磁场。"
+    },
+    {
+        "instruction": "在电磁场中，如何利用数学恒等式简化动量流密度的表达式？",
+        "input": "",
+        "output": "利用数学恒等式，动量流密度的表达式可以简化为：\n$$\\big(\\nabla\\cdot E\\big)E+\\big(\\nabla\\times E\\big)\\times E=\\nabla\\cdot\\big(E E\\big)-\\frac{1}{2}\\nabla\\cdot\\big(E^{2}\\mathbf{I}\\big)$$\n其中，$E$ 是电场，$\\mathbf{I}$ 是单位张量。"
+    },
+    {
+        "instruction": "电磁场的动量流密度是什么？",
+        "input": "",
+        "output": "电磁场的动量流密度由以下公式给出：\n$$\n\\mathbf{T}={\\frac{1}{2}}\\left(\\varepsilon_{0}E^{2}+{\\frac{B^{2}}{\\mu_{0}}}\\right)\\mathbf{I}-\\varepsilon_{0}E\\mathbf{E}-{\\frac{1}{\\mu_{0}}}B B\n$$"
+    },
+    {
+        "instruction": "在介质中，Minkowski 力密度如何表示？",
+        "input": "",
+        "output": "在介质中，Minkowski 力密度表示为：\n$$\nf_{\\mathrm{{M}}}=\\nabla\\cdot\\Big[D E+B H-\\frac{1}{2}\\big(D\\cdot E+B\\cdot H\\big)\\mathbf{I}\\Big]-\\frac{\\partial}{\\partial t}\\big(D\\times B\\big)\n$$\n其中，\n$$\n\\pmb{f}_{\\mathrm{{M}}}=\\rho_{\\mathrm{{f}}}\\pmb{E}+\\pmb{j}_{\\mathrm{{f}}}\\times\\pmb{B}-\\frac12E^{2}\\pmb{\\nabla}\\varepsilon-\\frac12H^{2}\\pmb{\\nabla}\\mu\n$$"
+    },
+    {
+        "instruction": "求空间中存在均匀电场 $\\pmb{E}$ 时的应力密度。",
+        "input": "",
+        "output": "应力密度为：\n$$\nf_{\\mathrm{e}}=-{\\hat{n}}\\cdot\\mathbf{T}=-{\\hat{n}}\\cdot\\left[{\\frac{1}{2}}\\varepsilon_{0}E^{2}\\mathbf{I}-\\varepsilon_{0}E\\mathbf{E}\\right]=-{\\frac{1}{2}}\\varepsilon_{0}E^{2}{\\hat{n}}+\\varepsilon_{0}{\\big(}{\\hat{n}}\\cdot E{\\big)}E\n$$\n当 $\\hat{n}\\,//\\,E$ 时：\n$$\n\\pmb{f}_{\\mathrm{e}}=\\frac{1}{2}\\varepsilon_{0}E^{2}\\hat{\\pmb{n}}\n$$\n当 $\\hat{\\pmb{n}}\\perp{\\pmb{E}}$ 时：\n$$\n\\pmb{f}_{\\mathrm{e}}=-\\frac{1}{2}\\varepsilon_{0}E^{2}\\hat{n}\n$$"
+    },
+    {
+        "instruction": "带电粒子在磁场中稳定运动时系统的总动量是多少？",
+        "input": "",
+        "output": "机械动量为 $m\\pmb{v}$，电磁场的动量为：\n$$\np_{\\mathrm{EM}}=\\int\\varepsilon_{0}{\\pmb{E}}\\times{\\pmb{B}}\\,\\mathrm{d}\\tau=q{\\pmb{A}}\n$$\n故总动量为：\n$$\n\\pmb{p}=m\\pmb{v}+q\\pmb{A}\n$$"
+    },
+    {
+        "instruction": "同轴传输线内、外导线半径为 $a,\\ b$ ，两导线间为均匀绝缘介质。导线载有电流 $I$ ，两导线间的电压为 $U$ 。忽略电阻，计算介质中的能流密度 $\\boldsymbol{S}$ 和传输功率。",
+        "input": "",
+        "output": "在传输线中做环路积分，由Ampère 环路定理得：\n$$\n2\\pi r H_{\\phi}=I\\,,\\qquad\\left(a<r<b\\right)\n$$\n设内导线表面上的电荷线密度为 $\\lambda$ ，有：\n$$\nE_{r}\\cdot2\\pi r L=\\frac{\\lambda L}{\\varepsilon}\n$$\n$$\nS=E\\times H=E_{r}H_{\\phi}\\hat{\\pmb e}_{z}=\\frac{I\\lambda}{4\\pi^{2}\\varepsilon r^{2}}\\hat{\\pmb e}_{z}\n$$\n$$\nU=\\int_{a}^{b}E_{r}\\mathrm{d}r=\\int_{a}^{b}\\frac{\\lambda}{2\\pi r\\varepsilon}\\mathrm{d}r=\\frac{\\lambda}{2\\pi\\varepsilon}\\ln\\frac{b}{a}\n$$\n从而得到能流密度和功率为：\n$$\nS=\\frac{U I}{2\\pi\\ln(b/a)}\\frac{1}{r^{2}}\\hat{e}_{z}\n$$\n$$\nP=\\int_{a}^{b}S\\cdot2\\pi r\\mathrm{d}r=U I\n$$"
+    },
+    {
+        "instruction": "设内导线的电导率为 $\\sigma$ ，电流分布均匀，计算通过内导线表面进入介质的能流。",
+        "input": "",
+        "output": "在导线内，有：\n$$\n\\pmb{E}=\\frac{j}{\\sigma}=\\frac{I}{\\pi a^{2}\\sigma}\\hat{e}_{z}\n$$\n由于在导体表面上， $E_{t}$ 连续，故有：\n$$\n\\left.E_{z}\\right|_{r=a^{+}}=\\frac{I}{\\pi a^{2}\\sigma}\n$$\n所以，$\\boldsymbol{S}$ 的 $\\hat{\\boldsymbol e}_{r}$ 分量为：\n$$\nS_{r}=-E_{z}H_{\\phi}=\\frac{-I^{2}}{2\\pi^{2}a^{3}\\sigma}\n$$\n流入长度为 $L$ 的导线的功率为：\n$$\n-S_{r}(2\\pi a L)=I^{2}\\frac{L}{\\pi a^{2}\\sigma}=I^{2}R\n$$"
+    },
+    {
+        "instruction": "电磁场的角动量是什么？",
+        "input": "",
+        "output": "电磁角动量密度（一阶张量）为 $\\ell_{\\mathrm{EM}}=r\\times g$，角动量流密度张量（二阶张量）为 $\\mathbf{M}=-\\mathbf{T}\\times\\pmb{r}$。电磁场与物质场的总角动量守恒。"
+    },
+    {
+        "instruction": "电磁场的总角动量如何表示？",
+        "input": "",
+        "output": "电磁场的总角动量可以表示为 $L_{\\mathrm{EM}}=\\varepsilon_{0}\\iiint\\big[E_{j}\\big(\\boldsymbol{r}\\times\\nabla\\big)A_{j}+\\varepsilon_{0}\\boldsymbol{E}\\times\\boldsymbol{A}\\big]\\mathrm{d}\\tau$，其中第一项为光子场的轨道角动量，第二项为光子的自旋角动量。"
+    },
+    {
+        "instruction": "光子的自旋是多少？",
+        "input": "",
+        "output": "运用量子论的知识，可以得到光子的自旋为1。"
+    },
+    {
+        "instruction": "在电动力学中，当有电介质或磁介质存在时，Maxwell 方程组中应该考虑哪些“源”？",
+        "input": "",
+        "output": "自由电荷和传导电流 $\\rho_{\\mathrm{f}}$ 和 $j_{\\mathrm{f}}$，极化电荷 $\\rho_{\\mathrm{p}}$，极化电流和磁化电流 $j_{\\mathrm{p}}$ 和 $j_{\\mathrm{m}}$。它们的表达式为 $j_{\\mathrm{p}}={\\frac{\\partial P}{\\partial t}}$ 和 $\\boldsymbol{j}_{\\mathrm{m}}=\\nabla\\times\\boldsymbol{M}$，其中 $P$ 和 $M$ 分别为极化强度矢量和磁化强度矢量。"
+    },
+    {
+        "instruction": "电介质和磁介质在外电场和外磁场中如何调整自身以达到平衡条件？",
+        "input": "",
+        "output": "电介质和磁介质会在外电场和外磁场中进行自身的调整，来达到平衡条件。"
+    },
+    {
+        "instruction": "电介质的极化在外电场下如何体现？",
+        "input": "",
+        "output": "电介质的极化在外电场下体现出宏观的偶极矩。"
+    },
+    {
+        "instruction": "极化强度 $_P$ 的定义是什么？",
+        "input": "",
+        "output": "定义极化强度 $_P$ 为单位体积内的偶极矩，来统一描述有极分子和无极分子的极化情况。"
+    },
+    {
+        "instruction": "磁介质的磁化在外磁场下如何体现？",
+        "input": "",
+        "output": "磁介质的磁化在外磁场下体现出非零的宏观磁矩。"
+    },
+    {
+        "instruction": "磁化强度 $M$ 的定义是什么？",
+        "input": "",
+        "output": "定义磁化强度 $M$ 为单位体积内的磁矩，来统一描述顺磁介质和逆磁介质的情况。"
+    },
+    {
+        "instruction": "在线性介质的情况下，电介质的极化强度 $\\pmb{{\\cal P}}$ 如何表示？",
+        "input": "",
+        "output": "$\\pmb{{\\cal P}}=\\varepsilon_{0}\\pmb{{\\chi}}_{\\mathrm{e}}\\cdot\\pmb{{\\cal E}}$"
+    },
+    {
+        "instruction": "在线性介质的情况下，磁化强度 $M$ 如何表示？",
+        "input": "",
+        "output": "$M=\\frac{1}{\\mu_{0}}\\pmb{\\lambda}_{\\mathrm{m}}\\cdot\\pmb{B}$"
+    },
+    {
+        "instruction": "对于导体来说，Ohm 定律如何表示？",
+        "input": "",
+        "output": "$j=\\sigma E$"
+    },
+    {
+        "instruction": "铁电体和铁磁体在外加场为零时有何特性？",
+        "input": "",
+        "output": "铁电体和铁磁体在外加场为零的时候，也存在自发的电极化或磁化。"
+    },
+    {
+        "instruction": "在介质中，Maxwell 方程组的形式是什么？",
+        "input": "",
+        "output": "$$\\begin{array}{l}{{\\displaystyle\\nabla\\cdot{\\cal D}=\\rho_{\\mathrm{f}}}}\\ {~~}\\ {{\\displaystyle\\nabla\\times{\\cal H}=j_{\\mathrm{f}}+\\frac{\\partial{\\cal D}}{\\partial t}}}\\ {{\\displaystyle\\nabla\\times{\\cal E}=-\\frac{\\partial{\\cal B}}{\\partial t}}}\\ {{\\displaystyle\\nabla\\cdot{\\cal B}=0}}\\end{array}$$"
+    },
+    {
+        "instruction": "电位移矢量 $D$ 的定义是什么？",
+        "input": "",
+        "output": "$$D\\equiv\\varepsilon_{0}E+P$$"
+    },
+    {
+        "instruction": "磁场强度 $\\pmb{H}$ 的定义是什么？",
+        "input": "",
+        "output": "$$\\pmb{H}=\\frac{\\pmb{B}}{\\mu_{0}}-M$$"
+    },
+    {
+        "instruction": "在线性、各向同性的介质中，电位移矢量 $D$ 和电场强度 $E$ 的关系是什么？",
+        "input": "",
+        "output": "$$D=\\varepsilon{\\pmb E}=\\varepsilon_{0}{\\left(1+\\chi_{\\mathrm{e}}\\right)}{\\pmb E}$$"
+    },
+    {
+        "instruction": "在线性、各向同性的介质中，磁场强度 $H$ 和磁感应强度 $B$ 的关系是什么？",
+        "input": "",
+        "output": "$$H=\\frac{1}{\\mu}B=\\frac{1}{\\mu_{0}\\big(1+\\chi_{\\mathrm{m}}\\big)}B$$"
+    },
+    {
+        "instruction": "电极化率 $\\chi_{\\mathrm{e}}$、介电常数 $\\varepsilon$、磁化率 $\\kappa$ 和磁导率 $\\mu$ 的定义是什么？",
+        "input": "",
+        "output": "$$\\begin{array}{c}{{P=\\chi_{\\mathrm{e}}\\varepsilon_{0}.}}\\ {{\\null}}\\ {{D=\\varepsilon E}}\\ {{M=\\kappa H}}\\ {{\\null}}\\ {{B=\\mu H}}\\end{array}$$"
+    },
+    {
+        "instruction": "相对介电常数 $\\varepsilon_{r}$ 和相对磁导率 $\\mu_{r}$ 的定义是什么？",
+        "input": "",
+        "output": "$$\\varepsilon_{r}=\\varepsilon/\\varepsilon_{0}, \\quad \\mu_{r}=\\mu/\\mu_{0}$$"
+    },
+    {
+        "instruction": "面电流密度是如何定义的？",
+        "input": "",
+        "output": "$K_{\\mathrm{m}}=-{\\hat{\\pmb n}}\\times M$"
+    },
+    {
+        "instruction": "在电介质和磁介质存在的情况下，Maxwell 方程组中的哪些项需要修改？",
+        "input": "",
+        "output": "Maxwell 方程组中的两项需要修改：\n1. $\\nabla\\cdot{\\pmb E}=\\frac{1}{\\varepsilon_{0}}\\left(\\rho+\\rho_{\\mathrm{p}}\\right)=\\frac{\\rho}{\\varepsilon_{0}}{-}\\frac{1}{\\varepsilon_{0}}\\nabla\\cdot{\\pmb P}$\n2. $\\nabla\\times{\\pmb B}=\\mu_{0}\\left(j+j_{\\mathrm{m}}+j_{\\mathrm{p}}\\right)+\\varepsilon_{0}\\mu_{0}\\frac{\\partial{\\pmb E}}{\\partial t}=\\mu_{0}j+\\mu_{0}\\nabla\\times{\\pmb M}+\\mu_{0}\\frac{\\partial{\\pmb P}}{\\partial t}+\\varepsilon_{0}\\mu_{0}\\frac{\\partial{\\pmb E}}{\\partial t}$"
+    },
+    {
+        "instruction": "在电介质和磁介质存在的情况下，Maxwell 方程组中哪些项保持不变？",
+        "input": "",
+        "output": "Maxwell 方程组中的以下两项保持不变：\n1. $\\nabla\\times\\mathbf{{\\cal{E}}}=-\\frac{\\partial\\mathbf{{\\cal{B}}}}{\\partial t}$\n2. $\\nabla\\cdot B=0$"
+    },
+    {
+        "instruction": "在电动力学中，介质界面上的边界条件是如何确定的？",
+        "input": "",
+        "output": "利用Maxwell方程的积分形式，可以给出介质界面上的边界条件。"
+    },
+    {
+        "instruction": "Maxwell 方程的积分形式是什么？",
+        "input": "",
+        "output": "$$\\begin{array}{r l}&{\\oint\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!D\\cdot\\mathrm{d}\\sigma=\\iiint\\rho\\mathrm{d}\\tau}\\\\ &{\\quad\\oint\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!E\\cdot\\mathrm{d}\\ell=-{\\frac{\\partial}{\\partial t}}\\iint\\pmb{\\mathbf{B}}\\cdot\\mathrm{d}\\sigma}\\\\ &{\\oint\\!\\!\\!\\!\\!\\!\\int\\pmb{\\mathbf{B}}\\cdot\\mathrm{d}\\sigma=0}\\\\ &{\\qquad\\oint\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\int H\\cdot\\mathrm{d}\\ell=\\iint j\\cdot\\mathrm{d}\\sigma+{\\frac{\\partial}{\\partial t}}\\iint\\pmb{\\mathbf{D}}\\cdot\\mathrm{d}\\sigma}\\end{array}$$"
+    },
+    {
+        "instruction": "使用Gauss 小盒和Ampère 小圈，可以得到哪些边界条件？",
+        "input": "",
+        "output": "$$\\begin{array}{r l}&{\\boldsymbol{\\hat{n}\\cdot\\left(D_{2}-D_{1}\\right)=\\Sigma}}\\\\ &{\\quad\\boldsymbol{\\hat{n}\\cdot\\left(B_{2}-B_{1}\\right)=0}}\\\\ &{\\quad\\boldsymbol{\\hat{n}\\times\\left(E_{2}-E_{1}\\right)=0}}\\\\ &{\\quad\\boldsymbol{\\hat{n}\\times\\left(H_{2}-H_{1}\\right)=K}}\\end{array}$$ 其中 $\\Sigma$ 为自由电荷的面密度，$\\kappa$ 为传导电流的面密度。若 $\\Sigma=0$ 且 ${\\cal K}={\\bf0}$ ，则 $D_{n}$ 、 $B_{n}$ 连续，$E_{t}$ 、 $H_{t}$ 连续。"
+    }
+]

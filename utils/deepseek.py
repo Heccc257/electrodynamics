@@ -232,17 +232,66 @@ def reverse_textbook(file_path):
     
     save_json(expand_questions, output_path)
 
+def check_latex_format(client, response):
+    latex_prompt = r"""我会给你一段内容，检查其中latex公式有没有格式错误，如果没有直接原文返回给我，不要输出多余内容，否则修正后全部返回给我
+    要求对于\sum \frac 等公式，特殊符号，需要使用\\将\转义为纯文本
+    例如：
+        输入：
+        [
+            {
+                "instruction": "在电动力学中，$P_{l}(\cos\theta)$ 表示___。",
+                "input": "",
+                "output": "勒让德多项式"
+            },
+            {
+                "instruction": "使用爱因斯坦求和约定，向量 $\pmb{A}=A_{1}\pmb{e}_{1}+A_{2}\pmb{e}_{2}+A_{3}\pmb{e}_{3}$ 可以表达为___。",
+                "input": "",
+                "output": "$A_{i}{e_{i}}$"
+            }
+        ]
+        输出：
+        [
+            {
+                "instruction": "在电动力学中，$P_{l}(\\cos\\theta)$ 表示___。",
+                "input": "",
+                "output": "勒让德多项式"
+            },
+            {
+                "instruction": "使用爱因斯坦求和约定，向量 $\\pmb{A}=A_{1}\\pmb{e}_{1}+A_{2}\\pmb{e}_{2}+A_{3}\\pmb{e}_{3}$ 可以表达为___。",
+                "input": "",
+                "output": "$A_{i}{e_{i}}$"
+            }
+        ]
+
+    下面是要给你的内容\n
+    """
+    response = client.chat.completions.create(
+        model="deepseek-chat",
+        messages=[
+            {"role": "system", "content": "you are a helpful assistant"},
+            {"role": "user", "content": latex_prompt + response},
+        ],
+        stream=False
+    )
+    response = response.choices[0].message.content
+
+    return response
+
 def blank_textbook(file_path):
-    prompt = r"""我会给你一个电动力学的概念，请你根据内容的质和量出至少5道高质量填空题来帮我更好地理解和记忆这些内容（内容太多的情况下要多出几道题）。
-    你要分析给你的电动力学内容，截取有价值的原文片段，并且在关键的地方设置空，记住最好是原文的片段！！！
+    prompt = r"""我会给你一个电动力学的概念，请你根据内容的质和量出3-6道高质量的基础知识问答来帮我更好地理解和记忆这些内容,重点在于理解和学习电动力学概念.（内容太多的情况下要多出几道题,不需要出过多的重复的题）。
+    你要分析给你的电动力学内容，最好截取有价值的原文片段，！！！
+    如果你引用了原文的内容或者题目，需要将引用的内容也一并包含在题干中，不需要写出文中的题号，例如：
+        例题1.4中xxx:  
+        (用下标法证明 $\\nabla\\cdot\\left(\\mathbf{A}\\times B\\right)=B\\cdot\\nabla\\times A-A\\cdot\\nabla\\times ......)
+    你出的题，不要出单纯的计算题，可以截取例题。
     使用类似的json格式返回给我，要严格遵循返回格式，保证返回的内容可以使用python解析为json，只需要返回json内容即可。例如：
         输入：三维狄拉克函数的定义为  \n\n$$\n\\delta(\\pmb{r})=\\delta(x)\\delta(y)\\delta(z),\n$$  \n\n这里 $\\pmb{r}=x\\pmb{e}_{x}+y\\pmb{e}_{y}+z\\pmb{e}_{z}$ 是位移矢量
         返回：
         [
             {
-                "instruction": "三维狄拉克函数的定义为___,这里 ___是位移矢量。",
+                "instruction": "三维狄拉克函数的定义为",
                 "input": "",
-                "output": "$$\n\\delta(\\pmb{r})=\\delta(x)\\delta(y)\\delta(z),\n$$ ; $\\pmb{r}=x\\pmb{e}_{x}+y\\pmb{e}_{y}+z\\pmb{e}_{z}$  "
+                "output": "$$\n\\delta(\\pmb{r})=\\delta(x)\\delta(y)\\delta(z),\n$$ "
             },
             {
                 "instruction": "xxx",
@@ -261,7 +310,7 @@ def blank_textbook(file_path):
     下面给出你需要参考的电动力学内容，要结合其中的内容出题：
     """
 
-    latex_prompt = r"""我会给你一段内容，检查其中latex公式有没有格式错误，如果没有直接原文返回给我，否则修正后全部返回给我
+    latex_prompt = r"""我会给你一段内容，检查其中latex公式有没有格式错误，如果没有直接原文返回给我，不要输出多余内容，否则修正后全部返回给我
     要求对于\sum \frac 等公式，特殊符号，需要使用\\将\转义为纯文本
     例如：
         输入：
@@ -309,14 +358,19 @@ def blank_textbook(file_path):
         
         setences = content.split('。')
 
-        step = 20
-        strip = 40
+        step = 3
+        strip = 10
 
-        for i in range(0, len(setences), step):
+        # i-step+strip < len(sentences)
+        # ranges = [0] + [i for i in range(step, len(setences)+step-strip, step)]
+        ranges = [0] + [i for i in range(step, len(setences), step)]
+        print(f"sentences num: {len(setences)}    ranges: {ranges}")
+        for i in ranges:
             selected_content = ". ".join(setences[i: min(i+strip, len(setences))])
+            selected_content = "title: " + obj["title"] + "\n" + selected_content
 
             question = prompt + selected_content
-            if idx < 1:
+            if idx < 1 and i < 2 * step:
                 print(question)
 
             response = client.chat.completions.create(
@@ -345,7 +399,7 @@ def blank_textbook(file_path):
                 # 捕获其他可能的异常
                 print(f"发生错误: {e}")
                 print(str(response))
-                with open("blank_waste.txt", "a") as f:
+                with open("./datasets/blank_waste.txt", "a") as f:
                     f.write(str(response))
                 continue
             blank_questions += response
@@ -354,6 +408,74 @@ def blank_textbook(file_path):
                 save_json(blank_questions, output_path)
     
     save_json(blank_questions, output_path)
+
+def origin_textbook(file_path):
+    prompt = r"""下面我会给你一个电动力学的教材片段，帮我处理一下格式
+    对于title部分，将其变为一个问句，并且不要出现如1.4等编号
+    对于content部分，去掉其中没有关键作用的描述，只保留关键的论述和公式.
+    用json的格式返回给我，格式如下，只需要返回json本体就行了，不需要开头和结尾的```标记
+        [
+            {
+                "instruction": "在电动力学中，$P_{l}(\cos\theta)$ 表示___。",
+                "input": "",
+                "output": "勒让德多项式"
+            },
+            {
+                "instruction": "使用爱因斯坦求和约定，向量 $\pmb{A}=A_{1}\pmb{e}_{1}+A_{2}\pmb{e}_{2}+A_{3}\pmb{e}_{3}$ 可以表达为___。",
+                "input": "",
+                "output": "$A_{i}{e_{i}}$"
+            }
+        ]
+    
+    """
+    client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
+
+    datas = json.load(open(file_path, 'r'))
+
+    origin_questions = []
+    output_path = "./datasets/origin.json"
+
+    with open(output_path, "w") as f:
+        pass
+    
+    for idx, obj in enumerate(tqdm(datas, desc="Processing questions")):
+        title = obj["title"]
+        content = obj["content"]
+        
+        setences = content.split('。')
+            
+        question = prompt + f"title: {title} \n\n content: {content}"
+
+        response = client.chat.completions.create(
+            model="deepseek-chat",
+            messages=[
+                {"role": "system", "content": "you are a helpful assistant"},
+                {"role": "user", "content": question},
+            ],
+            stream=False
+        )
+        response = response.choices[0].message.content
+
+        response = check_latex_format(client, response)
+        if idx < 1:
+            print(f"response: {response}")
+
+        try:
+            response = json.loads(response)
+        except Exception as e:
+            # 捕获其他可能的异常
+            print(f"发生错误: {e}")
+            print(str(response))
+            with open("./datasets/origin_waste.txt", "a") as f:
+                f.write(str(response))
+            continue
+
+        origin_questions += response
+        
+        if idx%5 == 0 or idx < 5:
+            save_json(origin_questions, output_path)
+    
+    save_json(origin_questions, output_path)
 
 
 if __name__ == "__main__":
@@ -380,6 +502,9 @@ if __name__ == "__main__":
     elif analy == "blank":
         print("blank")
         blank_textbook(args.file)
+    elif analy == "origin":
+        print("origin")
+        origin_textbook(args.file)
     else:
         print("unknown analayse")
         

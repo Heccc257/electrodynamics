@@ -1,0 +1,239 @@
+```json
+[
+    {
+        "instruction": "经典电动力学是什么？",
+        "input": "",
+        "output": "经典电动力学（classical electrodynamics；CED）是量子电动力学（quantum electrodynamics；QED）的经典极限。在光子数目很大且单个光子携带的动量远远小于电荷载体的动量时，经典电动力学是个非常好的近似，由Maxwell 方程组描述。"
+    },
+    {
+        "instruction": "经典电动力学的主要研究内容有哪些？",
+        "input": "",
+        "output": "静电场和静磁场、能量、动量、角动量、Maxwell 方程组、介质和导体、Lorentz 力、电磁场的边界条件。"
+    }
+]
+``````json
+[
+    {
+        "instruction": "在电动力学中，Maxwell 方程组的基本形式是什么？",
+        "input": "",
+        "output": "$$\n\\nabla\\cdot D=\\rho_{\\mathrm{f}}\n$$\n\n$$\n\\begin{array}{l}{\\displaystyle\\nabla\\times\\boldsymbol{H}-\\frac{\\partial\\boldsymbol{D}}{\\partial t}=\\boldsymbol{j}_{\\mathrm{f}}}\\\\ {\\nabla\\times\\boldsymbol{E}+\\frac{\\partial\\boldsymbol{B}}{\\partial t}=\\mathbf{0}}\\end{array}\n$$\n\n$$\n\\nabla\\cdot B=0\n$$"
+    },
+    {
+        "instruction": "在电动力学中，为什么引入 $\ensuremath{\\boldsymbol{D}}$ 和 $\ensuremath{\\boldsymbol{H}}$ 场？",
+        "input": "",
+        "output": "引入 $\ensuremath{\\boldsymbol{D}}$ 和 $\ensuremath{\\boldsymbol{H}}$ 场的原因是：总电荷 $\\rho_{\\mathrm{t}}$ 和总电流 $j_{\\mathrm{t}}$ 不好求，希望物理表达式通过自由电荷和传导电流来表示。"
+    },
+    {
+        "instruction": "在电动力学中，介质方程的一般形式是什么？",
+        "input": "",
+        "output": "$$\n\\begin{array}{r l}{\\lefteqn{D=D(E,B)}}\\\\ &{{}}\\\\ {\\pmb{H}=\\pmb{H}(E,\\pmb{B})}\\end{array}\n$$"
+    },
+    {
+        "instruction": "在电动力学中，电荷的连续性方程是什么？",
+        "input": "",
+        "output": "$$\n{\\frac{\\partial\\rho}{\\partial t}}+\\nabla\\cdot\\boldsymbol{j}=0\n$$"
+    },
+    {
+        "instruction": "在电动力学中，带电粒子在电磁场中的受力由什么力刻画？",
+        "input": "",
+        "output": "带电为 $q$ 、速度为 $\\pmb{v}$ 的粒子在电磁场中的受力由Lorentz 力刻画。"
+    }
+]
+``````json
+[
+    {
+        "instruction": "在电动力学中，Lorentz 力是如何表示的？",
+        "input": "",
+        "output": "$$\\pmb{F}=q\\big(\\pmb{E}+\\pmb{v}\\times\\pmb{B}\\big)$$"
+    },
+    {
+        "instruction": "Lorentz 力密度是如何表示的？",
+        "input": "",
+        "output": "$$\\mathbf{f}=\\rho\\mathbf{E}+\\mathbf{j}\\times\\mathbf{B}$$"
+    }
+]
+``````json
+[
+    {
+        "instruction": "在电动力学中，Maxwell 方程组在Gauss单位制下的表达式是什么？",
+        "input": "",
+        "output": "$$\\nabla\\cdot\\pmb{\\cal D}=4\\pi\\rho$$ $$\\nabla\\times\\pmb{H}-\\frac{1}{c}\\frac{\\partial\\pmb{D}}{\\partial t}=\\frac{4\\pi}{c}\\pmb{j}$$ $$\\nabla\\times\\pmb{E}+\\frac{1}{c}\\frac{\\partial\\pmb{B}}{\\partial t}=\\pmb{0}$$ $$\\nabla\\cdot B=0$$"
+    },
+    {
+        "instruction": "国际单位制（SI）与Gauss单位制之间的电场和磁场的换算关系是什么？",
+        "input": "",
+        "output": "$${\\pmb E}^{\\mathrm{(SI)}}=\\frac{1}{\\sqrt{4\\pi\\epsilon_{0}}}{\\pmb E}^{\\mathrm{(G)}}$$ $$B^{\\mathrm{(SI)}}=\\sqrt{\\frac{\\mu_{0}}{4\\pi}}B^{\\mathrm{(G)}}$$"
+    },
+    {
+        "instruction": "在电动力学中，电荷密度在国际单位制（SI）与Gauss单位制之间的换算关系是什么？",
+        "input": "",
+        "output": "$$\\rho^{\\mathrm{(SI)}}=\\sqrt{4\\pi\\epsilon_{0}}\\rho^{\\mathrm{(G)}}$$"
+    }
+]
+``````json
+[
+    {
+        "instruction": "什么是静电场和静磁场？",
+        "input": "",
+        "output": "静电场是由静止电荷产生的电场，静磁场是由恒定电流产生的磁场。"
+    },
+    {
+        "instruction": "静电场的电场强度 $\pmb{E}$ 与电荷密度 $\rho$ 的关系是什么？",
+        "input": "",
+        "output": "$\nabla \cdot \pmb{E} = \frac{\rho}{\epsilon_0}$"
+    },
+    {
+        "instruction": "静电场的电势 $\phi$ 与电场强度 $\pmb{E}$ 的关系是什么？",
+        "input": "",
+        "output": "$\pmb{E} = -\nabla \phi$"
+    },
+    {
+        "instruction": "静磁场的磁感应强度 $\pmb{B}$ 与电流密度 $\pmb{J}$ 的关系是什么？",
+        "input": "",
+        "output": "$\nabla \times \pmb{B} = \mu_0 \pmb{J}$"
+    },
+    {
+        "instruction": "静磁场的磁矢势 $\pmb{A}$ 与磁感应强度 $\pmb{B}$ 的关系是什么？",
+        "input": "",
+        "output": "$\pmb{B} = \nabla \times \pmb{A}$"
+    }
+]
+``````json
+[
+    {
+        "instruction": "什么是经典电动力学？",
+        "input": "",
+        "output": "经典电动力学（classical electrodynamics；CED）是量子电动力学（quantum electrodynamics；QED）的经典极限。在光子数目很大且单个光子携带的动量远远小于电荷载体的动量时，经典电动力学是个非常好的近似，由Maxwell 方程组描述。"
+    },
+    {
+        "instruction": "经典电动力学的主要内容有哪些？",
+        "input": "",
+        "output": "静电场和静磁场、能量、动量、角动量、Maxwell 方程组、介质和导体、Lorentz 力、电磁场的边界条件。"
+    }
+]
+``````json
+[
+    {
+        "instruction": "Maxwell 方程组在电动力学中表示什么？",
+        "input": "",
+        "output": "Maxwell 方程组描述了电场和磁场的基本关系，包括高斯定律、法拉第电磁感应定律、安培环路定律（含位移电流）以及磁场的高斯定律。具体形式为：\n1. $\\nabla\\cdot D=\\rho_{\\mathrm{f}}$\n2. $\\nabla\\times\\boldsymbol{H}-\\frac{\\partial\\boldsymbol{D}}{\\partial t}=\\boldsymbol{j}_{\\mathrm{f}}$\n3. $\\nabla\\times\\boldsymbol{E}+\\frac{\\partial\\boldsymbol{B}}{\\partial t}=\\mathbf{0}$\n4. $\\nabla\\cdot B=0$"
+    },
+    {
+        "instruction": "在电动力学中，介质方程 $D=D(E,B)$ 和 $\\pmb{H}=\\pmb{H}(E,\\pmb{B})$ 表示什么？",
+        "input": "",
+        "output": "介质方程描述了电位移场 $D$ 和磁场强度 $\\pmb{H}$ 与电场 $E$ 和磁感应强度 $\\pmb{B}$ 之间的关系。这些关系可以是复杂的，包括非线性、非局域性、依赖晶体结构或温度等。"
+    },
+    {
+        "instruction": "电荷的连续性方程在电动力学中如何表示？",
+        "input": "",
+        "output": "电荷的连续性方程表示为 $\\frac{\\partial\\rho}{\\partial t}+\\nabla\\cdot\\boldsymbol{j}=0$，它描述了电荷密度 $\\rho$ 和电流密度 $\\boldsymbol{j}$ 之间的关系，反映了电荷守恒的原理。"
+    },
+    {
+        "instruction": "Lorentz 力在电动力学中如何描述带电粒子的受力？",
+        "input": "",
+        "output": "Lorentz 力描述了带电为 $q$、速度为 $\\pmb{v}$ 的粒子在电磁场中的受力，公式为 $\\pmb{F} = q(\\pmb{E} + \\pmb{v} \\times \\pmb{B})$，其中 $\\pmb{E}$ 是电场，$\\pmb{B}$ 是磁感应强度。"
+    }
+]
+``````json
+[
+    {
+        "instruction": "在电动力学中，Lorentz 力是如何表示的？",
+        "input": "",
+        "output": "$$\\pmb{F}=q\\big(\\pmb{E}+\\pmb{v}\\times\\pmb{B}\\big)$$"
+    },
+    {
+        "instruction": "Lorentz 力密度是如何表示的？",
+        "input": "",
+        "output": "$$\\mathbf{f}=\\rho\\mathbf{E}+\\mathbf{j}\\times\\mathbf{B}$$"
+    }
+]
+``````json
+[
+    {
+        "instruction": "在Gauss单位制中，Maxwell方程组的形式是什么？",
+        "input": "",
+        "output": "$$\\nabla\\cdot\\pmb{\\cal D}=4\\pi\\rho$$ $$\\nabla\\times\\pmb{H}-\\frac{1}{c}\\frac{\\partial\\pmb{D}}{\\partial t}=\\frac{4\\pi}{c}\\pmb{j}$$ $$\\nabla\\times\\pmb{E}+\\frac{1}{c}\\frac{\\partial\\pmb{B}}{\\partial t}=\\pmb{0}$$ $$\\nabla\\cdot B=0$$"
+    },
+    {
+        "instruction": "国际单位制（SI）与Gauss单位制之间的电场和磁场的换算关系是什么？",
+        "input": "",
+        "output": "$${\\pmb E}^{\\mathrm{(SI)}}=\\frac{1}{\\sqrt{4\\pi\\epsilon_{0}}}{\\pmb E}^{\\mathrm{(G)}}$$ $$B^{\\mathrm{(SI)}}=\\sqrt{\\frac{\\mu_{0}}{4\\pi}}B^{\\mathrm{(G)}}$$"
+    },
+    {
+        "instruction": "国际单位制（SI）与Gauss单位制之间的电荷密度的换算关系是什么？",
+        "input": "",
+        "output": "$$\\rho^{\\mathrm{(SI)}}=\\sqrt{4\\pi\\epsilon_{0}}\\rho^{\\mathrm{(G)}}$$"
+    }
+]
+``````json
+[
+    {
+        "instruction": "什么是静电场和静磁场？",
+        "input": "",
+        "output": "静电场和静磁场是电动力学中描述静止电荷和恒定电流产生的场。静电场由静止电荷产生，静磁场由恒定电流产生。"
+    },
+    {
+        "instruction": "静电场的电场强度 $\pmb{E}$ 与电荷密度 $\rho$ 的关系是什么？",
+        "input": "",
+        "output": "$\nabla \cdot \pmb{E} = \frac{\rho}{\epsilon_0}$"
+    },
+    {
+        "instruction": "静磁场的磁感应强度 $\pmb{B}$ 与电流密度 $\pmb{J}$ 的关系是什么？",
+        "input": "",
+        "output": "$\nabla \times \pmb{B} = \mu_0 \pmb{J}$"
+    }
+]
+```[
+    {
+        "instruction": "在电动力学中，Lorentz力是如何表示的？",
+        "input": "",
+        "output": "$\pmb{F}=q\big(\pmb{E}+\pmb{v}\times\pmb{B}\big)$"
+    },
+    {
+        "instruction": "Lorentz力密度是如何表示的？",
+        "input": "",
+        "output": "$\mathbf{f}=\rho\mathbf{E}+\mathbf{j}\times\mathbf{B}$"
+    }
+][
+    {
+        "instruction": "什么是静电场和静磁场？",
+        "input": "",
+        "output": "静电场是由静止电荷产生的电场，静磁场是由恒定电流产生的磁场。"
+    },
+    {
+        "instruction": "静电场的电场强度 $\pmb{E}$ 与电荷密度 $\rho$ 的关系是什么？",
+        "input": "",
+        "output": "$\nabla \cdot \pmb{E} = \frac{\rho}{\epsilon_0}$"
+    },
+    {
+        "instruction": "静磁场的磁感应强度 $\pmb{B}$ 与电流密度 $\pmb{J}$ 的关系是什么？",
+        "input": "",
+        "output": "$\nabla \times \pmb{B} = \mu_0 \pmb{J}$"
+    }
+][
+    {
+        "instruction": "电磁场的能量密度和能流密度是如何表示的？",
+        "input": "",
+        "output": "在真空中，能量密度和能流密度分别表示为：\n$$\n{\displaystyle{\\pmb S}=\\frac{1}{\\mu_{0}}\\pmb E\\times\\pmb B}\n$$\n$$\n{\displaystyle w=\\frac{1}{2}\\left(\\varepsilon_{0}\\boldsymbol E^{2}+\\frac{1}{\\mu_{0}}\\boldsymbol B^{2}\\right)}\n$$\n在介质中，能量密度和能流密度分别表示为：\n$$\n{\displaystyle{\\pmb{S}=\\pmb{E}\\times\\pmb{H}}}\n$$\n$$\n{\displaystyle{\\mathstrut w=\\frac{1}{2}(\\pmb{E}\\cdot\\pmb{D}+\\pmb{B}\\cdot\\pmb{H})}}\n$$"
+    },
+    {
+        "instruction": "电容器中的总能量如何计算？",
+        "input": "",
+        "output": "电容器中的总能量为：\n$$\n{\\mathcal{E}}(t)={\\frac{1}{2}}\\varepsilon E(t)^{2}\\pi r^{2}h\n$$"
+    },
+    {
+        "instruction": "电容器中能量的变化率如何表示？",
+        "input": "",
+        "output": "电容器中能量的变化率为：\n$$\n{\\frac{\\mathrm{d}{\\mathcal{E}}(t)}{\\mathrm{d}t}}=\\pi\\varepsilon r^{2}h E{\\frac{\\mathrm{d}E}{\\mathrm{d}t}}\n$$"
+    },
+    {
+        "instruction": "Poynting矢量在电容器中的表达式是什么？",
+        "input": "",
+        "output": "Poynting矢量为：\n$$\n\\pmb{S}=\\frac{1}{\\mu}\\pmb{E}\\times\\pmb{B}=\\frac{\\varepsilon\\rho}{2}E\\frac{\\partial E}{\\partial t}(-\\hat{\\pmb{e}}_{\\rho})\n$$"
+    },
+    {
+        "instruction": "电容器中能量的增加是如何实现的？",
+        "input": "",
+        "output": "电容器中能量的增加不是从导线中流过来的，而是从电容器外面的空间通过电容器侧面流进电容器的。这正体现了电磁场作为物理实体来传递能量的特点。"
+    }
+]

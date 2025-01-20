@@ -1,5 +1,205 @@
 [
     {
+        "input": "描述麦克斯韦方程组在真空中的形式。",
+        "output": "\\begin{aligned} \\nabla \\cdot \\pmb{{\\cal E}} &= \\frac{\\rho}{\\varepsilon_0}, \\\\ \\nabla \\cdot \\pmb{{\\cal B}} &= 0, \\\\ \\nabla \\times \\pmb{{\\cal E}} &= -\\frac{\\partial \\pmb{{\\cal B}}}{\\partial t}, \\\\ \\nabla \\times \\pmb{{\\cal B}} &= \\mu_0 \\pmb{{\\cal J}} + \\mu_0\\varepsilon_0 \\frac{\\partial \\pmb{{\\cal E}}}{\\partial t}. \\end{aligned}"
+    },
+    {
+        "input": "推导静电场中库仑定律的矢量形式。",
+        "output": "\\pmb{{\\cal E}} = \\frac{1}{4\\pi\\varepsilon_0} \\sum_{i} \\frac{q_i}{\\lvert \\pmb{{r}} - \\pmb{{r}}_i \\rvert^2} \\hat{\\pmb{r}}."
+    },
+    {
+        "input": "简述洛伦兹力的表达式。",
+        "output": "\\pmb{{F}} = q(\\pmb{{\\cal E}} + \\pmb{{v}} \\times \\pmb{{\\cal B}})."
+    },
+    {
+        "input": "描述电偶极子在均匀电场中的受力和受矩情况。",
+        "output": "\\text{力}: \\pmb{{F}} = \\pmb{{p}} \\cdot \\nabla \\pmb{{\\cal E}} = 0. \\\\ \\text{矩}: \\pmb{{\\tau}} = \\pmb{{p}} \\times \\pmb{{\\cal E}}."
+    },
+    {
+        "input": "电磁波在各向同性介质中的传播方程是什么？",
+        "output": "\\nabla^2 \\pmb{{\\cal E}} - \\mu\\varepsilon \\frac{\\partial^2 \\pmb{{\\cal E}}}{\\partial t^2} = 0."
+    },
+    {
+        "input": "解释位移电流的物理意义及其数学形式。",
+        "output": "位移电流描述了变化的电场引起的电磁效应，其数学形式为：\\pmb{{J}}_d = \\varepsilon_0 \\frac{\\partial \\pmb{{\\cal E}}}{\\partial t}."
+    },
+    {
+        "input": "静电场中能量密度的表达式是什么？",
+        "output": "u = \\frac{1}{2}\\varepsilon_0 \\lvert \\pmb{{\\cal E}} \\rvert^2."
+    },
+    {
+        "input": "描述电磁场的拉格朗日密度形式。",
+        "output": "\\mathcal{L} = -\\frac{1}{4}F^{\\mu\\nu}F_{\\mu\\nu} - j^\\mu A_\\mu."
+    },
+    {
+        "input": "推导平面电磁波的偏振关系。",
+        "output": "对于线性偏振，\\pmb{{\\cal E}} \\perp \\pmb{{\\cal B}}, \\quad \\pmb{{\\cal E}}, \\pmb{{\\cal B}} \\perp \\pmb{{k}}."
+    },
+    {
+        "input": "导体表面的电场和电荷密度之间的关系是什么？",
+        "output": "\\pmb{{\\cal E}} = \\frac{\\sigma}{\\varepsilon_0}\\hat{\\pmb{n}}."
+    },
+    {
+        "input": "描述安培环路定律在静态情况下的形式。",
+        "output": "\\nabla \\times \\pmb{{\\cal B}} = \\mu_0 \\pmb{{\\cal J}}."
+    },
+    {
+        "input": "电磁波的能流密度如何定义？",
+        "output": "能流密度由坡印廷矢量定义：\\pmb{{S}} = \\frac{1}{\\mu_0} \\pmb{{\\cal E}} \\times \\pmb{{\\cal B}}."
+    },
+    {
+        "input": "推导电磁场动量密度的表达式。",
+        "output": "电磁场动量密度为：\\pmb{{g}} = \\varepsilon_0 \\pmb{{\\cal E}} \\times \\pmb{{\\cal B}}."
+    },
+    {
+        "input": "描述均匀电磁波的色散关系。",
+        "output": "在真空中，电磁波的色散关系为：\\omega = ck."
+    },
+    {
+        "input": "说明电磁波的横波性质。",
+        "output": "电磁波是横波，其电场 \\pmb{{\\cal E}} 和磁场 \\pmb{{\\cal B}} 均垂直于传播方向 \\pmb{{k}}。"
+    },
+    {
+        "input": "描述磁偶极子的磁场分布。",
+        "output": "\\pmb{{\\cal B}} = \\frac{\\mu_0}{4\\pi} \\left[ \\frac{3(\\pmb{{m}} \\cdot \\hat{\\pmb{{r}}})\\hat{\\pmb{{r}}} - \\pmb{{m}}}{r^3} \\right]."
+    },
+    {
+        "input": "如何定义电磁波的偏振态？",
+        "output": "电磁波的偏振态由电场矢量的振动方向决定，例如线性偏振和圆偏振。"
+    },
+    {
+        "input": "简述电磁场能量守恒的基本方程。",
+        "output": "能量守恒方程为：\\frac{\\partial u}{\\partial t} + \\nabla \\cdot \\pmb{{S}} = -\\pmb{{J}} \\cdot \\pmb{{\\cal E}}, 其中 u 为能量密度，\\pmb{{S}} 为坡印廷矢量。"
+    },
+    {
+        "input": "描述在介质中麦克斯韦方程组的形式。",
+        "output": "\\begin{aligned} \\nabla \\cdot \\pmb{{\\cal D}} &= \\rho_f, \\\\ \\nabla \\cdot \\pmb{{\\cal B}} &= 0, \\\\ \\nabla \\times \\pmb{{\\cal E}} &= -\\frac{\\partial \\pmb{{\\cal B}}}{\\partial t}, \\\\ \\nabla \\times \\pmb{{\\cal H}} &= \\pmb{{J}}_f + \\frac{\\partial \\pmb{{\\cal D}}}{\\partial t}. \\end{aligned}"
+    },
+    {
+        "input": "如何推导静磁场中的矢量势定义？",
+        "output": "静磁场满足 \\nabla \\cdot \\pmb{{\\cal B}} = 0，因此 \\pmb{{\\cal B}} 可以表示为 \\pmb{{\\cal B}} = \\nabla \\times \\pmb{{A}}，其中 \\pmb{{A}} 为矢量势。"
+    },
+    {
+        "input": "推导平面电磁波的波动方程。",
+        "output": "\\nabla^2 \\pmb{{\\cal E}} - \\frac{1}{c^2} \\frac{\\partial^2 \\pmb{{\\cal E}}}{\\partial t^2} = 0, \\quad \\nabla^2 \\pmb{{\\cal B}} - \\frac{1}{c^2} \\frac{\\partial^2 \\pmb{{\\cal B}}}{\\partial t^2} = 0."
+    },
+    {
+        "input": "描述均匀介质中的电场和位移矢量之间的关系。",
+        "output": "\\pmb{{\\cal D}} = \\varepsilon \\pmb{{\\cal E}}, \\quad \\varepsilon = \\varepsilon_0 \\varepsilon_r."
+    },
+    {
+        "input": "电荷密度分布的高斯定律如何表述？",
+        "output": "\\oint \\pmb{{\\cal E}} \\cdot d\\pmb{{A}} = \\frac{q_{\\text{enc}}}{\\varepsilon_0}."
+    },
+    {
+        "input": "磁通量的数学定义是什么？",
+        "output": "磁通量为：\\Phi_B = \\int \\pmb{{\\cal B}} \\cdot d\\pmb{{A}}."
+    },
+    {
+        "input": "简述电磁场的张量形式。",
+        "output": "电磁场张量为：\\begin{aligned} F^{\\mu\\nu} &= \\begin{bmatrix} 0 & -\\cal{E}_x & -\\cal{E}_y & -\\cal{E}_z \\\\ \\cal{E}_x & 0 & -\\cal{B}_z & \\cal{B}_y \\\\ \\cal{E}_y & \\cal{B}_z & 0 & -\\cal{B}_x \\\\ \\cal{E}_z & -\\cal{B}_y & \\cal{B}_x & 0 \\end{bmatrix}. \\end{aligned}"
+    },
+    {
+        "input": "导体中静电平衡时的电场和电荷分布是什么？",
+        "output": "在静电平衡时，导体内部电场为零，净电荷分布在导体表面。"
+    },
+    {
+        "input": "在时变电场中，法拉第定律如何表示？",
+        "output": "\\nabla \\times \\pmb{{\\cal E}} = -\\frac{\\partial \\pmb{{\\cal B}}}{\\partial t}."
+    },
+    {
+        "input": "描述磁场的高斯定律。",
+        "output": "\\nabla \\cdot \\pmb{{\\cal B}} = 0."
+    },
+    {
+        "input": "电磁场的动量守恒如何表述？",
+        "output": "\\frac{\\partial \\pmb{{g}}}{\\partial t} + \\nabla \\cdot \\pmb{{T}} = -\\pmb{{f}}, \\quad \\pmb{{g}} = \\varepsilon_0 \\pmb{{\\cal E}} \\times \\pmb{{\\cal B}}."
+    },
+    {
+        "input": "在导体表面，电场和磁场的边界条件是什么？",
+        "output": "电场：\\pmb{{\\cal E}}_\\perp = \\frac{\\sigma}{\\varepsilon_0}, \\quad 磁场：\\pmb{{\\cal B}}_\\parallel = 0."
+    },
+    {
+        "input": "描述均匀磁场中带电粒子的运动轨迹。",
+        "output": "带电粒子在均匀磁场中做匀速圆周运动，其轨迹的半径为：\\( r = \\frac{mv}{qB} \\)，周期为：\\( T = \\frac{2\\pi m}{qB} \\)。"
+    },
+    {
+        "input": "推导光子动量的表达式。",
+        "output": "光子的动量由能量与光速的关系给出：\\( p = \\frac{E}{c} = \\frac{h}{\\lambda} \\)。"
+    },
+    {
+        "input": "电磁场的势如何定义？",
+        "output": "标势 \\( \\phi \\) 和矢势 \\( \\pmb{{A}} \\) 的定义满足：\\( \\pmb{{\\cal E}} = -\\nabla \\phi - \\frac{\\partial \\pmb{{A}}}{\\partial t}, \\pmb{{\\cal B}} = \\nabla \\times \\pmb{{A}} \\)。"
+    },
+    {
+        "input": "推导狭义相对论中电场的变换公式。",
+        "output": "\\( \\pmb{{\\cal E}}_\\parallel = \\pmb{{\\cal E}}_\\parallel', \\quad \\pmb{{\\cal E}}_\\perp = \\gamma (\\pmb{{\\cal E}}_\\perp' + \\pmb{{v}} \\times \\pmb{{\\cal B}}') \\)。"
+    },
+    {
+        "input": "描述电磁场中的规范变换。",
+        "output": "规范变换形式为：\\( \\pmb{{A}}' = \\pmb{{A}} + \\nabla \\chi, \\phi' = \\phi - \\frac{\\partial \\chi}{\\partial t} \\)。"
+    },
+    {
+        "input": "推导波导中TE模式的截止频率。",
+        "output": "截止频率为：\\( f_c = \\frac{c}{2} \\sqrt{\\left(\\frac{m}{a}\\right)^2 + \\left(\\frac{n}{b}\\right)^2} \\)，其中 \\( m, n \\) 是模式数，\\( a, b \\) 是波导尺寸。"
+    },
+    {
+        "input": "描述电磁场张量的对偶张量。",
+        "output": "对偶张量定义为：\\( \\tilde{F}^{\\mu\\nu} = \\frac{1}{2}\\epsilon^{\\mu\\nu\\rho\\sigma}F_{\\rho\\sigma} \\)。"
+    },
+    {
+        "input": "解释电磁场的能量密度和动量密度。",
+        "output": "能量密度为：\\( u = \\frac{1}{2}(\\varepsilon_0 \\lvert \\pmb{{\\cal E}} \\rvert^2 + \\frac{1}{\\mu_0} \\lvert \\pmb{{\\cal B}} \\rvert^2) \\)，动量密度为：\\( \\pmb{{g}} = \\varepsilon_0 \\pmb{{\\cal E}} \\times \\pmb{{\\cal B}} \\)。"
+    },
+    {
+        "input": "推导简谐振荡的电磁波中坡印廷矢量的时间平均值。",
+        "output": "\\( \\langle \\pmb{{S}} \\rangle = \\frac{1}{2\\mu_0} \\text{Re}(\\pmb{{\\cal E}} \\times \\pmb{{\\cal B}}^*) \\)。"
+    },
+    {
+        "input": "描述电磁波在金属中的衰减规律。",
+        "output": "电磁波在金属中的衰减由斯金深度描述：\\( \\delta = \\sqrt{\\frac{2}{\\mu \\sigma \\omega}} \\)，其中 \\( \\sigma \\) 是导电率，\\( \\omega \\) 是角频率。"
+    },
+    {
+        "input": "描述赫兹偶极子辐射的远场电磁波特性。",
+        "output": "远场区域的电磁波为横波，电场和磁场的幅度与距离成反比，且满足 \\( \\pmb{{\\cal E}} \\perp \\pmb{{\\cal B}} \\perp \\pmb{{k}} \\)。"
+    },
+    {
+        "input": "推导法拉第圆盘中的感应电动势公式。",
+        "output": "\\( \\mathcal{E} = \\frac{1}{2} B \\omega R^2 \\)，其中 \\( B \\) 为磁感应强度，\\( \\omega \\) 为角速度，\\( R \\) 为圆盘半径。"
+    },
+    {
+        "input": "描述齐次介质中的电磁波传播速度。",
+        "output": "\\( v = \\frac{1}{\\sqrt{\\mu \\varepsilon}} \\)，其中 \\( \\mu \\) 为磁导率，\\( \\varepsilon \\) 为介电常数。"
+    },
+    {
+        "input": "解释电磁场中的平面波解的形式。",
+        "output": "平面波解为：\\( \\pmb{{\\cal E}} = \\pmb{{E}}_0 e^{i(\\pmb{{k}} \\cdot \\pmb{{r}} - \\omega t)}, \\pmb{{\\cal B}} = \\pmb{{B}}_0 e^{i(\\pmb{{k}} \\cdot \\pmb{{r}} - \\omega t)} \\)。"
+    },
+    {
+        "input": "简述洛伦兹规范的条件。",
+        "output": "洛伦兹规范的条件为：\\( \\nabla \\cdot \\pmb{{A}} + \\frac{1}{c^2} \\frac{\\partial \\phi}{\\partial t} = 0 \\)。"
+    },
+    {
+        "input": "描述电磁场中单极子和偶极子的辐射差异。",
+        "output": "单极子辐射不符合电荷守恒定律，因此不存在；偶极子辐射是最常见的辐射形式，辐射功率与频率的四次方成正比。"
+    },
+    {
+        "input": "推导沿电场方向移动的电荷所受的电磁力。",
+        "output": "力为：\\( \\pmb{{F}} = q(\\pmb{{\\cal E}} + \\pmb{{v}} \\times \\pmb{{\\cal B}}) \\)，在 \\( \\pmb{{v}} \\parallel \\pmb{{\\cal E}} \\) 时，\\( \\pmb{{F}} = q\\pmb{{\\cal E}} \\)。"
+    },
+    {
+        "input": "说明介质中电磁波的反射和折射定律。",
+        "output": "反射角等于入射角；折射定律为：\\( n_1 \\sin \\theta_1 = n_2 \\sin \\theta_2 \\)，其中 \\( n \\) 是折射率。"
+    },
+    {
+        "input": "描述驻波的条件及其形成。",
+        "output": "驻波形成条件为入射波与反射波的频率相同且传播方向相反，数学形式为：\\( \\pmb{{\\cal E}} = \\pmb{{E}}_0 \\cos(\\omega t) \\cos(kx) \\)。"
+    },
+    {
+        "input": "推导磁场中环形电流产生的磁感应强度。",
+        "output": "环形电流中心的磁感应强度为：\\( B = \\frac{\\mu_0 I}{2R} \\)，其中 \\( I \\) 为电流，\\( R \\) 为环半径。"
+    },
+    {
         "input": "描述电磁场在非相对论情况下的变换规律",
         "output": "在非相对论情况下（$V/c \\ll 1$），电磁场的变换规律简化为：\n\n对于电场：\n$$\n\\pmb{{\\cal E}}=\\pmb{{\\cal E}}^{\\prime}+c\\pmb{{\\cal B}}^{\\prime}\\times\\beta.\n$$\n\n对于磁场：\n$$\n\\pmb{{\\cal B}}=\\pmb{{\\cal B}}^{\\prime}-(\\pmb{{\\cal E}}^{\\prime}/c)\\times\\beta.\n$$\n\n其中，$\\beta=V/c$。"
     },
