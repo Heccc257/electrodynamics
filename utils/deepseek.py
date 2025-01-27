@@ -5,6 +5,7 @@ import argparse
 import os
 from tqdm import tqdm
 import copy
+import time
 
 # api_key = "sk-a81461b386a94a2cbe2c040f99cac1f3"
 api_key = "sk-8d0ba939547b4585acd59da8a383efe0"
@@ -571,11 +572,11 @@ def reasoner(file_path):
 
 def answer_cot(file_path):
     prompt = r"""
-    下面将给出一个或者若干个电动力学问题以及对应的思考过程(cot)，请分别为每道题给出对应的解答。
-    要求解答要尽量简洁，不需要给出思考过程。
-    注意公式使用$$并且关键字前使用\\,比如$\\sum_i$, $\\frac a b$ 。
-    注意输出格式，只需要返回对应的若干解答，用json的格式返回，并且开头和结尾不需要返回```，只需要直接返回内容。
-    参考下面的例子,返回的是一个json列表，列表中的每个元素只有一个键值"output"。
+    下面将给出一个或者若干个电动力学问题以及对应的参考答案，请分别为每道题给出对应的解答。
+    注意公式使用$$并且关键词前使用\\,比如$\\sum$, $\\frac a b $。保证我能用python的json.loads()函数解析。
+    输出只需要返回json的格式，不需要其他的内容。
+    格式参考下面的例子，返回一个json列表，必要包含```json等格式内容，每个元素对应一道题，只有两个键值"input"和"output"分别表示问题和答案，返回json的元素数量必须与输入的题目数量一致。
+    你需要将你自己的思考过程和自我反思过程整理好一并放到输出当中，不要太短,要全面和详细，思考过程用<think></think>包裹，答案用<answer></answer>包裹。
 
     例子：```
     输入：
@@ -583,28 +584,30 @@ def answer_cot(file_path):
         {
             "instruction": "在相对论粒子的辐射中，电场 $\\boldsymbol{E}$ 的表达式是如何与加速度的平行和垂直分量相关的？",
             "input": "",
-            "cot": "<|>在相对论粒子的辐射中，电场 $\\\\boldsymbol{E}$ 的表达式可以通过粒子的加速度 $\\\\boldsymbol{a}$ 的平行和垂直分量来描述。<|>首先，粒子的加速度 $\\\\boldsymbol{a}$ 可以分解为平行于速度 $\\\\boldsymbol{v}$ 的分量 $\\\\boldsymbol{a}_\\\\parallel$ 和垂直于速度 $\\\\boldsymbol{v}$ 的分量 $\\\\boldsymbol{a}_\\\\perp$。<|>根据相对论电动力学，电场 $\\\\boldsymbol{E}$ 的表达式为：\n$$\n\\\\boldsymbol{E} = \\\\frac{q}{4\\\\pi\\\\epsilon_0} \\\\left( \\\\frac{\\\\boldsymbol{n} - \\\\boldsymbol{\\\\beta}}{\\\\gamma^2 (1 - \\\\boldsymbol{\\\\beta} \\\\cdot \\\\boldsymbol{n})^3 R^2} + \\\\frac{\\\\boldsymbol{n} \\\\times [(\\\\boldsymbol{n} - \\\\boldsymbol{\\\\beta}) \\\\times \\\\boldsymbol{a}]}{c^2 (1 - \\\\boldsymbol{\\\\beta} \\\\cdot \\\\boldsymbol{n})^3 R} \\\\right)\n$$\n其中 $\\\\boldsymbol{\\\\beta} = \\\\boldsymbol{v}/c$，$\\\\gamma = 1/\\\\sqrt{1 - \\\\beta^2}$，$\\\\boldsymbol{n}$ 是观测方向的单位矢量，$R$ 是粒子到观测点的距离。<|>电场 $\\\\boldsymbol{E}$ 的辐射部分主要与加速度的垂直分量 $\\\\boldsymbol{a}_\\\\perp$ 相关，因为 $\\\\boldsymbol{a}_\\\\perp$ 会产生辐射场，而平行分量 $\\\\boldsymbol{a}_\\\\parallel$ 对辐射场的贡献较小。<|>因此，电场 $\\\\boldsymbol{E}$ 的辐射部分可以近似表示为：\n$$\n\\\\boldsymbol{E} \\\\approx \\\\frac{q}{4\\\\pi\\\\epsilon_0} \\\\frac{\\\\boldsymbol{n} \\\\times (\\\\boldsymbol{n} \\\\times \\\\boldsymbol{a}_\\\\perp)}{c^2 (1 - \\\\boldsymbol{\\\\beta} \\\\cdot \\\\boldsymbol{n})^3 R}\n$$\n这表明电场 $\\\\boldsymbol{E}$ 的辐射部分主要由加速度的垂直分量 $\\\\boldsymbol{a}_\\\\perp$ 决定。"
+            "output": "线性加速器对应 $\\boldsymbol{v}\\parallel\\dot{\\boldsymbol{v}}$ 的情况..."
         },
         {
             "instruction": "在相对论粒子的辐射中，交叉项 $\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}$ 的表达式是什么？",
             "input": "",
-            "cot": "<|>首先，考虑相对论粒子的辐射功率分布。辐射功率的角分布通常由两部分组成：平行极化分量和垂直极化分量。交叉项 $\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}$ 表示这两个极化分量之间的干涉项。<|>根据电动力学理论，辐射功率的角分布可以表示为：\n$$\n\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega} = \\frac{e^2}{4\\pi c} \\left| \\int_{-\\infty}^{\\infty} \\frac{\\mathbf{n} \\times [(\\mathbf{n} - \\boldsymbol{\\beta}) \\times \\dot{\\boldsymbol{\\beta}}]}{(1 - \\mathbf{n} \\cdot \\boldsymbol{\\beta})^3} e^{i\\omega(t - \\mathbf{n} \\cdot \\mathbf{r}(t)/c)} \\mathrm{d}t \\right|^2\n$$\n其中，$\\mathbf{n}$ 是观测方向的单位矢量，$\\boldsymbol{\\beta} = \\mathbf{v}/c$ 是粒子的速度矢量，$\\dot{\\boldsymbol{\\beta}}$ 是加速度矢量。<|>交叉项 $\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}$ 可以通过将平行和垂直极化分量的辐射场进行干涉得到。具体表达式为：\n$$\n\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}} = \\frac{e^2}{4\\pi c} \\Re \\left[ \\left( \\int_{-\\infty}^{\\infty} \\frac{\\mathbf{n} \\times [(\\mathbf{n} - \\boldsymbol{\\beta}) \\times \\dot{\\boldsymbol{\\beta}}]_{\\parallel}}{(1 - \\mathbf{n} \\cdot \\boldsymbol{\\beta})^3} e^{i\\omega(t - \\mathbf{n} \\cdot \\mathbf{r}(t)/c)} \\mathrm{d}t \\right) \\cdot \\left( \\int_{-\\infty}^{\\infty} \\frac{\\mathbf{n} \\times [(\\mathbf{n} - \\boldsymbol{\\beta}) \\times \\dot{\\boldsymbol{\\beta}}]_{\\perp}}{(1 - \\mathbf{n} \\cdot \\boldsymbol{\\beta})^3} e^{-i\\omega(t - \\mathbf{n} \\cdot \\mathbf{r}(t)/c)} \\mathrm{d}t \\right) \\right]\n$$\n其中，$\\Re$ 表示取实部，$\\parallel$ 和 $\\perp$ 分别表示平行和垂直极化分量。<|>"
+            "output": "交叉项 $\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}$ 的表达式为..."
         }
     ]
 
     输出：
     [
         {
-            "output": "电场 $\\boldsymbol{E}$ 的表达式可以分解为 $$\\boldsymbol{E} = e_{R} \\times [(e_{R} - \\beta) \\times \\dot{\\beta}_{\\parallel}] + e_{R} \\times [(e_{R} - \\beta) \\times \\dot{\\beta}_{\\perp}],$$ 其中 $\\dot{\\beta}_{\\parallel}$ 和 $\\dot{\\beta}_{\\perp}$ 分别是加速度的平行和垂直分量。"
+            "input": "在相对论粒子的辐射中，电场 $\\boldsymbol{E}$ 的表达式是如何与加速度的平行和垂直分量相关的？",
+            "output": "<think>...</think>\n<answer>...</answer>"
         },
         {
-            "output": "交叉项 $\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}$ 的表达式为 $$\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}} \\propto 2\\{e_{R} \\times [(e_{R} - \\beta) \\times \\dot{\\beta}_{\\parallel}]\\} \\cdot \\{e_{R} \\times [(e_{R} - \\beta) \\times \\dot{\\beta}_{\\perp}]\\}.$$"
+            "input": "在相对论粒子的辐射中，交叉项 $\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}$ 的表达式是什么？",
+            "output": "<think>...</think>\n<answer>...</answer>"
         }
     ]
 
     ```
     
-    下面将给出正式的问题和对应的cot：\n
+    下面将给出正式的问题和参考答案：\n
     """
     # 注意思维链的公式要使用$$，并且在关键词前使用\\，例如\\sum,\\delta等，否则无法用python解析。
     # 例子：根据爱因斯坦求和约定，二阶张量 $T_{ij}$ 的迹 $\\text{Tr}(T)$ 可以表示为 $\\text{Tr}(T) = T_{ii}$，其中 $i$ 是哑指标，默认求和。\n单位张量 $\\delta_{ij}$ 的定义是 $\\delta_{ij} = 1$ 当 $i = j$。
@@ -618,7 +621,7 @@ def answer_cot(file_path):
         pass
     
     batch_size = 5
-    datasets = [{"instruction": data["instruction"], "cot": data["cot"]} for data in datasets]
+    datasets = [{"instruction": data["instruction"], "output": data["output"]} for data in datasets]
 
     data_batches = [datasets[i: min(i+batch_size, len(datasets))] for i in range(0, len(datasets), batch_size)]
 
@@ -632,19 +635,22 @@ def answer_cot(file_path):
             print(f"questions example: {prompt + questions}")
 
         response = client.chat.completions.create(
-            # model="deepseek-reasoner",
-            model="deepseek-chat",
+            model="deepseek-reasoner",
+            # model="deepseek-chat",
             messages=messages
         )
         # reasoning_content = response.choices[0].message.reasoning_content
         content = response.choices[0].message.content
+        content.replace("```json", "").replace("```", "")
 
+        time.sleep(0.1)
         try:
             answers = json.loads(content)
-            
-            opts = copy.deepcopy(objs)
-            for idx in range(batch_size):
-                opts[idx]["output"] = answers[idx]["output"]
+            opts = answers
+
+            # opts = copy.deepcopy(objs)
+            # for idx in range(batch_size):
+            #     opts[idx]["output"] = answers[idx]["output"]
             outputs += opts
             if idx < 5 or idx%5 == 0:
                 save_json(outputs, output_path)
@@ -652,9 +658,9 @@ def answer_cot(file_path):
         except Exception as e:
             # 捕获其他可能的异常
             print(f"发生错误: {e}")
-            print(str(response))
+            print(content)
             with open("./datasets/answer_wastes.txt", "a") as wastes:
-                wastes.write(str(response))
+                wastes.write(content + "\n")
             continue
 
 

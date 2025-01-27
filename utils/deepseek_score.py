@@ -6,6 +6,7 @@ import os
 from tqdm import tqdm
 import copy
 import random
+import time
 
 # api_key = "sk-a81461b386a94a2cbe2c040f99cac1f3"
 api_key = "sk-8d0ba939547b4585acd59da8a383efe0"
@@ -81,8 +82,8 @@ def score(file_path):
 
         messages = [{"role": "user", "content": f"{prompt + questions}"}]
         response = client.chat.completions.create(
-            # model="deepseek-reasoner",
-            model="deepseek-chat",
+            model="deepseek-reasoner",
+            # model="deepseek-chat",
             messages=messages
         )
         # reasoning_content = response.choices[0].message.reasoning_content
@@ -98,8 +99,7 @@ def score(file_path):
                 opts[i]["comment"] = answers[i]["comment"]
             outputs += opts
             if len(outputs)%(batch_size*2) == 0:
-                save_json(outputs, output_path, append=True)
-                outputs = []
+                save_json(outputs, output_path)
 
         except Exception as e:
             # 捕获其他可能的异常
@@ -109,6 +109,188 @@ def score(file_path):
                 wastes.write(str(content))
             continue
 
+
+    save_json(outputs, output_path)
+
+def median(file_path):
+    prompt = r"""
+    下面将给出一个或者若干个电动力学问题,对应的标准答案,回答以及打分和评论。
+    根据回答的打分和评论，重新设计回答，使得回答更加符合要求，以便于我能更好的学习如何解决这个问题,如果认为有必要，还要需要补充若干(1-5道)相关的题目，同样的给出题目和回答,不需要包含"补充题目"等字样。
+    要求你的回答给出比较复杂并且足够清晰的思考过程，思考过程用</think>包裹，步骤用<|>隔开；回答用</answer>包裹.格式参考给你的例子。
+    
+    用json的格式返回，并且开头和结尾不需要返回```，只需要直接返回内容。
+    参考下面的例子,返回的是一个json列表,注意你的列表中的每个元素只有两个键值"input"和"output"，要严格按照给你的例子输出
+
+    例子：```
+    User:
+    [
+        {
+            "instruction": "Lorentz力密度是如何表示的？",
+            "standard": "</think><|>Lorentz力密度 $\\mathbf{f}$ ...。</answer>... </answer>",
+            "output": "</think><|>...</answer>Lorentz力密度表示为 $$\\mathbf{f}_{lorentz} = \\rho_e \\mathbf{E} + \\mathbf{J} \\times \\mathbf{B},$$ 其中 $\\rho_e$ 是电荷密度，$\\mathbf{J}$ 是电流密度。</answer>",
+            "score": 7,
+            "comment": "回答基本正确，但推导过程较为冗长，且部分表述不够简洁，与标准答案的简洁性有一定差距。"
+        },
+        {
+            "instruction": "Biot-Savart 定律描述了___。",
+            "standard": "</think> $d\\vec{B}$。<|>数学表达式为 $d\\vec{B} = \\frac{\\mu_0}{4\\pi} \\frac{Id\\vec{l} \\times \\vec{r}}{r^3}$，其中 $\\mu_0$ 是真空磁导率，$\\vec{r}$ 是从电流元到观察点的位矢，$r$ 是 $\\vec{r}$ 的模。<|>该定律适用于稳恒电流产生的磁场计算。</think>\n</answer>Biot-Savart 定律描述了电流元 $Id\\vec{l}$ 在空间中某点产生的磁场 $d\\vec{B}$。</answer>",
+            "output": " </think></answer>Biot-Savart Law 描述的是电流元产生的磁场 $$\\vec{d}\\mathbf{B} = \\frac{\\mu_0}{4\\pi} \\frac{I (\\vec{dl} \\times \\hat{r})}{r^2}.$$ 其应用包括计算长直导线、螺线管等装置中的磁场分布。</answer>",
+            "score": 6,
+            "comment": "回答虽然提到了Biot-Savart定律的数学表达式和应用，但开头部分的内容与问题无关，且没有直接回答Biot-Savart定律描述的内容。"
+        }
+    ]
+    Assistant:
+    [
+        {
+            "input": "题目描述1",
+            "output": "</think></think> </answer><answer>"
+        },
+        {
+            "input": "题目描述2",
+            "output": "</think></think> </answer><answer>"
+        }
+    ]
+    ```
+    
+    下面将给出正式的数据：\n
+    """
+    # 注意思维链的公式要使用$$，并且在关键词前使用\\，例如\\sum,\\delta等，否则无法用python解析。
+    # 例子：根据爱因斯坦求和约定，二阶张量 $T_{ij}$ 的迹 $\\text{Tr}(T)$ 可以表示为 $\\text{Tr}(T) = T_{ii}$，其中 $i$ 是哑指标，默认求和。\n单位张量 $\\delta_{ij}$ 的定义是 $\\delta_{ij} = 1$ 当 $i = j$。
+    client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
+    datasets = json.load(open(file_path, 'r'))
+    outputs = []
+    output_path = "./datasets/median_sup.json"
+
+    with open(output_path, "w") as f:
+        pass
+    
+    batch_size = 3
+
+    data_batches = [datasets[i: min(i+batch_size, len(datasets))] for i in range(0, len(datasets), batch_size)]
+
+
+    for idx, objs in enumerate(tqdm(data_batches, desc="Processing questions")):
+        questions = json.dumps(objs, ensure_ascii=False, indent=4)
+
+        # if idx < 2:
+        #     print(f"sample question: {questions}")
+
+        messages = [{"role": "user", "content": f"{prompt + questions}"}]
+        response = client.chat.completions.create(
+            # model="deepseek-reasoner",
+            model="deepseek-chat",
+            messages=messages
+        )
+        # reasoning_content = response.choices[0].message.reasoning_content
+        content = response.choices[0].message.content
+        # print("content")
+        try:
+            # if idx < 2:
+            #     print(f"sample response: {content}")
+            answers = json.loads(content)
+            outputs += answers
+            if idx%2 == 0:
+                save_json(outputs, output_path)
+
+        except Exception as e:
+            # 捕获其他可能的异常
+            print(f"发生错误: {e}")
+            print(str(content))
+            with open("./datasets/median_wastes.txt", "a") as wastes:
+                wastes.write(str(content))
+            continue
+
+
+    save_json(outputs, output_path)
+
+def hard(file_path):
+    prompt = r"""
+    我将给出一个或者多个电动力学问题，同时可能给出参考答案，请你分别根据问题和答案给出更加详细的思考过程，并且给出更加详细的回答。
+    注意公式使用$$并且关键词前使用\\,比如$\\sum$, $\\frac a b $。保证我能用python的json.loads()函数解析。
+    输出只需要返回json的格式，不需要其他的内容。
+    格式参考下面的例子，返回一个json列表，每个元素对应一道题，只有两个键值"input"和"output"分别表示问题和答案，返回json的元素数量必须与输入的题目数量一致。
+    你需要将你自己的思考过程和自我反思过程整理好一并放到输出当中，不要太短,要全面，思考过程用<think></think>包裹，答案用<answer></answer>包裹。要求思考过程要详细。
+    例子：```
+    User:
+    [
+        {
+            "input": "协变形式运动方程的时间分量 $\\mu=0$ 表示什么物理意义？",
+            "output": "<think><|>协变形式的运动方程通常写为 $\\frac{d p^\\mu}{d \\tau}..."
+        }
+    ]
+
+    Assistant:
+    [
+        {
+            "input": "协变形式运动方程的时间分量 $\\mu=0$ 表示什么物理意义？",
+            "output": "<think><|>协变形式的运动方程通常写为 $\\frac{d p^\\mu}{d \\tau} = q F^{\\mu\\nu} u_\\nu$... </think>\n<answer>协变形式运动方程的时间分量 $\\mu=0$ 表示能量变化率，即 $\\frac{d E}{d \\tau} = q \\mathbf{E} \\cdot \\mathbf{u}$，描述了电场对粒子做功的功率。</answer>"
+        }
+    ]
+    ```
+    
+    下面将给出正式的问题：\n
+    """
+    # 注意思维链的公式要使用$$，并且在关键词前使用\\，例如\\sum,\\delta等，否则无法用python解析。
+    # 例子：根据爱因斯坦求和约定，二阶张量 $T_{ij}$ 的迹 $\\text{Tr}(T)$ 可以表示为 $\\text{Tr}(T) = T_{ii}$，其中 $i$ 是哑指标，默认求和。\n单位张量 $\\delta_{ij}$ 的定义是 $\\delta_{ij} = 1$ 当 $i = j$。
+    client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
+    datasets = json.load(open(file_path, 'r'))
+    outputs = []
+    output_path = "./datasets/hard_sup.json"
+
+    with open(output_path, "w") as f:
+        pass
+    with open("./datasets/hard_wastes.txt", "w") as f:
+        pass
+    
+    batch_size = 3
+    
+    datasets = [{"input": data["input"], "output": data["output"]} for data in datasets]
+
+    data_batches = [datasets[i: min(i+batch_size, len(datasets))] for i in range(0, len(datasets), batch_size)]
+
+
+    for idx, objs in enumerate(tqdm(data_batches, desc="Processing questions")):
+
+        questions = json.dumps(objs, ensure_ascii=False, indent=4)
+
+        messages = [{"role": "user", "content": f"{prompt + questions}"}]
+        response = client.chat.completions.create(
+            model="deepseek-reasoner",
+            # model="deepseek-chat",
+            messages=messages
+        )
+        # reasoning_content = response.choices[0].message.reasoning_content
+        content = response.choices[0].message.content
+        reasoning_content = response.choices[0].message.reasoning_content
+
+        print(str(reasoning_content))
+        print(str(content))
+        exit(0)
+        
+        time.sleep(0.1)
+
+        try:
+            # if idx < 2:
+            #     print(f"sample response: {content}")
+            answers = json.loads(content)
+
+            for i in range(batch_size):
+                answers[i]["input"] = objs[i]["input"]
+            outputs += answers
+
+            if idx%2 == 0:
+                save_json(outputs, output_path)
+
+
+        except Exception as e:
+            # 捕获其他可能的异常
+            print(f"发生错误: {e}")
+            print(str(reasoning_content))
+            print(str(content))
+            with open("./datasets/hard_wastes.txt", "a") as wastes:
+                wastes.write(str(idx) + "\n")
+                wastes.write(str(content) + "\n\n")
+            continue
 
     save_json(outputs, output_path)
 
@@ -124,6 +306,12 @@ if __name__ == "__main__":
     if analy == "score": # scope of knowledge
         print("score")
         score(args.file)
+    elif analy == "median":
+        print("median")
+        median(args.file)
+    elif analy == "hard":
+        print("hard")
+        hard(args.file)
     else:
         print("unknown analayse")
         
