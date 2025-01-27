@@ -1,0 +1,7 @@
+version=$1
+data_set=$2
+model="DeepSeek-Elec-v"$version
+python -u answer_cot.py \
+    --model $model \
+    --data $data_set \
+    --output output

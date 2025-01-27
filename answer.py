@@ -62,11 +62,15 @@ def post_process(input, answer):
         answer = answer[length: ]
     return answer
 
+# def apply_system_template(prompt):
+#     template = f'''<|im_start|>system
+# You are a helpful assistant.<|im_end|>
+# <|im_start|>user
+# {prompt} <|im_end|>
+#     '''
+#     return template
 def apply_system_template(prompt):
-    template = f'''<|im_start|>system
-You are a helpful assistant.<|im_end|>
-<|im_start|>user
-{prompt} <|im_end|>
+    template = f'''<｜begin▁of▁sentence｜>User:{prompt}
     '''
     return template
 
@@ -78,18 +82,24 @@ def get_answers(
     output_dir=None,
     prompt_template=None,
 ):
+    prompts = json.load(open("config/prompt.json", 'r'))
+
+    reason_prompt_template = prompts["reason"]
+    answer_prompt_template = prompts["answer"]
 
     print(f"prompt template: {prompt_template}")
+
+    max_len = 1024*6
     llm = LLM(
         model=model_path,
-        max_model_len=1024,
+        max_model_len=max_len,
     )
 
     sampling_params = SamplingParams(
-        max_tokens=1024,  # 生成的最大新token数，包括输入文本
+        max_tokens=max_len,  # 生成的最大新token数，包括输入文本
         best_of=3,
         n=1,  # 返回的序列数量
-        temperature=0.7,  # 控制输出的随机性，值越低输出越确定但可能更单调
+        temperature=0.6,  # 控制输出的随机性，值越低输出越确定但可能更单调
         top_p=0.9,  # 核采样，只从累积概率最高的词汇中选择下一个token
         top_k=50,  # Top-k采样，只从概率最高的k个词汇中选择下一个token
         repetition_penalty=1.2  # 对已经生成过的token施加惩罚，以降低其再次被选中的概率
@@ -109,24 +119,36 @@ def get_answers(
                 print(json_obj["input"])
                 continue
 
-            # 根据template构造完整得prompt
-            prompt = prompt_template.format(**json_obj)
-            prompt = apply_system_template(prompt)
+            reason_prompt = reason_prompt_template + json_obj["input"]
+            reason_prompt = apply_system_template(reason_prompt)
+
 
             if idx == 0:
                 print("===== prompt example =====")
-                print(prompt)
+                print(reason_prompt)
                 print("")
 
-            outputs = llm.generate(prompt, sampling_params=sampling_params)
-            generated_text = outputs[0].outputs[0].text
+
+            outputs = llm.generate(reason_prompt, sampling_params=sampling_params)
+            reason = outputs[0].outputs[0].text
+
+            question_with_cot = str({
+                "问题": json_obj["input"],
+                "思考过程": reason,
+            })
+            answer_prompt = answer_prompt_template + question_with_cot
+            answer_prompt = apply_system_template(answer_prompt)
+
+            outputs = llm.generate(answer_prompt, sampling_params=sampling_params)
+            response = outputs[0].outputs[0].text
 
             # generated_text = post_process(prompt, generated_text)
             
             answer = {}
-            answer["input"] = json_obj["input"]
-            answer["standard"] = json_obj["output"]
-            answer["output"] = generated_text
+            answer["instruction"] = json_obj["input"]
+            answer["standard"] = json_obj["output"] if "output" in json_obj.keys() else ""
+            answer["cot"] = reason
+            answer["output"] = response
 
             answers.append(answer)
             
