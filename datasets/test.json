@@ -1,0 +1,6 @@
+[
+    {
+        "input": "证明向量叉乘的反对称性，即 $\boldsymbol{A} \times \boldsymbol{B} = -\boldsymbol{B} \times \boldsymbol{A}$，使用爱因斯坦求和约定。",
+        "output": "<think>首先要明确爱因斯坦求和约定，它规定在一个项中，如果某一下标重复出现两次，则要对该下标从1到3进行求和。对于向量叉乘，我们依据已知的利用爱因斯坦求和约定表示叉乘的公式。要证明反对称性，就需要分别写出 $\boldsymbol{A} \times \boldsymbol{B}$ 和 $\boldsymbol{B} \times \boldsymbol{A}$ 的表达式，然后通过Levi - Civita符号 $\epsilon_{ijk}$ 的反对称性质来建立两者之间的关系。思考过程如下：1. 回顾叉乘用爱因斯坦求和约定的表达式，为后续书写做准备。2. 分别写出 $\boldsymbol{A} \times \boldsymbol{B}$ 和 $\boldsymbol{B} \times \boldsymbol{A}$ 基于爱因斯坦求和约定的式子。3. 依据 $\epsilon_{ijk}$ 的反对称性质，对 $\boldsymbol{B} \times \boldsymbol{A}$ 的表达式进行变换，使其与 $\boldsymbol{A} \times \boldsymbol{B}$ 建立联系从而证明结论。</think>"
+    }
+]

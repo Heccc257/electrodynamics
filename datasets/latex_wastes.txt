@@ -1,0 +1,180 @@
+[
+    {
+        "instruction": "给定两个向量 $\boldsymbol{A} = (A_1, A_2, A_3)$ 和 $\boldsymbol{B} = (B_1, B_2, B_3)$，使用爱因斯坦求和约定计算它们的点乘。",
+        "output": "<think>首先明确爱因斯坦求和约定的规则，即当一个指标在一项中重复出现两次时，表示对该指标从1到3进行求和。对于向量$\boldsymbol{A} = (A_1, A_2, A_3)$和$\boldsymbol{B} = (B_1, B_2, B_3)$的点乘，按照点乘的定义是对应分量乘积之和，而爱因斯坦求和约定正好可以简洁地表示这种运算。我们只需按照约定，让重复指标$i$从1到3求和，就能得到点乘的结果。</think>\n<answer>根据爱因斯坦求和约定，向量$\boldsymbol{A}$与$\boldsymbol{B}$的点乘为：$$\boldsymbol{A} \cdot \boldsymbol{B} = A_i B_i=\sum_{i = 1}^{3}A_i B_i = A_1 B_1 + A_2 B_2 + A_3 B_3$$</answer>"
+    }
+]
+[
+    {
+        "instruction": "用爱因斯坦求和约定表示向量的点乘",
+        "output": "<think>首先要明确爱因斯坦求和约定的规则，即当一个指标在一项中重复出现两次时，就意味着对该指标从1到3（在三维空间中）进行求和。对于向量的点乘，我们知道向量$\boldsymbol{A}=(A_1,A_2,A_3)$，向量$\boldsymbol{B}=(B_1,B_2,B_3)$，其点乘的常规计算是$A_1B_1 + A_2B_2 + A_3B_3$ 。按照爱因斯坦求和约定，重复指标$i$就代表了这种对三个分量乘积求和的操作，所以可以简洁地表示为$A_i B_i$。</think>\n<answer>向量的点乘用爱因斯坦求和约定表示为：$$\boldsymbol{A} \cdot \boldsymbol{B} = A_i B_i$$</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定一个向量 $\boldsymbol{A} = (a, b, c)$，使用爱因斯坦求和约定计算 $\boldsymbol{A} \times \boldsymbol{A}$。",
+        "output": "<think>首先要明确爱因斯坦求和约定的规则，在这个约定下，叉乘可以用$$\epsilon_{ijk} A_i A_j \boldsymbol{e}_k$$来表示。这里的$$\epsilon_{ijk}$$是列维 - 奇维塔符号，具有反对称性，即$$\epsilon_{ijk}=-\epsilon_{jik}$$。而$$A_i A_j$$关于$$i$$和$$j$$是对称的。根据反对称和对称的性质，对于每一组$$i$$和$$j$$，$$\epsilon_{ijk} A_i A_j$$与$$-\epsilon_{jik} A_j A_i$$相互抵消，所以整体结果为零。</think>\n<answer>根据爱因斯坦求和约定，叉乘$$\boldsymbol{A} \times \boldsymbol{A}$$可表示为$$\boldsymbol{A} \times \boldsymbol{A} = \epsilon_{ijk} A_i A_j \boldsymbol{e}_k$$。因为$$\epsilon_{ijk}$$反对称，$$A_i A_j$$对称，所以对于任意$$i$$和$$j$$，有$$\epsilon_{ijk} A_i A_j = -\epsilon_{jik} A_j A_i$$，这就导致各项相互抵消，最终得到$$\boldsymbol{A} \times \boldsymbol{A} = 0$$。即任意向量与自身的叉乘为零。</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定一个二阶张量 $T_{ij}$，使用爱因斯坦求和约定写出其迹 $\text{Tr}(T)$ 的表达式，并推导其与单位张量 $\delta_{ij}$ 的关系。",
+        "output": "<think>首先要明确迹的概念，迹是方阵主对角线元素之和。在爱因斯坦求和约定下，对于二阶张量，当两个指标相同时就表示对该指标求和，所以很自然得出迹$\text{Tr}(T)=T_{ii}$。接着考虑单位张量$\delta_{ij}$，它在$i = j$时为$1$，$i\neq j$时为$0$，那么$T_{ij}\delta_{ij}$在求和过程中，只有当$i = j$时才有非零项，这就等同于$T_{ii}$，从而建立起与迹的关系。</think>\n<answer>根据爱因斯坦求和约定，二阶张量$T_{ij}$的迹$\text{Tr}(T)$的表达式为：$$\text{Tr}(T)=T_{ii}$$，这里$i$为哑指标，自动对$i$从$1$到张量所在空间维度求和。\n\n单位张量$\delta_{ij}$满足$$\delta_{ij}=\begin{cases}1, & i = j\\0, & i\neq j\end{cases}$$。\n\n则$$\text{Tr}(T)=T_{ij}\delta_{ij}$$，因为只有当$i = j$时，$\delta_{ij}$不为$0$，此时该项为$T_{ii}$，与前面迹的表达式一致。</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定向量 $\boldsymbol{C} = (C_1, C_2, C_3)$ 和 $\boldsymbol{D} = (D_1, D_2, D_3)$，使用爱因斯坦求和约定推导它们的点乘表达式，并计算当 $\boldsymbol{C} = (1, 2, 3)$ 和 $\boldsymbol{D} = (4, 5, 6)$ 时的点乘结果。",
+        "output": "<think>首先要明确爱因斯坦求和约定的规则，即当一个指标在一项中重复出现时，表示对该指标从1到3进行求和。对于向量的点乘，根据向量点乘的定义，是对应分量乘积的和。利用爱因斯坦求和约定，就可以简洁地表示出向量点乘的表达式。然后将给定的向量具体数值代入表达式，按照运算规则计算出结果。</think>\n<answer>根据爱因斯坦求和约定，重复指标意味着求和，对于向量$\boldsymbol{C} = (C_1, C_2, C_3)$和$\boldsymbol{D} = (D_1, D_2, D_3)$，它们的点乘表达式为：$$\boldsymbol{C} \cdot \boldsymbol{D} = C_i D_i=\sum_{i = 1}^{3}C_i D_i = C_1 D_1 + C_2 D_2 + C_3 D_3$$。当$\boldsymbol{C} = (1, 2, 3)$和$\boldsymbol{D} = (4, 5, 6)$时，代入上述表达式可得：$$\boldsymbol{C} \cdot \boldsymbol{D} = 1\times4 + 2\times5 + 3\times6 = 4 + 10 + 18 = 32$$。</answer>"
+    }
+]
+[
+    {
+        "instruction": "描述Levi-Civita符号的性质",
+        "output": "<think>首先要明确Levi - Civita符号是一个在三维空间中定义的重要符号。性质1表明它具有循环对称性，即指标按顺序循环移动，符号值不变，这是其在一些运算和公式推导中保持一致性的基础。性质2体现了它的反对称性，交换其中两个指标，符号值变号，这对于构建反对称张量等概念很关键。性质3说明当有两个指标相同时，符号值为0，这在处理一些涉及重复指标的运算时起到限定作用。通过理解这些性质，能更好地运用Levi - Civita符号进行向量运算、行列式计算等电动力学相关的数学推导。</think>\n<answer>\nLevi - Civita符号 $\epsilon_{ijk}$ 具有以下性质：\n1. **循环对称性**：$$\epsilon_{ijk} = \epsilon_{jki} = \epsilon_{kij}$$ 这意味着指标按顺序循环移动时，Levi - Civita符号的值保持不变。例如，在三维空间向量叉乘的行列式表示中，这种循环对称性有助于简化计算和推导相关公式。\n2. **反对称性**：$$\epsilon_{ijk} = -\epsilon_{jik}$$ 即交换其中任意两个指标，Levi - Civita符号的值变为原来的相反数。这种反对称性在构建反对称张量以及描述一些物理量的方向关系等方面具有重要应用。\n3. **重复指标为零**：$$\epsilon_{iik} = 0$$ 当Levi - Civita符号中有两个指标相同时，其值为零。在处理涉及重复指标的求和运算等情况时，该性质可简化计算过程。\n</answer>"
+    }
+]
+[
+    {
+        "instruction": "使用爱因斯坦求和约定表示 $\boldsymbol{A} \times (\boldsymbol{B} \times \boldsymbol{C})$",
+        "output": "<think>首先要明确爱因斯坦求和约定的规则，即重复的指标意味着对该指标从1到3求和。对于叉乘运算，在笛卡尔坐标系下可以用 Levi - Civita 符号$\epsilon_{ijk}$来表示。$\boldsymbol{A} \times (\boldsymbol{B} \times \boldsymbol{C})$是一个向量，我们需要逐步分析其各分量如何用爱因斯坦求和约定表示。先看$\boldsymbol{B} \times \boldsymbol{C}$，根据叉乘的定义，其第$k$分量可以表示为$\epsilon_{klm} B_l C_m$。然后再与$\boldsymbol{A}$做叉乘，$\boldsymbol{A}$与$\boldsymbol{B} \times \boldsymbol{C}$叉乘后的第$i$分量就可以通过$\epsilon_{ijk} A_j$与$\boldsymbol{B} \times \boldsymbol{C}$的分量相乘并对重复指标求和得到，最后再乘以单位向量$\boldsymbol{e}_i$表示向量形式。</think>\n<answer>根据爱因斯坦求和约定及叉乘运算在笛卡尔坐标系下用Levi - Civita符号的表示方法，$\boldsymbol{A} \times (\boldsymbol{B} \times \boldsymbol{C})$的$i$分量为：\n\\[\n\\begin{align*}\n[\boldsymbol{A} \times (\boldsymbol{B} \times \boldsymbol{C})]_i&=\epsilon_{ijk} A_j [\boldsymbol{B} \times \boldsymbol{C}]_k\\\\\n&=\epsilon_{ijk} A_j (\epsilon_{klm} B_l C_m)\n\\end{align*}\n\\]\n所以$\boldsymbol{A} \times (\boldsymbol{B} \times \boldsymbol{C})$用爱因斯坦求和约定表示为：\n$$\boldsymbol{A} \times (\boldsymbol{B} \times \boldsymbol{C}) = \epsilon_{ijk} A_j (\epsilon_{klm} B_l C_m) \boldsymbol{e}_i$$</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定向量 $\boldsymbol{E} = (E_1, E_2, E_3)$ 和 $\boldsymbol{F} = (F_1, F_2, F_3)$，使用爱因斯坦求和约定证明点乘的交换律，即 $\boldsymbol{E} \cdot \boldsymbol{F} = \boldsymbol{F} \cdot \boldsymbol{E}$。",
+        "output": "<think>首先要明确任务是利用爱因斯坦求和约定来证明点乘交换律。我们知道爱因斯坦求和约定下向量点乘有特定表示形式，那就先写出向量$\boldsymbol{E}$与$\boldsymbol{F}$点乘在该约定下的表达式。然后依据标量乘法本身具有交换律这一性质，对得到的表达式进行变换，看能否得出$\boldsymbol{E} \cdot \boldsymbol{F} = \boldsymbol{F} \cdot \boldsymbol{E}$的结论。</think>\n<answer>根据爱因斯坦求和约定，向量点乘表示为$\boldsymbol{E} \cdot \boldsymbol{F} = E_i F_i$ 。因为标量乘法满足交换律，即对于任意的$i$，都有$E_i F_i = F_i E_i$ 。而$F_i E_i$按照爱因斯坦求和约定就是$\boldsymbol{F} \cdot \boldsymbol{E}$ ，所以$\boldsymbol{E} \cdot \boldsymbol{F} = E_i F_i = F_i E_i = \boldsymbol{F} \cdot \boldsymbol{E}$，从而证明了点乘的交换律。</answer>"
+    }
+]
+[
+    {
+        "instruction": "使用爱因斯坦求和约定表示 $\boldsymbol{A} \cdot (\boldsymbol{B} \times \boldsymbol{C})$",
+        "output": "<think>首先要明确爱因斯坦求和约定的规则，即当一个指标在一项中重复出现两次时，表示对该指标从1到3进行求和。对于向量的点积和叉积，我们知道向量叉积$\boldsymbol{B} \times \boldsymbol{C}$的第$i$个分量可以表示为$(\boldsymbol{B} \times \boldsymbol{C})_i=\epsilon_{ijk}B_jC_k$，这里$\epsilon_{ijk}$是列维 - 奇维塔符号。然后再与向量$\boldsymbol{A}$做点积，点积就是对应分量相乘再求和，所以$\boldsymbol{A} \cdot (\boldsymbol{B} \times \boldsymbol{C}) = A_i(\boldsymbol{B} \times \boldsymbol{C})_i$，将$(\boldsymbol{B} \times \boldsymbol{C})_i=\epsilon_{ijk}B_jC_k$代入就可得到用爱因斯坦求和约定表示的式子。</think>\n<answer>根据向量叉积和点积的运算规则以及爱因斯坦求和约定，向量叉积$\boldsymbol{B} \times \boldsymbol{C}$的第$i$个分量为$(\boldsymbol{B} \times \boldsymbol{C})_i=\epsilon_{ijk}B_jC_k$，则$\boldsymbol{A} \cdot (\boldsymbol{B} \times \boldsymbol{C}) = A_i(\boldsymbol{B} \times \boldsymbol{C})_i = \epsilon_{ijk} A_i B_j C_k$，即$$\boldsymbol{A} \cdot (\boldsymbol{B} \times \boldsymbol{C}) = \epsilon_{ijk} A_i B_j C_k$$</answer>"
+    }
+]
+[
+    {
+        "instruction": "用爱因斯坦求和约定表示 $(\boldsymbol{A} \times \boldsymbol{B}) \times \boldsymbol{C}$",
+        "output": "<think>首先要明确爱因斯坦求和约定的规则，即重复指标意味着对该指标从1到3求和。对于叉乘运算，我们知道向量叉乘$\boldsymbol{A} \times \boldsymbol{B}$在爱因斯坦求和约定下可表示为$\epsilon_{ijk}A_jB_k\boldsymbol{e}_i$ ，这里$\epsilon_{ijk}$是列维 - 奇维塔符号。那么对于$(\boldsymbol{A} \times \boldsymbol{B}) \times \boldsymbol{C}$，先把$\boldsymbol{A} \times \boldsymbol{B}$看作一个整体，设$\boldsymbol{D}=\boldsymbol{A} \times \boldsymbol{B}$，其分量为$D_i=\epsilon_{ijk}A_jB_k$。然后$\boldsymbol{D} \times \boldsymbol{C}$，根据叉乘的爱因斯坦求和约定表示，就应该是$\epsilon_{ilm}D_lC_m\boldsymbol{e}_i$，再把$D_l=\epsilon_{ljk}A_jB_k$代入，就可以得到$(\boldsymbol{A} \times \boldsymbol{B}) \times \boldsymbol{C}$的爱因斯坦求和约定表达式。</think>\n<answer>\n1. 已知向量叉乘$\boldsymbol{A} \times \boldsymbol{B}$在爱因斯坦求和约定下为$\boldsymbol{D}=\boldsymbol{A} \times \boldsymbol{B}=\epsilon_{ijk}A_jB_k\boldsymbol{e}_i$，这里$D_i = \epsilon_{ijk}A_jB_k$。\n2. 计算$\boldsymbol{D} \times \boldsymbol{C}$，根据叉乘的爱因斯坦求和约定表示为$\epsilon_{ilm}D_lC_m\boldsymbol{e}_i$。\n3. 将$D_l=\epsilon_{ljk}A_jB_k$代入上式，可得：\n   \[
+   \begin{align*}
+   (\boldsymbol{A} \times \boldsymbol{B}) \times \boldsymbol{C}&=\epsilon_{ilm}(\epsilon_{ljk}A_jB_k)C_m\boldsymbol{e}_i\\
+   &=\epsilon_{ilm}\epsilon_{ljk}A_jB_kC_m\boldsymbol{e}_i
+   \end{align*}
+   \]\n   通常我们习惯将指标进行重新标记，令$i = k$，$j = m$，$k = n$，则得到$(\boldsymbol{A} \times \boldsymbol{B}) \times \boldsymbol{C}=\epsilon_{ijk} \epsilon_{imn} A_m B_n C_j \boldsymbol{e}_k$。\n</answer>"
+    }
+]
+[
+    {
+        "instruction": "证明向量叉乘的反对称性，即 $\boldsymbol{A} \times \boldsymbol{B} = -\boldsymbol{B} \times \boldsymbol{A}$，使用爱因斯坦求和约定。",
+        "output": "<think>首先要明确目标是证明向量叉乘的反对称性，即$$\boldsymbol{A} \times \boldsymbol{B} = -\boldsymbol{B} \times \boldsymbol{A}$$，且要求使用爱因斯坦求和约定。那就需要先知道在该约定下向量叉乘的表达式，即利用Levi - Civita符号$$\epsilon_{ijk}$$来表示叉乘。然后分别写出$$\boldsymbol{A} \times \boldsymbol{B}$$和$$\boldsymbol{B} \times \boldsymbol{A}$$基于爱因斯坦求和约定的表达式，再根据Levi - Civita符号的反对称性质进行推导，看能否得出要证明的等式。</think>\n<answer>根据爱因斯坦求和约定，叉乘的计算公式为：$$\boldsymbol{A} \times \boldsymbol{B} = \epsilon_{ijk} A_i B_j \boldsymbol{e}_k$$\n$$\boldsymbol{B} \times \boldsymbol{A}$$可表示为：$$\boldsymbol{B} \times \boldsymbol{A} = \epsilon_{ijk} B_i A_j \boldsymbol{e}_k$$\n因为Levi - Civita符号$$\epsilon_{ijk}$$具有反对称性，即$$\epsilon_{ijk} = -\epsilon_{jik}$$，所以：\n$$\boldsymbol{B} \times \boldsymbol{A} = \epsilon_{jik} B_j A_i \boldsymbol{e}_k = -\epsilon_{ijk} A_i B_j \boldsymbol{e}_k = -\boldsymbol{A} \times \boldsymbol{B}$$\n故证明了$$\boldsymbol{A} \times \boldsymbol{B} = -\boldsymbol{B} \times \boldsymbol{A}$$。</answer>"
+    }
+]
+[
+    {
+        "instruction": "用爱因斯坦求和约定表示向量的叉乘",
+        "output": "<think>首先要明确爱因斯坦求和约定的规则，即当一个指标在一项中重复出现两次时，表示对该指标从1到3进行求和。对于向量叉乘，我们需要找到一种方式利用这种约定来简洁地表示。向量叉乘的结果是一个向量，其分量与参与叉乘的两个向量的分量相关。我们知道叉乘的分量计算涉及到一些特定的组合和正负号变化，而列维 - 奇维塔符号$\epsilon_{ijk}$正好可以用来简洁地描述这种关系，通过它与向量$\boldsymbol{A}$和$\boldsymbol{B}$的分量相乘并按照爱因斯坦求和约定求和，就能得到叉乘结果向量的各个分量。</think>\n<answer>在三维空间中，设向量$\boldsymbol{A}=(A_1,A_2,A_3)$，$\boldsymbol{B}=(B_1,B_2,B_3)$，根据爱因斯坦求和约定，向量的叉乘表示为：$$\boldsymbol{A} \times \boldsymbol{B} = \epsilon_{ijk} A_i B_j \boldsymbol{e}_k$$，其中$\epsilon_{ijk}$是列维 - 奇维塔符号，当$ijk$为123、231、312的偶排列时，$\epsilon_{ijk}=1$；当$ijk$为132、321、213的奇排列时，$\epsilon_{ijk}=-1$；当$i = j$或$j = k$或$k = i$时，$\epsilon_{ijk}=0$。这里$i,j,k$都从1到3求和，$\boldsymbol{e}_k$是沿$k$方向的单位向量。这样就利用爱因斯坦求和约定简洁地表示出了向量的叉乘。</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定两个向量 $\boldsymbol{A} = (1, 2, 3)$ 和 $\boldsymbol{B} = (4, 5, 6)$，使用爱因斯坦求和约定计算它们的叉乘 $\boldsymbol{A} \times \boldsymbol{B}$。",
+        "output": "<think>首先要明确爱因斯坦求和约定下叉乘的计算公式，即利用Levi - Civita符号$\epsilon_{ijk}$来表示叉乘。需要清楚Levi - Civita符号的取值规则，当$ijk$为123、231、312的偶排列时，$\epsilon_{ijk}=1$；当$ijk$为132、213、321的奇排列时，$\epsilon_{ijk}=-1$；其他情况$\epsilon_{ijk}=0$。然后将向量$\boldsymbol{A}$和$\boldsymbol{B}$的分量代入公式展开计算，最后得出叉乘结果。</think>\n<answer>根据爱因斯坦求和约定，叉乘公式为$$\boldsymbol{A} \times \boldsymbol{B} = \epsilon_{ijk} A_i B_j \boldsymbol{e}_k$$。\n已知$\boldsymbol{A} = (1, 2, 3)$，则$A_1 = 1$，$A_2 = 2$，$A_3 = 3$；$\boldsymbol{B} = (4, 5, 6)$，则$B_1 = 4$，$B_2 = 5$，$B_3 = 6$。\n展开计算：\n\\[\n\\begin{align*}\n\boldsymbol{A} \times \boldsymbol{B} &= \epsilon_{123} A_1 B_2 \boldsymbol{e}_3 + \epsilon_{132} A_1 B_3 \boldsymbol{e}_2 + \epsilon_{213} A_2 B_1 \boldsymbol{e}_3 + \epsilon_{231} A_2 B_3 \boldsymbol{e}_1 + \epsilon_{312} A_3 B_1 \boldsymbol{e}_2 + \epsilon_{321} A_3 B_2 \boldsymbol{e}_1\\\\\n&= 1\times1\times5\times\boldsymbol{e}_3 + (-1)\times1\times6\times\boldsymbol{e}_2 + (-1)\times2\times4\times\boldsymbol{e}_3 + 1\times2\times6\times\boldsymbol{e}_1 + 1\times3\times4\times\boldsymbol{e}_2 + (-1)\times3\times5\times\boldsymbol{e}_1\\\\\n&=(12 - 15)\boldsymbol{e}_1+(12 - 6)\boldsymbol{e}_2+(5 - 8)\boldsymbol{e}_3\\\\\n&= (-3, 6, -3)\n\\end{align*}\n\\]\n所以$\boldsymbol{A} \times \boldsymbol{B} = (-3, 6, -3)$。</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定一个向量场 $\pmb{A} = A_i \\hat{e}_i$ 和一个标量场 $\phi$，使用爱因斯坦求和约定写出标量场的梯度 $\nabla \phi$ 和向量场的散度 $\nabla \cdot \pmb{A}$ 的表达式。",
+        "output": "<think>首先要明确爱因斯坦求和约定的规则，即当一个指标在一项中重复出现两次时，就意味着对该指标从1到3（在三维空间的情况下）进行求和。对于标量场的梯度，梯度是一个向量，其在直角坐标系下的分量就是标量场对各个坐标的偏导数，按照爱因斯坦求和约定，用重复指标表示求和来写出表达式。对于向量场的散度，散度是一个标量，它是向量场的各个分量对相应坐标的偏导数之和，同样依据爱因斯坦求和约定来表达。</think>\n<answer>根据爱因斯坦求和约定，在三维直角坐标系中：\n1. 标量场 $\phi$ 的梯度 $\nabla \phi$ 的表达式为：$$\nabla \phi=\frac{\partial \phi}{\partial x_i}\hat{e}_i\quad (i = 1,2,3)$$，这里 $i$ 为哑指标，意味着 $\nabla \phi=\frac{\partial \phi}{\partial x_1}\hat{e}_1+\frac{\partial \phi}{\partial x_2}\hat{e}_2+\frac{\partial \phi}{\partial x_3}\hat{e}_3$。\n2. 向量场 $\boldsymbol{A} = A_i \hat{e}_i$ 的散度 $\nabla \cdot \boldsymbol{A}$ 的表达式为：$$\nabla \cdot \boldsymbol{A}=\frac{\partial A_i}{\partial x_i}\quad (i = 1,2,3)$$，即 $\nabla \cdot \boldsymbol{A}=\frac{\partial A_1}{\partial x_1}+\frac{\partial A_2}{\partial x_2}+\frac{\partial A_3}{\partial x_3}$。</answer>"
+    }
+]
+[
+    {
+        "instruction": "描述爱因斯坦求和约定的基本规则",
+        "output": "<think>首先要明确爱因斯坦求和约定是一种在张量运算等场景中简化书写的规则。思考时需从其核心特点出发，理解为何会有这些规则。对于默认对哑指标求和，这是为了避免大量重复书写求和符号，提高书写效率；不同项包含相同自由指标，是保证运算在同一维度或同一组变量下进行，确保运算的一致性；同一个指标最多出现两次，是为了明确求和的对象和范围，避免混淆和错误。</think>\n<answer>爱因斯坦求和约定的基本规则如下：\n1. **默认对哑指标求和**：在表达式中，若某指标在一项内重复出现两次（称为哑指标），则默认对该指标从下限到上限求和，无需特别写出求和符号。例如在 $\(a_{i}b_{i}\)$ 中， $\(i\)$ 为哑指标，实际表示 $\(\sum_{i}a_{i}b_{i}\)$ 。\n2. **自由指标一致性**：一个运算式里，不同项中应该包含相同的自由指标。自由指标是在表达式中只出现一次的指标，它标识了该表达式与其他量的关系维度等，保证不同项在同一维度或变量体系下进行运算。例如在 $\(c_{j} = a_{ij}b_{i}\)$ 中， $\(j\)$ 是自由指标，不同项都有 $\(j\)$。\n3. **指标出现次数限制**：在任一项里，同一个指标最多出现两次。若出现一次为自由指标，出现两次为哑指标，若超过两次则会导致求和规则不明确，引起混淆。</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定两个向量 $\boldsymbol{A} = (A_1, A_2, A_3)$ 和 $\boldsymbol{B} = (B_1, B_2, B_3)$，使用爱因斯坦求和约定计算它们的点乘。",
+        "output": "<think>首先明确爱因斯坦求和约定的规则，即当一个指标在一项中重复出现两次时，表示对该指标从1到3进行求和。对于向量$\boldsymbol{A} = (A_1, A_2, A_3)$和$\boldsymbol{B} = (B_1, B_2, B_3)$的点乘，按照点乘的定义是对应分量乘积之和，而爱因斯坦求和约定正好可以简洁地表示这种运算。我们只需按照约定，让重复指标$i$从1到3求和，就能得到点乘的结果。</think>\n<answer>根据爱因斯坦求和约定，向量$\boldsymbol{A}$与$\boldsymbol{B}$的点乘为：$$\boldsymbol{A} \cdot \boldsymbol{B} = A_i B_i=\sum_{i = 1}^{3}A_i B_i = A_1 B_1 + A_2 B_2 + A_3 B_3$$</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定两个向量 $\boldsymbol{A} = (A_1, A_2, A_3)$ 和 $\boldsymbol{B} = (B_1, B_2, B_3)$，使用爱因斯坦求和约定计算它们的点乘。",
+        "output": "<think>首先明确爱因斯坦求和约定的规则，即当一个指标在一项中重复出现两次时，表示对该指标从1到3进行求和。对于向量$\boldsymbol{A} = (A_1, A_2, A_3)$和$\boldsymbol{B} = (B_1, B_2, B_3)$的点乘，按照点乘的定义是对应分量乘积之和，而爱因斯坦求和约定正好可以简洁地表示这种运算。我们只需按照约定，让重复指标$i$从1到3求和，就能得到点乘的结果。</think>\n<answer>根据爱因斯坦求和约定，向量$\boldsymbol{A}$与$\boldsymbol{B}$的点乘为：$$\boldsymbol{A} \cdot \boldsymbol{B} = A_i B_i=\sum_{i = 1}^{3}A_i B_i = A_1 B_1 + A_2 B_2 + A_3 B_3$$</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定两个向量 $\boldsymbol{A} = (A_1, A_2, A_3)$ 和 $\boldsymbol{B} = (B_1, B_2, B_3)$，使用爱因斯坦求和约定计算它们的点乘。",
+        "output": "<think>首先明确爱因斯坦求和约定的规则，即当一个指标在一项中重复出现两次时，表示对该指标从1到3进行求和。对于向量$\boldsymbol{A} = (A_1, A_2, A_3)$和$\boldsymbol{B} = (B_1, B_2, B_3)$的点乘，按照点乘的定义是对应分量乘积之和，而爱因斯坦求和约定正好可以简洁地表示这种运算。我们只需按照约定，让重复指标$i$从1到3求和，就能得到点乘的结果。</think>\n<answer>根据爱因斯坦求和约定，向量$\boldsymbol{A}$与$\boldsymbol{B}$的点乘为：$\boldsymbol{A} \cdot \boldsymbol{B} = A_i B_i=\sum_{i = 1}^{3}A_i B_i = A_1 B_1 + A_2 B_2 + A_3 B_3$</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定两个向量 $\boldsymbol{A} = (A_1, A_2, A_3)$ 和 $\boldsymbol{B} = (B_1, B_2, B_3)$，使用爱因斯坦求和约定计算它们的点乘。",
+        "output": "<think>首先明确爱因斯坦求和约定的规则，即当一个指标在一项中重复出现两次时，表示对该指标从1到3进行求和。对于向量$\boldsymbol{A} = (A_1, A_2, A_3)$和$\boldsymbol{B} = (B_1, B_2, B_3)$的点乘，按照点乘的定义是对应分量乘积之和，而爱因斯坦求和约定正好可以简洁地表示这种运算。我们只需按照约定，让重复指标$i$从1到3求和，就能得到点乘的结果。</think>\n<answer>根据爱因斯坦求和约定，向量$\boldsymbol{A}$与$\boldsymbol{B}$的点乘为：$$\boldsymbol{A} \cdot \boldsymbol{B} = A_i B_i=\sum_{i = 1}^{3}A_i B_i = A_1 B_1 + A_2 B_2 + A_3 B_3$$</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定两个向量 $\boldsymbol{A} = (A_1, A_2, A_3)$ 和 $\boldsymbol{B} = (B_1, B_2, B_3)$，使用爱因斯坦求和约定计算它们的点乘。",
+        "output": "<think>首先明确爱因斯坦求和约定的规则，即当一个指标在一项中重复出现两次时，表示对该指标从1到3进行求和。对于向量$\boldsymbol{A} = (A_1, A_2, A_3)$和$\boldsymbol{B} = (B_1, B_2, B_3)$的点乘，按照点乘的定义是对应分量乘积之和，而爱因斯坦求和约定正好可以简洁地表示这种运算。我们只需按照约定，让重复指标$i$从1到3求和，就能得到点乘的结果。</think>\n<answer>根据爱因斯坦求和约定，向量$\boldsymbol{A}$与$\boldsymbol{B}$的点乘为：$$\boldsymbol{A} \cdot \boldsymbol{B} = A_i B_i=\sum_{i = 1}^{3}A_i B_i = A_1 B_1 + A_2 B_2 + A_3 B_3$$</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定两个向量 $\\boldsymbol{A} = (A_1, A_2, A_3)$ 和 $\\boldsymbol{B} = (B_1, B_2, B_3)$，使用爱因斯坦求和约定计算它们的点乘。",
+        "output": "<think>首先明确爱因斯坦求和约定的规则，即当一个指标在一项中重复出现两次时，表示对该指标从1到3进行求和。对于向量$\\boldsymbol{A} = (A_1, A_2, A_3)$和$\\boldsymbol{B} = (B_1, B_2, B_3)$的点乘，按照点乘的定义是对应分量乘积之和，而爱因斯坦求和约定正好可以简洁地表示这种运算。我们只需按照约定，让重复指标$i$从1到3求和，就能得到点乘的结果。</think>
+<answer>根据爱因斯坦求和约定，向量$\\boldsymbol{A}$与$\\boldsymbol{B}$的点乘为：$$\\boldsymbol{A} \\cdot \\boldsymbol{B} = A_i B_i=\\sum_{i = 1}^{3}A_i B_i = A_1 B_1 + A_2 B_2 + A_3 B_3$$</answer>"
+    }
+]
+[
+    {
+        "instruction": "给定两个向量 $\\boldsymbol{A} = (1, 2, 3)$ 和 $\\boldsymbol{B} = (4, 5, 6)$，使用爱因斯坦求和约定计算它们的叉乘 $\\boldsymbol{A} \\times \\boldsymbol{B}$。",
+        "output": "<think>首先要明确爱因斯坦求和约定下叉乘的计算公式，即利用Levi - Civita符号$\\epsilon_{ijk}$来表示叉乘。需要清楚Levi - Civita符号的取值规则，当$ijk$为123、231、312的偶排列时，$\\epsilon_{ijk}=1$；当$ijk$为132、213、321的奇排列时，$\\epsilon_{ijk}=-1$；其他情况$\\epsilon_{ijk}=0$。然后将向量$\\boldsymbol{A}$和$\\boldsymbol{B}$的分量代入公式展开计算，最后得出叉乘结果。</think>\n<answer>根据爱因斯坦求和约定，叉乘公式为$$\\boldsymbol{A} \\times \\boldsymbol{B} = \\epsilon_{ijk} A_i B_j \\boldsymbol{e}_k$$。\n已知$\\boldsymbol{A} = (1, 2, 3)$，则$A_1 = 1$，$A_2 = 2$，$A_3 = 3$；$\\boldsymbol{B} = (4, 5, 6)$，则$B_1 = 4$，$B_2 = 5$，$B_3 = 6$。\n展开计算：\n\\[
+\\begin{align*}
+\\boldsymbol{A} \\times \\boldsymbol{B} &= \\epsilon_{123} A_1 B_2 \\boldsymbol{e}_3 + \\epsilon_{132} A_1 B_3 \\boldsymbol{e}_2 + \\epsilon_{213} A_2 B_1 \\boldsymbol{e}_3 + \\epsilon_{231} A_2 B_3 \\boldsymbol{e}_1 + \\epsilon_{312} A_3 B_1 \\boldsymbol{e}_2 + \\epsilon_{321} A_3 B_2 \\boldsymbol{e}_1\\\\
+&= 1\\times1\\times5\\times\\boldsymbol{e}_3 + (-1)\\times1\\times6\\times\\boldsymbol{e}_2 + (-1)\\times2\\times4\\times\\boldsymbol{e}_3 + 1\\times2\\times6\\times\\boldsymbol{e}_1 + 1\\times3\\times4\\times\\boldsymbol{e}_2 + (-1)\\times3\\times5\\times\\boldsymbol{e}_1\\\\
+&=(12 - 15)\\boldsymbol{e}_1+(12 - 6)\\boldsymbol{e}_2+(5 - 8)\\boldsymbol{e}_3\\\\
+&= (-3, 6, -3)
+\\end{align*}
+\\]\n所以$\\boldsymbol{A} \\times \\boldsymbol{B} = (-3, 6, -3)$。</answer>"
+    },
+    {
+        "instruction": "利用Levi-Civita符号的性质，计算以下表达式：$\\epsilon_{ijk} \\epsilon_{lmn} A_j B_k C_l D_m E_n$，其中$A_j$, $B_k$, $C_l$, $D_m$, $E_n$是向量分量。",
+        "output": "<think>\n1. 首先明确目标是利用Levi - Civita符号的性质计算给定表达式。\n2. 回忆Levi - Civita符号的重要性质，其中关键的是它与Kronecker delta符号的关系，即$$\\epsilon_{ijk}\\epsilon_{lmn}=\\delta_{il}(\\delta_{jm}\\delta_{kn}-\\delta_{jn}\\delta_{km})+\\delta_{im}(\\delta_{jn}\\delta_{kl}-\\delta_{jl}\\delta_{kn})+\\delta_{in}(\\delta_{jl}\\delta_{km}-\\delta_{jm}\\delta_{kl})$$ ，在这种情况下，由于表达式的对称性，我们可以直接利用$$\\epsilon_{ijk}\\epsilon_{lmn}=\\delta_{il}\\delta_{jm}\\delta_{kn}+\\delta_{im}\\delta_{jn}\\delta_{kl}+\\delta_{in}\\delta_{jl}\\delta_{km}-\\delta_{in}\\delta_{jm}\\delta_{kl}-\\delta_{im}\\delta_{jl}\\delta_{kn}-\\delta_{il}\\delta_{jn}\\delta_{km}$$ ，进一步简化可得$$\\epsilon_{ijk}\\epsilon_{lmn}=\\delta_{jl}\\delta_{km}-\\delta_{jm}\\delta_{kl}$$ ，这是解题的关键步骤。\n3. 有了这个关系后，将其代入原式，就可以把含有Levi - Civita符号的式子转化为含有Kronecker delta符号的式子。\n4. 再根据Kronecker delta符号$$\\delta_{ab}$$的性质，当\\(a = b\\)时$$\\delta_{ab}=1$$，否则$$\\delta_{ab}=0$$，对式子进行化简。\n5. 最后通过整理得到最终的表达式。\n</think>\n<answer>\n1. 根据Levi - Civita符号性质$$\\epsilon_{ijk}\\epsilon_{lmn}=\\delta_{jl}\\delta_{km}-\\delta_{jm}\\delta_{kl}$$，将原式$$\\epsilon_{ijk} \\epsilon_{lmn} A_j B_k C_l D_m E_n$$转化为$$(\\delta_{jl} \\delta_{km} - \\delta_{jm} \\delta_{kl}) A_j B_k C_l D_m E_n$$。\n2. 利用Kronecker delta符号性质展开：\n   - 对于$$\\delta_{jl} \\delta_{km}A_j B_k C_l D_m E_n$$，因为$$\\delta_{jl}$$意味着当\\(j = l\\)时该项不为零，$$\\delta_{km}$$意味着当\\(k = m\\)时该项不为零，所以$$\\delta_{jl} \\delta_{km}A_j B_k C_l D_m E_n = A_j B_k C_j D_k E_n$$。\n   - 对于$$\\delta_{jm} \\delta_{kl}A_j B_k C_l D_m E_n$$，因为$$\\delta_{jm}$$意味着当\\(j = m\\)时该项不为零，$$\\delta_{kl}$$意味着当\\(k = l\\)时该项不为零，所以$$\\delta_{jm} \\delta_{kl}A_j B_k C_l D_m E_n = A_j B_k C_k D_j E_n$$。\n   - 则原式变为$$A_j B_k C_j D_k E_n - A_j B_k C_k D_j E_n$$。\n3. 进一步整理：\n   - 因为$$A_j C_j=\\sum_{j = 1}^{3}A_j C_j$$，$$B_k D_k=\\sum_{k = 1}^{3}B_k D_k$$，所以$$A_j B_k C_j D_k E_n=(A_j C_j)(B_k D_k) E_n$$。\n   - 同理$$A_j B_k C_k D_j E_n=(A_j D_j)(B_k C_k) E_n$$。\n   - 最终表达式为$$(A_j C_j)(B_k D_k) E_n - (A_j D_j)(B_k C_k) E_n$$。\n</answer>"
+    }
+]
+[
+{
+    "instruction": "给定一个向量场 $\\pmb{B} = B_i \\hat{e}_i$，使用爱因斯坦求和约定写出其旋度 $\\nabla \\times \\pmb{B}$ 的表达式，并推导其在三维空间中的分量形式。",
+    "output": "<think>首先要明确爱因斯坦求和约定的规则，即重复的指标意味着对该指标从1到3进行求和。对于向量场旋度的定义，在这种约定下，通过引入Levi - Civita符号来简洁地表示。要推导三维空间中的分量形式，就需要根据Levi - Civita符号的取值，分别代入$i = 1, 2, 3$进行计算。当$i = 1$时，$j$和$k$取遍1到3，根据Levi - Civita符号$\\epsilon_{1jk}$的非零取值情况来确定旋度的第一个分量；同理可求$i = 2$和$i = 3$时的分量。</think>\n<answer>根据爱因斯坦求和约定，向量场$\\pmb{B}$的旋度$\\nabla \\times \\pmb{B}$表示为：$$(\\nabla \\times \\pmb{B})_i = \\epsilon_{ijk} \\frac{\\partial B_k}{\\partial x_j}$$，其中$\\epsilon_{ijk}$是Levi - Civita符号，$i$, $j$, $k$为哑指标默认求和。\n\n在三维空间中：\n当$i = 1$时，\n\\[
+\\begin{align*}
+(\\nabla \\times \\pmb{B})_1&=\\epsilon_{1jk} \\frac{\\partial B_k}{\\partial x_j}\\\\
+&=\\epsilon_{123} \\frac{\\partial B_3}{\\partial x_2}+\\epsilon_{132} \\frac{\\partial B_2}{\\partial x_3}\\\\
+&=1\\times\\frac{\\partial B_3}{\\partial x_2}+(-1)\\times\\frac{\\partial B_2}{\\partial x_3}\\\\
+&=\\frac{\\partial B_3}{\\partial x_2} - \\frac{\\partial B_2}{\\partial x_3}
+\\end{align*}
+\\]\n当$i = 2$时，\n\\[
+\\begin{align*}
+(\\nabla \\times \\pmb{B})_2&=\\epsilon_{2jk} \\frac{\\partial B_k}{\\partial x_j}\\\\
+&=\\epsilon_{231} \\frac{\\partial B_1}{\\partial x_3}+\\epsilon_{213} \\frac{\\partial B_3}{\\partial x_1}\\\\
+&=1\\times\\frac{\\partial B_1}{\\partial x_3}+(-1)\\times\\frac{\\partial B_3}{\\partial x_1}\\\\
+&=\\frac{\\partial B_1}{\\partial x_3} - \\frac{\\partial B_3}{\\partial x_1}
+\\end{align*}
+\\]\n当$i = 3$时，\n\\[
+\\begin{align*}
+(\\nabla \\times \\pmb{B})_3&=\\epsilon_{3jk} \\frac{\\partial B_k}{\\partial x_j}\\\\
+&=\\epsilon_{312} \\frac{\\partial B_2}{\\partial x_1}+\\epsilon_{321} \\frac{\\partial B_1}{\\partial x_2}\\\\
+&=1\\times\\frac{\\partial B_2}{\\partial x_1}+(-1)\\times\\frac{\\partial B_1}{\\partial x_2}\\\\
+&=\\frac{\\partial B_2}{\\partial x_1} - \\frac{\\partial B_1}{\\partial x_2}
+\\end{align*}
+\\]\n所以在三维空间中旋度的分量形式为：\n$$(\\nabla \\times \\pmb{B})_1 = \\frac{\\partial B_3}{\\partial x_2} - \\frac{\\partial B_2}{\\partial x_3}$$，\n$$(\\nabla \\times \\pmb{B})_2 = \\frac{\\partial B_1}{\\partial x_3} - \\frac{\\partial B_3}{\\partial x_1}$$，\n$$(\\nabla \\times \\pmb{B})_3 = \\frac{\\partial B_2}{\\partial x_1} - \\frac{\\partial B_1}{\\partial x_2}$$。</answer>"
+},
+{
+    "instruction": "利用Levi-Civita符号的性质，证明以下等式成立：$\\epsilon_{ijk} \\epsilon_{lmn} = \\delta_{il} \\delta_{jm} \\delta_{kn} + \\delta_{im} \\delta_{jn} \\delta_{kl} + \\delta_{in} \\delta_{jl} \\delta_{km} - \\delta_{il} \\delta_{jn} \\delta_{km} - \\delta_{im} \\delta_{jl} \\delta_{kn} - \\delta_{in} \\delta_{jm} \\delta_{kl}$",
+    "output": "<think>首先要明确Levi - Civita符号和Kronecker delta符号的定义及性质。Levi - Civita符号$\\epsilon_{ijk}$在$i,j,k$为1,2,3的偶排列时为1，奇排列时为 - 1，有两个指标相同时为0；Kronecker delta符号$\\delta_{ij}$当$i = j$时为1，$i \\neq j$时为0。要证明给定等式，需从Levi - Civita符号的性质出发，通过分析其非零情况，结合Kronecker delta符号来展开并比较各项。从参考答案思路看，先利用了Levi - Civita符号指标轮换不变性，又依据其为零的条件缩小讨论范围，最后得出等式形式，但具体展开和比较过程未详细给出，我们需详细完成这部分。</think>\n<answer>\n1. **Levi - Civita符号性质回顾**：\n   - Levi - Civita符号$\\epsilon_{ijk}$具有以下性质：\n     - 指标轮换对称性：$\\epsilon_{ijk}=\\epsilon_{jki}=\\epsilon_{kij}$，同时$\\epsilon_{ijk}=-\\epsilon_{ikj}=-\\epsilon_{jik}=-\\epsilon_{kji}$。\n     - 当$i = j$或$i = k$或$j = k$时，$\\epsilon_{ijk}=0$。\n   - Kronecker delta符号$\\delta_{ij}$定义为：$\\delta_{ij}=\\begin{cases}1, & i = j\\\\0, & i\\neq j\\end{cases}$。\n2. **等式证明**：\n   - 等式左边为$\\epsilon_{ijk}\\epsilon_{lmn}$。\n   - 等式右边各项分析：\n     - 对于$\\delta_{il}\\delta_{jm}\\delta_{kn}$：\n       - 当$i = l$，$j = m$，$k = n$时，该项为1。此时，若$i,j,k$为1,2,3的某一排列（因为Levi - Civita符号非零要求指标各不相同），那么$\\epsilon_{ijk}\\epsilon_{lmn}=\\epsilon_{ijk}\\epsilon_{ijk}$。由于$\\epsilon_{ijk}$的平方在其非零（即$i,j,k$为1,2,3的排列）时为1，所以该项对应了$\\epsilon_{ijk}\\epsilon_{lmn}$中$i = l$，$j = m$，$k = n$且$i,j,k$为排列的情况。\n     - 对于$\\delta_{im}\\delta_{jn}\\delta_{kl}$：\n       - 当$i = m$，$j = n$，$k = l$时，该项为1。此时，若$i,j,k$为1,2,3的某一排列，那么$\\epsilon_{ijk}\\epsilon_{lmn}=\\epsilon_{ijk}\\epsilon_{mni}$。根据Levi - Civita符号指标轮换对称性，$\\epsilon_{mni}=\\epsilon_{imn}$，所以$\\epsilon_{ijk}\\epsilon_{mni}=\\epsilon_{ijk}\\epsilon_{imn}$，该项对应了这种情况。\n     - 对于$\\delta_{in}\\delta_{jl}\\delta_{km}$：\n       - 当$i = n$，$j = l$，$k = m$时，该项为1。此时，若$i,j,k$为1,2,3的某一排列，那么$\\epsilon_{ijk}\\epsilon_{lmn}=\\epsilon_{ijk}\\epsilon_{nlj}$，根据指标轮换对称性，$\\epsilon_{nlj}=\\epsilon_{jln}$，所以$\\epsilon_{ijk}\\epsilon_{nlj}=\\epsilon_{ijk}\\epsilon_{jln}$，该项对应了这种情况。\n     - 对于$-\\delta_{il}\\delta_{jn}\\delta_{km}$：\n       - 当$i = l$，$j = n$，$k = m$时，该项为 - 1。此时，若$i,j,k$为1,2,3的某一排列，那么$\\epsilon_{ijk}\\epsilon_{lmn}=\\epsilon_{ijk}\\epsilon_{lnm}$，根据Levi - Civita符号的反对称性，$\\epsilon_{lnm}=-\\epsilon_{lmn}$，所以该项对应了这种情况。\n     - 对于$-\\delta_{im}\\delta_{jl}\\delta_{kn}$：\n       - 当$i = m$，$j = l$，$k = n$时，该项为 - 1。此时，若$i,j,k$为1,2,3的某一排列，那么$\\epsilon_{ijk}\\epsilon_{lmn}=\\epsilon_{ijk}\\epsilon_{mjl}$，根据反对称性，$\\epsilon_{mjl}=-\\epsilon_{jml}$，所以该项对应了这种情况。\n     - 对于$-\\delta_{in}\\delta_{jm}\\delta_{kl}$：\n       - 当$i = n$，$j = m$，$k = l$时，该项为 - 1。此时，若$i,j,k$为1,2,3的某一排列，那么$\\epsilon_{ijk}\\epsilon_{lmn}=\\epsilon_{ijk}\\epsilon_{nml}$，根据反对称性，$\\epsilon_{nml}=-\\epsilon_{mnl}$，所以该项对应了这种情况。\n   - 综合以上各项，等式右边完整地涵盖了$\\epsilon_{ijk}\\epsilon_{lmn}$所有可能的非零情况及其符号，所以等式$\\epsilon_{ijk} \\epsilon_{lmn} = \\delta_{il} \\delta_{jm} \\delta_{kn} + \\delta_{im} \\delta_{jn} \\delta_{kl} + \\delta_{in} \\delta_{jl} \\delta_{km} - \\delta_{il} \\delta_{jn} \\delta_{km} - \\delta_{im} \\delta_{jl} \\delta_{kn} - \\delta_{in} \\delta_{jm} \\delta_{kl}$成立。\n</answer>"
+}
+]

@@ -6,9 +6,11 @@ import os
 from tqdm import tqdm
 import copy
 import time
+import threading
 
 # api_key = "sk-a81461b386a94a2cbe2c040f99cac1f3"
 api_key = "sk-8d0ba939547b4585acd59da8a383efe0"
+# api_key = "fb37da60-b6f8-4f33-a955-7b0e96c4af64"
 
 def save_json(data, output_path, append=False):
     open_type = "w"
@@ -46,7 +48,8 @@ def analyse_scope_of_knowledge(file_path):
                 {"role": "system", "content": "你是一位电动力学领域的专家, 下面我会给出一个电动力学习题，请你分析一下这道题所用到的数理知识有哪些, 简短一些, 尽量不要超过2048个token"},
                 {"role": "user", "content": f"{obj["input"]}"},
             ],
-            stream=False
+            stream=False,
+            temperature=0.0,
         )
 
         f.write(f"response: {response.choices[0].message.content}\n")
@@ -571,43 +574,46 @@ def reasoner(file_path):
     save_json(outputs, output_path)
 
 def answer_cot(file_path):
-    prompt = r"""
-    下面将给出一个或者若干个电动力学问题以及对应的参考答案，请分别为每道题给出对应的解答。
-    注意公式使用$$并且关键词前使用\\,比如$\\sum$, $\\frac a b $。保证我能用python的json.loads()函数解析。
-    输出只需要返回json的格式，不需要其他的内容。
-    格式参考下面的例子，返回一个json列表，必要包含```json等格式内容，每个元素对应一道题，只有两个键值"input"和"output"分别表示问题和答案，返回json的元素数量必须与输入的题目数量一致。
-    你需要将你自己的思考过程和自我反思过程整理好一并放到输出当中，不要太短,要全面和详细，思考过程用<think></think>包裹，答案用<answer></answer>包裹。
+    # 注意公式要符合Latex的格式，使用$$包裹并且关键词前使用两个\符号,比如$\\sum$, $\\frac a b $。保证我能用python的json.loads()函数解析。
+    prompt = """
+    下面将给出一个或者多个独立的电动力学问题和参考答案(不保证答案的格式和内容正确性)，请分别为每道题给出对应的思考和解答过程。
+    注意回答的公式要符合Latex的格式，使用$$包裹。
 
-    例子：```
-    输入：
-    [
-        {
-            "instruction": "在相对论粒子的辐射中，电场 $\\boldsymbol{E}$ 的表达式是如何与加速度的平行和垂直分量相关的？",
-            "input": "",
-            "output": "线性加速器对应 $\\boldsymbol{v}\\parallel\\dot{\\boldsymbol{v}}$ 的情况..."
-        },
-        {
-            "instruction": "在相对论粒子的辐射中，交叉项 $\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}$ 的表达式是什么？",
-            "input": "",
-            "output": "交叉项 $\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}$ 的表达式为..."
-        }
-    ]
+    如果有多个问题，要分开回答，题目之间用(---)分割开。回答过程中不要将这几个问题之间关联回答，不要出现"第一个问题"之类的对于题目编号的表述，参考下面的格式。
+    对于每一道题你需要将你自己的思考过程整理好放到输出当中，如果题目比较复杂还需要复杂的反思过程。思考要全面和详细，作答过程要清晰和简洁。
+    思考过程用<think></think>包裹，作答过程用<answer></answer>包裹，思考和回答之间有个\n。
 
-    输出：
-    [
-        {
-            "input": "在相对论粒子的辐射中，电场 $\\boldsymbol{E}$ 的表达式是如何与加速度的平行和垂直分量相关的？",
-            "output": "<think>...</think>\n<answer>...</answer>"
-        },
-        {
-            "input": "在相对论粒子的辐射中，交叉项 $\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}$ 的表达式是什么？",
-            "output": "<think>...</think>\n<answer>...</answer>"
-        }
-    ]
+    格式的例子：```
+    User：
+    {
+        问题1的描述
+    },
+    {
+        问题2的描述
+    }
+
+    Assistant：
+        <think>问题1的思考</think>
+        <answer>问题1的回答</answer>
+    (---)
+        <think>问题2的思考</think>
+        <answer>问题2的回答</answer>
 
     ```
     
-    下面将给出正式的问题和参考答案：\n
+    下面将给出正式的问题：
+
+    """
+
+    # 公式要使用$$包裹。并且所有公式内的关键词前都需要恰好两个转义符号\，例如将$\frac \prime$改成$\\frac \\prime$。并且也不需要过多的转义符号，例如将$\\\\frac$改成$\\frac$,将$\\\\boldsymbol{A}$改成$\\boldsymbol{A}$。
+    # 一个良好的latex例子：交叉项 $\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}$
+    latex_prompt = """
+    我会给你一段内容，检查其中latex公式有没有格式错误，如果没有直接原文返回给我，不要输出多余内容，否则修正后全部返回给我
+    公式要使用$$包裹。例如\\(\\boldsymbol{A}\\)要改成$\\boldsymbol{A}$
+    主要不要有多余的转义符号，例如将$\\\\frac$改成$\\frac$,将$\\\\boldsymbol{A}$改成$\\boldsymbol{A}$。
+
+    下面是内容：\n
+        
     """
     # 注意思维链的公式要使用$$，并且在关键词前使用\\，例如\\sum,\\delta等，否则无法用python解析。
     # 例子：根据爱因斯坦求和约定，二阶张量 $T_{ij}$ 的迹 $\\text{Tr}(T)$ 可以表示为 $\\text{Tr}(T) = T_{ii}$，其中 $i$ 是哑指标，默认求和。\n单位张量 $\\delta_{ij}$ 的定义是 $\\delta_{ij} = 1$ 当 $i = j$。
@@ -619,49 +625,95 @@ def answer_cot(file_path):
 
     with open(output_path, "w") as f:
         pass
+    with open("./datasets/answer_wastes.txt", "w") as f:
+        pass
     
-    batch_size = 5
+    thread_size = 1
+    batch_size = 20 * thread_size
     datasets = [{"instruction": data["instruction"], "output": data["output"]} for data in datasets]
+    # datasets = [{"instruction": data["instruction"]} for data in datasets]
 
     data_batches = [datasets[i: min(i+batch_size, len(datasets))] for i in range(0, len(datasets), batch_size)]
 
-    for idx, objs in enumerate(tqdm(data_batches, desc="Processing questions")):
-        questions = json.dumps(objs, ensure_ascii=False, indent=4)
+    # doubao
+    client = OpenAI(
+        api_key = "fb37da60-b6f8-4f33-a955-7b0e96c4af64",
+        base_url = "https://ark.cn-beijing.volces.com/api/v3",
+    )
+
+    lock = threading.Lock()
+
+    def process_batch(idx, objs):
+        nonlocal outputs
+        nonlocal lock
 
 
+        # questions = json.dumps(objs, ensure_ascii=False, indent=4)
+        questions = prompt
+        for obj in objs:
+            questions += f"{{\n{obj['instruction'] + "\n\n参考答案\n" + obj["output"]}\n}}\n"
+        
         messages = [{"role": "user", "content": f"{prompt + questions}"}]
 
         if idx < 2:
             print(f"questions example: {prompt + questions}")
-
-        response = client.chat.completions.create(
-            model="deepseek-reasoner",
-            # model="deepseek-chat",
-            messages=messages
+        # doubao
+        completion = client.chat.completions.create(
+            model = "ep-20250124143019-2dn6m", # your model endpoint ID
+            messages=messages,
+            temperature=0.0
         )
-        # reasoning_content = response.choices[0].message.reasoning_content
-        content = response.choices[0].message.content
-        content.replace("```json", "").replace("```", "")
+        content = completion.choices[0].message.content
 
-        time.sleep(0.1)
-        try:
-            answers = json.loads(content)
-            opts = answers
+        content = content.replace("```json", "").replace("```", "")
 
-            # opts = copy.deepcopy(objs)
-            # for idx in range(batch_size):
-            #     opts[idx]["output"] = answers[idx]["output"]
-            outputs += opts
-            if idx < 5 or idx%5 == 0:
-                save_json(outputs, output_path)
+        completion = client.chat.completions.create(
+            model = "ep-20250124143019-2dn6m", # your model endpoint ID
+            messages=[{"role": "user", "content": f"{latex_prompt + content}"}]
+        )
+        content = completion.choices[0].message.content
 
-        except Exception as e:
-            # 捕获其他可能的异常
-            print(f"发生错误: {e}")
-            print(content)
-            with open("./datasets/answer_wastes.txt", "a") as wastes:
-                wastes.write(content + "\n")
-            continue
+        with lock:
+
+            try:
+                contents = [item for item in content.split("(---)\n") if item]
+
+                opts = copy.deepcopy(objs)
+
+                if len(contents) != len(opts):
+                    raise Exception("contents length not equal to opts length")
+                for i in range(len(contents)):
+                    opts[i]["output"] = contents[i]
+
+                outputs += opts
+                if idx < 5 or idx%5 == 0:
+                    save_json(outputs, output_path)
+            except Exception as e:
+                # 捕获其他可能的异常
+                print(f"发生错误: {e}")
+                # print(content)
+                with open("./datasets/answer_wastes.txt", "a") as wastes:
+                    wastes.write(content + "\n")
+
+    for idx, objs in enumerate(tqdm(data_batches, desc="Processing questions")):
+        # process_batch(idx, objs[0: thread_size])
+        threads = []
+        for i in range(0, batch_size, thread_size):
+            threads.append(threading.Thread(target=process_batch, args=(idx, objs[i: i+thread_size])))
+        for thread in threads:
+            thread.start()
+        for thread in threads:
+            thread.join()
+            
+        # response = client.chat.completions.create(
+        #     # model="deepseek-reasoner",
+        #     model="deepseek-chat",
+        #     messages=messages
+        # )
+        # # reasoning_content = response.choices[0].message.reasoning_content
+        # content = response.choices[0].message.content
+
+        
 
 
     save_json(outputs, output_path)

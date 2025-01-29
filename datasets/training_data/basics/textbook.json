@@ -4765,26 +4765,6 @@
         "output": "顺磁性是指在外磁场作用下，物质内部产生与外磁场方向相同的磁化强度，导致物质整体表现出顺磁性。顺磁性物质的磁化强度通常较弱。"
     },
     {
-        "instruction": "problem1 description",
-        "input": "",
-        "output": "考虑一个顺磁性材料，其磁化强度$\\mathbf{M}$与外磁场$\\mathbf{H}$的关系为$\\mathbf{M} = \\chi_m \\mathbf{H}$，其中$\\chi_m$是磁化率。假设外磁场$\\mathbf{H} = H_0 \\hat{z}$，求该材料的磁化强度$\\mathbf{M}$。"
-    },
-    {
-        "instruction": "problem2 description",
-        "input": "",
-        "output": "一个顺磁性材料的磁化率$\\chi_m$为$1.2 \\times 10^{-5}$。当外磁场$\\mathbf{H} = 500 \\hat{x} \\, \\text{A/m}$时，求该材料的磁化强度$\\mathbf{M}$。"
-    },
-    {
-        "instruction": "problem3 description",
-        "input": "",
-        "output": "推导顺磁性材料的磁化强度$\\mathbf{M}$与磁场$\\mathbf{B}$之间的关系。假设磁化率$\\chi_m$已知，且$\\mathbf{B} = \\mu_0 (\\mathbf{H} + \\mathbf{M})$，其中$\\mu_0$是真空磁导率。"
-    },
-    {
-        "instruction": "problem4 description",
-        "input": "",
-        "output": "一个顺磁性材料的磁化率$\\chi_m$为$2.5 \\times 10^{-4}$。当外磁场$\\mathbf{H} = 1000 \\hat{y} \\, \\text{A/m}$时，求该材料的磁感应强度$\\mathbf{B}$。假设真空磁导率$\\mu_0 = 4\\pi \\times 10^{-7} \\, \\text{N/A}^2$。"
-    },
-    {
         "instruction": "描述铁磁性的概念",
         "input": "",
         "output": "铁磁性是指在外磁场作用下，物质内部产生强烈的磁化强度，且磁化强度依赖于磁化的历史。铁磁性物质的磁化强度通常较强，且在外磁场移除后仍能保持一定的磁化强度。"
