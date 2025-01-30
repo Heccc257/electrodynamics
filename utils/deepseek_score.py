@@ -7,7 +7,7 @@ from tqdm import tqdm
 import copy
 import random
 import time
-
+import threading
 # api_key = "sk-a81461b386a94a2cbe2c040f99cac1f3"
 api_key = "sk-8d0ba939547b4585acd59da8a383efe0"
 api_key = "sk-3ad9b85645f246788fc2f3ae474bc6a0"
@@ -116,7 +116,7 @@ def median(file_path):
     prompt = r"""
     下面将给出一个或者若干个电动力学问题,对应的标准答案,回答以及打分和评论。
     根据回答的打分和评论，重新设计回答，使得回答更加符合要求，以便于我能更好的学习如何解决这个问题,如果认为有必要，还要需要补充若干(1-5道)相关的题目，同样的给出题目和回答,不需要包含"补充题目"等字样。
-    要求你的回答给出比较复杂并且足够清晰的思考过程，思考过程用</think>包裹，步骤用<|>隔开；回答用</answer>包裹.格式参考给你的例子。
+    要求你的回答给出比较复杂并且足够清晰的思考过程，思考过程用</think>包裹；回答用</answer>包裹.格式参考给你的例子。
     
     用json的格式返回，并且开头和结尾不需要返回```，只需要直接返回内容。
     参考下面的例子,返回的是一个json列表,注意你的列表中的每个元素只有两个键值"input"和"output"，要严格按照给你的例子输出
@@ -126,15 +126,14 @@ def median(file_path):
     [
         {
             "instruction": "Lorentz力密度是如何表示的？",
-            "standard": "</think><|>Lorentz力密度 $\\mathbf{f}$ ...。</answer>... </answer>",
-            "output": "</think><|>...</answer>Lorentz力密度表示为 $$\\mathbf{f}_{lorentz} = \\rho_e \\mathbf{E} + \\mathbf{J} \\times \\mathbf{B},$$ 其中 $\\rho_e$ 是电荷密度，$\\mathbf{J}$ 是电流密度。</answer>",
+            "standard": "...",
             "score": 7,
             "comment": "回答基本正确，但推导过程较为冗长，且部分表述不够简洁，与标准答案的简洁性有一定差距。"
         },
         {
             "instruction": "Biot-Savart 定律描述了___。",
-            "standard": "</think> $d\\vec{B}$。<|>数学表达式为 $d\\vec{B} = \\frac{\\mu_0}{4\\pi} \\frac{Id\\vec{l} \\times \\vec{r}}{r^3}$，其中 $\\mu_0$ 是真空磁导率，$\\vec{r}$ 是从电流元到观察点的位矢，$r$ 是 $\\vec{r}$ 的模。<|>该定律适用于稳恒电流产生的磁场计算。</think>\n</answer>Biot-Savart 定律描述了电流元 $Id\\vec{l}$ 在空间中某点产生的磁场 $d\\vec{B}$。</answer>",
-            "output": " </think></answer>Biot-Savart Law 描述的是电流元产生的磁场 $$\\vec{d}\\mathbf{B} = \\frac{\\mu_0}{4\\pi} \\frac{I (\\vec{dl} \\times \\hat{r})}{r^2}.$$ 其应用包括计算长直导线、螺线管等装置中的磁场分布。</answer>",
+            "standard": "...",
+            "output": " ...",
             "score": 6,
             "comment": "回答虽然提到了Biot-Savart定律的数学表达式和应用，但开头部分的内容与问题无关，且没有直接回答Biot-Savart定律描述的内容。"
         }
@@ -143,11 +142,11 @@ def median(file_path):
     [
         {
             "input": "题目描述1",
-            "output": "</think></think> </answer><answer>"
+            "output": "<think></think> <answer></answer>"
         },
         {
             "input": "题目描述2",
-            "output": "</think></think> </answer><answer>"
+            "output": "<think></think> <answer></answer>"
         }
     ]
     ```
@@ -168,8 +167,11 @@ def median(file_path):
 
     data_batches = [datasets[i: min(i+batch_size, len(datasets))] for i in range(0, len(datasets), batch_size)]
 
-
-    for idx, objs in enumerate(tqdm(data_batches, desc="Processing questions")):
+    lock = threading.Lock()
+    def process_batch(idx, objs):
+        nonlocal outputs
+        nonlocal lock
+        
         questions = json.dumps(objs, ensure_ascii=False, indent=4)
 
         # if idx < 2:
@@ -184,21 +186,58 @@ def median(file_path):
         # reasoning_content = response.choices[0].message.reasoning_content
         content = response.choices[0].message.content
         # print("content")
-        try:
-            # if idx < 2:
-            #     print(f"sample response: {content}")
-            answers = json.loads(content)
-            outputs += answers
-            if idx%2 == 0:
+        with lock:
+            try:
+                # if idx < 2:
+                #     print(f"sample response: {content}")
+                answers = json.loads(content)
+                outputs += answers
                 save_json(outputs, output_path)
 
-        except Exception as e:
-            # 捕获其他可能的异常
-            print(f"发生错误: {e}")
-            print(str(content))
-            with open("./datasets/median_wastes.txt", "a") as wastes:
-                wastes.write(str(content))
-            continue
+            except Exception as e:
+                # 捕获其他可能的异常
+                print(f"发生错误: {e}")
+                print(str(content))
+                with open("./datasets/median_wastes.txt", "a") as wastes:
+                    wastes.write(str(content))
+
+    threads = []
+    for idx, objs in enumerate(tqdm(data_batches, desc="Processing questions")):
+        
+        t = threading.Thread(target=process_batch, args=(idx, objs))
+        t.start()
+        threads.append(t)
+        questions = json.dumps(objs, ensure_ascii=False, indent=4)
+        if idx%10 == 0:
+            for t in threads:
+                t.join()
+        # if idx < 2:
+        #     print(f"sample question: {questions}")
+
+        # messages = [{"role": "user", "content": f"{prompt + questions}"}]
+        # response = client.chat.completions.create(
+        #     # model="deepseek-reasoner",
+        #     model="deepseek-chat",
+        #     messages=messages
+        # )
+        # # reasoning_content = response.choices[0].message.reasoning_content
+        # content = response.choices[0].message.content
+        # # print("content")
+        # try:
+        #     # if idx < 2:
+        #     #     print(f"sample response: {content}")
+        #     answers = json.loads(content)
+        #     outputs += answers
+        #     if idx%2 == 0:
+        #         save_json(outputs, output_path)
+
+        # except Exception as e:
+        #     # 捕获其他可能的异常
+        #     print(f"发生错误: {e}")
+        #     print(str(content))
+        #     with open("./datasets/median_wastes.txt", "a") as wastes:
+        #         wastes.write(str(content))
+        #     continue
 
 
     save_json(outputs, output_path)

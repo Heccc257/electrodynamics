@@ -19,6 +19,7 @@ def save_json(data, output_path, append=False):
     json_str = json.dumps(data, ensure_ascii=False, indent=4)
     with open(output_path, open_type, encoding="utf-8") as f:
         f.write(json_str)
+        f.flush()
 
 def analyse_scope_of_knowledge(file_path):
 
@@ -664,7 +665,7 @@ def answer_cot(file_path):
         pass
     
     thread_size = 1
-    batch_size = 5 * thread_size
+    batch_size = 15 * thread_size
     datasets = [{"input": data["input"], "output": data["output"]} for data in datasets]
     # datasets = [{"instruction": data["instruction"]} for data in datasets]
 
@@ -682,7 +683,9 @@ def answer_cot(file_path):
         nonlocal outputs
         nonlocal lock
 
-
+        if idx < 44: return
+        if idx > 45: return
+        
         # questions = json.dumps(objs, ensure_ascii=False, indent=4)
         questions = prompt
         for obj in objs:
@@ -718,9 +721,9 @@ def answer_cot(file_path):
 
                 opts = copy.deepcopy(objs)
 
-                if len(contents) != len(opts):
+                if len(contents) < len(opts):
                     raise Exception("contents length not equal to opts length")
-                for i in range(len(contents)):
+                for i in range(len(opts)):
                     opts[i]["output"] = contents[i]
 
                 outputs += opts
