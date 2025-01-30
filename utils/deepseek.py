@@ -86,6 +86,7 @@ def analyse_step_by_step(file_path):
         analyse["input"] = f"question: {obj["input"]}\n\n answer: {obj["output"]}"
 
         f.write(f"question {question}\n")
+        
         response = client.chat.completions.create(
             model="deepseek-chat",
             messages=[
@@ -349,7 +350,12 @@ def blank_textbook(file_path):
     下面是要给你的内容\n
     """
 
-    client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
+    # client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
+    # doubao
+    client = OpenAI(
+        api_key = "fb37da60-b6f8-4f33-a955-7b0e96c4af64",
+        base_url = "https://ark.cn-beijing.volces.com/api/v3",
+    )
 
     datas = json.load(open(file_path, 'r'))
 
@@ -416,71 +422,100 @@ def blank_textbook(file_path):
     save_json(blank_questions, output_path)
 
 def origin_textbook(file_path):
-    prompt = r"""下面我会给你一个电动力学的教材片段，帮我处理一下格式
-    对于title部分，将其变为一个问句，并且不要出现如1.4等编号
-    对于content部分，去掉其中没有关键作用的描述，只保留关键的论述和公式.
-    用json的格式返回给我，格式如下，只需要返回json本体就行了，不需要开头和结尾的```标记
-        [
-            {
-                "instruction": "在电动力学中，$P_{l}(\cos\theta)$ 表示___。",
-                "input": "",
-                "output": "勒让德多项式"
-            },
-            {
-                "instruction": "使用爱因斯坦求和约定，向量 $\pmb{A}=A_{1}\pmb{e}_{1}+A_{2}\pmb{e}_{2}+A_{3}\pmb{e}_{3}$ 可以表达为___。",
-                "input": "",
-                "output": "$A_{i}{e_{i}}$"
-            }
-        ]
+    prompt = r"""下面我会给你一个电动力学的教材片段，请帮我根据教材内容出若干道高质量的教难的题，要求每道题都要与教材内容相关，并且要与教材内容高度相关，并且要与教材内容高度相关，尤其是和相对论有关的问题。
+    题目以推导和计算为主，可以有关键概念的问答。
+    题目的公式使用Latex的格式，使用$包裹，例如$\sum_i$，$\frac a b $ 。
+    只需要返回题目的内容，每道题一行，不需要题号.
     
     """
     client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
+    # # doubao
+    # client = OpenAI(
+    #     api_key = "fb37da60-b6f8-4f33-a955-7b0e96c4af64",
+    #     base_url = "https://ark.cn-beijing.volces.com/api/v3",
+    # )
 
     datas = json.load(open(file_path, 'r'))
+    datas = datas[::-1]
 
     origin_questions = []
     output_path = "./datasets/origin.json"
 
     with open(output_path, "w") as f:
         pass
-    
-    for idx, obj in enumerate(tqdm(datas, desc="Processing questions")):
+
+    lock = threading.Lock()
+
+    def process_batch(obj):
         title = obj["title"]
         content = obj["content"]
-        
+
+        # 相对论问题
+        if "相对论" not in content:
+            return
         setences = content.split('。')
-            
-        question = prompt + f"title: {title} \n\n content: {content}"
-
-        response = client.chat.completions.create(
-            model="deepseek-chat",
-            messages=[
-                {"role": "system", "content": "you are a helpful assistant"},
-                {"role": "user", "content": question},
-            ],
-            stream=False
-        )
-        response = response.choices[0].message.content
-
-        response = check_latex_format(client, response)
-        if idx < 1:
-            print(f"response: {response}")
-
-        try:
-            response = json.loads(response)
-        except Exception as e:
-            # 捕获其他可能的异常
-            print(f"发生错误: {e}")
-            print(str(response))
-            with open("./datasets/origin_waste.txt", "a") as f:
-                f.write(str(response))
-            continue
-
-        origin_questions += response
         
-        if idx%5 == 0 or idx < 5:
-            save_json(origin_questions, output_path)
+        # segments = [setences]
+        segments = []
+        segments += [setences[i: min(i+10, len(setences))] for i in range(0, len(setences), 5)]
+
+        for seg in segments:
+            question = prompt + f"title: {title} \n\n content: {seg}"
+            # response = client.chat.completions.create(
+            #     model = "ep-20250124143019-2dn6m", # your model endpoint ID
+            #     messages=[
+            #         {"role": "system", "content": "you are a helpful assistant"},
+            #         {"role": "user", "content": question},
+            #     ],
+            #     temperature=0.1
+            # )
+            # response = response.choices[0].message.content
+            try:
+                response = client.chat.completions.create(
+                    model="deepseek-chat",
+                    # model="deepseek-reasoner",
+                    messages=[
+                        {"role": "system", "content": "you are a helpful assistant"},
+                        {"role": "user", "content": question},
+                    ],
+                    stream=False
+                )
+                response = response.choices[0].message.content
+
+                with lock:
+                    for r in response.split('\n'):
+                        if len(r) > 1:
+                            origin_questions.append({"input": r, "output": " ".join(seg)})
+                    save_json(origin_questions, output_path)
+                    time.sleep(0.01)
+            except Exception as e:
+                pass
+
+    threads = []
+    for idx, obj in enumerate(tqdm(datas, desc="Processing questions")):
+        threads.append(threading.Thread(target=process_batch, args=(obj,)))
+        threads[-1].start()
+        # try:
+        #     response = json.loads(response)
+        # except Exception as e:
+        #     # 捕获其他可能的异常
+        #     print(f"发生错误: {e}")
+        #     print(str(response))
+        #     with open("./datasets/origin_waste.txt", "a") as f:
+        #         f.write(str(response))
+        #     continue
+
+        # origin_questions += response
+        
+        if idx % 10 == 0:
+            for t in threads:
+                t.join()
+            time.sleep(0.01)
     
+    for t in threads:
+        t.join()
+        # if idx%5 == 0 or idx < 5:
+        #     save_json(origin_questions, output_path)
     save_json(origin_questions, output_path)
 
 def reasoner(file_path):
@@ -576,7 +611,7 @@ def reasoner(file_path):
 def answer_cot(file_path):
     # 注意公式要符合Latex的格式，使用$$包裹并且关键词前使用两个\符号,比如$\\sum$, $\\frac a b $。保证我能用python的json.loads()函数解析。
     prompt = """
-    下面将给出一个或者多个独立的电动力学问题和参考答案(不保证答案的格式和内容正确性)，请分别为每道题给出对应的思考和解答过程。
+    下面将给出一个或者多个独立的电动力学问题和参考资料(不保证资料的格式和内容正确性)，请分别为每道题给出对应的思考和解答过程。
     注意回答的公式要符合Latex的格式，使用$$包裹。
 
     如果有多个问题，要分开回答，题目之间用(---)分割开。回答过程中不要将这几个问题之间关联回答，不要出现"第一个问题"之类的对于题目编号的表述，参考下面的格式。
@@ -629,17 +664,17 @@ def answer_cot(file_path):
         pass
     
     thread_size = 1
-    batch_size = 20 * thread_size
-    datasets = [{"instruction": data["instruction"], "output": data["output"]} for data in datasets]
+    batch_size = 5 * thread_size
+    datasets = [{"input": data["input"], "output": data["output"]} for data in datasets]
     # datasets = [{"instruction": data["instruction"]} for data in datasets]
 
     data_batches = [datasets[i: min(i+batch_size, len(datasets))] for i in range(0, len(datasets), batch_size)]
 
-    # doubao
-    client = OpenAI(
-        api_key = "fb37da60-b6f8-4f33-a955-7b0e96c4af64",
-        base_url = "https://ark.cn-beijing.volces.com/api/v3",
-    )
+    # # doubao
+    # client = OpenAI(
+    #     api_key = "fb37da60-b6f8-4f33-a955-7b0e96c4af64",
+    #     base_url = "https://ark.cn-beijing.volces.com/api/v3",
+    # )
 
     lock = threading.Lock()
 
@@ -651,15 +686,17 @@ def answer_cot(file_path):
         # questions = json.dumps(objs, ensure_ascii=False, indent=4)
         questions = prompt
         for obj in objs:
-            questions += f"{{\n{obj['instruction'] + "\n\n参考答案\n" + obj["output"]}\n}}\n"
-        
+            questions += f"{{\n{obj['input'] + "\n\n参考资料:\n" + obj["output"]}\n}}\n"
         messages = [{"role": "user", "content": f"{prompt + questions}"}]
 
         if idx < 2:
             print(f"questions example: {prompt + questions}")
+
         # doubao
         completion = client.chat.completions.create(
-            model = "ep-20250124143019-2dn6m", # your model endpoint ID
+            # model = "ep-20250124143019-2dn6m", # your model endpoint ID
+            # model="deepseek-reasoner",
+            model="deepseek-chat",
             messages=messages,
             temperature=0.0
         )
@@ -667,11 +704,12 @@ def answer_cot(file_path):
 
         content = content.replace("```json", "").replace("```", "")
 
-        completion = client.chat.completions.create(
-            model = "ep-20250124143019-2dn6m", # your model endpoint ID
-            messages=[{"role": "user", "content": f"{latex_prompt + content}"}]
-        )
-        content = completion.choices[0].message.content
+        # completion = client.chat.completions.create(
+        #     # model = "ep-20250124143019-2dn6m", # your model endpoint ID
+        #     model="deepseek-reasoner",
+        #     messages=[{"role": "user", "content": f"{latex_prompt + content}"}]
+        # )
+        # content = completion.choices[0].message.content
 
         with lock:
 
@@ -700,8 +738,7 @@ def answer_cot(file_path):
         threads = []
         for i in range(0, batch_size, thread_size):
             threads.append(threading.Thread(target=process_batch, args=(idx, objs[i: i+thread_size])))
-        for thread in threads:
-            thread.start()
+            threads[-1].start()
         for thread in threads:
             thread.join()
             

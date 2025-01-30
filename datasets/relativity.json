@@ -1,5 +1,3093 @@
 [
     {
+        "input": "推导当$\\boldsymbol{\\beta}\\parallel\\dot{\\boldsymbol{\\beta}}$时，辐射角分布$\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}=\\frac{q^{2}\\mu_{0}c}{16\\pi^{2}}\\frac{\\dot{\\beta}^{2}\\sin^{2}\\theta}{(1-\\beta\\cos\\theta)^{5}}$的详细过程  ",
+        "output": ""
+    },
+    {
+        "input": "计算$\\boldsymbol{\\beta}\\parallel\\dot{\\boldsymbol{\\beta}}$情况下总辐射功率$P_{\\parallel}=\\frac{q^{2}\\mu_{0}c\\dot{\\beta}^{2}}{6\\pi(1-\\beta^{2})^{3}}$的球坐标积分过程  ",
+        "output": ""
+    },
+    {
+        "input": "证明当$\\beta\\to1$时，辐射角分布在$\\theta\\sim\\sqrt{2(1-\\beta)}$处出现极大值  ",
+        "output": ""
+    },
+    {
+        "input": "推导$\\boldsymbol{\\beta}\\perp\\dot{\\boldsymbol{\\beta}}$情况下$|e_{R}\\times[(e_{R}-\\beta)\\times\\dot{\\beta}]|^{2}=\\dot{\\beta}^{2}[(1-\\beta\\cos\\theta)^{2}+(\\sin\\theta\\cos\\phi)^{2}(\\beta^{2}-1)]$的矢量运算步骤  ",
+        "output": ""
+    },
+    {
+        "input": "验证当$\\boldsymbol{\\beta}\\perp\\dot{\\boldsymbol{\\beta}}$时总辐射功率$P_{\\perp}=\\frac{q^{2}\\mu_{0}}{6\\pi c}\\gamma^{4}a_{\\perp}^{2}$的积分结果$\\int_{0}^{\\pi}\\frac{\\sin^{3}\\theta(1-\\beta^{2}\\sin^{2}\\phi\\cos^{2}\\phi)}{(1-\\beta\\cos\\theta)^{5}}\\mathrm{d}\\theta$  ",
+        "output": ""
+    },
+    {
+        "input": "利用矢量正交性证明交叉项$\\int\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}\\mathrm{d}\\Omega=0$的严格数学过程  ",
+        "output": ""
+    },
+    {
+        "input": "比较线性加速器($P_{\\parallel}\\propto\\gamma^{6}$)与回旋加速器($P_{\\perp}\\propto\\gamma^{4}$)的辐射功率差异，并解释其物理根源  ",
+        "output": ""
+    },
+    {
+        "input": "将李纳德公式$P=\\frac{q^{2}\\mu_{0}}{6\\pi c}(\\gamma^{6}a_{\\parallel}^{2}+\\gamma^{4}a_{\\perp}^{2})$转换为用四维加速度$g^{\\mu}=\\gamma^{2}(c\\dot{\\gamma},\\gamma\\dot{\\boldsymbol{v}}+\\gamma^{3}(\\boldsymbol{\\beta}\\cdot\\dot{\\boldsymbol{v}})\\boldsymbol{\\beta})$表示的形式  ",
+        "output": ""
+    },
+    {
+        "input": "当粒子做圆周运动时($a_{\\parallel}=0$)，推导同步辐射总功率$P_{\\text{synch}}=\\frac{q^{2}c}{6\\pi\\epsilon_{0}}\\gamma^{4}\\left(\\frac{\\dot{v}}{c}\\right)^{2}$的完整表达式  ",
+        "output": ""
+    },
+    {
+        "input": "分析轫致辐射角分布$\\sin^{2}\\theta/(1-\\beta\\cos\\theta)^{5}$在极端相对论极限$\\gamma\\gg1$时表现出的强前冲效应物理机制  ",
+        "output": ""
+    },
+    {
+        "input": "利用泰勒展开证明当$\\beta\\ll1$时李纳德公式退化为经典拉莫公式$P_{\\text{Larmor}}=\\frac{q^{2}\\mu_{0}}{6\\pi c}\\dot{v}^{2}$  ",
+        "output": ""
+    },
+    {
+        "input": "推导相对论情形下四维力$K^{\\mu}=\\frac{\\mathrm{d}p^{\\mu}}{\\mathrm{d}\\tau}$与三维力$\\boldsymbol{F}=\\frac{\\mathrm{d}\\boldsymbol{p}}{\\mathrm{d}t}$的关系，并用此重新表达辐射功率公式  ",
+        "output": ""
+    },
+    {
+        "input": "计算相对论粒子在均匀磁场中运动时的辐射功率，证明其与$\\gamma^{2}$成正比的特性  ",
+        "output": ""
+    },
+    {
+        "input": "建立粒子在同步辐射过程中的能量损失方程$\\frac{\\mathrm{d}\\gamma}{\\mathrm{d}t}=-\\frac{q^{2}\\gamma^{4}\\omega_{c}^{2}}{6\\pi\\epsilon_{0}mc^{3}}$，其中$\\omega_{c}$为回旋频率  ",
+        "output": ""
+    },
+    {
+        "input": "分析辐射反作用力$\\boldsymbol{F}_{\\text{rad}}=\\frac{q^{2}\\gamma^{4}}{6\\pi\\epsilon_{0}c^{3}}(\\ddot{\\boldsymbol{v}}+3\\gamma^{2}\\frac{(\\boldsymbol{v}\\cdot\\dot{\\boldsymbol{v}})}{c^{2}}\\dot{\\boldsymbol{v}})$在平行与垂直加速度方向的分量差异  ",
+        "output": ""
+    },
+    {
+        "input": "利用电磁场变换定律推导运动粒子辐射场的角分布$\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\propto\\frac{\\sin^{2}\\theta}{(1-\\beta\\cos\\theta)^{5}}$的相对论多普勒效应解释  ",
+        "output": ""
+    },
+    {
+        "input": "证明在任意加速度方向分解下，李纳德公式的协变形式$P=\\frac{q^{2}\\mu_{0}}{6\\pi c}\\left[\\gamma^{6}(\\boldsymbol{a}\\cdot\\boldsymbol{\\beta})^{2}+\\gamma^{4}|\\boldsymbol{a}\\times\\boldsymbol{\\beta}|^{2}\\right]$  ",
+        "output": ""
+    },
+    {
+        "input": "计算极端相对论粒子($\\gamma\\to\\infty$)在$\\theta\\sim1/\\gamma$角度范围内的辐射功率占总功率的比例，证明其趋近于100%的特性  ",
+        "output": ""
+    },
+    {
+        "input": "推导带电粒子在直线加速器中辐射功率与加速电场$E$的关系式$P_{\\parallel}=\\frac{q^{4}E^{2}}{6\\pi\\epsilon_{0}c^{3}m^{2}}$，并分析其与粒子能量的无关性",
+        "output": ""
+    },
+    {
+        "input": "推导当$\\boldsymbol{\\beta}\\parallel\\dot{\\boldsymbol{\\beta}}$时，从方程$\\frac{\\mathrm{d}\\boldsymbol{P}}{\\mathrm{d}\\Omega}=\\frac{q^{2}\\mu_{0}c}{16\\pi^{2}}\\frac{|\\boldsymbol{e}_R\\times[\\boldsymbol{e}_R\\times\\dot{\\boldsymbol{\\beta}}]|^{2}}{(1-\\boldsymbol{\\beta}\\cdot\\boldsymbol{e}_R)^{5}}$出发，如何得到角分布$\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}=\\frac{q^{2}\\mu_{0}c}{16\\pi^{2}}\\frac{\\dot{\\beta}^{2}\\sin^{2}\\theta}{(1-\\beta\\cos\\theta)^{5}}$？  ",
+        "output": ""
+    },
+    {
+        "input": "当$\\beta\\to1$时，证明辐射功率角分布$\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\propto\\frac{\\sin^{2}\\theta}{(1-\\cos\\theta)^{5}}$在$\\theta\\to0$处的极值位置满足$\\theta_{\\rm max}\\approx\\sqrt{\\frac{2}{3\\gamma^{2}}}$，其中$\\gamma=(1-\\beta^2)^{-1/2}$。  ",
+        "output": ""
+    },
+    {
+        "input": "计算$\\boldsymbol{\\beta}\\parallel\\dot{\\boldsymbol{\\beta}}$情况下总辐射功率$P_{\\rm total}=\\oint\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\mathrm{d}\\Omega$，证明其结果为$P_{\\rm total}=\\frac{\\mu_0 q^2 \\dot{\\beta}^2 \\gamma^6}{6\\pi c}$。  ",
+        "output": ""
+    },
+    {
+        "input": "为什么当$\\boldsymbol{\\beta}\\parallel\\dot{\\boldsymbol{\\beta}}$时辐射功率角分布与加速度$\\dot{\\boldsymbol{\\beta}}$的符号无关？结合三重矢量积$\\boldsymbol{e}_R\\times[\\boldsymbol{e}_R\\times\\dot{\\boldsymbol{\\beta}}]$的展开式说明物理原因。  ",
+        "output": ""
+    },
+    {
+        "input": "当$\\boldsymbol{\\beta}\\perp\\dot{\\boldsymbol{\\beta}}$时，推导对应的辐射功率角分布$\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}$表达式，并与平行情形对比说明偏振方向的差异。  ",
+        "output": ""
+    },
+    {
+        "input": "分析在$\\beta\\to1$极限下，辐射功率角分布$\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\sim\\frac{\\sin^2\\theta}{(1-\\cos\\theta)^5}$的角向集中效应，计算半峰全宽$\\Delta\\theta$与洛伦兹因子$\\gamma$的关系。  ",
+        "output": ""
+    },
+    {
+        "input": "证明当$\\beta\\approx1$时，方程$(1-\\beta\\cos\\theta)^{-5}\\approx8\\gamma^{10}(1+\\gamma^2\\theta^2)^{-5}$的近似成立，其中$\\theta\\ll1$且$\\gamma\\gg1$。  ",
+        "output": ""
+    },
+    {
+        "input": "计算$\\boldsymbol{\\beta}\\parallel\\dot{\\boldsymbol{\\beta}}$情形下辐射电场$\\boldsymbol{E}_{\\rm rad}$的极化方向，说明其与加速度方向$\\dot{\\boldsymbol{\\beta}}$的空间关系。",
+        "output": ""
+    },
+    {
+        "input": "推导当$\\beta \\parallel \\dot{\\boldsymbol{\\beta}}$时角积分$\\int_{0}^{\\pi} \\frac{\\sin^{2}\\theta}{(1 - \\beta \\cos\\theta)^{5}} d\\theta$的结果为$\\frac{4}{3(1-\\beta^{2})^{3}}$的具体步骤  ",
+        "output": ""
+    },
+    {
+        "input": "利用$\\pmb{F}=\\gamma^{3}m\\dot{\\pmb{v}}$推导辐射功率$P_{\\parallel}=\\frac{q^{2}\\mu_{0}}{6\\pi c m^{2}}\\left(\\frac{d\\pmb{p}}{dt}\\right)^{2}$的表达式  ",
+        "output": ""
+    },
+    {
+        "input": "证明当$\\beta \\parallel \\dot{\\beta}$时$\\dot{\\gamma}mv = (\\gamma^{3}-\\gamma)m\\dot{v}$，并解释其物理意义  ",
+        "output": ""
+    },
+    {
+        "input": "计算$\\beta \\perp \\dot{\\beta}$情况下辐射功率的角分布积分$\\int \\frac{\\sin^{2}\\theta(1-\\beta\\cos\\theta)-\\beta^{2}\\sin^{2}\\theta}{(1-\\beta\\cos\\theta)^{5}}d\\Omega$  ",
+        "output": ""
+    },
+    {
+        "input": "推导$\\beta \\perp \\dot{\\beta}$时的总辐射功率表达式$P_{\\perp}=\\frac{q^{2}\\mu_{0}c\\gamma^{4}\\dot{\\beta}^{2}}{6\\pi}$  ",
+        "output": ""
+    },
+    {
+        "input": "分析当$\\gamma \\gg 1$时$P_{\\parallel}$与$P_{\\perp}$对粒子能量的依赖关系差异及其相对论效应  ",
+        "output": ""
+    },
+    {
+        "input": "由$\\beta^{2}=(\\gamma^{2}-1)/\\gamma^{2}$出发推导加速度与速度平行时的关系$\\pmb{F}=\\gamma^{3}m\\dot{\\pmb{v}}$  ",
+        "output": ""
+    },
+    {
+        "input": "解释当$\\beta \\parallel \\dot{\\beta}$时辐射功率$P_{\\parallel}\\propto (\\frac{dp}{dt})^{2}$与$\\gamma$无关的物理机制  ",
+        "output": ""
+    },
+    {
+        "input": "计算极端相对论极限($\\beta \\to 1$)下平行辐射功率$P_{\\parallel}$的渐近表达式及其量级特征  ",
+        "output": ""
+    },
+    {
+        "input": "建立制动辐射情形下相对论粒子辐射功率张量的协变表达式$P^{\\mu}=\\frac{q^{2}}{6\\pi m^{2}c^{3}}(\\frac{dp^{\\nu}}{d\\tau}\\frac{dp_{\\nu}}{d\\tau})p^{\\mu}$",
+        "output": ""
+    },
+    {
+        "input": "推导球坐标系中 $\\dot{\\boldsymbol{\\beta}} \\cdot \\boldsymbol{e}_R$ 和 $\\boldsymbol{\\beta} \\cdot \\boldsymbol{e}_R$ 的表达式，已知$\\boldsymbol{v}=v\\boldsymbol{e}_z$且$\\dot{\\boldsymbol{v}}=\\dot{v}\\boldsymbol{e}_x$。  ",
+        "output": ""
+    },
+    {
+        "input": "利用矢量三重积公式展开 $|\\boldsymbol{e}_R \\times [(\\boldsymbol{e}_R - \\boldsymbol{\\beta}) \\times \\dot{\\boldsymbol{\\beta}}]|^2$，并验证其结果为$\\dot{\\beta}^2\\left[(1-\\beta\\cos\\theta)^2 + (\\sin\\theta\\cos\\phi)^2(\\beta^2-1)\\right]$。  ",
+        "output": ""
+    },
+    {
+        "input": "对辐射功率表达式 $P_\\perp = \\frac{q^2\\mu_0 c \\dot{\\beta}^2}{16\\pi^2} \\int_0^\\pi \\int_0^{2\\pi} \\frac{(1-\\beta\\cos\\theta)^2 + (\\sin\\theta\\cos\\phi)^2(\\beta^2-1)}{(1-\\beta\\cos\\theta)^5} \\sin\\theta d\\phi d\\theta$ 进行积分计算，导出总功率的显式结果。  ",
+        "output": ""
+    },
+    {
+        "input": "证明当$\\boldsymbol{v} \\perp \\dot{\\boldsymbol{v}}$时，$\\left(\\frac{d\\mathfrak{p}}{dt}\\right)^2 = \\gamma^2 m^2 \\dot{v}^2$，并说明$\\gamma$保持常数的物理原因。  ",
+        "output": ""
+    },
+    {
+        "input": "从总辐射功率表达式$P_\\perp = \\frac{q^2\\mu_0}{6\\pi c}\\dot{v}^2\\gamma^4$出发，推导用相对论动量变化率$\\frac{d\\mathfrak{p}}{dt}$表示的形式$P_\\perp = \\frac{q^2\\mu_0}{6\\pi c m^2} \\gamma^2 \\left(\\frac{d\\mathfrak{p}}{dt}\\right)^2$。  ",
+        "output": ""
+    },
+    {
+        "input": "分析辐射功率$P_\\perp \\propto \\gamma^2$的物理内涵，讨论当粒子速度接近光速时($\\gamma \\to \\infty$)辐射特性的变化趋势。  ",
+        "output": ""
+    },
+    {
+        "input": "计算加速度方向与速度垂直时($\\boldsymbol{v}\\cdot\\dot{\\boldsymbol{v}}=0$)的辐射角分布$\\frac{dP}{d\\Omega}$，并确定最大辐射方向对应的$\\theta$角。  ",
+        "output": ""
+    },
+    {
+        "input": "验证球坐标系下$\\boldsymbol{\\beta}\\cdot\\boldsymbol{e}_R = \\beta\\cos\\theta$与$\\dot{\\boldsymbol{\\beta}}\\cdot\\boldsymbol{e}_R = \\dot{\\beta}\\sin\\theta\\cos\\phi$的几何关系，说明$\\phi$角的物理意义。  ",
+        "output": ""
+    },
+    {
+        "input": "推导相对论情况下$\\frac{d\\mathfrak{p}}{dt} = \\gamma m \\dot{\\boldsymbol{v}} + \\gamma^3 m (\\boldsymbol{\\beta} \\cdot \\dot{\\boldsymbol{v}})\\boldsymbol{\\beta}$的一般表达式，并证明当$\\boldsymbol{v} \\perp \\dot{\\boldsymbol{v}}$时退化为$\\gamma m \\dot{\\boldsymbol{v}}$。  ",
+        "output": ""
+    },
+    {
+        "input": "解释公式$P_\\perp = \\frac{q^2\\mu_0}{6\\pi c}\\frac{\\gamma^2}{m^2}\\left(\\frac{d\\mathfrak{p}}{dt}\\right)^2$中$\\gamma^2$因子的来源，说明其与经典辐射功率公式的本质区别。",
+        "output": ""
+    },
+    {
+        "input": "推导在相对论情形下，当外力方向与粒子速度方向垂直时，辐射功率$P_{\\perp}$与平行情况下的辐射功率$P_{\\parallel}$满足关系式$P_{\\perp} = \\gamma^2 P_{\\parallel}$。  ",
+        "output": ""
+    },
+    {
+        "input": "设粒子在回旋加速器中运动，速度$\\boldsymbol{v}$与加速度$\\dot{\\boldsymbol{v}}$垂直，已知经典辐射功率公式为$P = \\frac{q^2 a^2}{6\\pi \\epsilon_0 c^3}$，考虑相对论修正后，求$P_{\\perp}$与$\\gamma$的具体依赖关系。  ",
+        "output": ""
+    },
+    {
+        "input": "若一电子在直线加速器中以加速度$a_{\\parallel} = 10^{15} \\, \\text{m/s}^2$运动，当其速度达到$v = 0.99c$时，计算此时$P_{\\parallel}$与$P_{\\perp}$的比值。  ",
+        "output": ""
+    },
+    {
+        "input": "利用四维加速度的表达式$\\alpha^\\mu = \\frac{dU^\\mu}{d\\tau}$，推导实验室系中横向加速度$a_{\\perp}$与固有加速度$a_0$的关系，并由此解释$P_{\\perp} \\propto \\gamma^2$的物理根源。  ",
+        "output": ""
+    },
+    {
+        "input": "当外力$\\boldsymbol{F}$大小固定时，证明在横向加速情况下粒子辐射功率与纵向情况的比值$\\frac{P_{\\perp}}{P_{\\parallel}}$可表示为$\\gamma^2 \\frac{v^2}{c^2}$，并分析$\\gamma \\to \\infty$时的渐进行为。  ",
+        "output": ""
+    },
+    {
+        "input": "通过对比线性加速器和回旋加速器中辐射功率的$\\gamma$依赖关系，定量说明为何在$\\gamma \\gg 1$时回旋加速器的能量损失比线性加速器高两个数量级（假设相同外力）。  ",
+        "output": ""
+    },
+    {
+        "input": "从相对论性运动方程$\\frac{d}{dt}(\\gamma m \\boldsymbol{v}) = \\boldsymbol{F}$出发，导出横向和纵向加速度的表达式$a_{\\perp} = \\frac{F}{\\gamma m}$与$a_{\\parallel} = \\frac{F}{\\gamma^3 m}$，并由此计算两种情况的辐射功率比。  ",
+        "output": ""
+    },
+    {
+        "input": "若回旋加速器中粒子的轨道半径为$R$，磁感应强度为$B$，证明其辐射功率可表示为$P_{\\perp} = \\frac{q^4 B^2 \\gamma^2 v^2}{6\\pi \\epsilon_0 c^3 m^2}$，其中$v$为粒子横向速度。  ",
+        "output": ""
+    },
+    {
+        "input": "当考虑相对论性质量增加效应时，推导回旋加速器中粒子辐射功率的表达式$P_{\\perp} = \\frac{q^2}{6\\pi \\epsilon_0 c^3} \\left( \\frac{qB}{\\gamma m} \\right)^2 \\gamma^4 v^2$，并分析各物理量的依赖关系。  ",
+        "output": ""
+    },
+    {
+        "input": "利用Liénard–Wiechert势的辐射场公式，从场强表达式$\\boldsymbol{E}_{rad} = \\frac{q}{4\\pi \\epsilon_0} \\left[ \\frac{\\boldsymbol{n} \\times [(\\boldsymbol{n} - \\boldsymbol{\\beta}) \\times \\dot{\\boldsymbol{\\beta}}]}{c R (1 - \\boldsymbol{n} \\cdot \\boldsymbol{\\beta})^3} \\right]$出发，推导横向加速与纵向加速情况下的辐射功率比值。",
+        "output": ""
+    },
+    {
+        "input": "推导任意运动带电粒子的辐射总功率表达式时，证明交叉项积分$\\int\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}\\mathrm{d}\\Omega=0$  ",
+        "output": ""
+    },
+    {
+        "input": "利用方程(9.29)和(9.41)，结合$\\int\\left(\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\right)_{\\mathrm{cross}}\\mathrm{d}\\Omega=0$，推导李纳德公式$P=\\frac{q^{2}\\mu_{0}}{6\\pi c}(\\gamma^{6}a_{\\parallel}^{2}+\\gamma^{4}a_{\\perp}^{2})$  ",
+        "output": ""
+    },
+    {
+        "input": "当$\\gamma\\rightarrow1$时，验证李纳德公式退化为拉莫公式$P_{\\mathrm{Larmor}}=\\frac{q^{2}\\mu_{0}}{6\\pi c}a^{2}$，给出具体极限过程  ",
+        "output": ""
+    },
+    {
+        "input": "将电场表达式$\\boldsymbol{E}\\propto\\boldsymbol{e}_{R}\\times[(\\boldsymbol{e}_{R}-\\boldsymbol{\\beta})\\times\\dot{\\boldsymbol{\\beta}}]$分解为$\\boldsymbol{E}_{\\parallel}$和$\\boldsymbol{E}_{\\perp}$后，证明$E^{2}=E_{\\parallel}^{2}+E_{\\perp}^{2}+2\\boldsymbol{E}_{\\parallel}\\cdot\\boldsymbol{E}_{\\perp}$  ",
+        "output": ""
+    },
+    {
+        "input": "若粒子加速度完全平行于速度方向（$\\dot{\\beta}_{\\perp}=0$），推导此时辐射功率$P_{\\parallel}$与洛伦兹因子$\\gamma$的依赖关系  ",
+        "output": ""
+    },
+    {
+        "input": "对于极端相对论情形（$\\gamma\\gg1$），分析加速度分量$a_{\\parallel}$和$a_{\\perp}$对总辐射功率贡献的主导项  ",
+        "output": ""
+    },
+    {
+        "input": "计算匀速圆周运动带电粒子（$\\boldsymbol{a}\\perp\\boldsymbol{v}$）的辐射功率，给出用回旋加速器半径$R$和速度$v$表达的显式公式  ",
+        "output": ""
+    },
+    {
+        "input": "证明矢量三重积$\\boldsymbol{e}_{R}\\times[(\\boldsymbol{e}_{R}-\\boldsymbol{\\beta})\\times\\dot{\\boldsymbol{\\beta}}_{\\parallel}]$与$\\boldsymbol{e}_{R}\\times[(\\boldsymbol{e}_{R}-\\boldsymbol{\\beta})\\times\\dot{\\boldsymbol{\\beta}}_{\\perp}]$的正交性  ",
+        "output": ""
+    },
+    {
+        "input": "推导方程$\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}\\propto|\\boldsymbol{e}_{R}\\times[(\\boldsymbol{e}_{R}-\\boldsymbol{\\beta})\\times\\dot{\\boldsymbol{\\beta}}]|^{2}$在球坐标系中的角分布表达式  ",
+        "output": ""
+    },
+    {
+        "input": "当加速度同时存在平行和垂直分量时，分析$\\gamma^{6}a_{\\parallel}^{2}$项与$\\gamma^{4}a_{\\perp}^{2}$项的物理起源差异",
+        "output": ""
+    },
+    {
+        "input": "推导李纳-维谢尔势给出的辐射场表达式$\\mathbf{E}(\\mathbf{r}, t) = \\frac{e}{4\\pi \\epsilon_0} \\left[ \\frac{\\mathbf{n} \\times [ (\\mathbf{n} - \\boldsymbol{\\beta}) \\times \\dot{\\boldsymbol{\\beta}} ] }{c R (1 - \\mathbf{n} \\cdot \\boldsymbol{\\beta})^3 } \\right]_{\\text{ret}}$中各物理量的几何意义  ",
+        "output": ""
+    },
+    {
+        "input": "计算极端相对论条件下($\\gamma \\gg 1$)带电粒子横向加速度对应的辐射角分布$\\frac{dP}{d\\Omega} = \\frac{e^2 a_\\perp^2}{16\\pi^2 \\epsilon_0 c^3} \\frac{\\gamma^6}{(1 + \\gamma^2 \\theta^2)^5}$的峰值角度$\\theta_{\\text{max}}$  ",
+        "output": ""
+    },
+    {
+        "input": "利用四维加速度$\\alpha^\\mu = \\frac{du^\\mu}{d\\tau}$证明辐射功率的协变表达式$P = \\frac{2}{3} \\frac{e^2}{c^3} \\alpha^\\mu \\alpha_\\mu$与实验室系中$\\gamma^6$因子的关系  ",
+        "output": ""
+    },
+    {
+        "input": "推导匀速圆周运动相对论电子($\\beta \\approx 1$)的同步辐射特征频率公式$\\omega_c = \\frac{3}{2} \\gamma^3 \\frac{c}{\\rho}$，其中$\\rho$为曲率半径  ",
+        "output": ""
+    },
+    {
+        "input": "分析相对论性粒子在纵向加速($\\boldsymbol{\\beta} \\parallel \\dot{\\boldsymbol{\\beta}}$)时的辐射功率表达式，证明其比横向加速情况小$\\gamma^{-2}$倍  ",
+        "output": ""
+    },
+    {
+        "input": "计算考虑辐射反作用力的相对论运动方程$\\frac{d}{dt}(\\gamma m \\mathbf{v}) = e(\\mathbf{E} + \\mathbf{v} \\times \\mathbf{B}) + \\frac{2}{3} \\frac{e^2}{c^3} \\gamma^2 \\left[ \\frac{d^2 \\mathbf{v}}{dt^2} + \\frac{3\\gamma^2}{c^2} (\\mathbf{v} \\cdot \\frac{d\\mathbf{v}}{dt}) \\frac{d\\mathbf{v}}{dt} \\right]$的协变性  ",
+        "output": ""
+    },
+    {
+        "input": "推导实验室系中观测到的辐射功率$P = \\frac{2}{3} \\frac{e^2 c}{m^2} \\gamma^6 \\left[ \\left( \\frac{d\\mathbf{p}}{dt} \\right)^2 - \\frac{1}{c^2} \\left( \\frac{dE}{dt} \\right)^2 \\right]$与瞬时静止系中Larmor公式的对应关系  ",
+        "output": ""
+    },
+    {
+        "input": "证明在任意惯性系中辐射功率满足洛伦兹不变量$P = \\frac{2}{3} \\frac{e^2}{m^2 c^3} \\left( \\frac{dp^\\mu}{d\\tau} \\frac{dp_\\mu}{d\\tau} \\right)$，其中$p^\\mu$为四维动量  ",
+        "output": ""
+    },
+    {
+        "input": "计算相对论性粒子在均匀磁场中运动时同步辐射的偏振特性，导出辐射电场$\\mathbf{E}_\\text{rad}$的椭圆偏振参数表达式  ",
+        "output": ""
+    },
+    {
+        "input": "分析极端相对论极限下辐射前冲效应导致的辐射角收缩$\\Delta\\theta \\sim 1/\\gamma$，推导辐射功率角分布的半高全宽公式",
+        "output": ""
+    },
+    {
+        "input": "推导非相对论粒子辐射功率的角分布表达式，从方程$\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}=\\frac{q^{2}\\mu_{0}c}{16\\pi^{2}}\\left|e_{R}\\times(e_{R}\\times\\dot{\\beta})\\right|^{2}$出发，证明其可化简为$\\frac{\\mu_{0}q^{2}a^{2}}{16\\pi^{2}c}\\sin^{2}\\Theta$。  ",
+        "output": ""
+    },
+    {
+        "input": "当带电粒子加速度$\\pmb{a}$与观测方向$\\pmb{e}_{R}$夹角$\\Theta=90^\\circ$时，计算其辐射功率占总辐射功率的比例。  ",
+        "output": ""
+    },
+    {
+        "input": "利用三重矢量积公式$\\pmb{A}\\times(\\pmb{B}\\times\\pmb{C})=\\pmb{B}(\\pmb{A}\\cdot\\pmb{C})-\\pmb{C}(\\pmb{A}\\cdot\\pmb{B})$，证明$\\left|e_{R}\\times(e_{R}\\times\\dot{\\beta})\\right|^{2}=\\left|\\dot{\\beta}_{\\perp}\\right|^{2}$。  ",
+        "output": ""
+    },
+    {
+        "input": "通过积分$\\int_{0}^{\\pi}\\sin^{3}\\Theta\\,d\\Theta$验证总辐射功率$P=\\frac{\\mu_{0}q^{2}a^{2}}{6\\pi c}$的正确性。  ",
+        "output": ""
+    },
+    {
+        "input": "若将电偶极矩$\\pmb{p}=q\\pmb{r}'$的二阶导数$\\ddot{\\pmb{p}}$替换为磁偶极矩$\\pmb{m}$，讨论辐射功率表达式的形式变化。  ",
+        "output": ""
+    },
+    {
+        "input": "当粒子速度满足$\\beta=0.1$时，估算方程$1-\\beta\\cdot e_{R}$的近似误差量级并分析其对辐射角分布的影响。  ",
+        "output": ""
+    },
+    {
+        "input": "推导非相对论带电粒子在圆周运动中的辐射功率空间分布，设加速度$\\pmb{a}$始终垂直于瞬时速度$\\pmb{v}$。  ",
+        "output": ""
+    },
+    {
+        "input": "通过量纲分析证明拉莫公式$P=\\frac{\\mu_{0}q^{2}a^{2}}{6\\pi c}$中各物理量的幂次关系是否自洽。  ",
+        "output": ""
+    },
+    {
+        "input": "若带电粒子加速度方向与观测方向存在时间相关性$\\Theta(t)=\\omega t$，求辐射功率角分布的时均表达式。  ",
+        "output": ""
+    },
+    {
+        "input": "解释拉莫公式中$\\sin^{2}\\Theta$项的物理起源，并对比相对论性粒子辐射的角分布差异。",
+        "output": ""
+    },
+    {
+        "input": "从方程$\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega} = \\frac{q^{2}\\mu_{0}c}{16\\pi^{2}}|\\dot{\\beta}_{\\perp}|^{2}$出发，推导总辐射功率$P = \\frac{\\mu_0 q^2 a^2}{6\\pi c}$的积分过程，并说明积分中$\\sin^3\\Theta$项的物理意义  ",
+        "output": ""
+    },
+    {
+        "input": "证明矢量三重积公式$|e_R \\times (e_R \\times \\dot{\\beta})|^2 = |\\dot{\\beta}_{\\perp}|^2$在非相对论近似下的成立条件  ",
+        "output": ""
+    },
+    {
+        "input": "给定加速度矢量$\\boldsymbol{a} = a_z \\hat{z}$，计算辐射功率角分布$\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}$的极角$\\Theta$依赖关系并确定最大辐射方向  ",
+        "output": ""
+    },
+    {
+        "input": "推导电偶极矩二阶导数$\\ddot{\\boldsymbol{p}}$与加速度$\\boldsymbol{a}$的关系，并说明为何$\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega} \\propto |\\ddot{\\boldsymbol{p}}|^2$  ",
+        "output": ""
+    },
+    {
+        "input": "当粒子做圆周运动时，证明其总辐射功率可表示为$P = \\frac{\\mu_0 q^2}{6\\pi c}( \\dot{v}_r^2 + \\dot{v}_\\theta^2 )$，其中$v_r$和$v_\\theta$为极坐标分量  ",
+        "output": ""
+    },
+    {
+        "input": "分析若加速度方向与观测方向夹角$\\Theta$从$0$变为$\\pi/2$时，$\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}$的变化规律并给出定量描述  ",
+        "output": ""
+    },
+    {
+        "input": "通过量纲分析验证拉莫公式$P = \\frac{\\mu_0 q^2 a^2}{6\\pi c}$的正确性，指出各物理量的量纲匹配关系  ",
+        "output": ""
+    },
+    {
+        "input": "若粒子加速度在时谐场中呈$\\boldsymbol{a}(t) = a_0 e^{-i\\omega t} \\hat{x}$，推导辐射功率的时间平均值表达式  ",
+        "output": ""
+    },
+    {
+        "input": "计算当观测方向与加速度方向夹角$\\Theta = \\pi/3$时的微分辐射功率与最大辐射功率的比值  ",
+        "output": ""
+    },
+    {
+        "input": "从麦克斯韦应力张量出发，推导非相对论极限下坡印亭矢量的表达式，并建立其与拉莫公式的联系",
+        "output": ""
+    },
+    {
+        "input": "推导点电荷的推迟时刻$t_r$满足的方程$t_r = t - R(t_r)/c$，并证明$\\frac{\\partial t_r}{\\partial t} = \\frac{1}{1 - \\vec{e}_R \\cdot \\vec{\\beta}}$。  ",
+        "output": ""
+    },
+    {
+        "input": "利用$\\nabla|_{t_r} R = \\vec{e}_R$和$\\frac{\\partial R}{\\partial t_r} = -\\vec{e}_R \\cdot \\vec{v}$，推导$\\nabla t_r = -\\frac{\\vec{e}_R}{c(1 - \\vec{e}_R \\cdot \\vec{\\beta})}$。  ",
+        "output": ""
+    },
+    {
+        "input": "证明$\\vec{B} = \\vec{e}_R \\times \\vec{E}/c$时需说明为何$\\nabla|_{t_r} \\times \\vec{v} = 0$成立，并计算$\\nabla|_{t_r} \\phi \\times \\vec{\\beta}$的具体形式。  ",
+        "output": ""
+    },
+    {
+        "input": "当点电荷匀速运动时($\\vec{a}=0$)，证明其电场可化简为$\\vec{E} = \\frac{q}{4\\pi\\epsilon_0 R^2} \\frac{\\vec{e}_R - \\vec{\\beta}}{\\gamma^2 (1 - \\vec{e}_R \\cdot \\vec{\\beta})^3}$，其中$\\gamma = 1/\\sqrt{1-\\beta^2}$。  ",
+        "output": ""
+    },
+    {
+        "input": "推导加速度场$\\vec{E}_{\\vec{a}}$的表达式，说明为何其中含$\\vec{e}_R \\times [(\\vec{e}_R - \\vec{\\beta}) \\times \\vec{a}]$的几何意义。  ",
+        "output": ""
+    },
+    {
+        "input": "计算非相对论极限下($\\beta \\ll 1$)辐射场$\\vec{E}_{\\vec{a}}$与速度场$\\vec{E}_{\\vec{v}}$的比值，证明在远场区($R \\to \\infty$)辐射场占主导。  ",
+        "output": ""
+    },
+    {
+        "input": "利用$\\vec{A} = (\\vec{v}/c^2)\\phi$和$\\phi = \\frac{q}{4\\pi\\epsilon_0 R(1 - \\vec{e}_R \\cdot \\vec{\\beta})}$，直接计算$\\nabla \\times \\vec{A}$并验证$\\vec{B}$表达式。  ",
+        "output": ""
+    },
+    {
+        "input": "当粒子沿直线加速($\\vec{a} \\parallel \\vec{v}$)时，证明辐射场方向满足$\\vec{E}_{\\vec{a}} \\propto \\vec{e}_R \\times (\\vec{e}_R \\times \\vec{a})$，并讨论其角分布特性。  ",
+        "output": ""
+    },
+    {
+        "input": "从推迟势$\\phi(\\vec{x},t) = \\frac{1}{4\\pi\\epsilon_0} \\frac{q}{R(1 - \\vec{e}_R \\cdot \\vec{\\beta})}$出发，求$\\frac{\\partial \\phi}{\\partial t_r}$并说明其中$\\vec{e}_R \\cdot \\vec{a}$项的物理意义。  ",
+        "output": ""
+    },
+    {
+        "input": "证明速度场$\\vec{E}_{\\vec{v}}$在瞬时静止参考系($\\vec{\\beta}=0$)退化为静电场$\\vec{E} = \\frac{q}{4\\pi\\epsilon_0 R^2} \\vec{e}_R$，并分析$\\gamma$因子的作用。",
+        "output": ""
+    },
+    {
+        "input": "从电磁场的定义 $\\pmb{E} = -\\frac{\\partial \\pmb{A}}{\\partial t} - \\nabla \\phi$ 和 $\\pmb{B} = \\nabla \\times \\pmb{A}$ 出发，推导法拉第定律 $\\nabla \\times \\pmb{E} = -\\frac{\\partial \\pmb{B}}{\\partial t}$ 和磁场的高斯定理 $\\nabla \\cdot \\pmb{B} = 0$。  ",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦茨规范条件 $\\frac{1}{c^2} \\frac{\\partial \\phi}{\\partial t} + \\nabla \\cdot \\pmb{A} = 0$，结合标势方程 $\\frac{1}{c^2} \\frac{\\partial^2 \\phi}{\\partial t^2} - \\nabla^2 \\phi = \\frac{\\rho}{\\epsilon_0}$，证明电场的高斯定理 $\\nabla \\cdot \\pmb{E} = \\rho / \\epsilon_0$。  ",
+        "output": ""
+    },
+    {
+        "input": "通过矢势方程 $\\left( \\frac{1}{c^2} \\frac{\\partial^2}{\\partial t^2} - \\nabla^2 \\right) \\pmb{A} = \\mu_0 \\pmb{j}$ 和洛伦茨规范条件，推导安培-麦克斯韦定律 $\\nabla \\times \\pmb{B} = \\mu_0 \\pmb{j} + \\frac{1}{c^2} \\frac{\\partial \\pmb{E}}{\\partial t}$。  ",
+        "output": ""
+    },
+    {
+        "input": "证明协变形式的麦克斯韦方程 $\\partial_\\mu F^{\\mu\\nu} = \\mu_0 j^\\nu$ 在洛伦茨变换下保持形式不变，其中 $F^{\\mu\\nu}$ 为电磁场张量。  ",
+        "output": ""
+    },
+    {
+        "input": "从势函数的达朗贝尔方程 $\\partial_\\mu \\partial^\\mu A^\\nu = \\mu_0 j^\\nu$ 出发，推导标势 $\\phi$ 和矢势 $\\pmb{A}$ 的波动方程，并说明其与相对论协变性的关系。  ",
+        "output": ""
+    },
+    {
+        "input": "若电磁场张量 $F_{\\mu\\nu}$ 的分量包含 $\\pmb{E}$ 和 $\\pmb{B}$，写出其显式矩阵形式，并验证其满足 $\\partial_{[\\alpha} F_{\\beta\\gamma]} = 0$（齐次麦克斯韦方程）。  ",
+        "output": ""
+    },
+    {
+        "input": "利用能量-动量张量 $T^{\\mu\\nu} = \\frac{1}{\\mu_0} \\left( F^{\\mu\\alpha} F^\\nu_{~\\alpha} - \\frac{1}{4} \\eta^{\\mu\\nu} F_{\\alpha\\beta} F^{\\alpha\\beta} \\right)$，推导电磁场的能量密度 $u = \\frac{\\epsilon_0}{2} |\\pmb{E}|^2 + \\frac{1}{2\\mu_0} |\\pmb{B}|^2$。  ",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦茨规范下，四维势 $A^\\mu = (\\phi/c, \\pmb{A})$ 的方程 $\\partial_\\mu \\partial^\\mu A^\\nu = \\mu_0 j^\\nu$ 等价于 $\\nabla \\cdot \\pmb{E} = \\rho / \\epsilon_0$ 和 $\\nabla \\times \\pmb{B} = \\mu_0 \\pmb{j} + \\frac{1}{c^2} \\frac{\\partial \\pmb{E}}{\\partial t}$。  ",
+        "output": ""
+    },
+    {
+        "input": "若电荷密度 $\\rho$ 和电流密度 $\\pmb{j}$ 构成四维流 $j^\\mu = (c\\rho, \\pmb{j})$，证明连续性方程 $\\partial_\\mu j^\\mu = 0$ 是麦克斯韦方程组协变性的必然结果。  ",
+        "output": ""
+    },
+    {
+        "input": "从作用量 $S = \\int \\left( -\\frac{1}{4\\mu_0} F_{\\mu\\nu} F^{\\mu\\nu} + j_\\mu A^\\mu \\right) d^4x$ 出发，通过变分原理推导协变形式的麦克斯韦方程 $\\partial_\\mu F^{\\mu\\nu} = \\mu_0 j^\\nu$。",
+        "output": ""
+    },
+    {
+        "input": "从电场 $\\pmb{E}$ 和磁场 $\\pmb{B}$ 的定义出发，推导法拉第定律 $\\nabla \\times \\pmb{E} = -\\frac{\\partial \\pmb{B}}{\\partial t}$ 和磁场的高斯定理 $\\nabla \\cdot \\pmb{B} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦茨规范条件 $\\partial_{\\alpha}A^{\\alpha}=0$，推导标势 $\\phi$ 的波动方程 $\\left(\\frac{1}{c^2}\\frac{\\partial^2}{\\partial t^2} - \\nabla^2\\right)\\phi = \\frac{\\rho}{\\epsilon_0}$。",
+        "output": ""
+    },
+    {
+        "input": "从洛伦茨规范条件出发，推导矢势 $\\pmb{A}$ 的波动方程 $\\left(\\frac{1}{c^2}\\frac{\\partial^2}{\\partial t^2} - \\nabla^2\\right)\\pmb{A} = \\mu_0 \\pmb{j}$。",
+        "output": ""
+    },
+    {
+        "input": "利用电场 $\\pmb{E}$ 和磁场 $\\pmb{B}$ 的定义，推导安培-麦克斯韦定律 $\\nabla \\times \\pmb{B} = \\mu_0 \\pmb{j} + \\frac{1}{c^2}\\frac{\\partial \\pmb{E}}{\\partial t}$。",
+        "output": ""
+    },
+    {
+        "input": "证明电磁场的协变形式 $\\frac{\\partial F_{\\mu\\nu}}{\\partial x_{\\mu}} = \\mu_0 j_{\\nu}$ 具有相对论协变性，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "从麦克斯韦方程组出发，推导电磁场的能量密度 $u = \\frac{1}{2}\\left(\\epsilon_0 \\pmb{E}^2 + \\frac{1}{\\mu_0}\\pmb{B}^2\\right)$ 和动量密度 $\\pmb{g} = \\epsilon_0 \\pmb{E} \\times \\pmb{B}$。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦茨规范条件，证明电磁场的势函数 $\\phi$ 和 $\\pmb{A}$ 满足波动方程，并讨论其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "从麦克斯韦方程组出发，推导电磁场的能量守恒定律 $\\frac{\\partial u}{\\partial t} + \\nabla \\cdot \\pmb{S} = -\\pmb{j} \\cdot \\pmb{E}$，其中 $\\pmb{S} = \\frac{1}{\\mu_0} \\pmb{E} \\times \\pmb{B}$ 是坡印廷矢量。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦茨规范下，电磁场的势函数 $\\phi$ 和 $\\pmb{A}$ 的解具有一致性，并讨论其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "从麦克斯韦方程组出发，推导电磁场的动量守恒定律 $\\frac{\\partial \\pmb{g}}{\\partial t} + \\nabla \\cdot \\pmb{T} = -\\rho \\pmb{E} - \\pmb{j} \\times \\pmb{B}$，其中 $\\pmb{T}$ 是电磁场的应力张量。",
+        "output": ""
+    },
+    {
+        "input": "从电场 $\\pmb{E}$ 和磁场 $\\pmb{B}$ 的定义出发，推导法拉第电磁感应定律 $\\nabla \\times \\pmb{E} = -\\frac{\\partial \\pmb{B}}{\\partial t}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "利用磁场 $\\pmb{B} = \\nabla \\times \\pmb{A}$ 的定义，证明 $\\nabla \\cdot \\pmb{B} = 0$，并解释该方程的物理含义。",
+        "output": ""
+    },
+    {
+        "input": "从洛伦茨规范条件 $\\frac{1}{c^2} \\frac{\\partial \\phi}{\\partial t} + \\nabla \\cdot \\pmb{A} = 0$ 出发，推导出 $\\frac{1}{c^2} \\frac{\\partial^2 \\phi}{\\partial t^2} = -\\nabla \\cdot \\frac{\\partial \\pmb{A}}{\\partial t}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "结合电场 $\\pmb{E} = -\\frac{\\partial \\pmb{A}}{\\partial t} - \\nabla \\phi$ 和洛伦茨规范条件，推导出电场的高斯定理 $\\nabla \\cdot \\pmb{E} = \\frac{\\rho}{\\epsilon_0}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "从麦克斯韦方程组中的 $\\nabla \\times \\pmb{B} = \\mu_0 \\pmb{J} + \\mu_0 \\epsilon_0 \\frac{\\partial \\pmb{E}}{\\partial t}$ 出发，结合电场和磁场的定义，推导出安培-麦克斯韦定律，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "利用电场 $\\pmb{E}$ 和磁场 $\\pmb{B}$ 的定义，证明在真空中（无电荷和电流）电磁波满足波动方程 $\\nabla^2 \\pmb{E} - \\frac{1}{c^2} \\frac{\\partial^2 \\pmb{E}}{\\partial t^2} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "从洛伦茨规范条件出发，推导出电磁势 $\\phi$ 和 $\\pmb{A}$ 的波动方程 $\\frac{1}{c^2} \\frac{\\partial^2 \\phi}{\\partial t^2} - \\nabla^2 \\phi = \\frac{\\rho}{\\epsilon_0}$ 和 $\\frac{1}{c^2} \\frac{\\partial^2 \\pmb{A}}{\\partial t^2} - \\nabla^2 \\pmb{A} = \\mu_0 \\pmb{J}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "利用电场 $\\pmb{E}$ 和磁场 $\\pmb{B}$ 的定义，推导出电磁场的能量密度 $u = \\frac{1}{2} \\left( \\epsilon_0 \\pmb{E}^2 + \\frac{1}{\\mu_0} \\pmb{B}^2 \\right)$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "从麦克斯韦方程组出发，推导出电磁场的动量密度 $\\pmb{g} = \\epsilon_0 \\pmb{E} \\times \\pmb{B}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "利用电场 $\\pmb{E}$ 和磁场 $\\pmb{B}$ 的定义，推导出电磁场的坡印廷矢量 $\\pmb{S} = \\frac{1}{\\mu_0} \\pmb{E} \\times \\pmb{B}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导并证明在洛伦茨规范下，矢势 $\\pmb{A}$ 的方程 $\\left(\\frac{1}{c^{2}}\\frac{\\partial^{2}}{\\partial t^{2}}-\\nabla^{2}\\right)\\pmb{A}=\\mu_{0}\\pmb{j}$ 如何从麦克斯韦方程组导出。",
+        "output": ""
+    },
+    {
+        "input": "利用 $\\pmb{E} = -\\frac{\\partial \\pmb{A}}{\\partial t} - \\nabla \\phi$ 和 $\\pmb{B} = \\nabla \\times \\pmb{A}$，推导出 $\\nabla \\times \\pmb{B} = \\mu_{0}\\pmb{j} + \\frac{1}{c^{2}}\\frac{\\partial \\pmb{E}}{\\partial t}$。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦茨规范下，标势 $\\phi$ 和矢势 $\\pmb{A}$ 的方程 $\\left(\\frac{1}{c^{2}}\\frac{\\partial^{2}}{\\partial t^{2}}-\\nabla^{2}\\right)\\phi = \\frac{\\rho}{\\epsilon_{0}}$ 和 $\\left(\\frac{1}{c^{2}}\\frac{\\partial^{2}}{\\partial t^{2}}-\\nabla^{2}\\right)\\pmb{A} = \\mu_{0}\\pmb{j}$ 具有相对论协变性。",
+        "output": ""
+    },
+    {
+        "input": "从协变形式的麦克斯韦方程 $\\frac{\\partial F_{\\mu\\nu}}{\\partial x_{\\mu}} = \\mu_{0}j_{\\nu}$ 出发，推导出 $\\nabla \\times \\pmb{B} = \\mu_{0}\\pmb{j} + \\frac{1}{c^{2}}\\frac{\\partial \\pmb{E}}{\\partial t}$。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦茨规范条件 $\\frac{1}{c^{2}}\\frac{\\partial \\phi}{\\partial t} + \\nabla \\cdot \\pmb{A} = 0$，证明 $\\nabla \\cdot \\pmb{E} = \\frac{\\rho}{\\epsilon_{0}}$。",
+        "output": ""
+    },
+    {
+        "input": "从 $\\pmb{E} = -\\frac{\\partial \\pmb{A}}{\\partial t} - \\nabla \\phi$ 和 $\\pmb{B} = \\nabla \\times \\pmb{A}$ 出发，推导出 $\\nabla \\cdot \\pmb{B} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦茨规范下，电磁场的势函数 $\\phi$ 和 $\\pmb{A}$ 满足的方程 $\\left(\\frac{1}{c^{2}}\\frac{\\partial^{2}}{\\partial t^{2}}-\\nabla^{2}\\right)\\phi = \\frac{\\rho}{\\epsilon_{0}}$ 和 $\\left(\\frac{1}{c^{2}}\\frac{\\partial^{2}}{\\partial t^{2}}-\\nabla^{2}\\right)\\pmb{A} = \\mu_{0}\\pmb{j}$ 具有一致性。",
+        "output": ""
+    },
+    {
+        "input": "从 $\\nabla \\times \\pmb{E} = -\\frac{\\partial \\pmb{B}}{\\partial t}$ 出发，推导出 $\\nabla \\times \\pmb{E} = -\\frac{\\partial (\\nabla \\times \\pmb{A})}{\\partial t}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "利用 $\\pmb{E} = -\\frac{\\partial \\pmb{A}}{\\partial t} - \\nabla \\phi$ 和 $\\pmb{B} = \\nabla \\times \\pmb{A}$，推导出 $\\nabla \\cdot \\pmb{E} = \\frac{\\rho}{\\epsilon_{0}}$ 和 $\\nabla \\cdot \\pmb{B} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "从协变形式的麦克斯韦方程 $\\frac{\\partial F_{\\mu\\nu}}{\\partial x_{\\mu}} = \\mu_{0}j_{\\nu}$ 出发，推导出 $\\nabla \\cdot \\pmb{E} = \\frac{\\rho}{\\epsilon_{0}}$ 和 $\\nabla \\cdot \\pmb{B} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "根据麦克斯韦方程组中的 $\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\epsilon_0}$，推导出在真空中的电场 $\\mathbf{E}$ 与电荷密度 $\\rho$ 之间的关系，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "从 $\\nabla \\times \\mathbf{E} = -\\frac{\\partial \\mathbf{B}}{\\partial t}$ 出发，推导出在时变磁场中感生电场的表达式，并讨论其与法拉第电磁感应定律的关系。",
+        "output": ""
+    },
+    {
+        "input": "证明 $\\nabla \\cdot \\mathbf{B} = 0$ 表明磁场是无源的，并解释这一性质在电磁场理论中的重要性。",
+        "output": ""
+    },
+    {
+        "input": "利用 $\\nabla \\times \\mathbf{B} = \\mu_0 \\mathbf{j} + \\frac{1}{c^2} \\frac{\\partial \\mathbf{E}}{\\partial t}$，推导出在真空中的磁场 $\\mathbf{B}$ 与电流密度 $\\mathbf{j}$ 之间的关系，并讨论位移电流项 $\\frac{1}{c^2} \\frac{\\partial \\mathbf{E}}{\\partial t}$ 的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么仅用 $\\mathbf{E}$ 和 $\\mathbf{B}$ 无法描述 Aharonov-Bohm 效应，并讨论这一效应在量子力学中的重要性。",
+        "output": ""
+    },
+    {
+        "input": "假设一个平面电磁波在真空中传播，利用麦克斯韦方程组推导出电场 $\\mathbf{E}$ 和磁场 $\\mathbf{B}$ 的波动方程，并证明它们满足波动方程 $\\nabla^2 \\mathbf{E} - \\frac{1}{c^2} \\frac{\\partial^2 \\mathbf{E}}{\\partial t^2} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "在相对论框架下，讨论电场 $\\mathbf{E}$ 和磁场 $\\mathbf{B}$ 如何通过洛伦兹变换相互转换，并推导出在相对论情况下的电磁场变换公式。",
+        "output": ""
+    },
+    {
+        "input": "考虑一个匀速运动的点电荷，利用相对论效应推导出其产生的电场 $\\mathbf{E}$ 和磁场 $\\mathbf{B}$ 的表达式，并解释其与静止电荷产生的场的区别。",
+        "output": ""
+    },
+    {
+        "input": "从麦克斯韦方程组出发，推导出电磁场的能量密度 $u = \\frac{1}{2} \\left( \\epsilon_0 \\mathbf{E}^2 + \\frac{1}{\\mu_0} \\mathbf{B}^2 \\right)$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "讨论在相对论情况下，电磁场的动量密度 $\\mathbf{g} = \\epsilon_0 \\mathbf{E} \\times \\mathbf{B}$ 如何与电磁场的能量密度 $u$ 相关联，并推导出电磁场的动量守恒方程。",
+        "output": ""
+    },
+    {
+        "input": "推导麦克斯韦方程组中关于电场 $\\pmb{E}$ 和磁场 $\\pmb{B}$ 的四个方程，并解释每个方程的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "计算在真空中的电磁波传播速度 $c$，并证明 $c = \\frac{1}{\\sqrt{\\mu_0 \\epsilon_0}}$，其中 $\\mu_0$ 是真空磁导率，$\\epsilon_0$ 是真空电容率。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论框架下，电场 $\\pmb{E}$ 和磁场 $\\pmb{B}$ 可以通过洛伦兹变换相互转换，并给出具体的变换公式。",
+        "output": ""
+    },
+    {
+        "input": "计算一个匀速运动的点电荷产生的电场 $\\pmb{E}$ 和磁场 $\\pmb{B}$，并讨论在相对论效应下这些场的变化。",
+        "output": ""
+    },
+    {
+        "input": "推导电磁场的能量密度 $u$ 和动量密度 $\\pmb{g}$ 的表达式，并证明它们满足连续性方程 $\\frac{\\partial u}{\\partial t} + \\nabla \\cdot \\pmb{S} = 0$，其中 $\\pmb{S}$ 是坡印廷矢量。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论中，电磁场的能量-动量张量 $T^{\\mu\\nu}$ 满足 $\\partial_\\mu T^{\\mu\\nu} = 0$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "计算一个平面电磁波的能量密度 $u$ 和动量密度 $\\pmb{g}$，并证明它们满足 $u = \\frac{1}{2} (\\epsilon_0 E^2 + \\frac{1}{\\mu_0} B^2)$ 和 $\\pmb{g} = \\frac{1}{c^2} \\pmb{S}$。",
+        "output": ""
+    },
+    {
+        "input": "推导电磁场的拉格朗日密度 $\\mathcal{L}$，并证明通过欧拉-拉格朗日方程可以得到麦克斯韦方程组。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论中，电磁场的角动量密度 $\\pmb{l}$ 可以表示为 $\\pmb{l} = \\pmb{r} \\times \\pmb{g}$，其中 $\\pmb{r}$ 是位置矢量，$\\pmb{g}$ 是动量密度。",
+        "output": ""
+    },
+    {
+        "input": "计算一个带电粒子在电磁场中的运动方程，并讨论在相对论效应下粒子的轨迹如何变化。",
+        "output": ""
+    },
+    {
+        "input": "推导电磁场的能量密度表达式 $u = \\frac{1}{2} (\\epsilon_0 \\mathbf{E}^2 + \\frac{1}{\\mu_0} \\mathbf{B}^2)$，并解释其中每一项的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "利用麦克斯韦方程组，推导电磁场的动量密度表达式 $\\mathbf{g} = \\epsilon_0 \\mathbf{E} \\times \\mathbf{B}$，并说明其与电磁波的传播方向的关系。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论框架下，电磁场的能量-动量张量 $T^{\\mu\\nu}$ 满足 $\\partial_\\mu T^{\\mu\\nu} = 0$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "计算在相对论情况下，电磁场的能量-动量张量 $T^{\\mu\\nu}$ 的分量 $T^{00}$ 和 $T^{0i}$，并解释其与经典电磁场能量密度和动量密度的关系。",
+        "output": ""
+    },
+    {
+        "input": "利用相对论性电磁场的能量-动量张量 $T^{\\mu\\nu}$，推导出电磁场的能量和动量守恒方程，并讨论其在洛伦兹变换下的协变性。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论情况下，电磁场的能量密度 $u$ 和动量密度 $\\mathbf{g}$ 满足关系 $u = c |\\mathbf{g}|$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导电磁场的能量-动量张量 $T^{\\mu\\nu}$ 在四维时空中的表达式，并证明其在洛伦兹变换下的不变性。",
+        "output": ""
+    },
+    {
+        "input": "计算电磁场的能量-动量张量 $T^{\\mu\\nu}$ 在静止参考系中的分量，并讨论其在运动参考系中的变换规律。",
+        "output": ""
+    },
+    {
+        "input": "利用电磁场的能量-动量张量 $T^{\\mu\\nu}$，推导出电磁场的角动量密度表达式，并解释其与电磁场的自旋和轨道角动量的关系。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论情况下，电磁场的能量-动量张量 $T^{\\mu\\nu}$ 满足 $T^{\\mu\\nu} = T^{\\nu\\mu}$，并讨论其对称性的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导向量场 $A^{\\nu}$ 的拉格朗日方程，并证明其满足相对论协变性原理。",
+        "output": ""
+    },
+    {
+        "input": "给定拉格朗日密度 ${\\mathcal{L}}={\\mathcal{L}}(A^{\\nu},\\partial_{\\mu}A^{\\nu})$，推导其对应的作用量 $S$ 的表达式，并说明其四维标量性质。",
+        "output": ""
+    },
+    {
+        "input": "假设拉格朗日密度 ${\\mathcal{L}}$ 为 ${\\mathcal{L}}=-\\frac{1}{4}F_{\\mu\\nu}F^{\\mu\\nu}$，其中 $F_{\\mu\\nu}=\\partial_{\\mu}A_{\\nu}-\\partial_{\\nu}A_{\\mu}$，推导电磁场的拉格朗日方程。",
+        "output": ""
+    },
+    {
+        "input": "证明向量场 $A^{\\nu}$ 的拉格朗日方程 $\\frac{\\partial}{\\partial x^{\\mu}}\\left[\\frac{\\partial\\mathcal{L}}{\\partial(\\partial_{\\mu}A^{\\nu})}\\right]-\\frac{\\partial\\mathcal{L}}{\\partial A^{\\nu}}=0$ 在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "给定拉格朗日密度 ${\\mathcal{L}}=-\\frac{1}{4}F_{\\mu\\nu}F^{\\mu\\nu}+J^{\\mu}A_{\\mu}$，其中 $J^{\\mu}$ 是四维电流密度，推导包含外源的电磁场方程。",
+        "output": ""
+    },
+    {
+        "input": "假设 $A^{\\nu}$ 是一个四维矢量场，证明其拉格朗日密度 ${\\mathcal{L}}$ 必须是四维标量，以保证作用量 $S$ 的洛伦兹不变性。",
+        "output": ""
+    },
+    {
+        "input": "推导在相对论框架下，向量场 $A^{\\nu}$ 的拉格朗日方程如何从最小作用量原理 $\\delta S = 0$ 得出。",
+        "output": ""
+    },
+    {
+        "input": "给定拉格朗日密度 ${\\mathcal{L}}=-\\frac{1}{4}F_{\\mu\\nu}F^{\\mu\\nu}$，计算其对 $A^{\\nu}$ 的偏导数 $\\frac{\\partial\\mathcal{L}}{\\partial A^{\\nu}}$ 和对 $\\partial_{\\mu}A^{\\nu}$ 的偏导数 $\\frac{\\partial\\mathcal{L}}{\\partial(\\partial_{\\mu}A^{\\nu})}$。",
+        "output": ""
+    },
+    {
+        "input": "证明在电磁场中，拉格朗日密度 ${\\mathcal{L}}=-\\frac{1}{4}F_{\\mu\\nu}F^{\\mu\\nu}$ 是四维标量，并讨论其在相对论中的意义。",
+        "output": ""
+    },
+    {
+        "input": "给定作用量 $S=\\int\\mathcal{L}(A^{\\nu},\\partial_{\\mu}A^{\\nu})\\mathrm{d}\\Omega$，推导其在四维时空中的变分 $\\delta S$，并说明其与拉格朗日方程的关系。",
+        "output": ""
+    },
+    {
+        "input": "推导向量场 $A^{\\nu}$ 的拉格朗日方程，并证明其满足相对论协变性原理。",
+        "output": ""
+    },
+    {
+        "input": "给定拉格朗日密度 ${\\mathcal{L}}={\\mathcal{L}}(A^{\\nu},\\partial_{\\mu}A^{\\nu})$，推导出对应的作用量 $S$ 的表达式，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设拉格朗日密度 ${\\mathcal{L}}$ 是一个四维标量，证明向量场 $A^{\\nu}$ 的拉格朗日方程在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "计算电磁场的拉格朗日密度 ${\\mathcal{L}}$，并证明其关于 $\\partial_{\\mu}A^{\\nu}$ 是一个四维标量函数。",
+        "output": ""
+    },
+    {
+        "input": "给定向量场 $A^{\\nu}$ 的拉格朗日方程 $\\frac{\\partial}{\\partial x^{\\mu}}\\left[\\frac{\\partial\\mathcal{L}}{\\partial(\\partial_{\\mu}A^{\\nu})}\\right]-\\frac{\\partial\\mathcal{L}}{\\partial A^{\\nu}}=0$，推导其在四维时空中的具体形式。",
+        "output": ""
+    },
+    {
+        "input": "假设拉格朗日密度 ${\\mathcal{L}}$ 仅依赖于 $\\partial_{\\mu}A^{\\nu}$，推导出对应的拉格朗日方程，并讨论其与电磁场方程的关系。",
+        "output": ""
+    },
+    {
+        "input": "给定作用量 $S=\\int\\mathcal{L}(A^{\\nu},\\partial_{\\mu}A^{\\nu})\\mathrm{d}\\Omega$，证明其在四维时空中的不变性，并解释其与相对论协变性原理的关系。",
+        "output": ""
+    },
+    {
+        "input": "推导向量场 $A^{\\nu}$ 的拉格朗日方程在四维时空中的分量形式，并讨论其与电磁场方程的联系。",
+        "output": ""
+    },
+    {
+        "input": "假设拉格朗日密度 ${\\mathcal{L}}$ 是一个关于 $\\partial_{\\mu}A^{\\nu}$ 的四维标量函数，推导出对应的拉格朗日方程，并证明其满足相对论协变性原理。",
+        "output": ""
+    },
+    {
+        "input": "给定向量场 $A^{\\nu}$ 的拉格朗日方程，推导其在四维时空中的具体形式，并讨论其与电磁场方程的相似性和差异性。",
+        "output": ""
+    },
+    {
+        "input": "推导相对论性粒子的拉格朗日量，假设粒子在电磁场中运动，拉格朗日量为$L = -mc^2 \\sqrt{1 - \\frac{v^2}{c^2}} + q \\mathbf{v} \\cdot \\mathbf{A} - q \\phi$，其中$\\mathbf{A}$和$\\phi$分别是电磁场的矢势和标势，$q$是粒子的电荷，$m$是粒子的静止质量，$v$是粒子的速度，$c$是光速。  ",
+        "output": ""
+    },
+    {
+        "input": "利用拉格朗日方程$\\frac{d}{dt} \\left( \\frac{\\partial L}{\\partial \\dot{q}_i} \\right) - \\frac{\\partial L}{\\partial q_i} = 0$，推导相对论性粒子在电磁场中的运动方程，并解释其物理意义。  ",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论情况下，拉格朗日量$L = -mc^2 \\sqrt{1 - \\frac{v^2}{c^2}} + q \\mathbf{v} \\cdot \\mathbf{A} - q \\phi$在洛伦兹变换下是不变的。  ",
+        "output": ""
+    },
+    {
+        "input": "计算相对论性粒子的广义动量$\\mathbf{p} = \\frac{\\partial L}{\\partial \\mathbf{v}}$，并证明其与粒子的四维动量$p^\\mu = (E/c, \\mathbf{p})$的关系。  ",
+        "output": ""
+    },
+    {
+        "input": "在电磁场中，相对论性粒子的哈密顿量$H$可以表示为$H = \\mathbf{p} \\cdot \\mathbf{v} - L$，推导其具体形式，并讨论其在相对论情况下的物理意义。  ",
+        "output": ""
+    },
+    {
+        "input": "利用拉格朗日方程，推导电磁场中的相对论性粒子的能量-动量关系$E^2 = (pc)^2 + (mc^2)^2$。  ",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论情况下，拉格朗日量$L = -mc^2 \\sqrt{1 - \\frac{v^2}{c^2}} + q \\mathbf{v} \\cdot \\mathbf{A} - q \\phi$在规范变换$\\mathbf{A} \\rightarrow \\mathbf{A} + \\nabla \\chi$和$\\phi \\rightarrow \\phi - \\frac{\\partial \\chi}{\\partial t}$下是不变的。  ",
+        "output": ""
+    },
+    {
+        "input": "计算相对论性粒子在电磁场中的拉格朗日方程，并讨论其在低速极限下如何退化为经典力学中的洛伦兹力方程。  ",
+        "output": ""
+    },
+    {
+        "input": "推导相对论性粒子在电磁场中的四维运动方程$m \\frac{d u^\\mu}{d \\tau} = q F^{\\mu \\nu} u_\\nu$，其中$u^\\mu$是四维速度，$F^{\\mu \\nu}$是电磁场张量，$\\tau$是粒子的固有时间。  ",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论情况下，拉格朗日量$L = -mc^2 \\sqrt{1 - \\frac{v^2}{c^2}} + q \\mathbf{v} \\cdot \\mathbf{A} - q \\phi$在时间反演变换下是不变的，并讨论其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导标量场 $\\phi(t)$ 的拉格朗日方程，假设拉格朗日量密度为 $\\mathcal{L}(\\phi, \\dot{\\phi})$，并证明 $\\frac{d}{dt}\\left(\\frac{\\partial \\mathcal{L}}{\\partial \\dot{\\phi}}\\right) - \\frac{\\partial \\mathcal{L}}{\\partial \\phi} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "对于标量场 $\\phi(x^\\mu)$，利用最小作用量原理推导其拉格朗日方程，并证明 $\\frac{\\partial}{\\partial x^\\mu}\\left(\\frac{\\partial \\mathcal{L}}{\\partial (\\partial_\\mu \\phi)}\\right) - \\frac{\\partial \\mathcal{L}}{\\partial \\phi} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "考虑拉格朗日量密度 $\\mathcal{L} = \\frac{1}{2} \\partial_\\alpha \\phi \\partial^\\alpha \\phi$，推导该标量场的运动方程，并证明 $\\partial_\\mu \\partial^\\mu \\phi = 0$。",
+        "output": ""
+    },
+    {
+        "input": "证明在四维时空中，高斯定理可以写成 $\\int \\partial_\\alpha A^\\alpha d\\Omega = \\int A^\\alpha dS_\\alpha$，并解释其在推导标量场方程中的应用。",
+        "output": ""
+    },
+    {
+        "input": "对于一个标量场 $\\phi(x^\\mu)$，假设拉格朗日量密度为 $\\mathcal{L} = \\frac{1}{2} \\partial_\\nu \\phi \\partial^\\nu \\phi - \\alpha \\phi \\delta(\\mathbf{x} - \\mathbf{x}_p)$，推导该场的运动方程，并证明 $\\frac{1}{c^2} \\frac{\\partial^2 \\phi}{\\partial t^2} - \\nabla^2 \\phi = -\\alpha \\delta(\\mathbf{x} - \\mathbf{x}_p)$。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在相对论性场论中，拉格朗日量密度 $\\mathcal{L}$ 必须是四维标量，并讨论其对拉格朗日方程协变性的影响。",
+        "output": ""
+    },
+    {
+        "input": "对于标量场 $\\phi(x^\\mu)$，假设拉格朗日量密度为 $\\mathcal{L} = \\frac{1}{2} \\partial_\\mu \\phi \\partial^\\mu \\phi - V(\\phi)$，其中 $V(\\phi)$ 是势能项，推导该场的运动方程。",
+        "output": ""
+    },
+    {
+        "input": "考虑一个标量场 $\\phi(x^\\mu)$，其拉格朗日量密度为 $\\mathcal{L} = \\frac{1}{2} \\partial_\\mu \\phi \\partial^\\mu \\phi - \\frac{1}{2} m^2 \\phi^2$，推导该场的运动方程，并证明 $\\left(\\frac{1}{c^2} \\frac{\\partial^2}{\\partial t^2} - \\nabla^2 + m^2\\right) \\phi = 0$。",
+        "output": ""
+    },
+    {
+        "input": "解释在推导标量场方程时，为什么在边界上要求 $\\delta \\phi = 0$，并讨论其对最小作用量原理的影响。",
+        "output": ""
+    },
+    {
+        "input": "对于一个标量场 $\\phi(x^\\mu)$，假设拉格朗日量密度为 $\\mathcal{L} = \\frac{1}{2} \\partial_\\mu \\phi \\partial^\\mu \\phi - \\lambda \\phi^4$，推导该场的运动方程，并讨论其非线性项对场方程的影响。",
+        "output": ""
+    },
+    {
+        "input": "推导标量场 $\\phi(t, \\pmb{x})$ 的拉格朗日方程，假设拉格朗日量密度为 $\\mathcal{L} = \\mathcal{L}(\\phi, \\partial_{\\mu}\\phi)$，并证明其符合相对论协变性。",
+        "output": ""
+    },
+    {
+        "input": "给定一个自由标量场的拉格朗日量密度 $\\mathcal{L} = \\frac{1}{2} (\\partial_{\\mu}\\phi)(\\partial^{\\mu}\\phi) - \\frac{1}{2} m^2 \\phi^2$，推导其对应的运动方程，并讨论该方程在相对论框架下的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设标量场 $\\phi$ 仅依赖于时间 $t$，即 $\\phi = \\phi(t)$，推导其拉格朗日方程，并解释在这种情况下拉格朗日量密度 $\\mathcal{L}$ 的形式如何简化。",
+        "output": ""
+    },
+    {
+        "input": "考虑一个标量场 $\\phi(t, \\pmb{x})$ 的拉格朗日量密度 $\\mathcal{L} = \\frac{1}{2} (\\partial_{\\mu}\\phi)(\\partial^{\\mu}\\phi) - V(\\phi)$，其中 $V(\\phi)$ 是势能函数。推导该场的运动方程，并讨论势能函数 $V(\\phi)$ 对场行为的影响。",
+        "output": ""
+    },
+    {
+        "input": "证明标量场的拉格朗日量密度 $\\mathcal{L} = \\mathcal{L}(\\phi, \\partial_{\\mu}\\phi)$ 在洛伦兹变换下是不变的，并解释这种不变性如何保证场方程的相对论协变性。",
+        "output": ""
+    },
+    {
+        "input": "给定一个标量场 $\\phi(t, \\pmb{x})$ 的拉格朗日量密度 $\\mathcal{L} = \\frac{1}{2} (\\partial_{\\mu}\\phi)(\\partial^{\\mu}\\phi) - \\frac{1}{2} m^2 \\phi^2$，计算其对应的能量-动量张量 $T^{\\mu\\nu}$，并讨论其在相对论中的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设标量场 $\\phi(t, \\pmb{x})$ 的拉格朗日量密度为 $\\mathcal{L} = \\frac{1}{2} (\\partial_{\\mu}\\phi)(\\partial^{\\mu}\\phi) - \\frac{1}{2} m^2 \\phi^2 + J(x)\\phi$，其中 $J(x)$ 是外源项。推导该场的运动方程，并解释外源项 $J(x)$ 对场的影响。",
+        "output": ""
+    },
+    {
+        "input": "考虑一个标量场 $\\phi(t, \\pmb{x})$ 的拉格朗日量密度 $\\mathcal{L} = \\frac{1}{2} (\\partial_{\\mu}\\phi)(\\partial^{\\mu}\\phi) - \\frac{1}{2} m^2 \\phi^2$，证明该场的运动方程在四维时空中可以写为 $(\\partial_{\\mu}\\partial^{\\mu} + m^2)\\phi = 0$，并解释该方程在相对论中的意义。",
+        "output": ""
+    },
+    {
+        "input": "给定一个标量场 $\\phi(t, \\pmb{x})$ 的拉格朗日量密度 $\\mathcal{L} = \\frac{1}{2} (\\partial_{\\mu}\\phi)(\\partial^{\\mu}\\phi) - \\frac{1}{2} m^2 \\phi^2$，计算其对应的哈密顿量密度 $\\mathcal{H}$，并讨论其在相对论框架下的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设标量场 $\\phi(t, \\pmb{x})$ 的拉格朗日量密度为 $\\mathcal{L} = \\frac{1}{2} (\\partial_{\\mu}\\phi)(\\partial^{\\mu}\\phi) - \\frac{1}{2} m^2 \\phi^2$，证明该场的运动方程在四维时空中可以写为 $(\\partial_{\\mu}\\partial^{\\mu} + m^2)\\phi = 0$，并解释该方程在相对论中的意义。",
+        "output": ""
+    },
+    {
+        "input": "推导标量场 $\\phi(x^\\mu)$ 的拉格朗日方程，从作用量 $S = \\int \\mathcal{L}(\\phi, \\partial_\\mu \\phi, x^\\mu) \\, \\mathrm{d}\\Omega$ 出发，利用最小作用量原理 $\\delta S = 0$，并考虑边界条件 $\\delta \\phi = 0$ 在 $\\partial \\Omega$ 上。",
+        "output": ""
+    },
+    {
+        "input": "证明在四维时空中，对于向量场 $A^\\alpha$，高斯定理 $\\int \\partial_\\alpha A^\\alpha \\, \\mathrm{d}\\Omega = \\int A^\\alpha \\, \\mathrm{d}S_\\alpha$ 成立，并解释其在相对论中的应用。",
+        "output": ""
+    },
+    {
+        "input": "对于标量场 $\\phi(x^\\mu)$，推导其拉格朗日密度 $\\mathcal{L}(\\phi, \\partial_\\mu \\phi)$ 的欧拉-拉格朗日方程，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "考虑标量场 $\\phi(x^\\mu)$ 的作用量 $S = \\int \\mathcal{L}(\\phi, \\partial_\\mu \\phi) \\, \\mathrm{d}\\Omega$，证明在四维时空中，变分 $\\delta S$ 可以表示为 $\\delta S = \\int \\left[ \\frac{\\partial \\mathcal{L}}{\\partial \\phi} - \\partial_\\mu \\left( \\frac{\\partial \\mathcal{L}}{\\partial (\\partial_\\mu \\phi)} \\right) \\right] \\delta \\phi \\, \\mathrm{d}\\Omega$。",
+        "output": ""
+    },
+    {
+        "input": "对于标量场 $\\phi(x^\\mu)$，推导其在四维时空中的守恒流 $J^\\mu = \\frac{\\partial \\mathcal{L}}{\\partial (\\partial_\\mu \\phi)} \\delta \\phi$，并解释其与诺特定理的关系。",
+        "output": ""
+    },
+    {
+        "input": "考虑标量场 $\\phi(x^\\mu)$ 的作用量 $S = \\int \\mathcal{L}(\\phi, \\partial_\\mu \\phi) \\, \\mathrm{d}\\Omega$，证明在四维时空中，拉格朗日密度的变分 $\\delta \\mathcal{L}$ 可以表示为 $\\delta \\mathcal{L} = \\frac{\\partial \\mathcal{L}}{\\partial \\phi} \\delta \\phi + \\frac{\\partial \\mathcal{L}}{\\partial (\\partial_\\mu \\phi)} \\partial_\\mu (\\delta \\phi)$。",
+        "output": ""
+    },
+    {
+        "input": "对于标量场 $\\phi(x^\\mu)$，推导其在四维时空中的能量-动量张量 $T^{\\mu\\nu} = \\frac{\\partial \\mathcal{L}}{\\partial (\\partial_\\mu \\phi)} \\partial^\\nu \\phi - \\eta^{\\mu\\nu} \\mathcal{L}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "考虑标量场 $\\phi(x^\\mu)$ 的作用量 $S = \\int \\mathcal{L}(\\phi, \\partial_\\mu \\phi) \\, \\mathrm{d}\\Omega$，证明在四维时空中，拉格朗日密度的变分 $\\delta \\mathcal{L}$ 可以表示为 $\\delta \\mathcal{L} = \\partial_\\mu \\left( \\frac{\\partial \\mathcal{L}}{\\partial (\\partial_\\mu \\phi)} \\delta \\phi \\right)$。",
+        "output": ""
+    },
+    {
+        "input": "对于标量场 $\\phi(x^\\mu)$，推导其在四维时空中的守恒律 $\\partial_\\mu J^\\mu = 0$，其中 $J^\\mu = \\frac{\\partial \\mathcal{L}}{\\partial (\\partial_\\mu \\phi)} \\delta \\phi$，并解释其与对称性的关系。",
+        "output": ""
+    },
+    {
+        "input": "考虑标量场 $\\phi(x^\\mu)$ 的作用量 $S = \\int \\mathcal{L}(\\phi, \\partial_\\mu \\phi) \\, \\mathrm{d}\\Omega$，证明在四维时空中，拉格朗日密度的变分 $\\delta \\mathcal{L}$ 可以表示为 $\\delta \\mathcal{L} = \\frac{\\partial \\mathcal{L}}{\\partial \\phi} \\delta \\phi + \\partial_\\mu \\left( \\frac{\\partial \\mathcal{L}}{\\partial (\\partial_\\mu \\phi)} \\delta \\phi \\right)$。",
+        "output": ""
+    },
+    {
+        "input": "推导标量场 $\\phi$ 的拉格朗日方程，假设拉格朗日量密度为 $\\mathcal{L} = \\frac{1}{2} \\partial_{\\alpha} \\phi \\partial^{\\alpha} \\phi$，并验证其符合相对论协变性要求。  ",
+        "output": ""
+    },
+    {
+        "input": "利用高斯定理证明 $\\int \\frac{\\partial}{\\partial x^{\\mu}} \\left[ \\frac{\\partial \\mathcal{L}}{\\partial (\\partial_{\\mu} \\phi)} \\delta \\phi \\right] \\mathrm{d} \\Omega = 0$，并解释为什么在边界上 $\\delta \\phi = 0$。  ",
+        "output": ""
+    },
+    {
+        "input": "从最小作用量原理出发，推导标量场的拉格朗日方程 $\\frac{\\partial}{\\partial x^{\\mu}} \\left[ \\frac{\\partial \\mathcal{L}}{\\partial (\\partial_{\\mu} \\phi)} \\right] - \\frac{\\partial \\mathcal{L}}{\\partial \\phi} = 0$，并解释每一项的物理意义。  ",
+        "output": ""
+    },
+    {
+        "input": "假设拉格朗日量密度为 $\\mathcal{L} = \\frac{1}{2} \\partial_{\\alpha} \\phi \\partial^{\\alpha} \\phi - V(\\phi)$，其中 $V(\\phi)$ 是势能项，推导该标量场的运动方程。  ",
+        "output": ""
+    },
+    {
+        "input": "证明标量场的拉格朗日方程在洛伦兹变换下保持不变，并解释为什么这保证了理论的相对论协变性。  ",
+        "output": ""
+    },
+    {
+        "input": "计算标量场 $\\phi$ 的能量-动量张量 $T^{\\mu\\nu}$，假设拉格朗日量密度为 $\\mathcal{L} = \\frac{1}{2} \\partial_{\\alpha} \\phi \\partial^{\\alpha} \\phi$，并验证其守恒性 $\\partial_{\\mu} T^{\\mu\\nu} = 0$。  ",
+        "output": ""
+    },
+    {
+        "input": "考虑标量场的拉格朗日量密度 $\\mathcal{L} = \\frac{1}{2} \\partial_{\\alpha} \\phi \\partial^{\\alpha} \\phi - \\frac{1}{2} m^2 \\phi^2$，推导其运动方程并讨论质量项 $m$ 的物理意义。  ",
+        "output": ""
+    },
+    {
+        "input": "利用场的拉格朗日方程，证明标量场的运动方程可以写成克莱因-戈登方程的形式 $\\partial_{\\mu} \\partial^{\\mu} \\phi + m^2 \\phi = 0$。  ",
+        "output": ""
+    },
+    {
+        "input": "假设标量场的拉格朗日量密度为 $\\mathcal{L} = \\frac{1}{2} \\partial_{\\alpha} \\phi \\partial^{\\alpha} \\phi - \\lambda \\phi^4$，推导其运动方程并讨论非线性项 $\\lambda \\phi^4$ 的物理意义。  ",
+        "output": ""
+    },
+    {
+        "input": "从拉格朗日量密度 $\\mathcal{L} = \\frac{1}{2} \\partial_{\\alpha} \\phi \\partial^{\\alpha} \\phi$ 出发，推导标量场的哈密顿量密度，并讨论其在相对论场论中的意义。",
+        "output": ""
+    },
+    {
+        "input": "推导标量场 $\\phi$ 的拉格朗日方程 $\\frac{\\partial}{\\partial x^{\\mu}}\\left[\\frac{\\partial\\mathcal{L}}{\\partial(\\partial_{\\mu}\\phi)}\\right]=0$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "计算 $\\frac{\\partial}{\\partial(\\partial_{\\mu}\\phi)}\\left(\\partial_{\\alpha}\\phi\\partial^{\\alpha}\\phi\\right)$，并证明其结果等于 $\\partial^{\\mu}\\phi$。",
+        "output": ""
+    },
+    {
+        "input": "证明 $\\partial_{\\mu}\\partial^{\\mu}\\phi = \\left(\\frac{1}{c^{2}}\\frac{\\partial^{2}}{\\partial t^{2}} - \\nabla^{2}\\right)\\phi$，并解释该方程在相对论中的意义。",
+        "output": ""
+    },
+    {
+        "input": "考虑一个粒子在场中的情况，推导修正后的拉格朗日密度 $\\mathcal{L} = \\frac{1}{2}\\partial_{\\nu}\\phi\\partial^{\\nu}\\phi - \\alpha\\phi(\\pmb{x},t)\\delta(\\pmb{x}-\\pmb{x}_{p})$，并解释 $\\delta(\\pmb{x}-\\pmb{x}_{p})$ 的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导粒子在场中的运动方程 $\\frac{1}{c^{2}}\\frac{\\partial^{2}\\phi}{\\partial t^{2}} - \\nabla^{2}\\phi = -\\alpha\\delta(\\pmb{x}-\\pmb{x}_{p})$，并解释该方程的解的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明 $\\frac{\\partial\\mathcal{L}}{\\partial\\phi} = -\\alpha\\delta(\\pmb{x}-\\pmb{x}_{p})$，并解释该结果在场论中的意义。",
+        "output": ""
+    },
+    {
+        "input": "计算 $\\frac{\\partial}{\\partial x^{\\mu}}\\left[\\frac{\\partial\\mathcal{L}}{\\partial(\\partial_{\\mu}\\phi)}\\right]$ 对于 $\\mathcal{L} = \\frac{1}{2}\\partial_{\\nu}\\phi\\partial^{\\nu}\\phi - \\alpha\\phi(\\pmb{x},t)\\delta(\\pmb{x}-\\pmb{x}_{p})$，并解释其结果。",
+        "output": ""
+    },
+    {
+        "input": "解释 $\\Omega \\equiv \\frac{\\partial^{2}}{\\partial x^{\\mu}\\partial x_{\\mu}} = \\frac{1}{c^{2}}\\frac{\\partial^{2}}{\\partial t^{2}} - \\nabla^{2}$ 在相对论中的作用，并推导其在标量场中的应用。",
+        "output": ""
+    },
+    {
+        "input": "推导 $\\frac{\\partial^{2}\\phi}{\\partial x^{\\alpha}\\partial x_{\\alpha}} = -\\alpha\\delta(\\pmb{x}-\\pmb{x}_{p})$ 的解，并讨论其在相对论场论中的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "解释 $\\mathcal{L}_{pf} = -\\alpha\\phi(\\pmb{x},t)\\delta(\\pmb{x}-\\pmb{x}_{p})$ 在拉格朗日密度中的作用，并推导其对场方程的影响。",
+        "output": ""
+    },
+    {
+        "input": "推导在相对论情况下，电场和磁场的变换公式 $E_{y}=\\gamma(E_{y}^{\\prime}+c\\beta B_{z}^{\\prime})$ 和 $B_{y}=\\gamma[B_{y}^{\\prime}-(\\beta/c)E_{z}^{\\prime}]$ 的具体步骤。",
+        "output": ""
+    },
+    {
+        "input": "计算当两个参考系之间的相对速度 $V = 0.8c$ 时，电场 $E_{y}^{\\prime} = 3 \\times 10^3 \\, \\text{V/m}$ 和磁场 $B_{z}^{\\prime} = 2 \\times 10^{-5} \\, \\text{T}$ 在另一个参考系中的值 $E_{y}$ 和 $B_{y}$。",
+        "output": ""
+    },
+    {
+        "input": "证明在非相对论极限下（$V/c \\ll 1$），电磁场的变换公式简化为 $\\pmb{{\\cal E}}=\\pmb{{\\cal E}}^{\\prime}+c\\pmb{{\\cal B}}^{\\prime}\\times\\beta$ 和 $\\pmb{{\\cal B}}=\\pmb{{\\cal B}}^{\\prime}-(\\pmb{{\\cal E}}^{\\prime}/c)\\times\\beta$。",
+        "output": ""
+    },
+    {
+        "input": "给定一个参考系中的电场 $\\pmb{{\\cal E}}^{\\prime} = (E_{x}^{\\prime}, E_{y}^{\\prime}, E_{z}^{\\prime})$ 和磁场 $\\pmb{{\\cal B}}^{\\prime} = (B_{x}^{\\prime}, B_{y}^{\\prime}, B_{z}^{\\prime})$，推导在另一个参考系中的电场 $\\pmb{{\\cal E}}$ 和磁场 $\\pmb{{\\cal B}}$ 的表达式，假设两个参考系之间的相对速度方向是任意的。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在一个参考系中的电场可以转换成另一个参考系中的磁场，反之亦然，并给出具体的数学推导。",
+        "output": ""
+    },
+    {
+        "input": "计算当 $\\beta = 0.6$ 时，电场 $\\pmb{{\\cal E}}^{\\prime} = (0, 5 \\times 10^3, 0) \\, \\text{V/m}$ 和磁场 $\\pmb{{\\cal B}}^{\\prime} = (0, 0, 1 \\times 10^{-4}) \\, \\text{T}$ 在另一个参考系中的值 $\\pmb{{\\cal E}}$ 和 $\\pmb{{\\cal B}}$。",
+        "output": ""
+    },
+    {
+        "input": "推导在相对论情况下，电磁场张量 $F^{\\mu\\nu}$ 的变换规律，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "给定一个参考系中的电磁场张量 $F^{\\mu\\nu}$，推导在另一个参考系中的电磁场张量 $F^{\\mu\\nu}$ 的表达式，假设两个参考系之间的相对速度方向是任意的。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在非相对论极限下，电磁场的变换公式中 $\\gamma \\approx 1$，并给出具体的数学推导。",
+        "output": ""
+    },
+    {
+        "input": "计算当 $\\beta = 0.9$ 时，电场 $\\pmb{{\\cal E}}^{\\prime} = (2 \\times 10^3, 0, 0) \\, \\text{V/m}$ 和磁场 $\\pmb{{\\cal B}}^{\\prime} = (0, 3 \\times 10^{-5}, 0) \\, \\text{T}$ 在另一个参考系中的值 $\\pmb{{\\cal E}}$ 和 $\\pmb{{\\cal B}}$。",
+        "output": ""
+    },
+    {
+        "input": "推导在相对论情况下，电场和磁场的变换公式 $E_{y}=\\gamma(E_{y}^{\\prime}+c\\beta B_{z}^{\\prime})$ 和 $B_{y}=\\gamma[B_{y}^{\\prime}-(\\beta/c)E_{z}^{\\prime}]$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "给定两个参考系 $S$ 和 $S'$，其中 $S'$ 以速度 $V$ 沿 $x$ 轴相对于 $S$ 运动，推导电场和磁场的变换公式 $\\pmb{{\\cal E}}=\\gamma({\\pmb{{\\cal E}}}^{\\prime}+c{\\pmb{{\\cal B}}}^{\\prime}\\times\\beta)-\\frac{\\gamma^{2}}{\\gamma+1}\\beta(\\beta\\cdot{\\pmb{{\\cal E}}}^{\\prime})$ 和 $\\pmb{{\\cal B}}=\\gamma[{\\pmb{{\\cal B}}}^{\\prime}-({\\pmb{{\\cal E}}}^{\\prime}/c)\\times\\beta]-\\frac{\\gamma^{2}}{\\gamma+1}\\beta(\\beta\\cdot{\\pmb{{\\cal B}}}^{\\prime})$。",
+        "output": ""
+    },
+    {
+        "input": "在非相对论极限下（$V/c \\ll 1$），证明电场和磁场的变换公式简化为 $\\pmb{{\\cal E}}=\\pmb{{\\cal E}}^{\\prime}+c\\pmb{{\\cal B}}^{\\prime}\\times\\beta$ 和 $\\pmb{{\\cal B}}=\\pmb{{\\cal B}}^{\\prime}-(\\pmb{{\\cal E}}^{\\prime}/c)\\times\\beta$。",
+        "output": ""
+    },
+    {
+        "input": "给定一个参考系 $S$ 中的电场 $\\pmb{E} = (E_x, E_y, E_z)$ 和磁场 $\\pmb{B} = (B_x, B_y, B_z)$，推导在另一个以速度 $V$ 沿 $x$ 轴运动的参考系 $S'$ 中的电场和磁场分量。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在一个参考系中的电场可以转换成另一个参考系中的磁场，反之亦然，并给出具体的数学推导。",
+        "output": ""
+    },
+    {
+        "input": "给定一个电磁场张量 $F^{\\mu\\nu}$，推导其在洛伦兹变换下的变换规律，并解释其与电场和磁场变换公式的关系。",
+        "output": ""
+    },
+    {
+        "input": "在相对论情况下，证明电磁场张量 $F^{\\mu\\nu}$ 的反对称性，并解释其在电磁场变换中的作用。",
+        "output": ""
+    },
+    {
+        "input": "给定一个电磁场张量 $F^{\\mu\\nu}$，推导其在非相对论极限下的形式，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导在相对论情况下，电场和磁场的变换公式 $E_{z}=\\gamma(E_{z}^{\\prime}-c\\beta B_{y}^{\\prime})$ 和 $B_{z}=\\beta[B_{z}^{\\prime}+(\\beta/c)E_{y}^{\\prime}]$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "给定一个电磁场张量 $F^{\\mu\\nu}$，推导其在任意方向相对速度情况下的变换规律，并解释其与电场和磁场变换公式的关系。",
+        "output": ""
+    },
+    {
+        "input": "从相对论自由粒子的拉格朗日量 $L=-m c^{2}\\sqrt{1-v^{2}/c^{2}}$ 出发，推导出相对论动量 $\\pmb{p}=\\gamma m\\pmb{v}$ 的表达式。",
+        "output": ""
+    },
+    {
+        "input": "证明当 $c\\rightarrow\\infty$ 时，相对论动量 $\\pmb{p}$ 退化为非相对论动量 $m\\pmb{v}$。",
+        "output": ""
+    },
+    {
+        "input": "利用拉格朗日量 $L=-m c^{2}\\sqrt{1-v^{2}/c^{2}}$，推导出粒子的相对论能量 $\\mathcal{E}=\\gamma m c^{2}$。",
+        "output": ""
+    },
+    {
+        "input": "证明当 $v\\rightarrow0$ 时，相对论能量 $\\mathcal{E}$ 退化为静止能量 $m c^{2}$。",
+        "output": ""
+    },
+    {
+        "input": "推导出相对论动能 $\\mathcal{E}_{k}=(\\gamma-1)m c^{2}$ 的表达式，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明当 $c\\rightarrow\\infty$ 时，相对论能量 $\\mathcal{E}$ 退化为 $m c^{2}+\\frac{1}{2}m v^{2}$。",
+        "output": ""
+    },
+    {
+        "input": "利用四维速度 $\\boldsymbol{u}^{\\alpha}=(\\gamma c,\\gamma\\pmb{v})$，推导出四维动量 $p^{\\alpha}=(\\gamma m c,\\gamma m\\pmb{v})$ 的表达式。",
+        "output": ""
+    },
+    {
+        "input": "证明四维动量 $p^{\\alpha}$ 的模满足 $p_{\\alpha}p^{\\alpha}=m^{2}c^{2}$，并由此推导出能量-动量方程 $\\mathcal{E}^{2}=p^{2}c^{2}+m^{2}c^{4}$。",
+        "output": ""
+    },
+    {
+        "input": "对于光子，证明其动量 $p$ 与能量 $\\mathcal{E}$ 的关系为 $p=\\mathcal{E}/c$。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换，推导出能量 $\\mathcal{E}$ 和动量 $\\pmb{p}$ 在不同惯性参考系之间的变换关系。",
+        "output": ""
+    },
+    {
+        "input": "对于动能为 $50\\,\\mathrm{MeV}$ 的电子，计算其相对论因子 $\\gamma$ 和动量大小 $p$，已知电子的静止能量为 $0.511\\,\\mathrm{MeV}$。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论框架下，质量守恒一般不成立，并举例说明（如核聚变与核裂变）。",
+        "output": ""
+    },
+    {
+        "input": "利用四维动量 $p^{\\alpha}$ 的洛伦兹变换，推导出光的相对论多普勒效应的频率变换关系。",
+        "output": ""
+    },
+    {
+        "input": "对于光子，证明其能量 $\\mathcal{E}$ 和动量 $p$ 满足 $\\mathcal{E}=pc$。",
+        "output": ""
+    },
+    {
+        "input": "证明在 $\\mathcal{E}\\gg\\mathcal{E}_{0}$ 的情况下，动量 $p$ 近似等于 $\\mathcal{E}/c$。",
+        "output": ""
+    },
+    {
+        "input": "从相对论自由粒子的拉格朗日量 $L=-m c^{2}{\\sqrt{1-v^{2}/c^{2}}}$ 出发，推导出相对论动量 $\\pmb{p}=\\frac{m\\pmb{v}}{\\sqrt{1-v^{2}/c^{2}}}$ 的表达式，并解释当 $c\\rightarrow\\infty$ 时，动量如何退化为非相对论动量。",
+        "output": ""
+    },
+    {
+        "input": "利用相对论动量 $\\pmb{p}=\\gamma m\\pmb{v}$ 和拉格朗日量 $L=-m c^{2}{\\sqrt{1-v^{2}/c^{2}}}$，推导出相对论能量 $\\mathcal{E}=\\frac{m c^{2}}{\\sqrt{1-v^{2}/c^{2}}}$ 的表达式，并解释当 $v\\rightarrow0$ 时，能量如何退化为静止能量。",
+        "output": ""
+    },
+    {
+        "input": "证明相对论动能 $\\mathcal{E}_{k}\\equiv(\\gamma-1)m c^{2}$ 的表达式，并讨论当 $v\\ll c$ 时，动能如何近似为经典动能 $\\frac{1}{2}m v^{2}$。",
+        "output": ""
+    },
+    {
+        "input": "当 $c\\rightarrow\\infty$ 时，证明相对论能量 $\\mathcal{E}$ 退化为 $\\mathcal{E}=m c^{2}+\\frac{1}{2}m v^{2}$，并解释这一结果的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "讨论相对论中质量 $m$ 的概念，解释为什么有些教科书或文章将其称为“静止质量”，并分析这种命名的物理背景和意义。",
+        "output": ""
+    },
+    {
+        "input": "假设一个粒子的速度为 $v=0.8c$，计算其相对论动量 $\\pmb{p}$ 和相对论能量 $\\mathcal{E}$，并比较其与经典动量 $m\\pmb{v}$ 和经典能量 $\\frac{1}{2}m v^{2}$ 的差异。",
+        "output": ""
+    },
+    {
+        "input": "推导相对论能量和动量之间的关系式 $\\mathcal{E}^{2}=(pc)^{2}+(m c^{2})^{2}$，并解释这一关系在相对论物理中的重要性。",
+        "output": ""
+    },
+    {
+        "input": "假设一个粒子的动量为 $\\pmb{p}=m c$，计算其速度 $v$ 和相对论能量 $\\mathcal{E}$，并讨论这种情况下粒子的运动特性。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论中，粒子的动能 $\\mathcal{E}_{k}$ 可以表示为 $\\mathcal{E}_{k}=\\sqrt{(pc)^{2}+(m c^{2})^{2}}-m c^{2}$，并解释这一表达式的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "讨论相对论动量 $\\pmb{p}=\\gamma m\\pmb{v}$ 和经典动量 $m\\pmb{v}$ 之间的差异，并分析在什么情况下这两种动量的差异可以忽略不计。",
+        "output": ""
+    },
+    {
+        "input": "根据四维速度的定义 $\\boldsymbol{u}^{\\alpha}=(\\gamma c,\\gamma\\pmb{v})$，推导出粒子的四维动量 $\\boldsymbol{p}^{\\alpha}$ 的表达式，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论框架下，粒子的能量 $E$ 和动量 $\\pmb{p}$ 满足关系式 $E^2 = (pc)^2 + (m c^2)^2$，其中 $m$ 是粒子的静止质量。",
+        "output": ""
+    },
+    {
+        "input": "考虑一个粒子的四维动量 $\\boldsymbol{p}^{\\alpha} = (E/c, \\pmb{p})$，证明在洛伦兹变换下，$\\boldsymbol{p}^{\\alpha}$ 的变换规律与四维矢量的变换规律一致。",
+        "output": ""
+    },
+    {
+        "input": "假设一个粒子的静止质量为 $m$，速度为 $v$，计算其相对论能量 $E$ 和动量 $\\pmb{p}$，并讨论当 $v$ 接近光速 $c$ 时，$E$ 和 $\\pmb{p}$ 的行为。",
+        "output": ""
+    },
+    {
+        "input": "在相对论力学中，质量守恒一般不成立。请解释为什么在核聚变或核裂变过程中，系统的总质量不守恒，但总能量守恒。",
+        "output": ""
+    },
+    {
+        "input": "考虑两个粒子在相对论碰撞过程中的能量和动量守恒，推导出碰撞后粒子的能量和动量的表达式，并讨论在极端相对论情况下（即粒子速度接近光速）的结果。",
+        "output": ""
+    },
+    {
+        "input": "根据四维速度的定义 $\\boldsymbol{u}^{\\alpha}=(\\gamma c,\\gamma\\pmb{v})$，推导出粒子的四维加速度 $\\boldsymbol{a}^{\\alpha}$ 的表达式，并讨论其在相对论中的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论框架下，粒子的四维动量 $\\boldsymbol{p}^{\\alpha}$ 与四维速度 $\\boldsymbol{u}^{\\alpha}$ 之间的关系为 $\\boldsymbol{p}^{\\alpha} = m \\boldsymbol{u}^{\\alpha}$，其中 $m$ 是粒子的静止质量。",
+        "output": ""
+    },
+    {
+        "input": "考虑一个粒子的四维动量 $\\boldsymbol{p}^{\\alpha} = (E/c, \\pmb{p})$，证明在相对论中，粒子的能量 $E$ 和动量 $\\pmb{p}$ 满足 $\\boldsymbol{p}^{\\alpha} \\boldsymbol{p}_{\\alpha} = (m c)^2$。",
+        "output": ""
+    },
+    {
+        "input": "在相对论力学中，粒子的能量和动量有着特殊的联系。请解释为什么在非相对论极限下（即 $v \\ll c$），粒子的能量可以近似表示为 $E \\approx m c^2 + \\frac{1}{2} m v^2$。",
+        "output": ""
+    },
+    {
+        "input": "推导四维动量向量 $p^{\\alpha}$ 的模，并证明其满足 $p^{\\alpha}p_{\\alpha} = m^2c^2$，其中 $p^{\\alpha} = (\\gamma m c, \\gamma m v)$。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换公式，推导出在参考系 $S$ 和 $S'$ 之间，四维动量 $p^{\\alpha}$ 的变换关系 $p^{\\alpha} = \\Lambda_{~\\beta}^{\\alpha} p^{\\prime\\beta}$，并写出具体分量表达式。",
+        "output": ""
+    },
+    {
+        "input": "已知光子的能量为 $\\mathcal{E} = \\hbar\\omega$，动量为 $\\hbar k$，推导出光的相对论多普勒效应公式，即频率在不同参考系间的变换关系。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论中，能量 $\\mathcal{E}$ 和动量 $\\pmb{p}$ 的关系为 $\\mathcal{E}^2 = (pc)^2 + (m c^2)^2$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "给定一个粒子的四维动量 $p^{\\alpha} = (\\gamma m c, \\gamma m v)$，计算其在参考系 $S$ 和 $S'$ 之间的能量和动量的变换，假设参考系 $S'$ 以速度 $V$ 沿 $x$ 轴相对 $S$ 运动。",
+        "output": ""
+    },
+    {
+        "input": "推导出在相对论中，粒子的动能 $K$ 与其总能量 $\\mathcal{E}$ 之间的关系，并证明 $K = \\mathcal{E} - m c^2$。",
+        "output": ""
+    },
+    {
+        "input": "已知一个光子的四维动量 $p^{\\alpha} = (\\hbar\\omega/c, \\hbar k)$，推导出其在参考系 $S$ 和 $S'$ 之间的能量和动量的变换关系，假设参考系 $S'$ 以速度 $V$ 沿 $x$ 轴相对 $S$ 运动。",
+        "output": ""
+    },
+    {
+        "input": "利用四维动量向量 $p^{\\alpha}$ 的洛伦兹变换，推导出在参考系 $S$ 和 $S'$ 之间，粒子的动量分量 $p_x$ 和能量 $\\mathcal{E}$ 的变换关系。",
+        "output": ""
+    },
+    {
+        "input": "给定一个粒子的四维动量 $p^{\\alpha} = (\\gamma m c, \\gamma m v)$，计算其在参考系 $S$ 和 $S'$ 之间的动量分量 $p_y$ 和 $p_z$ 的变换关系，假设参考系 $S'$ 以速度 $V$ 沿 $x$ 轴相对 $S$ 运动。",
+        "output": ""
+    },
+    {
+        "input": "推导出在相对论中，粒子的能量 $\\mathcal{E}$ 和动量 $\\pmb{p}$ 的关系为 $\\mathcal{E} = \\sqrt{(pc)^2 + (m c^2)^2}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，四维体积元 $\\mathrm{d}\\Omega = c\\mathrm{d}t\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "给定两个四维向量 $A^{\\alpha} = (A^0, A^1, A^2, A^3)$ 和 $B^{\\alpha} = (B^0, B^1, B^2, B^3)$，证明它们的点乘 $A^{\\alpha}B_{\\alpha}$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "假设 $x^{\\alpha}$ 是一个四维位置向量，计算其模平方 $x^{\\alpha}x_{\\alpha}$ 并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，时空间隔 $\\mathrm{d}s^{2} = c^{2}\\mathrm{d}t^{2} - \\mathrm{d}x^{2} - \\mathrm{d}y^{2} - \\mathrm{d}z^{2}$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "给定四维动量 $p^{\\alpha} = (E/c, p_x, p_y, p_z)$，计算其模平方 $p^{\\alpha}p_{\\alpha}$ 并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，固有时 $\\mathrm{d}\\tau$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "给定四维电流密度 $J^{\\alpha} = (c\\rho, J_x, J_y, J_z)$，证明其模平方 $J^{\\alpha}J_{\\alpha}$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "假设 $F^{\\alpha\\beta}$ 是电磁场张量，证明 $F^{\\alpha\\beta}F_{\\alpha\\beta}$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "给定四维势 $A^{\\alpha} = (\\phi/c, A_x, A_y, A_z)$，计算其模平方 $A^{\\alpha}A_{\\alpha}$ 并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，四维波矢 $k^{\\alpha} = (\\omega/c, k_x, k_y, k_z)$ 的模平方 $k^{\\alpha}k_{\\alpha}$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "证明四维体积元 $\\mathrm{d}\\Omega = c\\mathrm{d}t\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z$ 在洛伦兹变换下是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "给定两个四维向量 $A^{\\alpha}$ 和 $B^{\\alpha}$，证明它们的点乘 $A^{\\alpha}B_{\\alpha}$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "计算四维向量 $x^{\\alpha} = (ct, x, y, z)$ 的模平方 $x^{\\alpha}x_{\\alpha}$，并证明它在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "利用四维标量的定义，证明时空间隔 $\\mathrm{d}s^{2} = c^{2}\\mathrm{d}t^{2} - \\mathrm{d}x^{2} - \\mathrm{d}y^{2} - \\mathrm{d}z^{2}$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "给定一个四维标量场 $\\phi(x^{\\mu})$，证明其在洛伦兹变换下满足 $\\phi(x^{\\mu}) = \\phi(x^{\\prime\\mu})$。",
+        "output": ""
+    },
+    {
+        "input": "证明固有时 $\\mathrm{d}\\tau$ 是一个四维标量，并推导其与坐标时 $\\mathrm{d}t$ 的关系。",
+        "output": ""
+    },
+    {
+        "input": "利用四维标量的性质，证明电磁场张量 $F^{\\alpha\\beta}$ 的标量不变量 $F^{\\alpha\\beta}F_{\\alpha\\beta}$ 在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "给定一个四维向量 $A^{\\alpha} = (A^{0}, \\mathbf{A})$，证明其在洛伦兹变换下的变换规律，并验证 $A^{\\alpha}A_{\\alpha}$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "证明四维动量 $p^{\\alpha} = (E/c, \\mathbf{p})$ 的模平方 $p^{\\alpha}p_{\\alpha}$ 是一个四维标量，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "利用四维标量的定义，证明电荷密度 $\\rho$ 和电流密度 $\\mathbf{j}$ 构成的四维电流密度 $J^{\\alpha} = (c\\rho, \\mathbf{j})$ 的模平方 $J^{\\alpha}J_{\\alpha}$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "推导洛伦兹变换矩阵 $[\\Lambda_{~\\nu}^{\\mu}]$ 的逆矩阵 $[\\Lambda^{~\\nu}_{\\mu}]$，并验证 $[\\Lambda_{~\\nu}^{\\mu}][\\Lambda^{~\\nu}_{\\rho}] = \\delta^{\\mu}_{\\rho}$。",
+        "output": ""
+    },
+    {
+        "input": "给定两个事件在参考系 $K$ 中的时空坐标分别为 $(ct_1, x_1, y_1, z_1)$ 和 $(ct_2, x_2, y_2, z_2)$，计算这两个事件之间的时空间隔 $\\Delta s^2$，并讨论其时空间隔的类型（类时、类空或类光）。",
+        "output": ""
+    },
+    {
+        "input": "证明四维位移向量 $x^{\\mu} = (ct, x, y, z)$ 的模平方 $s^2 = x^{\\alpha}x_{\\alpha}$ 在洛伦兹变换下是不变量。",
+        "output": ""
+    },
+    {
+        "input": "给定一个四维向量 $A^{\\mu} = (A^0, A^1, A^2, A^3)$，推导其协变形式 $A_{\\mu}$ 并计算其模平方 $A_{\\alpha}A^{\\alpha}$。",
+        "output": ""
+    },
+    {
+        "input": "假设参考系 $K'$ 相对于参考系 $K$ 以速度 $V$ 沿 $x$ 方向运动，推导四维向量 $A^{\\mu}$ 在 $K$ 和 $K'$ 之间的变换关系，并验证 $A^{\\alpha}B_{\\alpha}$ 在洛伦兹变换下是不变量。",
+        "output": ""
+    },
+    {
+        "input": "给定一个四维向量 $A^{\\mu} = (A^0, A^1, A^2, A^3)$，证明其在复数时空中的模平方为 $A^2 + B^2 + C^2 + (iA^0)^2$，并讨论其与实数时空中的模平方的区别。",
+        "output": ""
+    },
+    {
+        "input": "推导四维速度向量 $u^{\\mu} = \\frac{dx^{\\mu}}{d\\tau}$ 的表达式，并计算其模平方 $u_{\\alpha}u^{\\alpha}$，其中 $\\tau$ 为固有时。",
+        "output": ""
+    },
+    {
+        "input": "给定两个四维向量 $A^{\\mu}$ 和 $B^{\\mu}$，证明它们的点乘 $A^{\\alpha}B_{\\alpha}$ 在洛伦兹变换下是不变量。",
+        "output": ""
+    },
+    {
+        "input": "推导四维动量向量 $p^{\\mu} = (E/c, p_x, p_y, p_z)$ 的模平方 $p_{\\alpha}p^{\\alpha}$，并讨论其在相对论中的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "给定一个四维向量 $A^{\\mu}$，证明其在复数时空中的洛伦兹变换可以表示为保持向量 $(ict, x, y, z)$ 的模不变的旋转。",
+        "output": ""
+    },
+    {
+        "input": "推导相对论动量公式 $\\pmb{p}=\\frac{m\\pmb{v}}{\\sqrt{1-v^{2}/c^{2}}}$，并解释当 $c\\rightarrow\\infty$ 时，动量如何退化为非相对论形式。",
+        "output": ""
+    },
+    {
+        "input": "利用拉格朗日量 $L=-m c^{2}{\\sqrt{1-v^{2}/c^{2}}}$，推导相对论能量公式 $\\mathcal{E}=\\frac{m c^{2}}{\\sqrt{1-v^{2}/c^{2}}}$，并解释当 $v\\rightarrow0$ 时，能量如何退化为静止能量。",
+        "output": ""
+    },
+    {
+        "input": "证明相对论动能公式 $\\mathcal{E}_{k}=(\\gamma-1)m c^{2}$，并讨论当 $c\\rightarrow\\infty$ 时，动能如何退化为经典动能形式。",
+        "output": ""
+    },
+    {
+        "input": "推导四维动量向量 $p^{\\alpha}=m u^{\\alpha}$ 的表达式，并证明其在洛伦兹变换下的变换规律。",
+        "output": ""
+    },
+    {
+        "input": "利用四维动量向量的模 $p_{\\alpha}p^{\\alpha}=m^{2}c^{2}$，推导能量-动量关系 $\\mathcal{E}^{2}=p^{2}c^{2}+m^{2}c^{4}$，并讨论光子情况下的简化形式。",
+        "output": ""
+    },
+    {
+        "input": "计算一个动能为 $50\\,\\mathrm{MeV}$ 的电子的相对论因子 $\\gamma$ 和动量大小 $p$，已知电子的静止能量为 $0.511\\,\\mathrm{MeV}$。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在相对论力学框架下，质量守恒一般不成立，并举出核聚变与核裂变作为例子。",
+        "output": ""
+    },
+    {
+        "input": "推导光子能量与动量的关系 $p=\\frac{\\mathcal{E}}{c}$，并讨论其在 $\\mathcal{E}\\gg\\mathcal{E}_{0}$ 情况下的近似形式。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换公式，推导电磁波频率在不同参考系间的变换关系，即光的相对论多普勒效应。",
+        "output": ""
+    },
+    {
+        "input": "证明四维动量向量 $p^{\\alpha}$ 的时间分量 $\\mathcal{E}/c$ 和空间分量 $\\pmb{p}$ 在不同惯性参考系中的变换关系。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论框架下，粒子的能量 $E$ 和动量 $\\mathbf{p}$ 满足关系式 $E^2 = (pc)^2 + (m c^2)^2$，其中 $m$ 是粒子的静止质量，$c$ 是光速。",
+        "output": ""
+    },
+    {
+        "input": "给定一个粒子的四维速度 $\\boldsymbol{u}^{\\alpha} = (\\gamma c, \\gamma \\mathbf{v})$，推导其四维动量 $\\boldsymbol{p}^{\\alpha} = m \\boldsymbol{u}^{\\alpha}$ 的表达式，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "在核聚变过程中，两个氘核结合形成一个氦核并释放能量。假设氘核的静止质量为 $m_D$，氦核的静止质量为 $m_{He}$，计算该过程中释放的能量 $\\Delta E$，并解释为什么质量守恒在相对论力学中不成立。",
+        "output": ""
+    },
+    {
+        "input": "考虑一个粒子的四维动量 $\\boldsymbol{p}^{\\alpha} = (E/c, \\mathbf{p})$，证明在洛伦兹变换下，$E^2 - (pc)^2$ 是一个不变量。",
+        "output": ""
+    },
+    {
+        "input": "给定一个粒子的能量 $E$ 和动量 $\\mathbf{p}$，推导其速度 $\\mathbf{v}$ 的表达式，并讨论在 $v \\ll c$ 和 $v \\approx c$ 时的极限情况。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论力学中，粒子的动能 $K$ 可以表示为 $K = (\\gamma - 1) m c^2$，其中 $\\gamma$ 是洛伦兹因子。",
+        "output": ""
+    },
+    {
+        "input": "考虑一个粒子的四维速度 $\\boldsymbol{u}^{\\alpha} = (\\gamma c, \\gamma \\mathbf{v})$，推导其四维加速度 $\\boldsymbol{a}^{\\alpha}$ 的表达式，并讨论其在低速和高速情况下的行为。",
+        "output": ""
+    },
+    {
+        "input": "在相对论力学中，粒子的能量和动量满足 $E = \\gamma m c^2$ 和 $\\mathbf{p} = \\gamma m \\mathbf{v}$。证明在低速极限下，这些表达式退化为经典力学中的动能和动量表达式。",
+        "output": ""
+    },
+    {
+        "input": "考虑一个粒子的四维动量 $\\boldsymbol{p}^{\\alpha} = (E/c, \\mathbf{p})$，证明在相对论力学中，粒子的能量和动量满足 $E^2 = (pc)^2 + (m c^2)^2$。",
+        "output": ""
+    },
+    {
+        "input": "在相对论力学中，粒子的能量和动量是紧密联系的。给定一个粒子的能量 $E$ 和动量 $\\mathbf{p}$，推导其质量 $m$ 的表达式，并讨论在 $E \\gg m c^2$ 时的极限情况。",
+        "output": ""
+    },
+    {
+        "input": "推导四维动量向量 $p^{\\alpha}$ 的模，并证明其与能量和动量的关系为 $\\mathcal{E}^2 = (pc)^2 + (m c^2)^2$。",
+        "output": ""
+    },
+    {
+        "input": "给定一个粒子的四维动量 $p^{\\alpha} = (\\gamma m c, \\gamma m v)$，求其在另一个以速度 $V$ 沿 $x$ 轴运动的惯性参考系中的四维动量分量 $p^{\\prime\\alpha}$，并验证洛伦兹变换的正确性。",
+        "output": ""
+    },
+    {
+        "input": "假设一个光子的能量为 $\\mathcal{E} = \\hbar \\omega$，动量为 $p = \\hbar k$，推导其在以速度 $V$ 沿 $x$ 轴运动的惯性参考系中的频率 $\\omega'$ 和波数 $k'$，并解释光的相对论多普勒效应。",
+        "output": ""
+    },
+    {
+        "input": "证明四维动量向量 $p^{\\alpha}$ 的模在不同惯性参考系中是不变量，即 $p^{\\alpha} p_{\\alpha} = p^{\\prime\\alpha} p^{\\prime}_{\\alpha}$。",
+        "output": ""
+    },
+    {
+        "input": "给定一个粒子的四维动量 $p^{\\alpha} = (\\gamma m c, \\gamma m v)$，求其在静止参考系中的能量 $\\mathcal{E}$ 和动量 $\\mathbf{p}$，并验证 $\\mathcal{E}^2 = (pc)^2 + (m c^2)^2$。",
+        "output": ""
+    },
+    {
+        "input": "假设一个粒子的四维动量 $p^{\\alpha}$ 在某个惯性参考系中为 $(\\mathcal{E}/c, p_x, p_y, p_z)$，求其在另一个以速度 $V$ 沿 $x$ 轴运动的惯性参考系中的能量 $\\mathcal{E}'$ 和动量 $p_x'$，并验证洛伦兹变换的正确性。",
+        "output": ""
+    },
+    {
+        "input": "推导光子的四维动量 $p^{\\alpha} = (\\hbar \\omega / c, \\hbar k)$ 的模，并证明其为零，即 $p^{\\alpha} p_{\\alpha} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "给定一个粒子的四维动量 $p^{\\alpha} = (\\gamma m c, \\gamma m v)$，求其在以速度 $V$ 沿 $x$ 轴运动的惯性参考系中的能量 $\\mathcal{E}'$ 和动量 $p_x'$，并验证 $\\mathcal{E}'^2 = (p' c)^2 + (m c^2)^2$。",
+        "output": ""
+    },
+    {
+        "input": "假设一个光子的四维动量 $p^{\\alpha} = (\\hbar \\omega / c, \\hbar k)$，求其在以速度 $V$ 沿 $x$ 轴运动的惯性参考系中的频率 $\\omega'$ 和波数 $k'$，并解释光的相对论多普勒效应。",
+        "output": ""
+    },
+    {
+        "input": "推导四维动量向量 $p^{\\alpha}$ 的模在不同惯性参考系中的不变性，并证明其在相对论中的重要性。",
+        "output": ""
+    },
+    {
+        "input": "推导相对论能量-动量关系式 $\\mathcal{E}^{2}=p^{2}c^{2}+m^{2}c^{4}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "已知光子的静止质量 $m=0$，推导光子的动量 $p$ 与能量 $\\varepsilon$ 的关系式 $p=\\frac{\\varepsilon}{c}$。",
+        "output": ""
+    },
+    {
+        "input": "当粒子的能量 $\\mathcal{E}$ 远大于其静止能量 $\\mathcal{E}_{0}$ 时，证明动量 $p$ 近似等于 $\\mathcal{E}/c$。",
+        "output": ""
+    },
+    {
+        "input": "已知电子的静止能量为 $0.511\\,\\mathrm{MeV}$，计算动能为 $50\\,\\mathrm{MeV}$ 的电子的相对论因子 $\\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "计算动能为 $50\\,\\mathrm{MeV}$ 的电子的动量大小 $p$，并验证其是否符合相对论能量-动量关系式。",
+        "output": ""
+    },
+    {
+        "input": "推导相对论动量的四维形式 $p^{\\alpha}$ 和 $p_{\\alpha}$，并解释其在四维时空中的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "已知粒子的四维动量 $p^{\\alpha}=(\\mathcal{E}/c, p)$，证明 $p_{\\alpha}p^{\\alpha}=m^{2}c^{2}$。",
+        "output": ""
+    },
+    {
+        "input": "计算一个动量为 $10\\,\\mathrm{MeV}/c$ 的粒子的总能量 $\\mathcal{E}$，假设其静止质量为 $1\\,\\mathrm{MeV}/c^{2}$。",
+        "output": ""
+    },
+    {
+        "input": "推导相对论能量-动量关系式 $\\mathcal{E}^{2}=p^{2}c^{2}+m^{2}c^{4}$ 在非相对论极限下的近似形式，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "已知一个粒子的总能量 $\\mathcal{E}$ 和动量 $p$，推导其速度 $v$ 的表达式，并讨论在相对论极限下的行为。",
+        "output": ""
+    },
+    {
+        "input": "计算一个粒子的相对论动能$\\mathcal{E}_{k}$，已知其静止能量$\\mathcal{E}_{0}$为0.511 MeV，且$\\gamma=101$。",
+        "output": ""
+    },
+    {
+        "input": "推导相对论动量的表达式$p=\\gamma m v$，并解释其与经典动量$p=mv$的区别。",
+        "output": ""
+    },
+    {
+        "input": "已知一个粒子的总能量$\\mathcal{E}$为50 MeV，计算其动量$p$，假设光速$c=1$。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论中，能量和动量的关系为$\\mathcal{E}^2 = (pc)^2 + (\\mathcal{E}_{0})^2$。",
+        "output": ""
+    },
+    {
+        "input": "计算一个粒子的速度$v$，已知其$\\gamma=101$，并讨论当$\\gamma$趋近于无穷大时，速度$v$的极限。",
+        "output": ""
+    },
+    {
+        "input": "已知一个粒子的动能$\\mathcal{E}_{k}$为50 MeV，静止能量$\\mathcal{E}_{0}$为0.511 MeV，计算其总能量$\\mathcal{E}$。",
+        "output": ""
+    },
+    {
+        "input": "推导相对论因子$\\gamma$的表达式$\\gamma = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "计算一个粒子的静止质量$m_{0}$，已知其总能量$\\mathcal{E}$为50 MeV，且$\\gamma=101$。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论中，当粒子的速度$v$接近光速$c$时，其动量$p$趋近于无穷大。",
+        "output": ""
+    },
+    {
+        "input": "已知一个粒子的动量$p$为50 MeV/c，计算其动能$\\mathcal{E}_{k}$，假设静止能量$\\mathcal{E}_{0}$为0.511 MeV。",
+        "output": ""
+    },
+    {
+        "input": "推导四维速度 $u^{\\alpha}$ 的表达式，并证明其在洛伦兹变换下的变换关系 $u^{0}=\\gamma_{V}(u^{\\prime0}+\\beta_{V}u^{\\prime1})$ 和 $u^{1}=\\gamma_{V}(u^{\\prime1}+\\beta_{V}u^{\\prime0})$。",
+        "output": ""
+    },
+    {
+        "input": "计算四维速度的模平方 $u^{\\alpha}u_{\\alpha}$，并证明其等于 $c^{2}$。",
+        "output": ""
+    },
+    {
+        "input": "给定粒子在参考系 $K$ 中的速度 $v$，推导四维速度的空间分量 $\\mathbf{u} = \\gamma \\mathbf{v}$，并证明 $\\gamma = \\sqrt{1 + u^{2}/c^{2}}$。",
+        "output": ""
+    },
+    {
+        "input": "证明四维加速度 $a^{\\mu}$ 与四维速度 $u^{\\mu}$ 的点乘为零，即 $a^{\\mu}u_{\\mu} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "利用四维加速度 $a^{\\mu} = \\frac{\\mathrm{d}u^{\\mu}}{\\mathrm{d}\\tau}$，推导四维力 $F^{\\mu} = m a^{\\mu}$ 的表达式，并讨论其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "给定粒子在参考系 $K$ 中的速度 $\\mathbf{v} = (v_x, v_y, v_z)$，计算四维速度 $u^{\\alpha} = (\\gamma c, \\gamma v_x, \\gamma v_y, \\gamma v_z)$，并验证其模平方为 $c^{2}$。",
+        "output": ""
+    },
+    {
+        "input": "推导四维速度 $u^{\\alpha}$ 在参考系 $K$ 和 $K^{\\prime}$ 之间的变换关系，并证明 $u^{2} = u^{\\prime2}$ 和 $u^{3} = u^{\\prime3}$ 保持不变。",
+        "output": ""
+    },
+    {
+        "input": "给定粒子在参考系 $K$ 中的速度 $\\mathbf{v}$，推导四维速度 $u^{\\alpha}$ 的时间分量 $u^{0} = \\gamma c$，并证明其在洛伦兹变换下的不变性。",
+        "output": ""
+    },
+    {
+        "input": "利用四维速度 $u^{\\alpha}$ 和四维加速度 $a^{\\mu}$ 的定义，推导四维力 $F^{\\mu} = m a^{\\mu}$ 的表达式，并讨论其在相对论中的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明四维速度 $u^{\\alpha}$ 的模平方 $u^{\\alpha}u_{\\alpha}$ 是一个四维标量，且在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "推导四维速度 $u^{\\alpha}$ 的表达式，并证明其在洛伦兹变换下的协变性。",
+        "output": ""
+    },
+    {
+        "input": "计算一个以恒定速度 $v$ 运动的粒子的四维速度 $u^{\\alpha}$，并验证其满足 $u^{\\alpha}u_{\\alpha} = c^2$。",
+        "output": ""
+    },
+    {
+        "input": "证明四维速度 $u^{\\alpha}$ 与四维动量 $p^{\\alpha}$ 之间的关系 $p^{\\alpha} = m u^{\\alpha}$，其中 $m$ 是粒子的静止质量。",
+        "output": ""
+    },
+    {
+        "input": "推导四维加速度 $a^{\\alpha} = \\mathrm{d}u^{\\alpha}/\\mathrm{d}\\tau$ 的表达式，并讨论其在相对论中的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "计算一个粒子在匀加速运动中的四维加速度 $a^{\\alpha}$，并验证其与四维速度 $u^{\\alpha}$ 的正交性 $a^{\\alpha}u_{\\alpha} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "证明四维速度 $u^{\\alpha}$ 与四维波矢 $k^{\\alpha}$ 之间的关系 $k^{\\alpha} = (\\omega/c, \\mathbf{k})$ 在相对论中的协变性。",
+        "output": ""
+    },
+    {
+        "input": "推导四维动量 $p^{\\alpha}$ 的表达式，并证明其在洛伦兹变换下的协变性。",
+        "output": ""
+    },
+    {
+        "input": "计算一个光子（静止质量为零）的四维动量 $p^{\\alpha}$，并验证其满足 $p^{\\alpha}p_{\\alpha} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "证明四维动量 $p^{\\alpha}$ 与四维力 $F^{\\alpha}$ 之间的关系 $F^{\\alpha} = \\mathrm{d}p^{\\alpha}/\\mathrm{d}\\tau$，并讨论其在相对论中的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导四维角动量 $M^{\\alpha\\beta} = x^{\\alpha}p^{\\beta} - x^{\\beta}p^{\\alpha}$ 的表达式，并证明其在洛伦兹变换下的协变性。",
+        "output": ""
+    },
+    {
+        "input": "推导四维速度 $u^{\\alpha}$ 的表达式，并证明 $u^{0} = \\gamma c$ 和 $u^{i} = \\gamma v_{i}$，其中 $i = 1, 2, 3$。",
+        "output": ""
+    },
+    {
+        "input": "证明四维速度的模方 $u^{\\alpha}u_{\\alpha}$ 是一个洛伦兹不变量，并计算其值。",
+        "output": ""
+    },
+    {
+        "input": "给定粒子在参考系 $K$ 中的速度 $v = (v_x, v_y, v_z)$，求其在参考系 $K'$ 中的四维速度 $u'^{\\alpha}$，假设 $K'$ 相对于 $K$ 以速度 $V$ 沿 $x$ 轴运动。",
+        "output": ""
+    },
+    {
+        "input": "利用四维速度的变换关系，推导出速度 $v$ 在不同参考系之间的变换公式，即相对论速度叠加公式。",
+        "output": ""
+    },
+    {
+        "input": "证明相对论因子 $\\gamma$ 可以表示为 $\\gamma = \\sqrt{1 + u^2 / c^2}$，其中 $u$ 是四维速度的空间分量的大小。",
+        "output": ""
+    },
+    {
+        "input": "计算粒子在参考系 $K$ 中的四维加速度 $a^{\\alpha} = \\frac{du^{\\alpha}}{d\\tau}$，并证明其在洛伦兹变换下的变换规律。",
+        "output": ""
+    },
+    {
+        "input": "给定粒子在参考系 $K$ 中的四维速度 $u^{\\alpha} = (\\gamma c, \\gamma v_x, \\gamma v_y, \\gamma v_z)$，求其在参考系 $K'$ 中的四维速度 $u'^{\\alpha}$，假设 $K'$ 相对于 $K$ 以速度 $V$ 沿 $y$ 轴运动。",
+        "output": ""
+    },
+    {
+        "input": "证明四维速度 $u^{\\alpha}$ 的时间分量 $u^{0}$ 和空间分量 $\\mathbf{u}$ 满足关系 $u^{0} = \\gamma c$ 和 $\\mathbf{u} = \\gamma \\mathbf{v}$。",
+        "output": ""
+    },
+    {
+        "input": "给定粒子在参考系 $K$ 中的速度 $v = (v_x, v_y, v_z)$，求其在参考系 $K'$ 中的速度 $v'$，假设 $K'$ 相对于 $K$ 以速度 $V$ 沿 $z$ 轴运动。",
+        "output": ""
+    },
+    {
+        "input": "证明四维速度 $u^{\\alpha}$ 的变换关系 $u^{0} = \\gamma_V (u'^{0} + \\beta_V u'^{1})$ 和 $u^{1} = \\gamma_V (u'^{1} + \\beta_V u'^{0})$ 满足洛伦兹变换的要求。",
+        "output": ""
+    },
+    {
+        "input": "证明四维速度的模平方 $u^{\\alpha}u_{\\alpha} = c^2$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导四维速度 $u^{\\alpha}$ 与三维速度 $\\mathbf{v}$ 之间的关系，并证明 $u^{\\alpha}u_{\\alpha} = \\gamma^2(c^2 - v^2) = c^2$。",
+        "output": ""
+    },
+    {
+        "input": "给定粒子的四维速度 $u^{\\alpha}$，计算其四维动量 $p^{\\alpha} = m u^{\\alpha}$，并讨论其在相对论中的意义。",
+        "output": ""
+    },
+    {
+        "input": "证明四维加速度 $a^{\\mu} = \\frac{\\mathrm{d}u^{\\mu}}{\\mathrm{d}\\tau}$ 是一个四维向量，并讨论其与三维加速度的关系。",
+        "output": ""
+    },
+    {
+        "input": "计算四维加速度 $a^{\\mu}$ 的模平方 $a^{\\mu}a_{\\mu}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "给定粒子的四维速度 $u^{\\alpha}$ 和四维加速度 $a^{\\mu}$，证明 $u^{\\alpha}a_{\\alpha} = 0$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导四维速度 $u^{\\alpha}$ 与固有时 $\\tau$ 之间的关系，并证明 $\\mathrm{d}\\tau = \\frac{\\mathrm{d}s}{c}$。",
+        "output": ""
+    },
+    {
+        "input": "给定粒子的四维速度 $u^{\\alpha}$，计算其在某一惯性参考系中的三维速度分量，并讨论其在低速极限下的行为。",
+        "output": ""
+    },
+    {
+        "input": "证明四维速度 $u^{\\alpha}$ 的模平方 $u^{\\alpha}u_{\\alpha}$ 在所有惯性参考系中保持不变。",
+        "output": ""
+    },
+    {
+        "input": "给定粒子的四维加速度 $a^{\\mu}$，计算其在某一惯性参考系中的三维加速度分量，并讨论其在低速极限下的行为。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，四维体积元 $\\mathrm{d}\\Omega = c\\mathrm{d}t\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "给定两个四维向量 $A^{\\alpha}$ 和 $B^{\\alpha}$，证明它们的点乘 $A^{\\alpha}B_{\\alpha}$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "计算四维向量 $x^{\\alpha} = (ct, x, y, z)$ 的模平方 $x^{\\alpha}x_{\\alpha}$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，时空间隔 $\\mathrm{d}s^{2} = c^{2}\\mathrm{d}t^{2} - \\mathrm{d}x^{2} - \\mathrm{d}y^{2} - \\mathrm{d}z^{2}$ 是一个四维标量。",
+        "output": ""
+    },
+    {
+        "input": "给定四维向量 $A^{\\alpha} = (A^{0}, A^{1}, A^{2}, A^{3})$，证明其模平方 $A^{\\alpha}A_{\\alpha}$ 在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "推导四维标量 $\\phi(x^{\\mu})$ 在洛伦兹变换下的不变性条件 $\\phi(x^{\\mu}) = \\phi(x^{\\prime\\mu})$。",
+        "output": ""
+    },
+    {
+        "input": "计算四维向量 $A^{\\alpha} = (A^{0}, A^{1}, A^{2}, A^{3})$ 和 $B^{\\alpha} = (B^{0}, B^{1}, B^{2}, B^{3})$ 的点乘 $A^{\\alpha}B_{\\alpha}$，并解释其在相对论中的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明四维标量 $\\mathrm{d}\\tau = \\frac{\\mathrm{d}s}{c}$ 是固有时，且在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "给定四维向量 $x^{\\alpha} = (ct, x, y, z)$，证明其在洛伦兹变换下的变换规律 $x^{\\prime\\alpha} = \\Lambda^{\\alpha}_{\\beta} x^{\\beta}$。",
+        "output": ""
+    },
+    {
+        "input": "推导四维标量 $\\phi(x^{\\mu})$ 在洛伦兹变换下的变换规律，并证明其在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "证明四维标量在洛伦兹变换下保持不变，即若$S$和$S'$是两个惯性参考系，且$S'$相对于$S$以速度$v$沿$x$轴运动，则四维标量$\\phi$满足$\\phi'(x') = \\phi(x)$。",
+        "output": ""
+    },
+    {
+        "input": "计算四维标量$\\phi(x)$在四维时空中的梯度$\\partial_\\mu \\phi$，并证明其在洛伦兹变换下的变换规律为$\\partial'_\\mu \\phi' = \\Lambda_\\mu^\\nu \\partial_\\nu \\phi$，其中$\\Lambda_\\mu^\\nu$是洛伦兹变换矩阵。",
+        "output": ""
+    },
+    {
+        "input": "给定四维标量场$\\phi(x)$，推导其对应的四维流密度$j^\\mu = \\partial^\\mu \\phi$，并证明该流密度满足连续性方程$\\partial_\\mu j^\\mu = 0$。",
+        "output": ""
+    },
+    {
+        "input": "考虑四维标量场$\\phi(x)$在闵可夫斯基时空中的波动方程$\\Box \\phi = 0$，其中$\\Box = \\partial_\\mu \\partial^\\mu$是达朗贝尔算子。证明该波动方程在洛伦兹变换下形式不变。",
+        "output": ""
+    },
+    {
+        "input": "给定四维标量场$\\phi(x)$，计算其在四维时空中的能量-动量张量$T^{\\mu\\nu} = \\partial^\\mu \\phi \\partial^\\nu \\phi - \\frac{1}{2} \\eta^{\\mu\\nu} (\\partial_\\alpha \\phi \\partial^\\alpha \\phi)$，并证明其满足守恒定律$\\partial_\\mu T^{\\mu\\nu} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "考虑四维标量场$\\phi(x)$与电磁场的相互作用，推导出耦合项$\\mathcal{L}_{\\text{int}} = -e j^\\mu A_\\mu$，其中$j^\\mu$是四维流密度，$A_\\mu$是电磁四维势。证明该耦合项在洛伦兹变换下不变。",
+        "output": ""
+    },
+    {
+        "input": "给定四维标量场$\\phi(x)$，计算其在四维时空中的拉格朗日密度$\\mathcal{L} = \\frac{1}{2} \\partial_\\mu \\phi \\partial^\\mu \\phi - V(\\phi)$，并推导出对应的欧拉-拉格朗日方程$\\frac{\\partial \\mathcal{L}}{\\partial \\phi} - \\partial_\\mu \\left( \\frac{\\partial \\mathcal{L}}{\\partial (\\partial_\\mu \\phi)} \\right) = 0$。",
+        "output": ""
+    },
+    {
+        "input": "考虑四维标量场$\\phi(x)$在弯曲时空中的推广，推导出其在广义相对论中的运动方程$\\frac{1}{\\sqrt{-g}} \\partial_\\mu \\left( \\sqrt{-g} g^{\\mu\\nu} \\partial_\\nu \\phi \\right) = 0$，其中$g_{\\mu\\nu}$是时空度规，$g = \\det(g_{\\mu\\nu})$。",
+        "output": ""
+    },
+    {
+        "input": "给定四维标量场$\\phi(x)$，计算其在四维时空中的应力-能量张量$T_{\\mu\\nu} = \\partial_\\mu \\phi \\partial_\\nu \\phi - \\frac{1}{2} g_{\\mu\\nu} (\\partial_\\alpha \\phi \\partial^\\alpha \\phi)$，并证明其在广义相对论中满足爱因斯坦场方程$G_{\\mu\\nu} = 8\\pi G T_{\\mu\\nu}$。",
+        "output": ""
+    },
+    {
+        "input": "考虑四维标量场$\\phi(x)$在量子场论中的推广，推导出其对应的量子场算符$\\hat{\\phi}(x)$，并计算其对易关系$[\\hat{\\phi}(x), \\hat{\\phi}(y)]$在等时情况下的表达式。",
+        "output": ""
+    },
+    {
+        "input": "证明在闵氏空间中，四维位移向量 $x^{\\mu} = (ct, x, y, z)$ 的模平方 $s^2 = \\eta_{\\mu\\nu} x^{\\mu} x^{\\nu}$ 在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "给定一个四维向量 $A^{\\mu} = (A^0, A^1, A^2, A^3)$，推导其协变形式 $A_{\\mu}$ 并证明 $A_{\\mu} = \\eta_{\\mu\\nu} A^{\\nu}$。",
+        "output": ""
+    },
+    {
+        "input": "假设两个事件在参考系 $K$ 中的坐标分别为 $(ct_1, x_1, y_1, z_1)$ 和 $(ct_2, x_2, y_2, z_2)$，计算这两个事件之间的时空间隔 $(\\Delta s)^2$ 并讨论其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导洛伦兹变换矩阵 $\\Lambda_{\\ \\nu}^{\\mu}$ 的逆矩阵 $\\Lambda^{-1}$，并证明 $\\Lambda^{-1}$ 也是一个洛伦兹变换矩阵。",
+        "output": ""
+    },
+    {
+        "input": "给定一个四维向量 $A^{\\mu} = (A^0, A^1, A^2, A^3)$，证明其在洛伦兹变换下的变换规则为 $A^{\\mu} = \\Lambda_{\\ \\nu}^{\\mu} A^{\\prime \\nu}$。",
+        "output": ""
+    },
+    {
+        "input": "计算四维向量 $A^{\\mu} = (A^0, A^1, A^2, A^3)$ 和 $B^{\\mu} = (B^0, B^1, B^2, B^3)$ 的点积 $A^{\\mu} B_{\\mu}$，并讨论其在洛伦兹变换下的不变性。",
+        "output": ""
+    },
+    {
+        "input": "假设一个粒子在参考系 $K$ 中的四维速度为 $u^{\\mu} = \\frac{dx^{\\mu}}{d\\tau}$，其中 $\\tau$ 是固有时。推导 $u^{\\mu}$ 的表达式并证明 $u^{\\mu} u_{\\mu} = c^2$。",
+        "output": ""
+    },
+    {
+        "input": "给定一个四维动量向量 $p^{\\mu} = (E/c, p_x, p_y, p_z)$，推导其协变形式 $p_{\\mu}$ 并证明 $p^{\\mu} p_{\\mu} = m^2 c^2$，其中 $m$ 是粒子的静止质量。",
+        "output": ""
+    },
+    {
+        "input": "假设一个四维向量 $A^{\\mu}$ 在参考系 $K$ 中的分量为 $(A^0, A^1, A^2, A^3)$，在参考系 $K'$ 中的分量为 $(A^{\\prime 0}, A^{\\prime 1}, A^{\\prime 2}, A^{\\prime 3})$。推导 $A^{\\mu}$ 在 $K$ 和 $K'$ 之间的洛伦兹变换关系。",
+        "output": ""
+    },
+    {
+        "input": "证明在闵氏空间中，四维向量的模平方 $A^{\\mu} A_{\\mu}$ 可以是正数、负数或零，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "给定一个四维向量 $A^{\\mu} = (A^0, A^1, A^2, A^3)$，推导其在复数时空中的表达式，并证明其模平方在复数时空中的形式为 $A^2 + y^2 + z^2 + (ict)^2$。",
+        "output": ""
+    },
+    {
+        "input": "假设一个四维向量 $A^{\\mu}$ 在参考系 $K$ 中的分量为 $(A^0, A^1, A^2, A^3)$，在参考系 $K'$ 中的分量为 $(A^{\\prime 0}, A^{\\prime 1}, A^{\\prime 2}, A^{\\prime 3})$。推导 $A^{\\mu}$ 在 $K$ 和 $K'$ 之间的复数洛伦兹变换关系。",
+        "output": ""
+    },
+    {
+        "input": "证明在闵氏空间中，四维向量的协变形式和逆变形式之间的关系 $A_{\\mu} = \\eta_{\\mu\\nu} A^{\\nu}$ 在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "给定一个四维向量 $A^{\\mu} = (A^0, A^1, A^2, A^3)$，推导其在复数时空中的协变形式 $A_{\\mu}$ 并证明 $A_{\\mu} = \\eta_{\\mu\\nu} A^{\\nu}$。",
+        "output": ""
+    },
+    {
+        "input": "假设一个四维向量 $A^{\\mu}$ 在参考系 $K$ 中的分量为 $(A^0, A^1, A^2, A^3)$，在参考系 $K'$ 中的分量为 $(A^{\\prime 0}, A^{\\prime 1}, A^{\\prime 2}, A^{\\prime 3})$。推导 $A^{\\mu}$ 在 $K$ 和 $K'$ 之间的实数洛伦兹变换关系。",
+        "output": ""
+    },
+    {
+        "input": "推导四维位移向量 $x^{\\mu} = (ct, x, y, z)$ 的模的平方 $s^2$ 并证明其在洛伦兹变换下是不变量。",
+        "output": ""
+    },
+    {
+        "input": "给定两个惯性参考系 $K$ 和 $K^{\\prime}$，其中 $K^{\\prime}$ 以速度 $V$ 沿 $x$ 方向相对 $K$ 运动，推导四维向量 $A^{\\mu}$ 在 $K$ 和 $K^{\\prime}$ 之间的洛伦兹变换关系，并证明 $A^{\\mu}$ 的模的平方 $A^{\\mu}A_{\\mu}$ 是不变量。",
+        "output": ""
+    },
+    {
+        "input": "证明四维速度向量 $u^{\\mu} = \\frac{dx^{\\mu}}{d\\tau}$ 满足洛伦兹变换，并计算其在参考系 $K$ 和 $K^{\\prime}$ 中的分量。",
+        "output": ""
+    },
+    {
+        "input": "给定四维动量向量 $p^{\\mu} = (E/c, \\mathbf{p})$，推导其在洛伦兹变换下的变换关系，并证明能量-动量关系 $E^2 = (pc)^2 + (m_0c^2)^2$ 在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "证明四维加速度向量 $a^{\\mu} = \\frac{du^{\\mu}}{d\\tau}$ 在洛伦兹变换下的变换关系，并讨论其在相对论中的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "给定四维力向量 $F^{\\mu} = \\frac{dp^{\\mu}}{d\\tau}$，推导其在洛伦兹变换下的变换关系，并证明四维力与四维速度的乘积 $F^{\\mu}u_{\\mu}$ 为零。",
+        "output": ""
+    },
+    {
+        "input": "推导四维电磁势 $A^{\\mu} = (\\phi/c, \\mathbf{A})$ 在洛伦兹变换下的变换关系，并证明电磁场的张量 $F^{\\mu\\nu} = \\partial^{\\mu}A^{\\nu} - \\partial^{\\nu}A^{\\mu}$ 满足洛伦兹协变性。",
+        "output": ""
+    },
+    {
+        "input": "给定四维电流密度 $J^{\\mu} = (c\\rho, \\mathbf{J})$，推导其在洛伦兹变换下的变换关系，并证明电荷守恒定律 $\\partial_{\\mu}J^{\\mu} = 0$ 在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "证明四维波向量 $k^{\\mu} = (\\omega/c, \\mathbf{k})$ 在洛伦兹变换下的变换关系，并推导多普勒效应和光行差效应的相对论表达式。",
+        "output": ""
+    },
+    {
+        "input": "给定四维角动量张量 $M^{\\mu\\nu} = x^{\\mu}p^{\\nu} - x^{\\nu}p^{\\mu}$，推导其在洛伦兹变换下的变换关系，并讨论其在相对论力学中的应用。",
+        "output": ""
+    },
+    {
+        "input": "给定四维向量的逆变形式为 $A^{\\mu}=(A^{0},A^{1},A^{2},A^{3})$，利用闵氏空间的度规系数 $\\eta_{\\mu\\nu}$，推导其协变形式 $A_{\\mu}$ 并证明 $A_{\\mu}=(A^{0},-A^{1},-A^{2},-A^{3})$。",
+        "output": ""
+    },
+    {
+        "input": "对于四维位移矢量 $x^{\\alpha}=(ct,x,y,z)$，计算其模平方 $s^{2}=x^{\\alpha}x_{\\alpha}$ 并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "给定四维动量矢量 $p^{\\mu}=(E/c, p_x, p_y, p_z)$，计算其协变形式 $p_{\\mu}$ 并证明 $p_{\\mu}p^{\\mu}=m^2c^2$，其中 $m$ 为粒子的静止质量。",
+        "output": ""
+    },
+    {
+        "input": "利用四维向量的模平方公式 $A_{\\alpha}A^{\\alpha}$，证明电磁场张量 $F^{\\mu\\nu}$ 的模平方 $F_{\\mu\\nu}F^{\\mu\\nu}$ 是洛伦兹不变量。",
+        "output": ""
+    },
+    {
+        "input": "给定四维速度矢量 $u^{\\mu}=(\\gamma c, \\gamma \\mathbf{v})$，其中 $\\gamma$ 为洛伦兹因子，计算其协变形式 $u_{\\mu}$ 并证明 $u_{\\mu}u^{\\mu}=c^2$。",
+        "output": ""
+    },
+    {
+        "input": "对于四维波矢量 $k^{\\mu}=(\\omega/c, \\mathbf{k})$，计算其协变形式 $k_{\\mu}$ 并证明 $k_{\\mu}k^{\\mu}=0$ 对应于光波的传播条件。",
+        "output": ""
+    },
+    {
+        "input": "给定四维电流密度矢量 $j^{\\mu}=(c\\rho, \\mathbf{j})$，计算其协变形式 $j_{\\mu}$ 并证明连续性方程 $\\partial_{\\mu}j^{\\mu}=0$ 的洛伦兹不变性。",
+        "output": ""
+    },
+    {
+        "input": "利用四维向量的模平方公式，证明四维加速度矢量 $a^{\\mu}$ 的模平方 $a_{\\mu}a^{\\mu}$ 在惯性参考系中为零。",
+        "output": ""
+    },
+    {
+        "input": "给定四维势矢量 $A^{\\mu}=(\\phi/c, \\mathbf{A})$，计算其协变形式 $A_{\\mu}$ 并证明洛伦兹规范条件 $\\partial_{\\mu}A^{\\mu}=0$ 的洛伦兹不变性。",
+        "output": ""
+    },
+    {
+        "input": "对于四维角动量矢量 $L^{\\mu\\nu}=x^{\\mu}p^{\\nu}-x^{\\nu}p^{\\mu}$，计算其协变形式 $L_{\\mu\\nu}$ 并证明其模平方 $L_{\\mu\\nu}L^{\\mu\\nu}$ 是洛伦兹不变量。",
+        "output": ""
+    },
+    {
+        "input": "给定两个四维向量 $A^{\\alpha} = (A^0, A^1, A^2, A^3)$ 和 $B^{\\alpha} = (B^0, B^1, B^2, B^3)$，推导它们的点乘 $A^{\\alpha}B_{\\alpha}$ 并解释其结果在闵氏空间中的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "在闵氏空间中，四维向量 $A^{\\alpha}$ 的模定义为 $A^{\\alpha}A_{\\alpha}$。若 $A^{\\alpha} = (ct, x, y, z)$，计算其模并讨论其可能的取值（正、负、零）对应的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "在复数时空中，时间分量为虚数，即 $A^0 = \\mathrm{i}ct$。给定四维向量 $A^{\\alpha} = (\\mathrm{i}ct, x, y, z)$，计算其模 $A^{\\alpha}A_{\\alpha}$ 并解释其结果与闵氏空间中的模的区别。",
+        "output": ""
+    },
+    {
+        "input": "证明在复数时空中，四维向量 $A^{\\alpha} = (\\mathrm{i}ct, x, y, z)$ 的模 $A^{\\alpha}A_{\\alpha}$ 可以表示为 $x^2 + y^2 + z^2 - c^2 t^2$，并讨论其与闵氏空间中的间隔类型的关系。",
+        "output": ""
+    },
+    {
+        "input": "给定四维向量 $A^{\\alpha} = (A^0, A^1, A^2, A^3)$ 和 $B^{\\alpha} = (B^0, B^1, B^2, B^3)$，推导它们在复数时空中的点乘 $A^{\\alpha}B_{\\alpha}$ 并讨论其结果与闵氏空间中的点乘的区别。",
+        "output": ""
+    },
+    {
+        "input": "在闵氏空间中，四维向量 $A^{\\alpha}$ 的模 $A^{\\alpha}A_{\\alpha}$ 可以为零。给出一个具体的四维向量 $A^{\\alpha}$ 使得 $A^{\\alpha}A_{\\alpha} = 0$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "在复数时空中，四维向量 $A^{\\alpha} = (\\mathrm{i}ct, x, y, z)$ 的模 $A^{\\alpha}A_{\\alpha}$ 可以为零。给出一个具体的四维向量 $A^{\\alpha}$ 使得 $A^{\\alpha}A_{\\alpha} = 0$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "讨论在闵氏空间中，四维向量 $A^{\\alpha}$ 的模 $A^{\\alpha}A_{\\alpha}$ 为正、负、零时对应的物理现象，并举例说明。",
+        "output": ""
+    },
+    {
+        "input": "在复数时空中，四维向量 $A^{\\alpha} = (\\mathrm{i}ct, x, y, z)$ 的模 $A^{\\alpha}A_{\\alpha}$ 可以表示为 $x^2 + y^2 + z^2 - c^2 t^2$。推导这一表达式并解释其与闵氏空间中的间隔类型的关系。",
+        "output": ""
+    },
+    {
+        "input": "给定四维向量 $A^{\\alpha} = (A^0, A^1, A^2, A^3)$ 和 $B^{\\alpha} = (B^0, B^1, B^2, B^3)$，推导它们在闵氏空间中的点乘 $A^{\\alpha}B_{\\alpha}$ 并讨论其结果与复数时空中的点乘的区别。",
+        "output": ""
+    },
+    {
+        "input": "证明在实数时空中，四维向量 $(ct, x, y, z)$ 的模 $s^2 = -c^2t^2 + x^2 + y^2 + z^2$ 在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "推导洛伦兹变换矩阵 $\\Lambda$，使得四维向量 $(ct, x, y, z)$ 在参考系变换后满足 $s'^2 = s^2$。",
+        "output": ""
+    },
+    {
+        "input": "计算在实数时空中，四维向量 $(ct, x, y, z)$ 的协变分量和逆变分量，并证明它们之间的关系。",
+        "output": ""
+    },
+    {
+        "input": "证明在实数时空中，四维速度向量 $u^\\mu = \\frac{dx^\\mu}{d\\tau}$ 的模 $u^\\mu u_\\mu = -c^2$，其中 $\\tau$ 是固有时。",
+        "output": ""
+    },
+    {
+        "input": "推导在实数时空中，四维动量向量 $p^\\mu = m u^\\mu$ 的表达式，并证明其在洛伦兹变换下的不变性。",
+        "output": ""
+    },
+    {
+        "input": "计算在实数时空中，四维加速度向量 $a^\\mu = \\frac{du^\\mu}{d\\tau}$ 的表达式，并讨论其在非惯性参考系中的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明在实数时空中，四维力向量 $f^\\mu = \\frac{dp^\\mu}{d\\tau}$ 的表达式，并讨论其在相对论动力学中的应用。",
+        "output": ""
+    },
+    {
+        "input": "推导在实数时空中，四维电磁势 $A^\\mu = (\\phi/c, \\mathbf{A})$ 的表达式，并证明其在洛伦兹变换下的协变性。",
+        "output": ""
+    },
+    {
+        "input": "计算在实数时空中，四维电磁场张量 $F^{\\mu\\nu} = \\partial^\\mu A^\\nu - \\partial^\\nu A^\\mu$ 的表达式，并讨论其在电磁学中的应用。",
+        "output": ""
+    },
+    {
+        "input": "证明在实数时空中，四维电流密度 $J^\\mu = (\\rho c, \\mathbf{J})$ 的连续性方程 $\\partial_\\mu J^\\mu = 0$ 在洛伦兹变换下的不变性。",
+        "output": ""
+    },
+    {
+        "input": "推导在相对论中，长度收缩效应的公式 $l = l_0 / \\gamma$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "在 $K$ 参考系中，一根棒子的固有长度为 $l_0$，若棒子以速度 $v$ 沿 $x$ 轴运动，求在 $K$ 参考系中测量到的棒子长度 $l$。",
+        "output": ""
+    },
+    {
+        "input": "假设一个 $\\mu$ 子以速度 $v = 0.99c$ 从大气层顶运动到地面，大气层顶到地面的固有距离为 $100\\,\\mathrm{km}$。求在 $\\mu$ 子参考系中，大气层顶到地面的距离。",
+        "output": ""
+    },
+    {
+        "input": "在谷仓-梯子佯谬中，梯子的固有长度为 $l_L$，谷仓的固有长度为 $l_B$，且 $l_L > l_B$。若梯子以速度 $v$ 运动，使得 $l_L / \\gamma \\leq l_B$，求梯子的速度 $v$ 与 $l_L$ 和 $l_B$ 的关系。",
+        "output": ""
+    },
+    {
+        "input": "在谷仓-梯子佯谬中，若梯子的速度 $v = 0.8c$，梯子的固有长度 $l_L = 10\\,\\mathrm{m}$，谷仓的固有长度 $l_B = 8\\,\\mathrm{m}$，求在谷仓参考系中梯子的长度 $l$。",
+        "output": ""
+    },
+    {
+        "input": "推导在相对论中，固有体积 $V_0$ 与运动参考系中测量到的体积 $V$ 的关系 $V = V_0 / \\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "一个立方体在静止参考系中的边长为 $a$，若该立方体以速度 $v$ 沿 $x$ 轴运动，求在运动参考系中测量到的立方体体积 $V$。",
+        "output": ""
+    },
+    {
+        "input": "在四维时空中，证明体积元 $\\mathrm{d}t\\mathrm{d}V$ 不随参考系变化，即 $\\mathrm{d}t\\mathrm{d}V = \\mathrm{d}\\tau\\mathrm{d}V_0$。",
+        "output": ""
+    },
+    {
+        "input": "一个物体在静止参考系中的固有体积为 $V_0$，若该物体以速度 $v$ 运动，求在运动参考系中测量到的体积 $V$ 与固有体积 $V_0$ 的关系。",
+        "output": ""
+    },
+    {
+        "input": "在相对论中，解释为什么运动的时钟变缓 $\\mathrm{d}t = \\gamma\\mathrm{d}\\tau$ 与运动的体积缩小 $\\mathrm{d}V = \\mathrm{d}V_0 / \\gamma$ 是相互关联的。",
+        "output": ""
+    },
+    {
+        "input": "一根固有长度为 $l_0$ 的棒子在 $K'$ 参考系中静止，且平行于 $x'$ 轴。若 $K'$ 参考系相对于 $K$ 参考系以速度 $v$ 沿 $x$ 轴运动，求在 $K$ 参考系中测量到的棒子长度 $l$，并推导长度收缩公式 $l = l_0 \\sqrt{1 - \\frac{v^2}{c^2}}$。",
+        "output": ""
+    },
+    {
+        "input": "在 $K'$ 参考系中，一根棒子的两端坐标分别为 $x_1'$ 和 $x_2'$，且 $l_0 = |x_1' - x_2'|$。若 $K'$ 参考系相对于 $K$ 参考系以速度 $v$ 沿 $x$ 轴运动，求在 $K$ 参考系中同时测量棒子两端坐标 $x_1$ 和 $x_2$ 的条件，并推导 $l = |x_1 - x_2|$ 与 $l_0$ 的关系。",
+        "output": ""
+    },
+    {
+        "input": "一根固有长度为 $l_0$ 的棒子在 $K'$ 参考系中静止，且平行于 $x'$ 轴。若 $K'$ 参考系相对于 $K$ 参考系以速度 $v$ 沿 $x$ 轴运动，求在 $K$ 参考系中测量棒子长度 $l$ 时，棒子两端坐标 $x_1$ 和 $x_2$ 的时间差 $\\Delta t$，并解释为何需要同时测量两端坐标。",
+        "output": ""
+    },
+    {
+        "input": "一根固有长度为 $l_0$ 的棒子在 $K'$ 参考系中静止，且平行于 $x'$ 轴。若 $K'$ 参考系相对于 $K$ 参考系以速度 $v$ 沿 $x$ 轴运动，求在 $K$ 参考系中测量棒子长度 $l$ 时，棒子两端坐标 $x_1$ 和 $x_2$ 的洛伦兹变换表达式，并验证长度收缩公式 $l = l_0 \\sqrt{1 - \\frac{v^2}{c^2}}$。",
+        "output": ""
+    },
+    {
+        "input": "一根固有长度为 $l_0$ 的棒子在 $K'$ 参考系中静止，且平行于 $x'$ 轴。若 $K'$ 参考系相对于 $K$ 参考系以速度 $v$ 沿 $x$ 轴运动，求在 $K$ 参考系中测量棒子长度 $l$ 时，棒子两端坐标 $x_1$ 和 $x_2$ 的时空坐标 $(t_1, x_1)$ 和 $(t_2, x_2)$ 的关系，并推导长度收缩公式 $l = l_0 \\sqrt{1 - \\frac{v^2}{c^2}}$。",
+        "output": ""
+    },
+    {
+        "input": "一根固有长度为 $l_0$ 的棒子在 $K'$ 参考系中静止，且平行于 $x'$ 轴。若 $K'$ 参考系相对于 $K$ 参考系以速度 $v$ 沿 $x$ 轴运动，求在 $K$ 参考系中测量棒子长度 $l$ 时，棒子两端坐标 $x_1$ 和 $x_2$ 的时空坐标 $(t_1, x_1)$ 和 $(t_2, x_2)$ 的洛伦兹变换表达式，并验证长度收缩公式 $l = l_0 \\sqrt{1 - \\frac{v^2}{c^2}}$。",
+        "output": ""
+    },
+    {
+        "input": "一根固有长度为 $l_0$ 的棒子在 $K'$ 参考系中静止，且平行于 $x'$ 轴。若 $K'$ 参考系相对于 $K$ 参考系以速度 $v$ 沿 $x$ 轴运动，求在 $K$ 参考系中测量棒子长度 $l$ 时，棒子两端坐标 $x_1$ 和 $x_2$ 的时空坐标 $(t_1, x_1)$ 和 $(t_2, x_2)$ 的关系，并推导长度收缩公式 $l = l_0 \\sqrt{1 - \\frac{v^2}{c^2}}$。",
+        "output": ""
+    },
+    {
+        "input": "一根固有长度为 $l_0$ 的棒子在 $K'$ 参考系中静止，且平行于 $x'$ 轴。若 $K'$ 参考系相对于 $K$ 参考系以速度 $v$ 沿 $x$ 轴运动，求在 $K$ 参考系中测量棒子长度 $l$ 时，棒子两端坐标 $x_1$ 和 $x_2$ 的时空坐标 $(t_1, x_1)$ 和 $(t_2, x_2)$ 的洛伦兹变换表达式，并验证长度收缩公式 $l = l_0 \\sqrt{1 - \\frac{v^2}{c^2}}$。",
+        "output": ""
+    },
+    {
+        "input": "一根固有长度为 $l_0$ 的棒子在 $K'$ 参考系中静止，且平行于 $x'$ 轴。若 $K'$ 参考系相对于 $K$ 参考系以速度 $v$ 沿 $x$ 轴运动，求在 $K$ 参考系中测量棒子长度 $l$ 时，棒子两端坐标 $x_1$ 和 $x_2$ 的时空坐标 $(t_1, x_1)$ 和 $(t_2, x_2)$ 的关系，并推导长度收缩公式 $l = l_0 \\sqrt{1 - \\frac{v^2}{c^2}}$。",
+        "output": ""
+    },
+    {
+        "input": "一根固有长度为 $l_0$ 的棒子在 $K'$ 参考系中静止，且平行于 $x'$ 轴。若 $K'$ 参考系相对于 $K$ 参考系以速度 $v$ 沿 $x$ 轴运动，求在 $K$ 参考系中测量棒子长度 $l$ 时，棒子两端坐标 $x_1$ 和 $x_2$ 的时空坐标 $(t_1, x_1)$ 和 $(t_2, x_2)$ 的洛伦兹变换表达式，并验证长度收缩公式 $l = l_0 \\sqrt{1 - \\frac{v^2}{c^2}}$。",
+        "output": ""
+    },
+    {
+        "input": "计算一个以速度 $v = 0.99c$ 运动的 $\\mu$ 子的洛伦兹因子 $\\gamma$，并求出在大气层顶与地面间的距离在 $\\mu$ 子参考系中的长度。",
+        "output": ""
+    },
+    {
+        "input": "推导尺缩效应的公式 $L = L_0 / \\gamma$，并解释为什么在高速运动下，长度会缩短。",
+        "output": ""
+    },
+    {
+        "input": "在谷仓-梯子佯谬中，假设梯子的固有长度 $l_{L} = 10\\,\\mathrm{m}$，谷仓的固有长度 $l_{B} = 8\\,\\mathrm{m}$，求梯子必须以多大的速度 $v$ 运动才能使 $l_{L}/\\gamma \\leq l_{B}$。",
+        "output": ""
+    },
+    {
+        "input": "在谷仓-梯子佯谬中，假设梯子以速度 $v = 0.8c$ 运动，求梯子在谷仓参考系中的长度，并解释为什么梯子可以完全放入谷仓。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论中，固有长度 $L_0$ 与观测长度 $L$ 之间的关系为 $L = L_0 \\sqrt{1 - v^2/c^2}$。",
+        "output": ""
+    },
+    {
+        "input": "一个固有长度为 $L_0$ 的物体以速度 $v$ 运动，求其在静止参考系中的长度 $L$，并讨论当 $v$ 接近光速 $c$ 时，$L$ 的变化趋势。",
+        "output": ""
+    },
+    {
+        "input": "在谷仓-梯子佯谬中，假设梯子的固有长度 $l_{L} = 12\\,\\mathrm{m}$，谷仓的固有长度 $l_{B} = 10\\,\\mathrm{m}$，求梯子必须以多大的速度 $v$ 运动才能使 $l_{L}/\\gamma \\leq l_{B}$，并计算此时的洛伦兹因子 $\\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在 $\\mu$ 子参考系中，大气层顶与地面间的距离会缩短，并计算当 $\\mu$ 子以速度 $v = 0.999c$ 运动时，大气层顶与地面间的距离在 $\\mu$ 子参考系中的长度。",
+        "output": ""
+    },
+    {
+        "input": "推导相对论中的时间膨胀公式 $\\Delta t = \\gamma \\Delta t_0$，并解释为什么在高速运动下，时间会变慢。",
+        "output": ""
+    },
+    {
+        "input": "在谷仓-梯子佯谬中，假设梯子以速度 $v = 0.6c$ 运动，求梯子在谷仓参考系中的长度，并解释为什么梯子可以完全放入谷仓。",
+        "output": ""
+    },
+    {
+        "input": "推导在谷仓参考系中梯子两端同时进入谷仓的时间差$\\Delta t = t_1 - t_2$，并证明$\\Delta t = \\frac{l_B - l_L / \\gamma}{v}$。",
+        "output": ""
+    },
+    {
+        "input": "在女儿参考系中，推导谷仓长度缩短后的表达式$l_B' = \\frac{l_B}{\\gamma}$，并解释为什么梯子无法放入缩短后的谷仓。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换，推导在女儿参考系中梯子两端进入谷仓的时间差$t_1' - t_2'$，并证明$t_1' - t_2' = \\frac{\\gamma}{v} \\left[ \\frac{l_B}{\\gamma^2} - \\frac{l_L}{\\gamma} \\right]$。",
+        "output": ""
+    },
+    {
+        "input": "证明在谷仓参考系中，梯子两端进入谷仓的时间差$\\Delta t$满足$\\Delta t > 0$的条件为$l_B \\geq \\frac{l_L}{\\gamma}$。",
+        "output": ""
+    },
+    {
+        "input": "推导在谷仓参考系中，梯子两端进入谷仓的时空间隔$\\Delta s^2$，并证明$\\Delta s^2 = \\frac{(l_B - l_L / \\gamma)^2}{\\beta^2} - l_B^2$。",
+        "output": ""
+    },
+    {
+        "input": "在女儿参考系中，证明当$l_B \\leq \\frac{l_L}{\\gamma}$时，梯子两端进入谷仓的时间差$t_1' - t_2'$满足$t_1' - t_2' < 0$。",
+        "output": ""
+    },
+    {
+        "input": "解释固有体积（proper volume）的概念，并推导在相对论情况下，物体体积的变化公式$V = \\frac{V_0}{\\gamma}$，其中$V_0$为固有体积。",
+        "output": ""
+    },
+    {
+        "input": "在谷仓参考系中，推导梯子两端进入谷仓的时空间隔$\\Delta s^2$的表达式，并证明$\\Delta s^2 < 0$的条件为$l_B < l_L$。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换，推导在女儿参考系中梯子两端进入谷仓的时间差$t_1' - t_2'$，并证明$t_1' - t_2' = \\frac{\\gamma}{v} \\left[ \\frac{l_B}{\\gamma^2} - \\frac{l_L}{\\gamma} \\right]$。",
+        "output": ""
+    },
+    {
+        "input": "在谷仓参考系中，推导梯子两端进入谷仓的时空间隔$\\Delta s^2$，并证明$\\Delta s^2 = \\frac{l_B^2}{\\gamma^2} + \\frac{l_L^2}{\\gamma^2} - \\frac{2 l_B l_L}{\\gamma \\beta^2} - l_B^2$。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论中，运动的体积缩小公式 $V = V_0 / \\gamma$ 可以从洛伦兹变换推导出来，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "已知一个立方体在静止参考系中的边长为 $L_0$，当它以速度 $v$ 沿 $x$ 轴运动时，求其在运动参考系中的体积 $V$，并推导出 $V = V_0 / \\gamma$ 的关系。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在相对论中，运动的时钟变缓公式 $\\mathrm{d}t = \\gamma \\mathrm{d}\\tau$ 与运动的体积缩小公式 $\\mathrm{d}V = \\mathrm{d}V_0 / \\gamma$ 共同保证了四维时空体积元 $\\mathrm{d}t \\mathrm{d}V$ 的不变性。",
+        "output": ""
+    },
+    {
+        "input": "假设一个物体在静止参考系中的固有体积为 $V_0$，当它以速度 $v$ 运动时，求其四维时空体积元 $\\mathrm{d}t \\mathrm{d}V$ 的表达式，并证明其在洛伦兹变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "推导在相对论中，四维时空体积元 $\\mathrm{d}t \\mathrm{d}V$ 的不变性如何与洛伦兹变换的时空对称性相关联。",
+        "output": ""
+    },
+    {
+        "input": "已知一个物体在静止参考系中的固有体积为 $V_0$，当它以速度 $v$ 运动时，求其在运动参考系中的体积 $V$，并讨论当 $v$ 接近光速 $c$ 时，$V$ 的极限行为。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在相对论中，运动的时钟变缓和体积缩小是相互关联的现象，并通过公式 $\\mathrm{d}t \\mathrm{d}V = \\mathrm{d}\\tau \\mathrm{d}V_0$ 说明其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设一个物体在静止参考系中的固有体积为 $V_0$，当它以速度 $v$ 运动时，求其在运动参考系中的体积 $V$，并讨论当 $v$ 接近光速 $c$ 时，$V$ 的极限行为。",
+        "output": ""
+    },
+    {
+        "input": "推导在相对论中，四维时空体积元 $\\mathrm{d}t \\mathrm{d}V$ 的不变性如何与洛伦兹变换的时空对称性相关联。",
+        "output": ""
+    },
+    {
+        "input": "已知一个物体在静止参考系中的固有体积为 $V_0$，当它以速度 $v$ 运动时，求其在运动参考系中的体积 $V$，并讨论当 $v$ 接近光速 $c$ 时，$V$ 的极限行为。",
+        "output": ""
+    },
+    {
+        "input": "推导固有时 $\\tau$ 与坐标时 $t$ 之间的关系，并证明 $\\mathrm{d}\\tau = \\mathrm{d}t / \\gamma$，其中 $\\gamma = 1 / \\sqrt{1 - v^2/c^2}$。",
+        "output": ""
+    },
+    {
+        "input": "假设一个粒子以速度 $v = 0.8c$ 运动，计算其相对论因子 $\\gamma$，并求在实验室参考系中测得的时间间隔 $\\Delta t$ 与固有时间间隔 $\\Delta \\tau$ 之间的关系。",
+        "output": ""
+    },
+    {
+        "input": "利用时空间隔的不变性，证明 $\\Delta s = c \\Delta \\tau$，并解释为什么固有时 $\\tau$ 是不变量。",
+        "output": ""
+    },
+    {
+        "input": "一个 $\\mu$ 子在静止参考系中的寿命为 $2\\,\\mu\\mathrm{s}$，若它以速度 $v = 0.99c$ 运动，计算在实验室参考系中观测到的 $\\mu$ 子的寿命，并解释为什么我们能够在地面上观测到来自大气层顶的 $\\mu$ 子。",
+        "output": ""
+    },
+    {
+        "input": "假设一个时钟相对于 $K$ 系以速度 $v$ 运动，推导在 $K$ 系中观测到的时间间隔 $\\Delta t$ 与固有时间间隔 $\\Delta \\tau$ 之间的关系，并证明 $\\Delta t = \\gamma \\Delta \\tau$。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换，证明在 $K$ 系中观测到的时间间隔 $\\Delta t$ 与 $K'$ 系中的固有时间间隔 $\\Delta \\tau$ 之间的关系为 $\\Delta t = \\gamma \\Delta \\tau$，其中 $K'$ 系相对于 $K$ 系以速度 $v$ 运动。",
+        "output": ""
+    },
+    {
+        "input": "一个宇航员以 $\\gamma = 3$ 的速度相对于地球运动，其随身携带的时钟显示经过了10年，计算在地球参考系中观测到的时间间隔，并解释为什么宇航员不会觉得自己多活了20年。",
+        "output": ""
+    },
+    {
+        "input": "解释双生子佯谬，并利用固有时和相对论时间延缓效应，证明在双生子再次相遇时，宇航员（妹妹）会比地球上的哥哥更年轻。",
+        "output": ""
+    },
+    {
+        "input": "假设 $K'$ 系相对于 $K$ 系以速度 $V$ 运动，推导在 $K$ 系中观测到的时间间隔 $\\Delta t$ 与 $K'$ 系中的固有时间间隔 $\\Delta \\tau$ 之间的关系，并解释为什么 $\\Delta t \\neq \\Delta \\tau / \\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "利用时空间隔的不变性，推导在 $K$ 系中观测到的时间间隔 $\\Delta t$ 与 $K'$ 系中的固有时间间隔 $\\Delta \\tau$ 之间的关系，并证明 $\\Delta t = \\gamma \\Delta \\tau$。",
+        "output": ""
+    },
+    {
+        "input": "假设一个粒子以速度 $v$ 运动，推导其固有时间间隔 $\\Delta \\tau$ 与坐标时间间隔 $\\Delta t$ 之间的关系，并证明 $\\Delta \\tau = \\Delta t / \\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在相对论中，固有时 $\\tau$ 是一个不变量，并利用时空间隔的不变性证明 $\\Delta s = c \\Delta \\tau$。",
+        "output": ""
+    },
+    {
+        "input": "假设一个时钟相对于 $K$ 系以速度 $v$ 运动，推导在 $K$ 系中观测到的时间间隔 $\\Delta t$ 与固有时间间隔 $\\Delta \\tau$ 之间的关系，并证明 $\\Delta t = \\gamma \\Delta \\tau$。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换，推导在 $K$ 系中观测到的时间间隔 $\\Delta t$ 与 $K'$ 系中的固有时间间隔 $\\Delta \\tau$ 之间的关系，并证明 $\\Delta t = \\gamma \\Delta \\tau$。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在相对论中，时间延缓效应会导致运动时钟变慢，并利用固有时和时空间隔的不变性证明 $\\Delta \\tau = \\Delta t / \\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "一个粒子在实验室参考系中以速度 $v$ 运动，求其固有时 $\\tau$ 与实验室时间 $t$ 之间的关系，并推导出时间膨胀公式 $\\Delta t = \\gamma \\Delta \\tau$，其中 $\\gamma = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$。",
+        "output": ""
+    },
+    {
+        "input": "在相对论中，时空间隔 $\\Delta s$ 定义为 $\\Delta s^2 = c^2 \\Delta t^2 - \\Delta x^2$。假设一个事件在 $K$ 参考系中的时空间隔为 $\\Delta s$，在 $K'$ 参考系中的时空间隔为 $\\Delta s'$，证明 $\\Delta s = \\Delta s'$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "一个时钟以速度 $v$ 相对于实验室参考系运动，求该时钟的固有时 $\\tau$ 与实验室时间 $t$ 之间的关系，并证明 $\\Delta \\tau = \\frac{\\Delta t}{\\gamma}$，其中 $\\gamma = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$。",
+        "output": ""
+    },
+    {
+        "input": "在相对论中，固有时 $\\tau$ 定义为 $\\Delta \\tau = \\frac{\\Delta s}{c}$，其中 $\\Delta s$ 是时空间隔。假设一个粒子在 $K$ 参考系中以速度 $v$ 运动，求其固有时 $\\tau$ 与实验室时间 $t$ 之间的关系，并解释为什么固有时是不变量。",
+        "output": ""
+    },
+    {
+        "input": "一个粒子在 $K$ 参考系中以速度 $v$ 运动，求其固有时 $\\tau$ 与实验室时间 $t$ 之间的关系，并推导出时间膨胀公式 $\\Delta t = \\gamma \\Delta \\tau$，其中 $\\gamma = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$。解释为什么运动的时钟会变缓。",
+        "output": ""
+    },
+    {
+        "input": "在相对论中，时空间隔 $\\Delta s$ 定义为 $\\Delta s^2 = c^2 \\Delta t^2 - \\Delta x^2$。假设一个事件在 $K$ 参考系中的时空间隔为 $\\Delta s$，在 $K'$ 参考系中的时空间隔为 $\\Delta s'$，证明 $\\Delta s = \\Delta s'$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "一个时钟以速度 $v$ 相对于实验室参考系运动，求该时钟的固有时 $\\tau$ 与实验室时间 $t$ 之间的关系，并证明 $\\Delta \\tau = \\frac{\\Delta t}{\\gamma}$，其中 $\\gamma = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$。",
+        "output": ""
+    },
+    {
+        "input": "在相对论中，固有时 $\\tau$ 定义为 $\\Delta \\tau = \\frac{\\Delta s}{c}$，其中 $\\Delta s$ 是时空间隔。假设一个粒子在 $K$ 参考系中以速度 $v$ 运动，求其固有时 $\\tau$ 与实验室时间 $t$ 之间的关系，并解释为什么固有时是不变量。",
+        "output": ""
+    },
+    {
+        "input": "一个粒子在 $K$ 参考系中以速度 $v$ 运动，求其固有时 $\\tau$ 与实验室时间 $t$ 之间的关系，并推导出时间膨胀公式 $\\Delta t = \\gamma \\Delta \\tau$，其中 $\\gamma = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$。解释为什么运动的时钟会变缓。",
+        "output": ""
+    },
+    {
+        "input": "在相对论中，时空间隔 $\\Delta s$ 定义为 $\\Delta s^2 = c^2 \\Delta t^2 - \\Delta x^2$。假设一个事件在 $K$ 参考系中的时空间隔为 $\\Delta s$，在 $K'$ 参考系中的时空间隔为 $\\Delta s'$，证明 $\\Delta s = \\Delta s'$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导在参考系 $K$ 中，固有时 $\\mathrm{d}\\tau$ 与坐标时 $\\mathrm{d}t$ 的关系式 $\\mathrm{d}\\tau = \\mathrm{d}t / \\gamma$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设一个时钟以速度 $\\pmb{v}$ 相对于参考系 $K$ 运动，计算在 $K$ 系中观测到的时钟时间间隔 $\\mathrm{d}t$ 与固有时 $\\mathrm{d}\\tau$ 的关系，并证明 $\\mathrm{d}\\tau \\leq \\mathrm{d}t$。",
+        "output": ""
+    },
+    {
+        "input": "在参考系 $K$ 中，一个粒子以速度 $\\pmb{v}$ 运动，其固有时的间隔为 $\\mathrm{d}\\tau$。证明时空间隔 $\\mathrm{d}s$ 满足 $\\mathrm{d}s = c\\mathrm{d}\\tau$，并解释其与相对论不变量的关系。",
+        "output": ""
+    },
+    {
+        "input": "利用相对论因子 $\\gamma = 1 / \\sqrt{1 - v^2 / c^2}$，推导在参考系 $K$ 中观测到的时钟时间间隔 $\\mathrm{d}t$ 与固有时 $\\mathrm{d}\\tau$ 的关系式 $\\mathrm{d}\\tau = \\mathrm{d}t / \\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "假设一个时钟以速度 $\\pmb{v}$ 相对于参考系 $K$ 运动，计算在 $K$ 系中观测到的时钟时间间隔 $\\mathrm{d}t$ 与固有时 $\\mathrm{d}\\tau$ 的关系，并讨论当 $v \\to c$ 时，$\\mathrm{d}\\tau$ 的变化趋势。",
+        "output": ""
+    },
+    {
+        "input": "在参考系 $K$ 中，一个粒子以速度 $\\pmb{v}$ 运动，其固有时的间隔为 $\\mathrm{d}\\tau$。证明在 $K$ 系中观测到的时空间隔 $\\mathrm{d}s$ 满足 $\\mathrm{d}s = c\\mathrm{d}\\tau$，并解释其与相对论不变量的关系。",
+        "output": ""
+    },
+    {
+        "input": "利用相对论因子 $\\gamma = 1 / \\sqrt{1 - v^2 / c^2}$，推导在参考系 $K$ 中观测到的时钟时间间隔 $\\mathrm{d}t$ 与固有时 $\\mathrm{d}\\tau$ 的关系式 $\\mathrm{d}\\tau = \\mathrm{d}t / \\gamma$，并讨论当 $v = 0$ 时的情况。",
+        "output": ""
+    },
+    {
+        "input": "假设一个时钟以速度 $\\pmb{v}$ 相对于参考系 $K$ 运动，计算在 $K$ 系中观测到的时钟时间间隔 $\\mathrm{d}t$ 与固有时 $\\mathrm{d}\\tau$ 的关系，并解释为什么 $\\mathrm{d}\\tau \\leq \\mathrm{d}t$。",
+        "output": ""
+    },
+    {
+        "input": "在参考系 $K$ 中，一个粒子以速度 $\\pmb{v}$ 运动，其固有时的间隔为 $\\mathrm{d}\\tau$。证明在 $K$ 系中观测到的时空间隔 $\\mathrm{d}s$ 满足 $\\mathrm{d}s = c\\mathrm{d}\\tau$，并解释其与相对论不变量的关系。",
+        "output": ""
+    },
+    {
+        "input": "利用相对论因子 $\\gamma = 1 / \\sqrt{1 - v^2 / c^2}$，推导在参考系 $K$ 中观测到的时钟时间间隔 $\\mathrm{d}t$ 与固有时 $\\mathrm{d}\\tau$ 的关系式 $\\mathrm{d}\\tau = \\mathrm{d}t / \\gamma$，并讨论当 $v \\to c$ 时，$\\mathrm{d}\\tau$ 的变化趋势。",
+        "output": ""
+    },
+    {
+        "input": "推导固有时 $\\tau$ 与坐标时 $t$ 的关系式 $\\tau_{2}-\\tau_{1}=\\int_{t_{1}}^{t_{2}}\\mathrm{d}t/\\gamma$，并解释为什么 $\\tau_{2}-\\tau_{1}<t_{2}-t_{1}$。",
+        "output": ""
+    },
+    {
+        "input": "从洛伦兹变换出发，推导在 $K^{\\prime}$ 参考系中静止的时钟的固有时 $\\Delta\\tau$ 与 $K$ 参考系中的坐标时 $\\Delta t$ 的关系式 $\\Delta t=\\gamma\\Delta\\tau$。",
+        "output": ""
+    },
+    {
+        "input": "假设一个 $\\mu$ 子在静止参考系中的寿命为 $2\\,\\mu\\mathrm{s}$，若它以速度 $v=0.99c$ 运动，计算其在实验室参考系中的寿命，并解释为什么我们能够在地面上观测到来自大气层顶的 $\\mu$ 子。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换，证明在 $K^{\\prime}$ 参考系中静止的时钟满足 $\\Delta x^{\\prime}=0$ 时，$\\Delta t=\\gamma\\Delta\\tau$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设一个粒子以速度 $v=0.9c$ 运动，计算其时间膨胀因子 $\\gamma$，并推导其在实验室参考系中的时间 $\\Delta t$ 与固有时 $\\Delta\\tau$ 的关系。",
+        "output": ""
+    },
+    {
+        "input": "从时空间隔的不变性出发，推导固有时 $\\tau$ 与坐标时 $t$ 的关系式 $\\tau_{2}-\\tau_{1}=\\int_{t_{1}}^{t_{2}}\\mathrm{d}t/\\gamma$，并解释其与洛伦兹变换的一致性。",
+        "output": ""
+    },
+    {
+        "input": "假设一个 $\\mu$ 子以速度 $v=0.999c$ 运动，计算其在大气层顶到地面的距离 $100\\,\\mathrm{km}$ 中所经历的固有时 $\\Delta\\tau$，并解释为什么我们能够在地面上观测到它。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换，推导在 $K^{\\prime}$ 参考系中静止的时钟的固有时 $\\Delta\\tau$ 与 $K$ 参考系中的坐标时 $\\Delta t$ 的关系式 $\\Delta t=\\gamma\\Delta\\tau$，并解释其与时间膨胀现象的关系。",
+        "output": ""
+    },
+    {
+        "input": "假设一个粒子以速度 $v=0.8c$ 运动，计算其时间膨胀因子 $\\gamma$，并推导其在实验室参考系中的时间 $\\Delta t$ 与固有时 $\\Delta\\tau$ 的关系。",
+        "output": ""
+    },
+    {
+        "input": "从洛伦兹变换出发，推导在 $K^{\\prime}$ 参考系中静止的时钟的固有时 $\\Delta\\tau$ 与 $K$ 参考系中的坐标时 $\\Delta t$ 的关系式 $\\Delta t=\\gamma\\Delta\\tau$，并解释其与相对论时间膨胀的关系。",
+        "output": ""
+    },
+    {
+        "input": "一个 $\\mu$ 子在实验室参考系中以速度 $v = 0.99c$ 运动，计算其寿命在实验室参考系中的延长倍数 $\\gamma$，并计算其可运动的距离。",
+        "output": ""
+    },
+    {
+        "input": "一个人在实验室参考系中以 $\\gamma = 5$ 的速度运动，其随身携带的钟表明时间已经过了 $\\Delta\\tau = 15$ 年，计算在实验室参考系中观察到的其所经过的时间。",
+        "output": ""
+    },
+    {
+        "input": "一个 $\\mu$ 子在实验室参考系中以速度 $v = 0.95c$ 运动，计算其寿命在实验室参考系中的延长倍数 $\\gamma$，并计算其可运动的距离。",
+        "output": ""
+    },
+    {
+        "input": "一个人在实验室参考系中以 $\\gamma = 4$ 的速度运动，其随身携带的钟表明时间已经过了 $\\Delta\\tau = 8$ 年，计算在实验室参考系中观察到的其所经过的时间。",
+        "output": ""
+    },
+    {
+        "input": "一个 $\\mu$ 子在实验室参考系中以速度 $v = 0.9c$ 运动，计算其寿命在实验室参考系中的延长倍数 $\\gamma$，并计算其可运动的距离。",
+        "output": ""
+    },
+    {
+        "input": "一个人在实验室参考系中以 $\\gamma = 2$ 的速度运动，其随身携带的钟表明时间已经过了 $\\Delta\\tau = 12$ 年，计算在实验室参考系中观察到的其所经过的时间。",
+        "output": ""
+    },
+    {
+        "input": "一个 $\\mu$ 子在实验室参考系中以速度 $v = 0.8c$ 运动，计算其寿命在实验室参考系中的延长倍数 $\\gamma$，并计算其可运动的距离。",
+        "output": ""
+    },
+    {
+        "input": "一个人在实验室参考系中以 $\\gamma = 6$ 的速度运动，其随身携带的钟表明时间已经过了 $\\Delta\\tau = 5$ 年，计算在实验室参考系中观察到的其所经过的时间。",
+        "output": ""
+    },
+    {
+        "input": "一个 $\\mu$ 子在实验室参考系中以速度 $v = 0.7c$ 运动，计算其寿命在实验室参考系中的延长倍数 $\\gamma$，并计算其可运动的距离。",
+        "output": ""
+    },
+    {
+        "input": "一个人在实验室参考系中以 $\\gamma = 10$ 的速度运动，其随身携带的钟表明时间已经过了 $\\Delta\\tau = 2$ 年，计算在实验室参考系中观察到的其所经过的时间。",
+        "output": ""
+    },
+    {
+        "input": "推导在相对论中，两个惯性参考系 $K$ 和 $K^{\\prime}$ 之间的时间间隔关系，假设 $K^{\\prime}$ 以速度 $V$ 相对于 $K$ 运动，证明 $\\Delta t^{\\prime} = \\Delta t / \\gamma$，其中 $\\gamma = \\frac{1}{\\sqrt{1 - V^2/c^2}}$。",
+        "output": ""
+    },
+    {
+        "input": "在例题2.5中，如果 $K^{\\prime}$ 系中的固有时间隔 $\\Delta t^{\\prime}$ 为10年，且 $V = 0.8c$，计算在 $K$ 系中观察到的时间间隔 $\\Delta t$。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在相对论中，时间变缓效应会导致佯谬（paradox），并举例说明一个常见的佯谬。",
+        "output": ""
+    },
+    {
+        "input": "假设 $K$ 系中的观察者测量到 $K^{\\prime}$ 系中的时钟变慢了，而 $K^{\\prime}$ 系中的观察者也测量到 $K$ 系中的时钟变慢了，这是否违反了相对性原理？请详细解释。",
+        "output": ""
+    },
+    {
+        "input": "在相对论中，固有时（proper time）是如何定义的？它与坐标时间（coordinate time）有何区别？",
+        "output": ""
+    },
+    {
+        "input": "如果 $K^{\\prime}$ 系中的观察者测量到 $K$ 系中的时钟变慢了，而 $K$ 系中的观察者也测量到 $K^{\\prime}$ 系中的时钟变慢了，这是否意味着两个参考系中的时间流逝速度不同？请用公式推导说明。",
+        "output": ""
+    },
+    {
+        "input": "假设 $K^{\\prime}$ 系以速度 $V$ 相对于 $K$ 系运动，推导在 $K$ 系中观察到的 $K^{\\prime}$ 系中的长度收缩公式 $L = L_0 / \\gamma$，其中 $L_0$ 是 $K^{\\prime}$ 系中的固有长度。",
+        "output": ""
+    },
+    {
+        "input": "在相对论中，如何解释“双生子佯谬”（twin paradox）？请用公式推导说明为什么旅行归来的双生子会比留在地球上的双生子年轻。",
+        "output": ""
+    },
+    {
+        "input": "假设 $K^{\\prime}$ 系中的观察者测量到 $K$ 系中的时钟变慢了，而 $K$ 系中的观察者也测量到 $K^{\\prime}$ 系中的时钟变慢了，这是否意味着两个参考系中的时间流逝速度不同？请用公式推导说明。",
+        "output": ""
+    },
+    {
+        "input": "在相对论中，如何解释“同时性的相对性”？请用公式推导说明为什么两个事件在一个参考系中是同时的，但在另一个参考系中可能不是同时的。",
+        "output": ""
+    },
+    {
+        "input": "推导在参考系$K$和$K^{\\prime}$之间的时间间隔关系，已知$K^{\\prime}$相对于$K$以速度$V e_{x}$运动，证明$\\Delta t^{\\prime} = \\Delta t / \\gamma$，其中$\\Delta t = t_{2} - t_{1}$，$\\Delta t^{\\prime} = t_{2}^{\\prime} - t_{1}^{\\prime}$，$\\gamma = 1 / \\sqrt{1 - \\beta^{2}}$，$\\beta = V / c$。",
+        "output": ""
+    },
+    {
+        "input": "在参考系$K$中，两个事件分别发生在$(t_{1}, x_{1})$和$(t_{2}, x_{2})$，其中$x_{2} - x_{1} = V(t_{2} - t_{1})$。推导在参考系$K^{\\prime}$中这两个事件的时间间隔$\\Delta t^{\\prime}$，并证明$\\Delta t^{\\prime} = \\Delta t / \\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "在双生子佯谬中，假设妹妹乘坐的飞船以恒定速度$V$离开地球并在时间$T$后返回。计算妹妹在飞船上的固有时$\\tau$与地球上的时间$T$之间的关系，并证明$\\tau = T / \\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "在参考系$K$中，两个事件分别发生在$(t_{1}, x_{1})$和$(t_{2}, x_{2})$，其中$x_{2} - x_{1} = V(t_{2} - t_{1})$。推导在参考系$K^{\\prime}$中这两个事件的时间间隔$\\Delta t^{\\prime}$，并证明$\\Delta t^{\\prime} = \\gamma \\Delta t (1 - \\beta^{2})$。",
+        "output": ""
+    },
+    {
+        "input": "在双生子佯谬中，假设妹妹乘坐的飞船以恒定速度$V$离开地球并在时间$T$后返回。计算妹妹在飞船上的固有时$\\tau$与地球上的时间$T$之间的关系，并证明$\\tau = \\int_{0}^{T} \\mathrm{d}t / \\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "在参考系$K$中，两个事件分别发生在$(t_{1}, x_{1})$和$(t_{2}, x_{2})$，其中$x_{2} - x_{1} = V(t_{2} - t_{1})$。推导在参考系$K^{\\prime}$中这两个事件的时间间隔$\\Delta t^{\\prime}$，并证明$\\Delta t^{\\prime} = \\Delta t / \\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "在双生子佯谬中，假设妹妹乘坐的飞船以恒定速度$V$离开地球并在时间$T$后返回。计算妹妹在飞船上的固有时$\\tau$与地球上的时间$T$之间的关系，并证明$\\tau = T / \\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "在参考系$K$中，两个事件分别发生在$(t_{1}, x_{1})$和$(t_{2}, x_{2})$，其中$x_{2} - x_{1} = V(t_{2} - t_{1})$。推导在参考系$K^{\\prime}$中这两个事件的时间间隔$\\Delta t^{\\prime}$，并证明$\\Delta t^{\\prime} = \\gamma \\Delta t (1 - \\beta^{2})$。",
+        "output": ""
+    },
+    {
+        "input": "在双生子佯谬中，假设妹妹乘坐的飞船以恒定速度$V$离开地球并在时间$T$后返回。计算妹妹在飞船上的固有时$\\tau$与地球上的时间$T$之间的关系，并证明$\\tau = \\int_{0}^{T} \\mathrm{d}t / \\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "在参考系$K$中，两个事件分别发生在$(t_{1}, x_{1})$和$(t_{2}, x_{2})$，其中$x_{2} - x_{1} = V(t_{2} - t_{1})$。推导在参考系$K^{\\prime}$中这两个事件的时间间隔$\\Delta t^{\\prime}$，并证明$\\Delta t^{\\prime} = \\Delta t / \\gamma$。",
+        "output": ""
+    },
+    {
+        "input": "证明在狭义相对论中，两个事件间的时空间隔 $\\Delta s^{2} = c^{2}\\Delta t^{2} - \\Delta x^{2}$ 是一个不依赖于具体惯性参考系的物理量。",
+        "output": ""
+    },
+    {
+        "input": "给定两个事件在参考系 $K$ 中的时空坐标分别为 $(t_1, x_1)$ 和 $(t_2, x_2)$，其中 $\\Delta t = t_2 - t_1$ 和 $\\Delta x = x_2 - x_1$。若 $\\Delta s^{2} < 0$，证明存在一个参考系 $K^{\\prime}$，使得在这参考系中 $\\Delta t^{\\prime} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换，推导出在参考系 $K^{\\prime}$ 中，两个事件的时间差 $\\Delta t^{\\prime}$ 与参考系 $K$ 中的时间差 $\\Delta t$ 之间的关系式 $\\Delta t^{\\prime} = \\gamma (\\Delta t - \\frac{v \\Delta x}{c^{2}})$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设两个事件在参考系 $K$ 中的时空间隔为类时间隔，即 $\\Delta s^{2} > 0$。证明在任何惯性参考系中，这两个事件的先后顺序不会改变。",
+        "output": ""
+    },
+    {
+        "input": "给定两个事件在参考系 $K$ 中的时空坐标分别为 $(t_1, x_1)$ 和 $(t_2, x_2)$，其中 $\\Delta t = t_2 - t_1$ 和 $\\Delta x = x_2 - x_1$。若 $\\Delta s^{2} > 0$，证明不存在任何参考系 $K^{\\prime}$，使得在这参考系中 $\\Delta t^{\\prime} = 0$。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在狭义相对论中，有因果关系的两个事件之间的时空间隔必须是类时间隔，并推导出作用传递的最大速度为光速。",
+        "output": ""
+    },
+    {
+        "input": "给定两个事件在参考系 $K$ 中的时空坐标分别为 $(t_1, x_1)$ 和 $(t_2, x_2)$，其中 $\\Delta t = t_2 - t_1$ 和 $\\Delta x = x_2 - x_1$。若 $\\Delta s^{2} = 0$，证明这两个事件之间的间隔为类光间隔，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换，证明在类空间隔的情况下，存在一个参考系 $K^{\\prime}$，使得在这参考系中两个事件的先后顺序与参考系 $K$ 中的顺序相反。",
+        "output": ""
+    },
+    {
+        "input": "给定两个事件在参考系 $K$ 中的时空坐标分别为 $(t_1, x_1)$ 和 $(t_2, x_2)$，其中 $\\Delta t = t_2 - t_1$ 和 $\\Delta x = x_2 - x_1$。若 $\\Delta s^{2} < 0$，证明在这参考系中两个事件的同时性是不确定的，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在狭义相对论中，类时间隔事件的先后顺序是绝对的，而类空间隔事件的先后顺序依赖于所选择的参考系。",
+        "output": ""
+    },
+    {
+        "input": "在狭义相对论中，两个事件在不同参考系中的时间顺序可能不同。假设在参考系S中，事件A发生在$t_A = 0$，事件B发生在$t_B = 2$秒，且两事件的空间间隔为$\\Delta x = 3$光秒。求在另一个参考系S'中，若S'相对于S以速度$v = 0.6c$沿x轴运动，事件A和事件B的时间顺序是否会发生改变？  ",
+        "output": ""
+    },
+    {
+        "input": "给定两个事件的时空间隔$\\Delta s^2 = c^2\\Delta t^2 - \\Delta x^2$，若$\\Delta s^2 > 0$，证明这两个事件之间的因果关系是绝对的，即所有惯性参考系中这两个事件的先后顺序一致。  ",
+        "output": ""
+    },
+    {
+        "input": "假设两个事件的时空间隔$\\Delta s^2 = -9$光秒$^2$，且$\\Delta t = 2$秒，求这两个事件的空间间隔$\\Delta x$，并判断这两个事件是类空、类时还是类光间隔。  ",
+        "output": ""
+    },
+    {
+        "input": "在参考系S中，事件A和事件B的时空间隔为$\\Delta s^2 = 0$，且$\\Delta t = 1$秒。求在另一个参考系S'中，若S'相对于S以速度$v = 0.8c$沿x轴运动，事件A和事件B的时空间隔$\\Delta s'^2$。  ",
+        "output": ""
+    },
+    {
+        "input": "证明在狭义相对论中，若两个事件的时空间隔$\\Delta s^2$为类时间隔（$\\Delta s^2 > 0$），则存在一个惯性参考系，使得这两个事件发生在同一空间位置。  ",
+        "output": ""
+    },
+    {
+        "input": "在参考系S中，事件A和事件B的时空间隔为$\\Delta s^2 = -16$光秒$^2$，且$\\Delta x = 5$光秒。求在另一个参考系S'中，若S'相对于S以速度$v = 0.5c$沿x轴运动，事件A和事件B的时空间隔$\\Delta s'^2$。  ",
+        "output": ""
+    },
+    {
+        "input": "假设两个事件的时空间隔$\\Delta s^2 = 25$光秒$^2$，且$\\Delta x = 4$光秒，求这两个事件的时间间隔$\\Delta t$，并判断这两个事件是类空、类时还是类光间隔。  ",
+        "output": ""
+    },
+    {
+        "input": "在狭义相对论中，若两个事件的时空间隔$\\Delta s^2$为类光间隔（$\\Delta s^2 = 0$），证明这两个事件之间的因果关系是绝对的，即所有惯性参考系中这两个事件的先后顺序一致。  ",
+        "output": ""
+    },
+    {
+        "input": "在参考系S中，事件A和事件B的时空间隔为$\\Delta s^2 = 4$光秒$^2$，且$\\Delta t = 3$秒。求在另一个参考系S'中，若S'相对于S以速度$v = 0.9c$沿x轴运动，事件A和事件B的时空间隔$\\Delta s'^2$。  ",
+        "output": ""
+    },
+    {
+        "input": "证明在狭义相对论中，若两个事件的时空间隔$\\Delta s^2$为类空间隔（$\\Delta s^2 < 0$），则存在一个惯性参考系，使得这两个事件同时发生。",
+        "output": ""
+    },
+    {
+        "input": "证明在任意惯性参考系中，类光间隔的时空间隔 $\\Delta s^{2}=0$ 保持不变。",
+        "output": ""
+    },
+    {
+        "input": "给定两个事件在参考系 $K$ 中的时空坐标分别为 $(t_1, x_1)$ 和 $(t_2, x_2)$，计算这两个事件的时空间隔 $\\Delta s^{2}$，并判断其类型（类光、类空或类时）。",
+        "output": ""
+    },
+    {
+        "input": "假设在参考系 $K$ 中，两个事件的时间间隔为 $\\Delta t$，空间间隔为 $\\Delta x$，且满足 $c^{2}\\Delta t^{2} < \\Delta x^{2}$。证明在另一个参考系 $K^{\\prime}$ 中，这两个事件的时空间隔 $\\Delta s^{\\prime2}$ 仍然满足 $\\Delta s^{\\prime2} < 0$。",
+        "output": ""
+    },
+    {
+        "input": "在参考系 $K$ 中，两个事件的时间间隔为 $\\Delta t$，空间间隔为 $\\Delta x$，且满足 $c^{2}\\Delta t^{2} > \\Delta x^{2}$。求在另一个参考系 $K^{\\prime}$ 中，这两个事件的时间间隔 $\\Delta t^{\\prime}$ 和空间间隔 $\\Delta x^{\\prime}$ 之间的关系。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么类空间隔的两个事件的同时性依赖于所选参考系，并给出一个具体的例子说明这一点。",
+        "output": ""
+    },
+    {
+        "input": "给定两个事件在参考系 $K$ 中的时空坐标分别为 $(t_1, x_1)$ 和 $(t_2, x_2)$，且满足 $\\Delta s^{2} < 0$。求在另一个参考系 $K^{\\prime}$ 中，这两个事件的时间间隔 $\\Delta t^{\\prime}$ 和空间间隔 $\\Delta x^{\\prime}$ 的表达式。",
+        "output": ""
+    },
+    {
+        "input": "证明在任意惯性参考系中，类时间隔的时空间隔 $\\Delta s^{2} > 0$ 保持不变。",
+        "output": ""
+    },
+    {
+        "input": "假设在参考系 $K$ 中，两个事件的时间间隔为 $\\Delta t$，空间间隔为 $\\Delta x$，且满足 $c^{2}\\Delta t^{2} = \\Delta x^{2}$。求在另一个参考系 $K^{\\prime}$ 中，这两个事件的时空间隔 $\\Delta s^{\\prime2}$ 的表达式。",
+        "output": ""
+    },
+    {
+        "input": "解释时空间隔 $\\Delta s^{2}$ 为什么是一个不依赖于具体惯性参考系的物理量，并给出数学证明。",
+        "output": ""
+    },
+    {
+        "input": "给定两个事件在参考系 $K$ 中的时空坐标分别为 $(t_1, x_1)$ 和 $(t_2, x_2)$，且满足 $\\Delta s^{2} > 0$。求在另一个参考系 $K^{\\prime}$ 中，这两个事件的时间间隔 $\\Delta t^{\\prime}$ 和空间间隔 $\\Delta x^{\\prime}$ 之间的关系。",
+        "output": ""
+    },
+    {
+        "input": "证明在参考系 $K^{\\prime}$ 中，若 $\\Delta t^{\\prime}=0$，则时空间隔 $\\Delta s^{\\prime2}=-\\Delta{\\pmb x}^{\\prime2}<0$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换推导，当 $K^{\\prime}$ 系相对于 $K$ 系的速度 $V$ 满足 $\\Delta t=(\\beta/c)\\Delta x$ 时，$\\Delta t^{\\prime}=0$ 的条件，并求出 $\\beta$ 的表达式。",
+        "output": ""
+    },
+    {
+        "input": "证明当 $c\\Delta t<\\Delta x$ 时，存在一个参考系 $K^{\\prime}$ 使得 $\\Delta t^{\\prime}=0$，并讨论 $\\beta<1$ 的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导在参考系 $K^{\\prime}$ 中，若 $\\Delta t^{\\prime}<0$，则两事件的先后顺序在 $K^{\\prime}$ 与 $K$ 系中相反的条件，并解释其与因果律的关系。",
+        "output": ""
+    },
+    {
+        "input": "解释类空间隔联系的两个事件的同时性与先后顺序依赖于参考系选择的原因，并举例说明这种依赖关系如何导致狭义相对论中的佯谬。",
+        "output": ""
+    },
+    {
+        "input": "给定两个事件的时空间隔 $\\Delta s^2=-c^2\\Delta t^2+\\Delta x^2$，证明当 $\\Delta s^2>0$ 时，存在一个参考系 $K^{\\prime}$ 使得 $\\Delta t^{\\prime}=0$，并讨论其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换推导，当 $\\Delta t^{\\prime}<0$ 时，两事件的时空间隔 $\\Delta s^2$ 的表达式，并解释其与类空间隔的关系。",
+        "output": ""
+    },
+    {
+        "input": "证明在类空间隔的情况下，两个事件的因果顺序不能通过参考系的选择来改变，并讨论其与因果律的关系。",
+        "output": ""
+    },
+    {
+        "input": "给定两个事件的时空间隔 $\\Delta s^2=-c^2\\Delta t^2+\\Delta x^2$，证明当 $\\Delta s^2<0$ 时，存在一个参考系 $K^{\\prime}$ 使得 $\\Delta t^{\\prime}=0$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "讨论在狭义相对论中，类空间隔与类时间隔的区别，并解释为什么类空间隔的事件不能通过参考系的选择来改变其因果顺序。",
+        "output": ""
+    },
+    {
+        "input": "证明对于类时间隔事件，不存在任何惯性参考系使得 $\\Delta t^{\\prime}=0$，并解释这一结果如何与因果律相关联。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换公式 $\\Delta t^{\\prime} \\propto c\\Delta t - \\beta \\Delta x$，推导出在类时间隔情况下，$\\Delta t^{\\prime}$ 与 $\\Delta t$ 具有相同符号的条件，并解释这一条件的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设两个事件之间的时空间隔为 $\\Delta s^{2} = c^{2}\\Delta t^{2} - \\Delta x^{2} > 0$，证明在任何惯性参考系中，这两个事件的因果关系保持不变。",
+        "output": ""
+    },
+    {
+        "input": "通过洛伦兹变换，证明如果两个事件在某个惯性参考系中是类时间隔的，则在所有惯性参考系中它们都是类时间隔的。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在相对论中，作用（interaction）的传递速度不能超过光速，并利用类时间隔的概念说明这一限制的物理基础。",
+        "output": ""
+    },
+    {
+        "input": "假设两个事件在某个惯性参考系中的时间差为 $\\Delta t$，空间距离为 $\\Delta x$，且 $\\Delta x < c\\Delta t$，证明在任何其他惯性参考系中，这两个事件的因果关系保持不变。",
+        "output": ""
+    },
+    {
+        "input": "利用洛伦兹变换，证明对于类时间隔事件，$\\Delta t^{\\prime}$ 与 $\\Delta t$ 的符号相同，并解释这一结果如何支持因果律的绝对性。",
+        "output": ""
+    },
+    {
+        "input": "假设两个事件在某个惯性参考系中的时空间隔为 $\\Delta s^{2} = c^{2}\\Delta t^{2} - \\Delta x^{2} > 0$，证明在任何其他惯性参考系中，这两个事件的时空间隔仍然满足 $\\Delta s^{\\prime2} > 0$。",
+        "output": ""
+    },
+    {
+        "input": "通过洛伦兹变换，证明对于类时间隔事件，$\\Delta t^{\\prime}$ 与 $\\Delta t$ 的关系可以表示为 $\\Delta t^{\\prime} = \\gamma (\\Delta t - \\frac{v}{c^{2}}\\Delta x)$，并解释这一公式的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "解释为什么在相对论中，类时间隔事件的先后顺序是绝对的，并利用洛伦兹变换公式说明这一结论的数学基础。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论中，如果两个事件之间的间隔是类时的，则这两个事件的因果顺序在所有惯性参考系中都是一致的。",
+        "output": ""
+    },
+    {
+        "input": "假设事件1和事件2在某个惯性参考系中的时间间隔为$\\Delta t$，空间间隔为$|\\Delta \\pmb{x}|$，证明如果$|\\Delta \\pmb{x}|/\\Delta t < c$，则这两个事件的间隔是类时的。",
+        "output": ""
+    },
+    {
+        "input": "在相对论中，如果事件1是事件2的原因，证明在任何惯性参考系中，事件1总是先于事件2发生。",
+        "output": ""
+    },
+    {
+        "input": "考虑两个事件在某个惯性参考系中的时间间隔为$\\Delta t$，空间间隔为$|\\Delta \\pmb{x}|$，推导出这两个事件的间隔是类时的条件，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明在相对论中，任何因果联系的传递速度都不能超过光速$c$，并解释这与类时间隔的关系。",
+        "output": ""
+    },
+    {
+        "input": "假设事件1和事件2在某个惯性参考系中的时间间隔为$\\Delta t$，空间间隔为$|\\Delta \\pmb{x}|$，证明如果$|\\Delta \\pmb{x}|/\\Delta t > c$，则这两个事件的间隔是类空的，并且不存在因果联系。",
+        "output": ""
+    },
+    {
+        "input": "在相对论中，解释为什么类时间隔保证了因果律的成立，并给出数学推导。",
+        "output": ""
+    },
+    {
+        "input": "考虑两个事件在某个惯性参考系中的时间间隔为$\\Delta t$，空间间隔为$|\\Delta \\pmb{x}|$，证明如果$|\\Delta \\pmb{x}|/\\Delta t = c$，则这两个事件的间隔是类光的，并讨论其因果联系的可能性。",
+        "output": ""
+    },
+    {
+        "input": "在相对论中，证明如果两个事件的间隔是类时的，则存在一个惯性参考系，使得这两个事件在同一地点发生。",
+        "output": ""
+    },
+    {
+        "input": "假设事件1和事件2在某个惯性参考系中的时间间隔为$\\Delta t$，空间间隔为$|\\Delta \\pmb{x}|$，证明如果$|\\Delta \\pmb{x}|/\\Delta t < c$，则存在一个惯性参考系，使得这两个事件同时发生。",
+        "output": ""
+    },
+    {
+        "input": "推导洛伦兹变换的矩阵形式，并证明其保持时空间隔 $s^{2}=c^{2}t^{2}-x^{2}-y^{2}-z^{2}$ 不变。",
+        "output": ""
+    },
+    {
+        "input": "假设两个惯性参考系 $K$ 和 $K^{\\prime}$ 以相对速度 $V$ 沿 $x$ 轴运动，推导从 $K$ 系到 $K^{\\prime}$ 系的洛伦兹变换方程，并证明 $\\gamma = \\frac{1}{\\sqrt{1-\\frac{V^{2}}{c^{2}}}}$。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，时空间隔 $s^{2}=c^{2}t^{2}-x^{2}-y^{2}-z^{2}$ 是不变量。",
+        "output": ""
+    },
+    {
+        "input": "通过双曲函数 $\\cosh\\phi$ 和 $\\sinh\\phi$ 推导洛伦兹变换的表达式，并解释 $\\phi$ 的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设两个惯性参考系 $K$ 和 $K^{\\prime}$ 以相对速度 $V$ 沿 $x$ 轴运动，推导从 $K^{\\prime}$ 系到 $K$ 系的洛伦兹反变换方程。",
+        "output": ""
+    },
+    {
+        "input": "证明当 $c \\rightarrow \\infty$ 时，洛伦兹变换退化为伽利略变换。",
+        "output": ""
+    },
+    {
+        "input": "假设两个惯性参考系 $K$ 和 $K^{\\prime}$ 以相对速度 $V$ 沿 $y$ 轴运动，推导相应的洛伦兹变换方程。",
+        "output": ""
+    },
+    {
+        "input": "证明洛伦兹变换不具有可对易性，即两次洛伦兹变换的结果依赖于变换的先后次序。",
+        "output": ""
+    },
+    {
+        "input": "通过双曲旋转的角度 $\\phi$ 推导相对速度 $V$ 与 $\\phi$ 的关系，并证明 $\\tanh\\phi = \\frac{V}{c}$。",
+        "output": ""
+    },
+    {
+        "input": "假设两个惯性参考系 $K$ 和 $K^{\\prime}$ 以相对速度 $V$ 沿 $z$ 轴运动，推导相应的洛伦兹变换方程。",
+        "output": ""
+    },
+    {
+        "input": "推导洛伦兹变换的表达式，假设参考系 $K$ 和 $K^{\\prime}$ 以相对速度 $v$ 沿 $x$ 轴运动，要求保持时空间隔不变，即 $c^2 t^2 - x^2 = c^2 t^{\\prime 2} - x^{\\prime 2}$。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，时空间隔 $s^2 = c^2 t^2 - x^2 - y^2 - z^2$ 是不变量。",
+        "output": ""
+    },
+    {
+        "input": "计算在洛伦兹变换下，两个事件的时间差 $\\Delta t$ 和空间距离 $\\Delta x$ 如何变换，并讨论其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设在参考系 $K$ 中，两个事件同时发生，即 $\\Delta t = 0$，但在参考系 $K^{\\prime}$ 中，这两个事件的时间差为 $\\Delta t^{\\prime}$，推导 $\\Delta t^{\\prime}$ 与相对速度 $v$ 的关系。",
+        "output": ""
+    },
+    {
+        "input": "在洛伦兹变换下，推导速度的变换公式，即 $u_x^{\\prime} = \\frac{u_x - v}{1 - \\frac{u_x v}{c^2}}$，并讨论当 $u_x = c$ 时的情况。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，光速 $c$ 是不变量，即如果 $u_x = c$，则 $u_x^{\\prime} = c$。",
+        "output": ""
+    },
+    {
+        "input": "推导洛伦兹变换的逆变换，即从 $(t^{\\prime}, x^{\\prime})$ 变换回 $(t, x)$ 的表达式。",
+        "output": ""
+    },
+    {
+        "input": "假设在参考系 $K$ 中，一个粒子的动量为 $p$，能量为 $E$，推导在参考系 $K^{\\prime}$ 中，该粒子的动量和能量的表达式。",
+        "output": ""
+    },
+    {
+        "input": "讨论在洛伦兹变换下，长度收缩和时间膨胀的物理现象，并推导相应的公式。",
+        "output": ""
+    },
+    {
+        "input": "假设在参考系 $K$ 中，一个粒子的速度为 $u$，推导在参考系 $K^{\\prime}$ 中，该粒子的速度 $u^{\\prime}$ 的表达式，并讨论当 $u$ 接近光速 $c$ 时的情况。",
+        "output": ""
+    },
+    {
+        "input": "证明在二维空间中，坐标变换 $x^{\\prime}=x\\cos\\phi-y\\sin\\phi$ 和 $y^{\\prime}=y\\cos\\phi+x\\sin\\phi$ 保持时空间隔 $s^{2}=c^{2}t^{2}-(x^{2}+y^{2})$ 不变。",
+        "output": ""
+    },
+    {
+        "input": "利用双曲函数的性质，推导出保持时空间隔 $s^{2}=c^{2}t^{2}-x^{2}$ 不变的坐标变换 $(t,x)\\rightarrow(t^{\\prime},x^{\\prime})$，并给出 $t^{\\prime}$ 和 $x^{\\prime}$ 的表达式。",
+        "output": ""
+    },
+    {
+        "input": "假设 $c t=s\\cosh\\theta$ 和 $x=s\\sinh\\theta$，证明 $c^{2}t^{2}-x^{2}=s^{2}$ 成立。",
+        "output": ""
+    },
+    {
+        "input": "给定 $c t^{\\prime}=s\\cosh\\theta^{\\prime}$ 和 $x^{\\prime}=s\\sinh\\theta^{\\prime}$，利用双曲函数的和差化积公式，推导出 $t^{\\prime}$ 和 $x^{\\prime}$ 与 $t$ 和 $x$ 之间的关系。",
+        "output": ""
+    },
+    {
+        "input": "考虑一个相对论性粒子在 $x$ 方向上的运动，其速度 $v$ 接近光速 $c$。利用双曲函数的性质，推导出洛伦兹因子 $\\gamma$ 的表达式，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，时空间隔 $s^{2}=c^{2}t^{2}-(x^{2}+y^{2}+z^{2})$ 是一个不变量。",
+        "output": ""
+    },
+    {
+        "input": "给定两个事件在惯性参考系 $S$ 中的坐标 $(t_1, x_1, y_1, z_1)$ 和 $(t_2, x_2, y_2, z_2)$，推导出在另一个惯性参考系 $S^{\\prime}$ 中这两个事件的时空间隔 $s^{\\prime2}$ 的表达式，并证明 $s^{\\prime2}=s^{2}$。",
+        "output": ""
+    },
+    {
+        "input": "利用双曲函数的性质，推导出洛伦兹变换矩阵的表达式，并证明其行列式为1。",
+        "output": ""
+    },
+    {
+        "input": "考虑一个事件在惯性参考系 $S$ 中的坐标为 $(t, x, y, z)$，推导出在另一个惯性参考系 $S^{\\prime}$ 中以速度 $v$ 沿 $x$ 轴运动的坐标变换公式。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，光速 $c$ 是一个不变量，即 $c^{2}t^{2}-x^{2}=c^{2}t^{\\prime2}-x^{\\prime2}$。",
+        "output": ""
+    },
+    {
+        "input": "推导洛伦兹变换中的双曲旋转公式，证明 $x = x^{\\prime} \\cosh \\phi + c t^{\\prime} \\sinh \\phi$ 和 $c t = x^{\\prime} \\sinh \\phi + c t^{\\prime} \\cosh \\phi$ 满足相对论中的时空坐标变换关系。",
+        "output": ""
+    },
+    {
+        "input": "给定两个惯性参考系 $K$ 和 $K^{\\prime}$，其中 $K^{\\prime}$ 以速度 $v$ 相对于 $K$ 运动，推导出双曲旋转角度 $\\phi$ 与相对速度 $v$ 之间的关系，并证明 $\\tanh \\phi = \\frac{v}{c}$。",
+        "output": ""
+    },
+    {
+        "input": "假设 $K^{\\prime}$ 系的原点在 $K$ 系中的运动速度为 $v$，证明 $x^{\\prime} = 0$ 时，$x = v t$，并利用双曲旋转公式推导出 $v = c \\tanh \\phi$。",
+        "output": ""
+    },
+    {
+        "input": "给定洛伦兹变换中的双曲旋转公式，证明当 $\\phi$ 很小时，双曲旋转公式可以近似为伽利略变换 $x = x^{\\prime} + v t$ 和 $t = t^{\\prime}$。",
+        "output": ""
+    },
+    {
+        "input": "假设 $K^{\\prime}$ 系的原点在 $K$ 系中以速度 $v$ 运动，推导出 $K$ 系中的时间 $t$ 与 $K^{\\prime}$ 系中的时间 $t^{\\prime}$ 之间的关系，并证明 $t = \\gamma t^{\\prime}$，其中 $\\gamma = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$。",
+        "output": ""
+    },
+    {
+        "input": "给定洛伦兹变换中的双曲旋转公式，证明 $x^2 - (c t)^2 = (x^{\\prime})^2 - (c t^{\\prime})^2$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设 $K^{\\prime}$ 系的原点在 $K$ 系中以速度 $v$ 运动，推导出 $K$ 系中的空间坐标 $x$ 与 $K^{\\prime}$ 系中的空间坐标 $x^{\\prime}$ 之间的关系，并证明 $x = \\gamma (x^{\\prime} + v t^{\\prime})$。",
+        "output": ""
+    },
+    {
+        "input": "给定洛伦兹变换中的双曲旋转公式，证明当 $v \\ll c$ 时，洛伦兹变换可以近似为伽利略变换，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设 $K^{\\prime}$ 系的原点在 $K$ 系中以速度 $v$ 运动，推导出 $K$ 系中的时间 $t$ 与 $K^{\\prime}$ 系中的时间 $t^{\\prime}$ 之间的关系，并证明 $t = \\gamma \\left( t^{\\prime} + \\frac{v x^{\\prime}}{c^2} \\right)$。",
+        "output": ""
+    },
+    {
+        "input": "给定洛伦兹变换中的双曲旋转公式，证明 $x^{\\prime} = \\gamma (x - v t)$ 和 $t^{\\prime} = \\gamma \\left( t - \\frac{v x}{c^2} \\right)$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "推导洛伦兹变换中的 $\\gamma(V)$ 表达式，并证明 $\\gamma(V) = \\frac{1}{\\sqrt{1 - \\beta^2}}$，其中 $\\beta = \\frac{V}{c}$。",
+        "output": ""
+    },
+    {
+        "input": "给定洛伦兹变换矩阵，证明时空间隔 $s^2 = c^2 t^2 - x^2 - y^2 - z^2$ 在变换下保持不变。",
+        "output": ""
+    },
+    {
+        "input": "假设两个惯性参考系 $K$ 和 $K'$ 沿 $x$ 方向以速度 $V$ 相对运动，推导 $K$ 系中的时间 $t$ 与 $K'$ 系中的时间 $t'$ 之间的关系，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，$\\sinh\\phi = \\frac{V/c}{\\sqrt{1 - V^2/c^2}}$ 和 $\\cosh\\phi = \\frac{1}{\\sqrt{1 - V^2/c^2}}$ 满足双曲函数的基本关系 $\\cosh^2\\phi - \\sinh^2\\phi = 1$。",
+        "output": ""
+    },
+    {
+        "input": "给定洛伦兹变换的矩阵形式，推导出 $x$ 和 $t$ 的表达式，并解释矩阵中每个元素的物理意义。",
+        "output": ""
+    },
+    {
+        "input": "假设一个事件在 $K'$ 系中的坐标为 $(ct', x', y', z')$，推导其在 $K$ 系中的坐标 $(ct, x, y, z)$，并讨论当 $V \\ll c$ 时，洛伦兹变换退化为伽利略变换的条件。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，两个事件的同时性是相对的，即在一个参考系中同时发生的事件在另一个参考系中可能不同时。",
+        "output": ""
+    },
+    {
+        "input": "给定洛伦兹变换的表达式，推导出速度叠加公式，并证明当 $V \\ll c$ 时，速度叠加公式退化为经典的速度叠加公式。",
+        "output": ""
+    },
+    {
+        "input": "假设一个粒子在 $K'$ 系中以速度 $u'$ 沿 $x'$ 方向运动，推导其在 $K$ 系中的速度 $u$，并讨论当 $u' = c$ 时的情况。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，光速 $c$ 是不变的，即光速在所有惯性参考系中都具有相同的值。",
+        "output": ""
+    },
+    {
+        "input": "推导洛伦兹变换矩阵 $\\left(\\begin{array}{c c c c}{\\gamma}&{-\\beta\\gamma}&{0}&{0}\\ {-\\beta\\gamma}&{\\gamma}&{0}&{0}\\ {0}&{0}&{1}&{0}\\ {0}&{0}&{0}&{1}\\end{array}\\right)$ 的逆矩阵，并验证其满足洛伦兹变换的反变换条件。",
+        "output": ""
+    },
+    {
+        "input": "证明当 $c\\rightarrow\\infty$ 时，洛伦兹变换退化为伽利略变换，并解释为什么伽利略变换不能保持时空间隔不变。",
+        "output": ""
+    },
+    {
+        "input": "给定两个洛伦兹变换矩阵 $L_1$ 和 $L_2$，分别对应于速度 $V_1$ 和 $V_2$，证明一般情况下 $L_1 L_2 \\neq L_2 L_1$，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "计算在 $y-t$ 平面和 $t-z$ 平面分别进行双曲旋转后的最终坐标变换矩阵，并讨论其是否具有可对易性。",
+        "output": ""
+    },
+    {
+        "input": "给定一个事件在 $K$ 系中的时空坐标 $(ct, x, y, z)$，利用洛伦兹变换矩阵计算其在 $K'$ 系中的坐标 $(ct', x', y', z')$，并验证时空间隔 $s^2 = (ct)^2 - x^2 - y^2 - z^2$ 在 $K$ 和 $K'$ 系中保持不变。",
+        "output": ""
+    },
+    {
+        "input": "推导在 $K$ 系中以速度 $V$ 运动的粒子在 $K'$ 系中的速度 $u'$，并讨论当 $V$ 接近光速 $c$ 时 $u'$ 的变化趋势。",
+        "output": ""
+    },
+    {
+        "input": "证明洛伦兹变换矩阵的行列式为 1，并解释其物理意义。",
+        "output": ""
+    },
+    {
+        "input": "给定一个事件在 $K'$ 系中的时空坐标 $(ct', x', y', z')$，利用洛伦兹变换的反变换计算其在 $K$ 系中的坐标 $(ct, x, y, z)$，并验证时空间隔 $s^2 = (ct)^2 - x^2 - y^2 - z^2$ 在 $K$ 和 $K'$ 系中保持不变。",
+        "output": ""
+    },
+    {
+        "input": "讨论洛伦兹变换与伽利略变换在保持时空间隔不变性上的本质区别，并举例说明。",
+        "output": ""
+    },
+    {
+        "input": "给定两个洛伦兹变换矩阵 $L_1$ 和 $L_2$，分别对应于速度 $V_1$ 和 $V_2$，计算 $L_1 L_2$ 和 $L_2 L_1$ 的乘积，并讨论其是否具有可对易性。",
+        "output": ""
+    },
+    {
+        "input": "推导洛伦兹变换的表达式，假设两个惯性参考系$S$和$S'$沿$x$轴以相对速度$v$运动，给出坐标变换公式$x' = \\gamma(x - vt)$和$t' = \\gamma\\left(t - \\frac{vx}{c^2}\\right)$，其中$\\gamma = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，时空间隔$ds^2 = c^2 dt^2 - dx^2 - dy^2 - dz^2$是不变量。",
+        "output": ""
+    },
+    {
+        "input": "计算在洛伦兹变换下，两个事件的时间间隔$\\Delta t$和空间间隔$\\Delta x$如何变换，给出$\\Delta t' = \\gamma\\left(\\Delta t - \\frac{v \\Delta x}{c^2}\\right)$和$\\Delta x' = \\gamma(\\Delta x - v \\Delta t)$。",
+        "output": ""
+    },
+    {
+        "input": "假设一个粒子在$S$系中以速度$u$沿$x$轴运动，求在$S'$系中该粒子的速度$u'$，并推导出相对论速度叠加公式$u' = \\frac{u - v}{1 - \\frac{uv}{c^2}}$。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，电磁场的变换规律为$\\mathbf{E}' = \\gamma(\\mathbf{E} + \\mathbf{v} \\times \\mathbf{B}) - \\frac{\\gamma^2}{\\gamma + 1} \\frac{\\mathbf{v} \\cdot \\mathbf{E}}{c^2} \\mathbf{v}$和$\\mathbf{B}' = \\gamma\\left(\\mathbf{B} - \\frac{\\mathbf{v} \\times \\mathbf{E}}{c^2}\\right)$。",
+        "output": ""
+    },
+    {
+        "input": "计算在洛伦兹变换下，四维动量$P^\\mu = (E/c, \\mathbf{p})$的变换规律，并证明$P^\\mu P_\\mu = m^2 c^2$是不变量。",
+        "output": ""
+    },
+    {
+        "input": "推导在洛伦兹变换下，电磁波的频率$\\nu$和波矢$\\mathbf{k}$的变换规律，给出$\\nu' = \\gamma\\left(\\nu - \\frac{v k_x}{c}\\right)$和$k_x' = \\gamma\\left(k_x - \\frac{v \\nu}{c^2}\\right)$。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，电荷密度$\\rho$和电流密度$\\mathbf{J}$的变换规律为$\\rho' = \\gamma\\left(\\rho - \\frac{v J_x}{c^2}\\right)$和$J_x' = \\gamma(J_x - v \\rho)$。",
+        "output": ""
+    },
+    {
+        "input": "计算在洛伦兹变换下，电磁场的能量密度$u$和动量密度$\\mathbf{g}$的变换规律，给出$u' = \\gamma^2 \\left(u - \\frac{v \\cdot \\mathbf{S}}{c^2}\\right)$和$\\mathbf{g}' = \\gamma^2 \\left(\\mathbf{g} - \\frac{v u}{c^2}\\right)$，其中$\\mathbf{S}$是坡印廷矢量。",
+        "output": ""
+    },
+    {
+        "input": "证明在洛伦兹变换下，电磁场的拉格朗日密度$\\mathcal{L} = -\\frac{1}{4} F^{\\mu\\nu} F_{\\mu\\nu}$是不变量。",
+        "output": ""
+    },
+    {
         "input": "推导当 $\\beta\\|\\dot{\\boldsymbol{\\beta}}$ 时，辐射功率的角分布公式 $\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}=\\frac{q^{2}\\mu_{0}c}{16\\pi^{2}}\\frac{\\dot{\\beta}^{2}\\sin^{2}\\theta}{(1-\\beta\\cos\\theta)^{5}}$ 的具体步骤。",
         "output": "对于 $\\beta\\sim1$ 的相对论粒子，我们无法忽略方程(9.15) 中的 $\\beta$ 或者 $\\beta$ ，此时计算会更加复杂 这里我们首先讨论两种特殊情况： $\\beta\\|\\dot{\\boldsymbol{\\beta}}$ 与 $\\beta\\perp\\dot{\\beta}$ ，而将一般情况下的辐射功率计算留在作业里   \n\n首先我们计算 $\\beta\\|\\dot{\\boldsymbol{\\beta}}$ 时的辐射功率 如果 $\\beta\\|\\dot{\\boldsymbol{\\beta}}$ ，则方程(9.15) 变成  \n\n$$\n\\frac{\\mathrm{d}\\boldsymbol{P}}{\\mathrm{d}\\Omega}=\\frac{q^{2}\\mu_{0}c}{16\\pi^{2}}\\frac{\\left|\\boldsymbol{e}_{R}\\times\\left[\\boldsymbol{e}_{R}\\times\\dot{\\boldsymbol{\\beta}}\\right]\\right|^{2}}{(1-\\boldsymbol{\\beta}\\cdot\\boldsymbol{e}_{R})^{5}}.\n$$  \n\n定义 $\\theta=\\langle\\beta,e_{R}\\rangle$ . 当 $\\beta\\|\\dot{\\boldsymbol{\\beta}},\\langle\\dot{\\boldsymbol{\\beta}},e_{R}\\rangle=\\boldsymbol{\\theta}$  \n\n$$\n\\boxed{\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega}=\\frac{q^{2}\\mu_{0}c}{16\\pi^{2}}\\frac{\\dot{\\beta}^{2}\\sin^{2}\\theta}{(1-\\beta\\cos\\theta)^{5}},}\n$$  \n\n此时辐射功率的角分布很有意思. 如果 $\\theta=0$ , 则 $\\mathrm{d}P/\\mathrm{d}\\Omega=0$ . 然后，对 $\\beta\\rightarrow1$ 的超相对论粒子，  \n\n$$\n1-\\beta\\cos\\theta\\sim1-\\cos\\theta\\rightarrow0,\\quad\\mathrm{{as\\}\\}\\theta\\rightarrow0.\n$$  \n\n因此 $\\mathrm{d}P/\\mathrm{d}\\Omega$ 在 $\\theta\\sim0$ 处（但不是在 $\\theta=0$ ）非常大 注意到辐射功率的角分布与加速度的符号无关，即无论该粒子是加速还是减速 当一个高速粒子作减速运动时（例如撞到另一个粒子上），会向外辐射出能量 此时这种辐射被称为轫致辐射，刹车辐射或制动辐射(bremsstrahlung)   \n\n当 $\\beta\\|\\dot{\\boldsymbol{\\beta}}$ 时，辐射总功率为  \n\n$$\n\\begin{array}{r l}&{P_{\\|}=\\int\\frac{q^{2}\\mu_{0}c}{16\\pi^{2}}\\frac{\\dot{\\beta}^{2}\\sin^{2}\\theta}{(1-\\beta\\cos\\theta)^{5}}\\mathrm{d}\\Omega}\\\\ &{\\quad=\\frac{q^{2}\\mu_{0}c\\dot{\\beta}^{2}}{16\\pi^{2}}\\int_{0}^{2\\pi}\\mathrm{d}\\phi\\int_{0}^{\\pi}\\frac{\\sin^{2}\\theta}{(1-\\beta\\cos\\theta)^{5}}\\mathrm{d}\\theta}\\\\ &{\\quad=\\frac{q^{2}\\mu_{0}c\\dot{\\beta}^{2}}{16\\pi^{2}}2\\pi\\frac{4}{3(1-\\beta^{2})^{3}}}\\\\ &{\\quad=\\frac{q^{2}\\mu_{0}c\\dot{\\beta}^{2}}{6\\pi(1-\\beta^{2})^{3}}}\\\\ &{\\quad=\\frac{q^{2}\\mu_{0}}{6\\pi^{2}}\\gamma^{6}\\nu^{2}=\\frac{q^{2}\\mu_{0}}{6\\pi c}\\gamma^{6}a^{2}.}\\end{array}\n$$  \n\n我们也可以利用粒子的受力来表示其辐射总功率，这在有些问题里会非常方便 对 $\\pmb{v}\\lVert\\dot{\\pmb{v}}$ , 我们从动量 $\\mathfrak{p}$ 的时间变化率里得到,  \n\n$$\nF={\\frac{\\mathrm{d}{\\pmb{p}}}{\\mathrm{d}t}}={\\frac{\\mathrm{d}}{\\mathrm{d}t}}(\\gamma m{\\pmb{v}})={\\dot{\\gamma}}m{\\pmb{v}}+\\gamma m{\\dot{\\boldsymbol{v}}}.\n$$  \n\n注意到 $\\beta^{2}=(\\gamma^{2}-1)/\\gamma^{2}$ , 且对 $\\pmb{v}\\lVert\\dot{\\pmb{v}}$ 而言有,  \n\n$$\n\\dot{\\gamma}m v=\\gamma^{3}\\beta^{2}m\\dot{v}=(\\gamma^{3}-\\gamma)m\\dot{v}.\n$$  \n\n将方程(9.31) 代入式(9.30) 我们有  \n\n$$\n\\pmb{F}=\\frac{\\mathrm{d}\\pmb{p}}{\\mathrm{d}t}=\\gamma^{3}m\\dot{\\pmb{v}}.\n$$  \n\n因此利用力 $\\scriptstyle F,\\,\\beta\\parallel{\\dot{\\boldsymbol{\\beta}}}$ 时的总辐射功率为  \n\n$$\n\\left|P_{\\|}=\\frac{q^{2}\\mu_{0}}{6\\pi c m^{2}}\\left(\\frac{\\mathrm{d}{\\bf p}}{\\mathrm{d}t}\\right)^{2}.\\right|\n$$  \n\n因此，在给定外力下，此时的辐射功率与粒子的能量即 $\\gamma$ 无关   \n\n第二种特殊情况是 $\\beta\\perp\\dot{\\beta}$ "
     },
