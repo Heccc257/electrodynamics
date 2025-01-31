@@ -388,10 +388,6 @@
         "output": "假设总电荷$\\sum_a q_a = 0$，且坐标原点从$\\mathbf{O}$移动到$\\mathbf{O}'$，新坐标$\\mathbf{x}_a' = \\mathbf{x}_a + \\mathbf{d}$，其中$\\mathbf{d}$是位移向量。则新电偶极矩为：\n$$\n\\mathbf{p}' = \\sum q_a \\mathbf{x}_a' = \\sum q_a (\\mathbf{x}_a + \\mathbf{d}) = \\sum q_a \\mathbf{x}_a + \\mathbf{d} \\sum q_a = \\mathbf{p} + \\mathbf{d} \\cdot 0 = \\mathbf{p}\n$$\n因此，电偶极矩与坐标原点无关。"
     },
     {
-        "input": "problem3 description",
-        "output": "一个固有长度为 $l_{0}$ 的杆在静止参考系中测得。如果观察者测得的杆长度为 $l = \\frac{l_{0}}{2}$，求杆相对于观察者的运动速度 $v$。使用洛伦兹收缩公式 $l = l_{0} \\sqrt{1 - \\frac{v^2}{c^2}}$ 进行推导。"
-    },
-    {
         "input": "什么是张量的协变分量？",
         "output": "张量的协变分量 $F_{i j}$ 在两个坐标系间的变换规律为 $F_{i j}=\\frac{\\partial x^{\\prime m}}{\\partial x^{i}}\\frac{\\partial x^{\\prime n}}{\\partial x^{j}}F_{m n}^{\\prime}$。"
     },
