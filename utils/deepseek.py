@@ -683,9 +683,6 @@ def answer_cot(file_path):
         nonlocal outputs
         nonlocal lock
 
-        if idx < 44: return
-        if idx > 45: return
-        
         # questions = json.dumps(objs, ensure_ascii=False, indent=4)
         questions = prompt
         for obj in objs:

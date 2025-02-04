@@ -8,9 +8,11 @@ import copy
 import random
 import time
 import threading
+import silicon_flow
 # api_key = "sk-a81461b386a94a2cbe2c040f99cac1f3"
 api_key = "sk-8d0ba939547b4585acd59da8a383efe0"
 api_key = "sk-3ad9b85645f246788fc2f3ae474bc6a0"
+# api_key = "sk-ceajxtcicytniffxkfcwfsqgyokeqnyxdctctrkongnnogxl"
 
 def save_json(data, output_path, append=False):
     open_type = "w"
@@ -243,93 +245,82 @@ def median(file_path):
     save_json(outputs, output_path)
 
 def hard(file_path):
+    # 你需要将你自己的思考过程和自我反思过程整理好一并放到输出当中，不要太短,要全面，思考过程用<think></think>包裹，答案用<answer></answer>包裹。要求思考过程要详细。
     prompt = r"""
-    我将给出一个或者多个电动力学问题，同时可能给出参考答案，请你分别根据问题和答案给出更加详细的思考过程，并且给出更加详细的回答。
-    注意公式使用$$并且关键词前使用\\,比如$\\sum$, $\\frac a b $。保证我能用python的json.loads()函数解析。
-    输出只需要返回json的格式，不需要其他的内容。
-    格式参考下面的例子，返回一个json列表，每个元素对应一道题，只有两个键值"input"和"output"分别表示问题和答案，返回json的元素数量必须与输入的题目数量一致。
-    你需要将你自己的思考过程和自我反思过程整理好一并放到输出当中，不要太短,要全面，思考过程用<think></think>包裹，答案用<answer></answer>包裹。要求思考过程要详细。
-    例子：```
-    User:
-    [
-        {
-            "input": "协变形式运动方程的时间分量 $\\mu=0$ 表示什么物理意义？",
-            "output": "<think><|>协变形式的运动方程通常写为 $\\frac{d p^\\mu}{d \\tau}..."
-        }
-    ]
-
-    Assistant:
-    [
-        {
-            "input": "协变形式运动方程的时间分量 $\\mu=0$ 表示什么物理意义？",
-            "output": "<think><|>协变形式的运动方程通常写为 $\\frac{d p^\\mu}{d \\tau} = q F^{\\mu\\nu} u_\\nu$... </think>\n<answer>协变形式运动方程的时间分量 $\\mu=0$ 表示能量变化率，即 $\\frac{d E}{d \\tau} = q \\mathbf{E} \\cdot \\mathbf{u}$，描述了电场对粒子做功的功率。</answer>"
-        }
-    ]
-    ```
-    
+    我将给出一个电动力学问题，同时可能给出参考答案，一步一步思考并解决这个问题。
+    注意公式使用latex格式，使用$$包裹。
     下面将给出正式的问题：\n
     """
     # 注意思维链的公式要使用$$，并且在关键词前使用\\，例如\\sum,\\delta等，否则无法用python解析。
     # 例子：根据爱因斯坦求和约定，二阶张量 $T_{ij}$ 的迹 $\\text{Tr}(T)$ 可以表示为 $\\text{Tr}(T) = T_{ii}$，其中 $i$ 是哑指标，默认求和。\n单位张量 $\\delta_{ij}$ 的定义是 $\\delta_{ij} = 1$ 当 $i = j$。
+
     client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
+    # client = OpenAI(api_key=api_key, base_url="https://api.siliconflow.cn/v1/chat/completions")
     datasets = json.load(open(file_path, 'r'))
     outputs = []
     output_path = "./datasets/hard_sup.json"
+    lock = threading.Lock()
 
     with open(output_path, "w") as f:
         pass
     with open("./datasets/hard_wastes.txt", "w") as f:
         pass
     
-    batch_size = 3
-    
-    datasets = [{"input": data["input"], "output": data["output"]} for data in datasets]
+    batch_size = 1
+    datasets = [{"input": data["input"], "output": data["output"] if "output" in data.keys() else ""} for data in datasets]
 
     data_batches = [datasets[i: min(i+batch_size, len(datasets))] for i in range(0, len(datasets), batch_size)]
 
-
-    for idx, objs in enumerate(tqdm(data_batches, desc="Processing questions")):
+    def process_batch(idx, objs):
+        nonlocal outputs
+        nonlocal lock
 
         questions = json.dumps(objs, ensure_ascii=False, indent=4)
 
-        messages = [{"role": "user", "content": f"{prompt + questions}"}]
-        response = client.chat.completions.create(
-            model="deepseek-reasoner",
-            # model="deepseek-chat",
-            messages=messages
-        )
+        # messages = [{"role": "user", "content": f"{prompt + questions}"}]
+        # response = client.chat.completions.create(
+        #     model="deepseek-reasoner",
+        #     # model="deepseek-chat",
+        #     messages=messages,
+        #     temperature=0.1
+        # )
+        # # reasoning_content = response.choices[0].message.reasoning_content
+        # content = response.choices[0].message.content
         # reasoning_content = response.choices[0].message.reasoning_content
-        content = response.choices[0].message.content
-        reasoning_content = response.choices[0].message.reasoning_content
 
-        print(str(reasoning_content))
-        print(str(content))
-        exit(0)
+        # content = content.replace("<think>", "").replace("</think>", "").replace("<answer>", "").replace("</answer>", "")
+        # reasoning_content = reasoning_content.replace("<think>", "").replace("</think>", "").replace("<answer>", "").replace("</answer>", "")
         
-        time.sleep(0.1)
+        content = silicon_flow.ask_silicon(questions)
+        with lock:
+            try:
+                answers = {}
+                answers["input"] = objs[0]["input"]
+                # answers["output"] = f"<think>{reasoning_content}</think>\n<answer>{content}</answer>"
+                answers["output"] = content
 
-        try:
-            # if idx < 2:
-            #     print(f"sample response: {content}")
-            answers = json.loads(content)
-
-            for i in range(batch_size):
-                answers[i]["input"] = objs[i]["input"]
-            outputs += answers
-
-            if idx%2 == 0:
+                outputs.append(answers)
                 save_json(outputs, output_path)
 
 
-        except Exception as e:
-            # 捕获其他可能的异常
-            print(f"发生错误: {e}")
-            print(str(reasoning_content))
-            print(str(content))
-            with open("./datasets/hard_wastes.txt", "a") as wastes:
-                wastes.write(str(idx) + "\n")
-                wastes.write(str(content) + "\n\n")
-            continue
+            except Exception as e:
+                # 捕获其他可能的异常
+                print(f"发生错误: {e}")
+                # print(str(reasoning_content))
+                print(str(content))
+                with open("./datasets/hard_wastes.txt", "a") as wastes:
+                    wastes.write(str(idx) + "\n")
+                    wastes.write(str(content) + "\n\n")
+
+    threads = []
+    for idx, objs in enumerate(tqdm(data_batches, desc="Processing questions")):
+        t = threading.Thread(target=process_batch, args=(idx, objs))
+        t.start()
+        threads.append(t)
+
+        if idx%8 == 0:
+            for t in threads:
+                t.join()
 
     save_json(outputs, output_path)
 
