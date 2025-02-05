@@ -9,6 +9,7 @@ import random
 import time
 import threading
 import silicon_flow
+import aliyun
 # api_key = "sk-a81461b386a94a2cbe2c040f99cac1f3"
 api_key = "sk-8d0ba939547b4585acd59da8a383efe0"
 api_key = "sk-3ad9b85645f246788fc2f3ae474bc6a0"
@@ -254,8 +255,11 @@ def hard(file_path):
     # 注意思维链的公式要使用$$，并且在关键词前使用\\，例如\\sum,\\delta等，否则无法用python解析。
     # 例子：根据爱因斯坦求和约定，二阶张量 $T_{ij}$ 的迹 $\\text{Tr}(T)$ 可以表示为 $\\text{Tr}(T) = T_{ii}$，其中 $i$ 是哑指标，默认求和。\n单位张量 $\\delta_{ij}$ 的定义是 $\\delta_{ij} = 1$ 当 $i = j$。
 
-    client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
-    # client = OpenAI(api_key=api_key, base_url="https://api.siliconflow.cn/v1/chat/completions")
+    # client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
+
+    client = OpenAI(api_key="sk-90db01b7652f459bb3295de1aac85967", base_url="https://dashscope.aliyuncs.com/compatible-mode/v1")
+
+
     datasets = json.load(open(file_path, 'r'))
     outputs = []
     output_path = "./datasets/hard_sup.json"
@@ -279,19 +283,29 @@ def hard(file_path):
 
         # messages = [{"role": "user", "content": f"{prompt + questions}"}]
         # response = client.chat.completions.create(
-        #     model="deepseek-reasoner",
+        #     # model="deepseek-reasoner",
         #     # model="deepseek-chat",
+        #     model="deepseek-v3", 
         #     messages=messages,
         #     temperature=0.1
         # )
         # # reasoning_content = response.choices[0].message.reasoning_content
         # content = response.choices[0].message.content
         # reasoning_content = response.choices[0].message.reasoning_content
+        # print(content)
 
         # content = content.replace("<think>", "").replace("</think>", "").replace("<answer>", "").replace("</answer>", "")
         # reasoning_content = reasoning_content.replace("<think>", "").replace("</think>", "").replace("<answer>", "").replace("</answer>", "")
         
-        content = silicon_flow.ask_silicon(questions)
+        prompt = r"""我将给出一个电动力学问题，同时可能给出参考答案，一步一步思考并解决这个问题。思考过程用<think></think>包裹，答案用<answer></answer>包裹。
+        注意公式使用latex格式，使用$$包裹。
+        下面将给出正式的问题和参考资料：\n
+        """
+        questions = f"{prompt + questions}"
+        if idx == 0:
+            print(f"sample question: {questions}")
+        content = aliyun.ask_aliyun(questions)
+
         with lock:
             try:
                 answers = {}

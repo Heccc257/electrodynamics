@@ -1,10 +1,12 @@
 import requests
-
+from openai import OpenAI
 api_key = "sk-ceajxtcicytniffxkfcwfsqgyokeqnyxdctctrkongnnogxl"
 url = "https://api.siliconflow.cn/v1/chat/completions"
 
 def ask_silicon(question):
+
     prompt = "解决下面的电动力学问题，同时可能给出参考答案，简要给出详细的数学推导和计算过程，思考过程用<think> </think>包裹，答案用<answer> </answer>包裹。公式使用latex格式，用$包裹\n\n" + question + "\n\n"
+    
     payload = {
         "model": "deepseek-ai/DeepSeek-V3",
         # "model": "deepseek-ai/DeepSeek-R1",
