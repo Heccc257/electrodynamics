@@ -98,7 +98,7 @@ def get_answers(
         max_tokens=max_len,  # 生成的最大新token数，包括输入文本
         best_of=3,
         n=1,  # 返回的序列数量
-        temperature=0.6,  # 控制输出的随机性，值越低输出越确定但可能更单调
+        temperature=0.2,  # 控制输出的随机性，值越低输出越确定但可能更单调
         top_p=0.9,  # 核采样，只从累积概率最高的词汇中选择下一个token
         top_k=50,  # Top-k采样，只从概率最高的k个词汇中选择下一个token
         repetition_penalty=1.2  # 对已经生成过的token施加惩罚，以降低其再次被选中的概率

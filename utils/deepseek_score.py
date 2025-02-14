@@ -338,6 +338,106 @@ def hard(file_path):
 
     save_json(outputs, output_path)
 
+def choose(file_path):
+    # 你需要将你自己的思考过程和自我反思过程整理好一并放到输出当中，不要太短,要全面，思考过程用<think></think>包裹，答案用<answer></answer>包裹。要求思考过程要详细。
+    prompt = r"""
+    我将给出一个电动力学问题，同时可能给出参考答案，一步一步思考并解决这个问题。
+    注意公式使用latex格式，使用$$包裹。
+    下面将给出正式的问题：\n
+    """
+    # 注意思维链的公式要使用$$，并且在关键词前使用\\，例如\\sum,\\delta等，否则无法用python解析。
+    # 例子：根据爱因斯坦求和约定，二阶张量 $T_{ij}$ 的迹 $\\text{Tr}(T)$ 可以表示为 $\\text{Tr}(T) = T_{ii}$，其中 $i$ 是哑指标，默认求和。\n单位张量 $\\delta_{ij}$ 的定义是 $\\delta_{ij} = 1$ 当 $i = j$。
+
+    # client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
+
+    client = OpenAI(api_key="sk-90db01b7652f459bb3295de1aac85967", base_url="https://dashscope.aliyuncs.com/compatible-mode/v1")
+
+
+    datasets = json.load(open(file_path, 'r'))
+    outputs = []
+    output_path = "./datasets/choose.json"
+    lock = threading.Lock()
+
+    with open(output_path, "w") as f:
+        pass
+    with open("./datasets/choose_wastes.txt", "w") as f:
+        pass
+    
+    batch_size = 1
+    datasets = [{"instruction": data["instruction"], "output": data["output"] if "output" in data.keys() else ""} for data in datasets]
+
+    data_batches = [datasets[i: min(i+batch_size, len(datasets))] for i in range(0, len(datasets), batch_size)]
+
+    def process_batch(idx, objs):
+        nonlocal outputs
+        nonlocal lock
+
+        questions = json.dumps(objs, ensure_ascii=False, indent=4)
+        obj = objs[0]
+        # messages = [{"role": "user", "content": f"{prompt + questions}"}]
+        # response = client.chat.completions.create(
+        #     # model="deepseek-reasoner",
+        #     # model="deepseek-chat",
+        #     model="deepseek-v3", 
+        #     messages=messages,
+        #     temperature=0.1
+        # )
+        # # reasoning_content = response.choices[0].message.reasoning_content
+        # content = response.choices[0].message.content
+        # reasoning_content = response.choices[0].message.reasoning_content
+        # print(content)
+
+        # content = content.replace("<think>", "").replace("</think>", "").replace("<answer>", "").replace("</answer>", "")
+        # reasoning_content = reasoning_content.replace("<think>", "").replace("</think>", "").replace("<answer>", "").replace("</answer>", "")
+        
+        prompt = r"""我将给出一个电动力学问题，以及若干个回答，从0开始编号。
+        根据答案正确性和思维完整性选择最好的一个，只需要输出编号。
+
+        """
+        questions = f"{prompt + questions}"
+        if idx == 0:
+            print(f"sample question: {questions}")
+        content = aliyun.ask_aliyun(questions)
+        best = 0
+        for i in range(len(obj["output"])):
+            if str(i) in content:
+                best = i
+                break
+        
+        with lock:
+            try:
+                for i in range(len(obj["output"])):
+                    if i == best: continue
+                    answers = {}
+                    answers["instruction"] = "下面将给出一个电动力学问题，请一步一步思考，使用中文给出思考过程和解答。\n    要求思考过程详细，解答要尽量简洁,思考过程用<think></think>包裹,解答用<answer></answer>包裹\n    注意公式使用$$\n    例如：```\n    User: \"在相对论粒子的辐射中，电场 $\\boldsymbol{E}$ 的表达式是如何与加速度的平行和垂直分量相关的？\"\n    Assistant: \"<think>在相对论粒子的辐射中，电场 $\\boldsymbol{E}$ 的表达式可以通过粒子的加速度 $\\boldsymbol{a}$ 的平行和垂直分量来描述。...</think>\\n <answer>线性加速器中，粒子的速度 $\\mathbf{v}$ 与加速度 ...</answer>\"\n    ```\n    下面是问题：\n\n" + obj["instruction"]
+                    answers["chosen"] = obj["output"][best]
+                    answers["rejected"] = obj["output"][i]
+                    # answers["content"] = content
+                    outputs.append(answers)
+
+            except Exception as e:
+                # 捕获其他可能的异常
+                print(f"发生错误: {e}")
+                # print(str(reasoning_content))
+                print(str(content))
+                with open("./datasets/hard_wastes.txt", "a") as wastes:
+                    wastes.write(str(idx) + "\n")
+                    wastes.write(str(content) + "\n\n")
+
+    threads = []
+    for idx, objs in enumerate(tqdm(data_batches, desc="Processing questions")):
+        t = threading.Thread(target=process_batch, args=(idx, objs))
+        t.start()
+        threads.append(t)
+
+        if idx%8 == 0:
+            for t in threads:
+                t.join()
+
+            save_json(outputs, output_path)
+
+    save_json(outputs, output_path)
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process a JSON file with electrodynamics problems.")
     parser.add_argument("--file", type=str, help="Path to the JSON file containing the electrodynamics problems.")
@@ -356,6 +456,9 @@ if __name__ == "__main__":
     elif analy == "hard":
         print("hard")
         hard(args.file)
+    elif analy == "choose":
+        print("choose")
+        choose(args.file)
     else:
         print("unknown analayse")
         

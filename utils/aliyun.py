@@ -9,8 +9,8 @@ client = OpenAI(
 
 def ask_aliyun(question):
     completion = client.chat.completions.create(
-        # model="qwen-plus", # 此处以qwen-plus为例，可按需更换模型名称。模型列表：https://help.aliyun.com/zh/model-studio/getting-started/models
-        model="qwq-32b-preview", # 此处以qwen-plus为例，可按需更换模型名称。模型列表：https://help.aliyun.com/zh/model-studio/getting-started/models
+        model="qwen-plus", # 此处以qwen-plus为例，可按需更换模型名称。模型列表：https://help.aliyun.com/zh/model-studio/getting-started/models
+        # model="qwq-32b-preview", # 此处以qwen-plus为例，可按需更换模型名称。模型列表：https://help.aliyun.com/zh/model-studio/getting-started/models
         # model="deepseek-v3",
         messages=[
             {'role': 'system', 'content': 'You are a helpful assistant.'},
